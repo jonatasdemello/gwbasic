@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>GWBASIC Source Code Libraries of General Purpose Routines by Gary Peek</title>
+</head>
+<body>
+
+<center>
+<h3>GWBASIC Source Code Libraries of General Purpose Routines</h3>
+placed in the public domain by Gary Peek
+<br>
+from Gary Peek's BASIC Source Code Archive
+</center>
+<p>
+
+As I was writing DOS based BASIC programs over the years I found the need,
+(as many programmers who used BASIC did), for general purpose subroutines
+that could be used with the programs I was writing. At one time I even
+packaged a well documented set of routines for sale. The result of this
+work was <A HREF="routines.bas">ROUTINES.BAS</A>.
+<p>
+
+It has features that you have seen on many older DOS programs like
+shadowed boxes with selectable color combinations. I actually put too
+much effort into putting all these features in it, because I reverted
+to using (and still use) just a monochrome subset of these routines in
+<A HREF="routsmal.bas">ROUTSMAL.BAS</A>. I also continue to make slight
+improvements to ROUTSMAL when I have the need.
+<p>
+
+I recommend ROUTSMAL over ROUTINES except to learn how to do something
+or to copy a routine you need that is not in ROUTINES. Also, the line numbers
+between the two are different. <i>Keep in mind that some of the test programs
+and other complete programs described on other pages may use some of these
+routines in a way that demonstrate them better or better provides a way to
+extract them for your uses.</i>
+<p>
+
+The subroutine that started it all was <A HREF="editsub.bas">EDITSUB.BAS</A>,
+a replacement for BASIC's INPUT statement, and is still useful if you need
+something small.
+<p>
+
+Note: Some of the programs in the <i>Miscellaneous</i> section use some of
+these subroutines <i>or earlier and simpler versions of them</i>. The
+assembly language interface subroutine is the only place where it was
+necessary to have different commands for GWBASIC and QuickBASIC, and it
+is commented.
+<p>
+
+
+ROUTSMAL contains only the following:
+<ul>
+<li>outline the screen
+<li>display centered message
+<li>edit a field at row and column
+<li>select a file from the current directory
+<li>select a file from any directory on the disk
+<li>multiple selection menu
+<li>point and shoot menu of up to 9 items
+<li>scrolling point and shoot menu for >20 and <100 items 
+</ul>
+
+
+ROUTINES contains the following:
+<ul>
+<li>display and select colors for ROUTINES
+<li>outline the screen
+<li>erase line
+<li>display message at row and column
+<li>edit a field at row and column
+<li>message and field/date/time/dollar amount
+<li>enter or change date
+<li>enter or change time
+<li>enter dollar amount
+<li>wait for any key hit
+<li>delay in seconds
+<li>delay in seconds or key hit
+<li>wait for a function key hit
+<li>display and select file names (vertically)
+<li>display and select file names (wide)
+<li>point and shoot style menu
+<li>multiple selection on/off menu
+<li>full screen menu with work & prompt areas
+<li>erase menu work area
+<li>erase menu prompt area
+<li>display a bar graph
+<li>draw 1 bar for bar graph
+<li>create messages with large characters
+<li>display messages with large characters
+</ul>
+<p>
+
+
+The following require the assembly language interface:
+<p>
+
+<ul>
+<li>get monitor type
+<p>
+
+The following provide access to mouse function calls:
+<p>
+
+<ul>
+<li>hardware reset and status
+<li>show cursor
+<li>hide cursor
+<li>get button status and mouse position
+<li>set cursor position
+<li>get button press info
+<li>get button release info
+<li>set cursor limits
+<li>set graphics cursor
+<li>set text cursor
+<li>read motion counters
+<li>set sensitivity and double speed
+<li>get driver version, type, IRQ
+</ul>
+
+</ul>
+<p>
+
+This is the assembly language interface:
+<ul>
+<li>set up and call assembly language subroutine
+<li>load assembly language subroutine
+</ul>
+<p>
+
+ROUTINES is so large that there is not enough room in the GWBASIC interpreter
+to include demo code to show how to use it, so I broke it apart into
+files that include parts of ROUTINES and demo code. They are as follows:
+<p>
+
+<A HREF="routdemi.bas">ROUTDEMI.BAS</A>, assembly language interface,
+mouse support. This is a crude EGA graphics drawing program. (However, a
+better graphics program can be found in the graphics program area.)
+<p>
+
+<A HREF="routdemf.bas">ROUTDEMF.BAS</A>, file selection. (However, ROUTSMAL
+has monochrome file selection routines with more features.)
+<p>
+
+<A HREF="routdemd.bas">ROUTDEMD.BAS</A>, display and data entry.
+<p>
+
+<A HREF="routdemg.bas">ROUTDEMG.BAS</A>, block graphics, bar charts. All of
+these work on monochrome monitors.
+<p>
+
+<A HREF="routdemm.bas">ROUTDEMM.BAS</A>, menus and menu selection. "Point and
+shoot", toggle lists of items, etc.
+<p>
+
+<img src="/cgi-bin/log.cgi?GWroutines" alt="log file">
+
+</body>
+</html>
+

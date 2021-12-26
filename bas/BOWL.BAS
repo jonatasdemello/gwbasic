@@ -1,0 +1,315 @@
+5 CONST Delay = 500
+10 SCREEN 12: CLS
+20 F% = 1: FFF% = 1
+30 DIM A%(10, 2): DIM B%(10): DIM C%(10): DIM D%(14, 2, 6): DIM SC%(6)
+40 GOSUB 1910
+50 PRINT "HOW MANY PLAYERS? (1 - 6), (TYPE 0 FOR HELP SCREEN)"
+60 PP$ = INKEY$: IF PP$ = "Q" OR PP$ = "q" THEN STOP
+70 IF PP$ = "0" THEN 2690
+80 IF PP$ = "" THEN GOSUB 2570: GOTO 60 ELSE P% = VAL(PP$)
+90 IF P% < 1 OR P% > 6 THEN SOUND 100, 5: GOTO 60
+100 PRINT "LEVEL OF PLAY?(1 - HARD, 4 - EASY)"
+110 TT$ = INKEY$: IF TT$ = "Q" OR TT$ = "q" THEN STOP
+120 IF TT$ = "" THEN GOSUB 2570: GOTO 110 ELSE T% = VAL(TT$)
+130 IF T% < 1 OR T% > 10 THEN SOUND 100, 5: GOTO 110 ELSE T% = 7 - T%
+140 CLS
+150 A%(1, 1) = 500: A%(1, 2) = 290
+160 A%(2, 1) = 530: A%(2, 2) = 270
+170 A%(3, 1) = 530: A%(3, 2) = 310
+180 A%(4, 1) = 560: A%(4, 2) = 250
+190 A%(5, 1) = 560: A%(5, 2) = 290
+200 A%(6, 1) = 560: A%(6, 2) = 330
+210 A%(7, 1) = 590: A%(7, 2) = 230
+220 A%(8, 1) = 590: A%(8, 2) = 270
+230 A%(9, 1) = 590: A%(9, 2) = 310
+240 A%(10, 1) = 590: A%(10, 2) = 350
+250 LINE (0, 180)-(640, 180), 15
+260 LINE (0, 400)-(640, 400), 15
+270 FOR Z% = 1 TO 10
+280 CIRCLE (A%(Z%, 1), A%(Z%, 2)), 10, 12
+290 PAINT (A%(Z%, 1), A%(Z%, 2)), 15, 12
+300 CIRCLE (A%(Z%, 1), A%(Z%, 2)), 7, 12
+310 B%(Z%) = 0
+320 NEXT Z%
+330 Z% = 200: ZZ% = 0
+340 FF% = FF% + 1
+350 IF FF% = 3 THEN FFF% = FFF% + 1: FF% = 1
+360 IF FFF% = P% + 1 THEN FFF% = 1: F% = F% + 1
+370 IF F% = 11 AND FF% = 1 AND D%(10, 2, FFF%) < 10 THEN 330
+380 IF F% = 11 AND FF% = 2 AND D%(10, 2, FFF%) <> 12 THEN 270
+390 IF F% = 12 THEN 1740
+400 IF FFF% / 2 = INT(FFF% / 2) THEN PL% = 2 ELSE PL% = 1
+410 FOR X% = 1 TO 4: BB$ = INKEY$: NEXT X%
+420 IF FF% = 1 THEN
+430 LOCATE 19, 30
+440 PRINT "PLAYER :"; FFF%
+450 WF% = WF% + 1: IF WF% = 11 THEN WF% = 1
+460 ON WF% GOSUB 470, 480, 490, 500, 510, 520, 530, 540, 550, 560: GOTO 570
+470 PLAY "L16<<FDDC<B>DC<GL8AL16>C>>": RETURN
+480 PLAY "L16<<<GL8A>FL16EC<A>C>>": RETURN
+490 PLAY "L16<<<EGAGA>L8CL16E-L8DL16C>>": RETURN
+500 PLAY "L16<<EGL8AL16GF+EDF+L8G>>": RETURN
+510 PLAY "L16<<FEFED<B>DL8EL16D>>": RETURN
+520 PLAY "L16<<<A>CDL8EL16GA>>": RETURN
+530 PLAY "L16<<EGBGAF+L8DL16<B>L8DL16E>>": RETURN
+540 PLAY "L16<<<AB>L8C+L16EL8DL16C+<BAL8G+BL16A>>>": RETURN
+550 PLAY "L16<<EEEEL8EC+L16DL8C+L16<A>>>": RETURN
+560 PLAY "L16<<EL8GL16EL8C>C<L16AL8GFL16EL8DL16C>>": RETURN
+570 LOCATE 19, 30: PRINT "                 "
+580 END IF
+590 FOR X% = 1 TO 4: BB$ = INKEY$: NEXT X%
+600 IF ZZ% = 0 THEN Z% = Z% + 2
+610 IF ZZ% = 1 THEN Z% = Z% - 2
+620 IF ZZ% = 0 AND Z% > 380 THEN ZZ% = 1
+630 IF ZZ% = 1 AND Z% < 200 THEN ZZ% = 0
+640 CIRCLE (50, Z%), 10, 14
+    ZXSNOTS = ZXSNOTS + 1: IF ZXSNOTS >= 4 THEN ZXSNOTS = 0: WAIT &H3DA, &H8, &H8: WAIT &H3DA, &H8 'Added 12/26/2006
+655 'FOR ZXSNOTS = 0 TO Delay: NEXT ZXSNOTS 'Removed 12/26/2006
+656 CIRCLE (50, Z%), 10, 0
+660 BB$ = INKEY$
+670 IF BB$ = "" THEN 600
+680 IF BB$ = "Q" OR BB$ = "q" THEN STOP
+690 IF PL% = 1 AND BB$ <> "7" AND BB$ <> "1" AND BB$ <> "9" AND BB$ <> "3" AND BB$ <> "8" AND BB$ <> "2" AND BB$ <> "6" THEN SOUND 100, .1: GOTO 600
+700 IF PL% = 2 AND BB$ <> "W" AND BB$ <> "Z" AND BB$ <> "R" AND BB$ <> "C" AND BB$ <> "E" AND BB$ <> "X" AND BB$ <> "D" THEN SOUND 100, .1: GOTO 600
+710 IF BB$ = "7" OR BB$ = "W" THEN ZX% = -.5
+720 IF BB$ = "1" OR BB$ = "Z" THEN ZX% = .5
+730 IF BB$ = "9" OR BB$ = "R" THEN ZX% = -.5
+740 IF BB$ = "3" OR BB$ = "C" THEN ZX% = .5
+750 IF BB$ = "8" OR BB$ = "E" THEN ZX% = -.5
+760 IF BB$ = "2" OR BB$ = "X" THEN ZX% = .5
+770 FOR Y% = 50 TO 660 STEP 5
+780 IF ((BB$ = "7" AND PL% = 1) OR (BB$ = "W" AND PL% = 2)) AND Z% > 200 THEN Z% = Z% - 1
+790 IF ((BB$ = "1" AND PL% = 1) OR (BB$ = "Z" AND PL% = 2)) AND Z% < 380 THEN Z% = Z% + 1
+800 IF ((BB$ = "9" AND PL% = 1) OR (BB$ = "R" AND PL% = 2)) AND Z% > 200 AND Y% > 200 THEN Z% = Z% - SQR(Y% - 200) / 10
+810 IF ((BB$ = "3" AND PL% = 1) OR (BB$ = "C" AND PL% = 2)) AND Z% < 380 AND Y% > 200 THEN Z% = Z% + SQR(Y% - 200) / 10
+820 IF ((BB$ = "8" AND PL% = 1) OR (BB$ = "E" AND PL% = 2)) AND Z% > 200 AND Y% > 200 THEN Z% = Z% - SQR(Y% - 200) / 20
+830 IF ((BB$ = "2" AND PL% = 1) OR (BB$ = "X" AND PL% = 2)) AND Z% < 380 AND Y% > 200 THEN Z% = Z% + SQR(Y% - 200) / 20
+840 CIRCLE (Y%, Z%), 10, 14
+    ZXSNOTS = ZXSNOTS + 1: IF ZXSNOTS >= 4 THEN ZXSNOTS = 0: WAIT &H3DA, &H8, &H8: WAIT &H3DA, &H8 'Added 12/26/2006
+845 'FOR ZXSNOTS = 0 TO Delay: NEXT ZXSNOTS 'Removed 12/26/2006
+850 IF Y% > 490 AND Y% < 600 THEN
+860 FOR X% = 1 TO 10
+870 C%(X%) = 0
+880 NEXT X%
+890 FOR X% = 1 TO 10
+900 IF B%(X%) = 1 THEN 1090
+910 IF B%(X%) = 0 AND ABS(Z% - A%(X%, 2)) >= 20 AND ABS(Z% - A%(X%, 2)) < 25 AND Y% + 3 > A%(X%, 1) AND Y% - 3 < A%(X%, 1) THEN GOSUB 1560: IF C%(X%) = 1 THEN 930
+920 IF B%(X%) = 0 AND SQR((Y% - A%(X%, 1)) * (Y% - A%(X%, 1)) + (Z% - A%(X%, 2)) * (Z% - A%(X%, 2))) < 20 THEN
+930 C%(X%) = 1
+940 IF C%(1) = 1 AND B%(2) = 0 THEN U% = (T% * RND): IF U% < 3 - ZX% THEN C%(2) = 1
+950 IF C%(1) = 1 AND B%(3) = 0 THEN U% = (T% * RND): IF U% < 3 + ZX% THEN C%(3) = 1
+960 IF C%(2) = 1 AND B%(4) = 0 THEN U% = (T% * RND): IF U% < 3 - ZX% THEN C%(4) = 1
+970 IF C%(2) = 1 AND B%(5) = 0 THEN U% = (T% * RND): IF U% < 3 + ZX% THEN C%(5) = 1
+980 IF C%(3) = 1 AND B%(5) = 0 THEN U% = (T% * RND): IF U% < 3 - ZX% THEN C%(5) = 1
+990 IF C%(3) = 1 AND B%(6) = 0 THEN U% = (T% * RND): IF U% < 3 + ZX% THEN C%(6) = 1
+1000 IF C%(4) = 1 AND B%(7) = 0 THEN U% = (T% * RND): IF U% < 3 - ZX% THEN C%(7) = 1
+1010 IF C%(4) = 1 AND B%(8) = 0 THEN U% = (T% * RND): IF U% < 3 + ZX% THEN C%(8) = 1
+1020 IF C%(5) = 1 AND B%(8) = 0 THEN U% = (T% * RND): IF U% < 3 - ZX% THEN C%(8) = 1
+1030 IF C%(5) = 1 AND B%(9) = 0 THEN U% = (T% * RND): IF U% < 3 + ZX% THEN C%(9) = 1
+1040 IF C%(6) = 1 AND B%(9) = 0 THEN U% = (T% * RND): IF U% < 3 - ZX% THEN C%(9) = 1
+1050 IF C%(6) = 1 AND B%(10) = 0 THEN U% = (T% * RND): IF U% < 3 + ZX% THEN C%(10) = 1
+1060 FOR V% = 1 TO 10
+1070 IF B%(V%) = 0 AND C%(V%) = 1 THEN LINE (A%(V%, 1) - 10, A%(V%, 2) - 10)-(A%(V%, 1) + 10, A%(V%, 2) + 10), 0, BF: SOUND INT(50 * RND) + 75, .3: B%(V%) = 1
+1080 NEXT V%
+1090 END IF
+1100 NEXT X%
+1110 END IF
+1120 CIRCLE (Y%, Z%), 10, 0
+1130 NEXT Y%
+1140 FOR X% = 1 TO 10
+1150 IF B%(X%) = 1 THEN D%(F%, FF%, FFF%) = D%(F%, FF%, FFF%) + 1
+1160 NEXT X%
+1170 IF FF% = 2 AND ((F% <> 11) OR (F% = 11 AND D%(F%, 1, FFF%) < 10)) THEN D%(F%, 2, FFF%) = D%(F%, 2, FFF%) - D%(F%, 1, FFF%)
+1180 IF D%(F%, FF%, FFF%) = 0 THEN
+1190 FOR X% = 700 TO 550 STEP -5
+1200 SOUND X%, .5
+1210 NEXT X%
+1220 END IF
+1230 IF F% = 11 THEN
+1240 IF D%(F%, FF%, FFF%) = 10 THEN SOUND 500, 5
+1250 IF D%(9, 2, FFF%) = 12 AND FF% = 1 AND D%(10, 2, FFF%) = 12 THEN SC%(FFF%) = SC%(FFF%) + D%(F%, FF%, FFF%): LOCATE 9, 11 * FFF% - 4: PRINT 20 + D%(F%, FF%, FFF%)
+1260 SC%(FFF%) = SC%(FFF%) + D%(F%, FF%, FFF%)
+1270 LOCATE 10, 11 * FFF% - 4
+1280 PRINT 10 + D%(F%, 1, FFF%) + D%(F%, 2, FFF%)
+1290 GOTO 1520
+1300 END IF
+1310 SC%(FFF%) = SC%(FFF%) + D%(F%, FF%, FFF%)
+1320 IF F% < 11 AND FF% = 1 AND D%(F%, FF%, FFF%) = 10 THEN D%(F%, 2, FFF%) = 12: FF% = 2: SOUND 500, 5: LOCATE F%, 11 * FFF%: PRINT "X"
+1330 IF F% < 11 AND FF% = 2 AND D%(F%, 1, FFF%) + D%(F%, 2, FFF%) = 10 THEN D%(F%, 2, FFF%) = 11: SOUND 250, 5: LOCATE F%, 11 * FFF%: PRINT "/"
+1340 LOCATE F%, 11 * FFF% - 9
+1350 IF F% > 10 THEN LOCATE 10, 11 * FFF% - 9
+1360 IF F% < 10 THEN PRINT F%; " :";
+1370 IF F% >= 10 THEN PRINT "10  :";
+1380 IF D%(F%, 2, FFF%) < 11 AND (F% < 11 OR (F% = 10 AND FF% = 1)) THEN PRINT D%(F%, 1, FFF%) + D%(F%, 2, FFF%)
+1390 IF D%(F%, 2, FFF%) > 10 AND (F% < 11 OR (F% = 10 AND FF% = 1)) THEN PRINT " 10"
+1400 IF D%(10, 2, FFF%) > 10 AND D%(11, 1, FFF%) < 10 THEN LOCATE 10, 11 * FFF% - 4: PRINT 10 + D%(11, 1, FFF%) + D%(11, 2, FFF%)
+1410 IF D%(10, 2, FFF%) > 10 AND D%(11, 1, FFF%) = 10 THEN LOCATE 10, 11 * FFF% - 4: PRINT 20 + D%(11, 2, FFF%)
+1420 IF D%(10, 2, FFF%) < 10 AND D%(10, 2, FFF%) > 0 THEN LOCATE 10, 11 * FFF% - 4: PRINT D%(10, 1, FFF%) + D%(10, 2, FFF%) + D%(11, 1, FFF%)
+1430 IF F% = 1 THEN 1520
+1440 IF D%(F% - 1, 2, FFF%) = 11 AND F% < 11 AND FF% = 1 THEN SC%(FFF%) = SC%(FFF%) + D%(F%, FF%, FFF%): LOCATE F% - 1, 11 * FFF% - 4: PRINT D%(F%, 1, FFF%) + 10
+1450 IF D%(F% - 1, 2, FFF%) = 11 AND D%(F%, 2, FFF%) = 12 THEN SC%(FFF%) = SC%(FFF%) + 10: LOCATE F% - 1, 11 * FFF% - 4: PRINT 20
+1460 IF D%(F% - 1, 2, FFF%) = 12 AND FF% = 1 AND F% < 11 THEN SC%(FFF%) = SC%(FFF%) + D%(F%, FF%, FFF%): LOCATE F% - 1, 11 * FFF% - 4: PRINT D%(F%, 1, FFF%) + 10
+1470 IF D%(F% - 1, 2, FFF%) = 12 AND D%(F%, 2, FFF%) = 12 AND F% < 11 THEN SC%(FFF%) = SC%(FFF%) + 10: LOCATE F% - 1, 11 * FFF% - 4: PRINT 20
+1480 IF D%(F% - 1, 2, FFF%) = 12 AND D%(F%, 2, FFF%) = 11 AND F% < 11 THEN SC%(FFF%) = SC%(FFF%) + 10 - D%(F%, 1, FFF%): LOCATE F% - 1, 11 * FFF% - 4: PRINT 20
+1490 IF D%(F% - 1, 2, FFF%) = 12 AND FF% = 2 AND F% < 11 AND D%(F%, 2, FFF%) < 11 THEN SC%(FFF%) = SC%(FFF%) + D%(F%, FF%, FFF%): LOCATE F% - 1, 11 * FFF% - 4: PRINT D%(F%, 1, FFF%) + D%(F%, 2, FFF%) + 10
+1500 IF D%(F% - 2, 2, FFF%) = 12 AND D%(F% - 1, 2, FFF%) = 12 AND FF% = 1 THEN SC%(FFF%) = SC%(FFF%) + D%(F%, FF%, FFF%): LOCATE F% - 2, 11 * FFF% - 4: PRINT D%(F%, 1, FFF%) + 20
+1510 IF D%(F% - 2, 2, FFF%) = 12 AND D%(F% - 1, 2, FFF%) = 12 AND D%(F%, 2, FFF%) = 12 THEN SC%(FFF%) = SC%(FFF%) + 10: LOCATE F% - 2, 11 * FFF% - 4: PRINT 30
+1520 LOCATE 27, 11 * FFF% - 9: PRINT "SC:"; SC%(FFF%)
+1530 IF F% = 11 AND FF% = 1 AND D%(10, 2, FFF%) = 12 AND D%(11, 1, FFF%) = 10 THEN 270
+1540 IF FF% = 2 THEN FOR X% = 1 TO 2000: NEXT X%
+1550 IF FF% = 1 THEN 330 ELSE 270
+1560 PAINT (A%(X%, 1), A%(X%, 2)), 0, 0
+1570 CIRCLE (A%(X%, 1) + 3, A%(X%, 2)), 10, 12
+1580 PAINT (A%(X%, 1) + 3, A%(X%, 2)), 15, 12
+1590 CIRCLE (A%(X%, 1) + 5, A%(X%, 2)), 7, 12
+1600 FOR RZ% = 1 TO 50: NEXT RZ%: SOUND 400, 2
+1610 PAINT (A%(X%, 1) + 3, A%(X%, 2)), 0, 0
+1620 CIRCLE (A%(X%, 1) - 3, A%(X%, 2)), 10, 12
+1630 PAINT (A%(X%, 1) - 3, A%(X%, 2)), 15, 12
+1640 CIRCLE (A%(X%, 1) - 5, A%(X%, 2)), 7, 12
+1650 FOR RZ% = 1 TO 50: NEXT RZ%: SOUND 410, 2
+1660 PAINT (A%(X%, 1) - 3, A%(X%, 2)), 0, 0
+1670 CIRCLE (A%(X%, 1), A%(X%, 2)), 10, 12
+1680 PAINT (A%(X%, 1), A%(X%, 2)), 15, 12
+1690 CIRCLE (A%(X%, 1), A%(X%, 2)), 7, 12
+1700 FOR RZ% = 1 TO 50: NEXT RZ%: SOUND 400, 2
+1710 U% = INT(2 * RND) + 1
+1720 IF U% = 1 THEN C%(X%) = 1
+1730 RETURN
+1740 LOCATE 19, 30: PRINT "G A M E   O V E R"
+1750 PLAY "L8>>CCC<<"
+1760 FOR Z% = 1 TO 1000: NEXT Z%
+1770 PLAY "<<L8EL16GAGL8EL16GA>CDCL8E-L16DL8CL16<GL16AL8GL16GAL8>CL16CG<L8GL16AB>L8C<L16C>>>>"
+1780 LOCATE 28, 1
+1790 PRINT "PLAY AGAIN?": HIGH = 0: PERSON = 0
+1800 FOR X% = 1 TO P%
+1810 IF SC%(X%) = HIGH% THEN PERSON% = 0
+1820 IF SC%(X%) > HIGH% THEN HIGH% = SC%(X%): PERSON% = X%
+1830 NEXT X%
+1840 Z$ = INKEY$
+     WAIT &H3DA, &H8, &H8: WAIT &H3DA, &H8 'Added 12/26/2006
+1850 IF PERSON% <> 0 THEN LOCATE 27, 11 * PERSON% - 9: PRINT "SC:"; HIGH%
+     WAIT &H3DA, &H8, &H8: WAIT &H3DA, &H8 'Added 12/26/2006
+1860 IF Z$ = "" AND PERSON% <> 0 THEN LOCATE 27, 11 * PERSON% - 9: PRINT "         "
+1870 IF Z$ = "" THEN 1840
+1880 IF Z$ = "Y" OR Z$ = "y" THEN CLEAR : GOTO 10
+1890 IF Z$ <> "N" AND Z$ <> "n" THEN 1840
+1900 END
+1910 LOCATE 12, 32: PRINT "S I L V E R B R O S"
+1920 LOCATE 14, 32: PRINT "   B O W L I N G"
+1930 FOR X = 1 TO 6 STEP .08
+1940 XXX = (640 - (200 * X)) / 2: YYY = (480 - (100 * Y)) / 2 - X * 70
+1950 LINE (50 * X + XXX, 100 * X + YYY)-(0 * X + XXX, 50 * X + YYY), INT(15 * RND) + 1
+1960 LINE -(0 * X + XXX, 0 * X + YYY), INT(15 * RND) + 1
+1970 LINE -(200 * X + XXX, 0 * X + YYY), INT(15 * RND) + 1
+1980 LINE -(200 * X + XXX, 50 * X + YYY), INT(15 * RND) + 1
+1990 LINE -(150 * X + XXX, 100 * X + YYY), INT(15 * RND) + 1
+2000 NEXT X
+2010 LOCATE 26, 20: PRINT "CREATED BY KENNY AND ALAN SILVERMAN"
+2020 LOCATE 1, 1
+2030 LINE (20, 420)-(272, 270), 10
+2040 LINE -(368, 270), 10
+2050 LINE -(620, 420), 10
+2060 XX = 1: YY = .7
+2070 X% = 270: Y% = 240: GOSUB 2510
+2080 X% = 295: Y% = 240: GOSUB 2510
+2090 X% = 325: Y% = 240: GOSUB 2510
+2100 X% = 350: Y% = 240: GOSUB 2510
+2110 X% = 285: Y% = 250: GOSUB 2510
+2120 X% = 335: Y% = 250: GOSUB 2510
+2130 X% = 310: Y% = 250: GOSUB 2510
+2140 X% = 325: Y% = 260: GOSUB 2510
+2150 X% = 295: Y% = 260: GOSUB 2510
+2160 X% = 310: Y% = 270: GOSUB 2510
+2170 XY% = 325
+2180 FOR X% = 460 TO 300 STEP -5
+2190 XY% = SQR(ABS(4 * (-58.1818) * (X% - 299.9432))) + 336.3636
+2200 CIRCLE (XY%, X%), (X% - 100) / 20, 14
+2210 FOR XX = 1 TO (460 - X%) / 2: NEXT XX
+2220 SOUND (X% - 100) / 3, .4
+2230 CIRCLE (XY%, X%), (X% - 100) / 20, 0
+2240 NEXT X%
+2250 LINE (272, 220)-(368, 320), 0, BF
+2260 LINE (272, 270)-(368, 270), 10
+2270 FOR X% = 50 TO 500 STEP 50
+2280 SOUND X%, 1
+2290 NEXT X%
+2300 RETURN
+2310 LINE (X% + 12 * XX, Y% + 24 * YY)-(X% + 8 * XX, Y% + 24 * YY), ZZ%
+2320 LINE -(X% + 8 * XX, Y% + 18 * YY), ZZ%
+2330 LINE -(X% + 12 * XX, Y% + 18 * YY), ZZ%
+2340 LINE -(X% + 14 * XX, Y% + 12 * YY), ZZ%
+2350 LINE -(X% + 14 * XX, Y% + 6 * YY), ZZ%
+2360 LINE -(X% + 12 * XX, Y% + 0 * YY), ZZ%
+2370 LINE -(X% + 8 * XX, Y% + 0 * YY), ZZ%
+2380 LINE -(X% + 6 * XX, Y% + 6 * YY), ZZ%
+2390 LINE -(X% + 6 * XX, Y% + 12 * YY), ZZ%
+2400 LINE -(X% + 8 * XX, Y% + 18 * YY), ZZ%
+2410 LINE -(X% + 8 * XX, Y% + 24 * YY), ZZ%
+2420 LINE -(X% + 4 * XX, Y% + 30 * YY), ZZ%
+2430 LINE -(X% + 4 * XX, Y% + 48 * YY), ZZ%
+2440 LINE -(X% + 6 * XX, Y% + 54 * YY), ZZ%
+2450 LINE -(X% + 14 * XX, Y% + 54 * YY), ZZ%
+2460 LINE -(X% + 16 * XX, Y% + 48 * YY), ZZ%
+2470 LINE -(X% + 16 * XX, Y% + 30 * YY), ZZ%
+2480 LINE -(X% + 12 * XX, Y% + 24 * YY), ZZ%
+2490 LINE -(X% + 12 * XX, Y% + 18 * YY), ZZ%
+2500 RETURN
+2510 ZZ% = 14: GOSUB 2310
+2520 PAINT (X% + 10 * XX, Y% + 42 * YY), 15, 14
+2530 PAINT (X% + 10 * XX, Y% + 12 * YY), 15, 14
+2540 PAINT (X% + 10 * XX, Y% + 20 * YY), 12, 14
+2550 ZZ% = 12: GOSUB 2310
+2560 RETURN
+2570 DRG% = DRG% + 1: IF DRG% = 10 THEN DRG% = 1
+2580 ON DRG% GOSUB 2600, 2610, 2620, 2630, 2640, 2650, 2660, 2670, 2680
+2590 RETURN
+2600 PLAY "L16<<FL8FFL8E>>": RETURN
+2610 PLAY "L16<<L8DL16DL8DL16D>>": RETURN
+2620 PLAY "L16<<C<L8BL16AL8B>L16CL8DL8G>>": RETURN
+2630 PLAY "L16<<GL8FL16EL8EL16E>>": RETURN
+2640 PLAY "L16<<CCL8DGDEL16DL8C>>": RETURN
+2650 PLAY "L16<<<GA>CL8E-L16DL8CL16DL8C<>>>": RETURN
+2660 PLAY "L16<<L8A>L16CL8AGL16AL8G<>>": RETURN
+2670 PLAY "L16<<L8GL16F+A>CECL8FL16EL8C<L16A>L8C<>>": RETURN
+2680 PLAY "L16<<L8DL8CCCC<L16AGGGG>>>": RETURN
+2690 CLS
+2700 LOCATE 1, 1
+2710 PRINT "   CONTROLS:      | CREATED BY KENNY AND ALAN SILVERMAN "
+2720 PRINT "                  --------------------------------------"
+2730 PRINT "    ODD PLAYERS USE NUMERS, EVEN PLAYERS USE LETTERS    "
+2740 PRINT "                                            ---------   "
+2750 PRINT "     D,6- SRAIGHT                           | ODD:  |   "
+2760 PRINT "                                            |       |   "
+2770 PRINT "     W,7- UPWARD SLANT                      | 7 8 9 |   "
+2780 PRINT "                                            |     6 |   "
+2790 PRINT "     Z,1- DOWNWARD SLANT                    | 1 2 3 |   "
+2800 PRINT "                                            |       |   "
+2810 PRINT "     E,8- SMALL UPWARD CURVE                ---------   "
+2820 PRINT "                                            | EVEN: |   "
+2830 PRINT "     X,2- SMALL DOWNWARD CURVE              |       |   "
+2840 PRINT "                                            | W E R |   "
+2850 PRINT "     R,9- BIG UPWARD CURVE                  |    D  |   "
+2860 PRINT "                                            | Z X C |   "
+2870 PRINT "     C,3- BIG DOWNWARD CURVE                |       |   "
+2880 PRINT "                                            ---------   "
+2890 PRINT "PRESS ANY KEY TO RETURN TO MAIN SCREEN                  "
+2900 LINE (250, 62)-(325, 62), 12
+2910 LINE (250, 95)-(325, 85), 12
+2920 LINE (250, 130)-(325, 140), 12
+2930 LINE (250, 162)-(300, 160), 12
+2940 LINE -(315, 157), 12
+2950 LINE -(325, 154), 12
+2960 LINE (250, 195)-(300, 197), 12
+2970 LINE -(315, 200), 12
+2980 LINE -(325, 203), 12
+2990 LINE (250, 230)-(300, 225), 12
+3000 LINE -(315, 220), 12
+3010 LINE -(325, 210), 12
+3020 LINE (250, 262)-(300, 267), 12
+3030 LINE -(315, 272), 12
+3040 LINE -(325, 282), 12
+3050 EG$ = INKEY$: GOSUB 2570
+3060 IF EG$ = "" THEN 3050
+3070 CLEAR : CLS : GOTO 20
+

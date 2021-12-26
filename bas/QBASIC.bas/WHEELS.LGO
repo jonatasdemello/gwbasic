@@ -1,0 +1,23 @@
+to wheels
+rg
+setc 7
+setpos 100,300
+wheel
+setc 15
+setpos 130,320
+wheel
+setc 7
+setpos 400,300
+wheel
+setc 15
+setpos 430,320
+wheel
+end
+
+to wheel
+seth 0
+repeat 30[fd 100 rt 177 fd 100 rt 177]
+seth 98
+repeat 30[fd 11 rt 12]
+end
+

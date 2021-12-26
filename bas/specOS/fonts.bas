@@ -1,0 +1,13 @@
+ZXASCII
+AUTO -1
+PROG fonts.bas
+10 CLS 
+20 LIST BANK 
+30 LOAD "FONTS/default_8x8.font" BANK 
+40 LOAD "FONTS/default_16x16.font" BANK 
+50 LOAD "FONTS/default_8x16.font" BANK 
+60 LOAD "FONTS/GameBoy" BANK 
+70 LOAD "FONTS/Segoe" BANK 
+80 LOAD "FONTS/Topaz8x18.font" BANK 
+90 PRINT "-"
+100 LIST BANK 

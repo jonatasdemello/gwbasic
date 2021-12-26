@@ -1,0 +1,136 @@
+AppleWin 1.12 history
+=====================
+
+This version of AppleWin is based directly on Oliver Schmidt's 1.10.4 source.
+In an effort to distinguish any subsequent releases I make from the other
+variants of AppleWin, my release numbering system shall be 1.12.xx.
+
+Tom Charlesworth
+tomcharlesworth@blueyonder.co.uk
+
+
+Restrictions/bugs:
+- Disk][ speed can be slow even in enhanced mode.
+- Turning off MB support turns Apple speaker off as well.
+- SSI263 emulation is very basic: there is no attempt to emulate rate, inflection or filters.
+- RAM bank switching isn't working correctly on Apple][ mode, so when the IRQ
+  occurs, the code crashes out to the monitor ('*' prompt) for certain games.
+- Running w/out 6502 DLLs doesn't work (internal 6520 emu code is broken)
+
+
+Acknowledgements:
+- TV emulation mode by Thomas Stahl.
+- SSI263 phoneme samples from Chris Foxwell (still missing phoneme #0!)
+
+
+1.12.5.0 - 11 Dec 2004
+----------------------
+- Added browse dialogs for F11 & Ctrl-F12.
+
+
+1.12.4.4 - 28 Nov 2004
+----------------------
+- Changed Configuration Dialog to Property Sheet Pages.
+- Added Volume control for Speaker & Mockingboard.
+- Added control for keyboard buffer.
+- Added Save State page.
+
+
+1.12.4.3 - 13 Nov 2004
+----------------------
+- Fixed problem with jerky graphics when in mixed HGR/TEXT (Olympic Decathlon).
+- Fixed sudden burst of 'full speed' after unpausing.
+- Fixed joystick emulation problem (Championship Lode Runner & Boulderdash).
+- Fixed FLASH problem when nothing changing on TEXT screen.
+- Fixed problem with internal 6502 emu's SBC opcode when in BCD mode (Dino Eggs).
+- Fixed Pro Mockingboard compatiblity problem (Pro-MB accesses are now ignored).
+- Added emulator save-state (Save=F11, Load=Ctrl+F12).
+
+
+1.12.4.2 - 09 Nov 2004
+----------------------
+- Internal
+
+
+1.12.4.1 - 14 Sep 2004
+----------------------
+- Fixed "CPU usage 100%" problem.
+- Switch MB output from dual-mono to stereo.
+- Relaxed TIMER1's max freq from ~62Hz (period=0x4000) to ~83Hz (period=0x3000).
+- Fixed FLASH problem when in monochrome mode.
+
+
+1.12.4.0 - 01 Aug 2004
+----------------------
+- Switched to MAME's AY8910 emulation
+- Added support for SSI263 speech chip on Mockingboard
+- Ctrl+Reset now resets MB
+- Key presses: 2 buffers. Fixes problem where key presses are missed on faster PCs.
+- Added FLASH support
+- Switched Speaker to use DirectX
+- Rebuilt using DirectX 9.0b library
+- Removed AppleWin calibration when starting a new version
+- Fixed 6502 emulation cycle-count inaccuracies, resulting in:
+  . Precise analogue joystick support (Rescue Raiders' joystick support now works)
+  . Precise Apple speaker
+- Emulation speed control now works when using Mockingboard
+- Full speed (Scroll-lock) mutes all sound (Speaker,Mockingboard)
+- Fixed DELREG.INF
+- Reset now switches Alternate char set off
+- PC's delete key maps to Apple's DEL key
+- Fixed characters: '6', '|', '_'
+
+
+1.12.3 - 04 Jan 2004
+--------------------
+Changes:
+- Added Thomas Stahl's TV emulation mode: "Color (TV emulation)".
+  Tested with Karateka, Mindshadow.
+	"As you probably know, many of the higher sophisticated Apple ][+
+	games made use of the blurr-effekt that color TV-monitors had on
+	patterns consisting of horizontal color stripes. Using this effect it
+	was possible to produce *solid* mix colors like grey, purple, pink,
+	yellow and aquamarine even in the 2+ *hi-res mode*."
+- Included Thomas Stahl's adjusted hires colors:
+	He "adjusted the hires colors for a more realistic look -
+	at least in comparison with an Apple PAL-System."
+- Changed wording in Config dialog: from "Color (optimized)" to "Color (text optimized)".
+- Fixed Config dialog (speed settings were misplaced in 1.12.2).
+- Fixed Joystick 2 for Mario Bros: Now when in dual-joystick mode, 2nd joystick
+  button controls both switches #1 & #2 as one.
+- Fixed Mockingboard IRQ frequency problem (Ultima 4 & 5 tunes now play at correct rate).
+- Added Applewin.chm to release zip. (NB. This hasn't changed from 1.10.4)
+
+
+1.12.2 - 05 Jul 2003
+--------------------
+Changes:
+- Added support for 2nd joystick.
+  If the 2nd Apple joystick is enabled, then the buttons are re-configured:
+  - Joystick 1 controls only button #0 (ie. not button #1 too)
+  - Joystick 2 controls only button #1 (ie. not button #2)
+  This is so that player 1 can't affect player 2's controls.
+  So there is no way to control button #2 via a joystick. I don't think this will be a problem.
+  Of course Left Alt, Right Alt and Shift still activate the 3 buttons.
+  NB. Disable 2nd joystick if playing a 1 player game that requires the use of buttons 0 and 1.
+  Tested with Archon I, Archon II and One-on-one.
+
+
+1.12.1 - 24 Nov 2002
+--------------------
+Changes:
+- Changed tone waveform from orthodox square-wave to a more logarithm shape,
+  based on real MB waveform analysis. This is by no means perfect, but in my
+  opinion gives the tones more musical quality.
+- Added MB enable/disable switch to Configuration dialog.
+- Added simple logging support. If AppleWin is started from the command line
+  (DOS box) with the '-l' switch, then a text log file, AppleWin.log, will be
+  generated. This can hopefully be used to diagnose problems some users are having.
+
+
+1.12.00 - 17 Nov 2002
+---------------------
+- Initial release.
+- Supports 2 Mockingboard cards in slots 4 & 5
+- 12 voices and noise supported using DirectX 8.1.
+- Tested on Win98, 2000 and XP platforms.

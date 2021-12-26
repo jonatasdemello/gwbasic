@@ -1,0 +1,93 @@
+
+
+FICSPGN1.BAS   Help File                                          18 May 1995
+
+     This program is Version 1 of a BASIC Program to convert FIC output files 
+to PGN. It is written in GWBASIC Version 3.2. I realize that GWBASIC is not 
+the most modern language, but I am an old-fashioned guy and I wanted to 
+contribute whatever I could to the Free Internet Server effort. Regard this 
+program as a case of my putting my money where my mouth is. Or, to be precise, 
+putting my mouth where my money isn't (RR).
+
+     The program uses a bunch of klunky string handling routines to convert
+the output of games played on the Free Internet Chess Server to PGN format. 
+Once the games are in PGN format they can be put into a data base program, 
+viewed with a PGN reader, etc. The program is inelegant. But, hopefully, it 
+will be useful. 
+
+     The program listing is heavily commented so you can change things such 
+as the date of the year when 1996 arrives. The various game end conditions 
+are listed in the final dozen lines of the program. (Thanks to Thanatos for 
+playing some silly games with me on FICS to explore various end states.) 
+There may be ways to win or lose a game of which I am unaware. If so, 
+additional program lines need to be added.
+
+     The output goes to a file called OUTPUT.PGN. The input comes from a 
+file called GMS.FIC. The main thing thing you need to know is how to make 
+GMS.FIC. 
+
+     To make GMS.FIC assemble into one big file your games from wherever you 
+receive E-mail from the Free Internet Chess Server. Edit this file to remove 
+all blank lines and mailing information. The sequence of lines for each game 
+should then be:
+
+=================================================        Line 1 row of = signs
+player1 (xxxx) vs. player2 (xxxx) --- Sat Apr 1, 3:00 GMT              Line 2
+Rated Blitz match, initial time; 2 minutes, increment: 12 seconds      Line 3 
+Move     player1         player2                                       Line 4
+-----   -------------   -------------                                  Line 5
+ 1.         e4              e5               
+ 2.         Nf3             Nc6
+ 3.         Bc4             Nf6
+        more game lines (no blank lines)
+      Some result line                                               Last line
+====================================================== Line 1 of second game
+etc just as in game 1
+
+After the result line of the last game type 999. Doing this will allow the 
+BASIC program to end cleanly. A short, tested, sample GMS.FIC file follows.
+
+
+Test file GMS.FIC:
+
+
+
+=========================================================================
+unknown (1428) vs. NNs (1500) --- Sat Apr  1,  3:53 GMT
+Rated Blitz match, initial time: 2 minutes, increment: 12 seconds.
+Move  unknown                NNs
+----  ----------------   ----------------
+  1.  e4      (0:10)     g6      (0:04)
+  2.  d4      (0:03)     Bg7     (0:00)
+  3.  Be3     (0:05)     d6      (0:01)
+  4.  Bc4     (0:04)     Nc6     (0:06)
+  5.  c3      (0:09)    
+      Checkmate.
+=========================================================================
+NNs (1500) vs. unknown (UNR) --- Sat Apr  1,  3:58 GMT
+Unrated Blitz match, initial time: 3 minutes, increment: 0 seconds.
+Move  NNs                unknown
+----  ----------------   ----------------
+  1.  c4      (0:08)     e5      (0:21)
+  2.  Nc3     (0:03)     Nf6     (0:48)
+  3.  g3      (0:02)     Bb4     (0:31)
+  4.  Bg2     (0:09)     Bxc3    (1:05)
+  5.  bxc3    (0:02)
+      {Black ran out of time.}
+=========================================================================
+NNs (1809) vs. Thanatos (UNR) --- Tue Apr 11, 18:20 GMT
+Unrated Blitz match, initial time: 1 minutes, increment: 0 seconds.
+Move  NNs                Thanatos
+----  ----------------   ----------------
+  1.  c4      (0:02)     e5      (0:05)
+      {A draw was agreed.}
+=========================================================================
+Thanatos (UNR) vs. NNs (1809) --- Tue Apr 11, 18:21 GMT
+Unrated Blitz match, initial time: 1 minutes, increment: 0 seconds.
+Move  Thanatos           NNs
+----  ----------------   ----------------
+  1.  e4      (0:20)     e6      (0:05)
+  2.  f4      (0:09)     b6      (0:47)
+  3.  d4      (0:53)
+      {Both players ran out of time.}
+999

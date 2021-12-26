@@ -1,0 +1,12 @@
+to heart
+setpos 320,100
+seth 0
+setc 12
+repeat 22[fd 10 rt 10]
+fd 157
+rt 100
+fd 157
+repeat 22[fd 10 rt 10]
+fd 157
+end
+

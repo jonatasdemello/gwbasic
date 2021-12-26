@@ -1,0 +1,39 @@
+
+
+                        Super Star Trek Classic
+
+
+This is a C port of an old BASIC program: the classic Super Star Trek 
+game. It comes from the book _BASIC Computer Games_ edited by David Ahl of 
+Creative Computing fame. It was published by Workman Publishing, 1 West 
+39 Street, New York, New York, and the ISBN is: 0-89489-052-3.
+
+For more information see my Classic Computer Game: Star Trek page at:
+
+  http://www.cfi.org/ccn/startrek.html
+
+This code is written in ANSI C with nothing fancy, so it should compile 
+anywhere there is an ANSI C compiler.
+
+Please send me any bug reports, bug fixes, enhancments, etc. Contact
+me at:
+ 
+  Chris Nystrom
+  11013 Prairie Dove Circle
+  Austin, Texas  78758
+ 
+E-Mail:
+
+   chris@gnu.ai.mit.edu
+   nystrom@cactus.org
+   ccn@cfi.org
+
+This game is dedicated to Mike Mayfield, David Ahl, R.C.Leedom, and all who
+worked on the original, Creative Computing Magazine, and the glory days of
+early microcomputers with cassette storage.
+
+Thanks!
+
+Chris
+
+

@@ -1,0 +1,1479 @@
+! ------------------------------------------------------------------------------
+! Haunted House - by Jenny Tyler and Les Howarth
+!
+! Inform port and location descriptions by John Elliott, May-June 2014
+!
+! ------------------------------------------------------------------------------
+
+Constant Story "Haunted House";
+
+Constant Headline
+             "^By Jenny Tyler and Les Howarth^
+             Inform port and location descriptions by John Elliott^";
+
+Constant MAX_SCORE = 34;
+Constant OBJECT_SCORE = 1;
+Serial "140517";
+
+Release 1;
+
+Replace ScoreSub;
+Replace DigSub;
+
+Include "Parser";
+Include "VerbLib";
+
+attribute legible;
+
+!-------------------------------------------------------------------------------
+! Initialise
+!
+!-------------------------------------------------------------------------------
+
+[ Initialise;
+
+    location        = FrontGate;
+
+];
+
+
+!
+! The standard Inform 'scored' attribute doesn't do quite what 
+! we want here. To replicate the original system exactly, a 
+! scored object has to add and subtract each time it is picked up.
+!
+Class Scoreable
+	with after [;
+		Take:	score = score + OBJECT_SCORE;
+			things_score = things_score + OBJECT_SCORE;
+			rfalse;
+		Drop:	score = score - OBJECT_SCORE;
+			things_score = things_score - OBJECT_SCORE;
+			rfalse;
+	];	
+
+! ----------------------------------------------------------------------------
+! Locations
+!
+! In this section we will define our locations. These are "Objects" to Inform.
+!
+! ----------------------------------------------------------------------------
+
+Class Rowable has light;
+
+Class Diggable
+      has light;
+
+Class CliffRoom 
+      class Diggable
+      with before [;
+			Jump: print "Deciding to end it all, you jump off 
+				     the cliff and are dashed to pieces on the 
+                                     shingle far below.";
+			      deadflag = 1;
+			      rtrue;
+		],
+	  e_to "That would send you over the cliff edge.",
+	  d_to "You wouldn't be able to climb down the cliff in anything 
+                approaching safety.";
+
+Diggable DarkCorner "Dark Corner"
+    with  description "It's hard to imagine that this corner of the garden 
+			ever got much sunlight. Between the garden wall and
+			the shadow of the house, nothing seems to grow here
+			except a few straggling stalks of deadly nightshade.",
+	  e_to OvergrownGarden,
+	  s_to CornerOfHouse,
+      has light;
+
+Object -> Shadow "shadow"
+     with name 'shadow',
+	  before [;
+		Enter: "You step into the shadow. Nothing untoward happens,
+			so you step out again.";
+	  ],
+      has scenery;
+
+Diggable OvergrownGarden "Overgrown Garden"
+    with  description "This might once have been the kitchen garden. It's now
+		       a wilderness of grass, brambles and other weeds, 
+                       extending to the east and the west.",
+	  w_to DarkCorner,
+	  e_to ByWoodpile,
+      has light;
+
+Diggable ByWoodpile "By Woodpile"
+    with  description "A heap of decaying logs bears mute witness to the time
+                       the house needed fires. Now they are crumbling and 
+                       overgrown with ivy. The yard continues to the east; to 
+		       the west, it gives way to rough vegetation.",
+	  w_to OvergrownGarden,
+	  e_to Yard,
+    has   light;
+
+Scoreable -> Axe "axe"
+    with  name 'axe',
+	  article "an",
+          description "Still serviceable. Though slightly rusted, the blade 
+                       is still sharp.",
+          initial "An axe is embedded in one of the logs.",
+	  before [;
+		Swing: 	if (player in Study)
+			{
+				give Hole general;
+				"A few axe blows soon enlarge the hole in
+				 the wall enough to walk through.";
+			}
+			if (player in DiningRoom && DiningTable in DiningRoom)
+			{
+				remove DiningTable;
+				"With a frenzied effort you smash the table 
+				into splinters. Little practical benefit 
+				seems to have accrued from this act of 
+				vandalism.";
+			}
+			"Whoosh!";
+
+	   ];
+
+Object Yard "Yard"
+    with  description "Weeds grow between the cracked, uneven slabs that
+		       pave this yard. The garden wall blocks your way to
+		       the north: heaped against it is a mound of rubbish.
+		       The yard extends to the west, and rough open ground
+		       can be seen to the east. The back door of the house
+		       leads south.",
+	  w_to ByWoodpile,
+	  e_to Weedpatch,
+	  s_to SculleryDoor,
+    has   light;
+
+Object -> Rubbish "rubbish"
+    with name 'rubbish',
+         description "The remains of a cart, a smashed refrigerator, a broken 
+		      cast-iron bedstead... nothing worth a second glance." 
+     has static scenery;
+
+Diggable Weedpatch "Weedpatch"
+    with description "Maybe this was once cultivated land, but the only plants
+		      now growing here are stunted bushes and weeds. To the
+		      east the garden shades into woodland, and there is a
+		      dusty yard to the west.",
+	w_to Yard,
+	e_to Forest;
+
+Scoreable -> Shovel "shovel"
+   with name 'shovel' 'spade',
+        initial "A shovel has been thrust into the ground and abandoned here.",
+        description "Heavy and sturdy.";
+
+Diggable Forest "Forest"
+	with description "If this was ever part of the garden, it has been
+			left to its own devices for many years now. Trees 
+			blot out the daylight and hem you in, except for
+			a narrow east-west path against the wall of the 
+			house.",
+	w_to Weedpatch,
+	e_to ThickForest,
+	s_to Clearing;
+
+Object Trees 
+	with name 'trees',
+	found_in Forest ThickForest UnderBlastedTree,
+	description "The trees have an unsettling, distorted appearance.",
+	has static scenery;
+
+Diggable ThickForest "Thick Forest"
+	with description "You must still be quite near to the house, but it's 
+			impossible to see it through the trees. Narrow,
+			winding paths lead south, west and east.",
+	w_to Forest,	
+	s_to Clearing,
+	e_to UnderBlastedTree;
+
+Diggable UnderBlastedTree "At the foot of the blasted tree"
+	with description "The forest is even thicker here, trees and 
+			brambles hemming you in. One tree catches your
+			attention: leafless and black, it has obviously
+			been struck by lightning not too long ago.",
+	w_to ThickForest,
+	s_to Path,
+	u_to [; <<Climb Tree>>; ];
+
+Object Tree "tree"
+	with name 'tree',
+	description "Smooth, black, its branches reaching out like claws.",
+	found_in UnderBlastedTree BlastedTree,
+	before [;
+		Climb:  if (player in UnderBlastedTree)
+			{
+				if (rope has moved) 
+				   "You can't get up the tree without the
+				    rope to help you.";
+				PlayerTo(BlastedTree);
+				rtrue;	
+			}
+			if (player in BlastedTree)	
+			{
+				PlayerTo(UnderBlastedTree);
+				rtrue;
+			}
+		],
+	has static scenery;	
+
+Object BlastedTree "At the top of the tree"
+	with description "Even from the top of the tree, the thick forest
+			hems you in. You can make out what looks like cliff
+			to the south, but that's all.",
+	d_to UnderBlastedTree,
+	n_to [; print "Crash! You fell out of the tree!^";
+		PlayerTo(UnderBlastedTree);
+		rtrue; ],
+	s_to [; print "Crash! You fell out of the tree!^";
+		PlayerTo(UnderBlastedTree);
+		rtrue; ],
+	e_to [; print "Crash! You fell out of the tree!^";
+		PlayerTo(UnderBlastedTree);
+		rtrue; ],
+	w_to [; print "Crash! You fell out of the tree!^";
+		PlayerTo(UnderBlastedTree);
+		rtrue; ],
+	has light;
+
+
+Scoreable Rope "rope"
+	with name 'rope',
+	initial "A rope hangs from one of the tree's upper branches.",
+	before [; Climb:
+			if (self hasnt moved)
+			{
+				<<Climb Tree>>;	
+			}
+			"It isn't attached to anything any more.";
+		  Swing: "This is no time to play games.";
+
+		  Take: 
+			if (player in UnderBlastedTree)
+			{
+				"It's tied to the branch, and you can't reach
+				the knot.";
+			}
+		],
+	found_in UnderBlastedTree BlastedTree;
+
+Diggable CornerOfHouse "Corner of House"
+	with description "The garden wall comes close to the house here,
+			 leaving only a narrow alley leading north-south.",
+	n_to DarkCorner,
+	s_to SideOfHouse;
+
+Object EntranceToKitchen "Entrance to Kitchen"
+	with description "The corridor turns a corner here: to the east
+			  is the kitchen, and the hallway continues to the
+			  south.",
+	e_to Kitchen,
+	s_to BackOfHallway,
+	has light;
+
+Object Kitchen "Kitchen"
+	with description 
+		[;
+			print "There's not a lot left of the fixtures and
+				fittings. It looks like anything of value
+				has already been stripped out. There are
+				doors to east and west, and a stone sink 
+				on the north wall. ";
+			print "A large, ugly range stands against the south 
+				wall. Its oven door is ";
+			if (range has open) "open.";
+			else		    "closed.";	
+		],
+	e_to SculleryDoor,
+	w_to EntranceToKitchen,
+	has light;
+
+Object -> Sink "sink"
+	with name 'sink',
+	description "A battered stone sink, streaked with scum and algae.",
+	 has static scenery;
+
+Object -> Range "range"
+	with name 'range' 'oven',
+	     description [;
+		print "Large, rusty and grease-encrusted. ";
+		<<Search Range>>;
+		],
+	has scenery container openable open;
+
+Scoreable -> -> Matches "box of matches"
+	with name 'box' 'matches',
+	     description "Dusty, but it's nearly full.";
+
+Object SculleryDoor "Scullery Door"
+	with description "This room looks as if it's been visited by 
+			bored teenagers at some point: the bare walls are
+			covered with graffiti, and there are scorch marks
+			on the floor. The doorframe, bereft of its door,
+			leads north, and the kitchen continues to the west.",
+	w_to Kitchen,
+	n_to Yard,
+	has light;
+
+Object -> Graffiti
+	with description "Illegible and angular. Presumably it meant something
+			to whoever put it there.",
+	with name 'graffiti' 'graffito',
+	has scenery;
+
+Object DustyRoom "Dusty Room"
+	with description "The only remarkable thing about this small
+			chamber is the amount of dust it has managed
+			to accumulate over the years. The spiral staircase
+			leads down, and there is a doorway to the east.",
+	d_to SpiralStaircase,
+	s_to SpiralStaircase,
+	e_to RearTurretRoom,
+	has light;
+
+Object RearTurretRoom "Rear Turret Room"
+	with description "This is a small, round chamber with a single door
+			to the west. The floor is stone, speckled with guano.
+			Overhead, the ceiling follows the outline of the 
+			turret, rising to a cone.",
+	w_to DustyRoom,
+	has light;
+
+Object -> Bats "bats"
+	with name 'bats',
+	     initial "A large number of bats are hanging from the beams of
+		      the ceiling.",
+	     description "You're no bat expert, but to your way of thinking
+			  they don't look very friendly.",
+	     react_before [;
+				if (action ~= ##Spray && random(4) < 3)
+					"The bats take exception to your 
+					presence and swarm down, attacking 
+					you with claws and teeth.";
+					
+			],
+	has static animate;
+
+Scoreable -> Scroll "scroll"
+	with name 'scroll',
+	description "The writing is in an alien tongue.",
+	before [;
+		Burn: 	if (Matches in player)
+			{
+				if (self has moved) score = score - 1;	
+				remove self;
+				"It burns with a bright flame and is rapidly
+				destroyed.";
+			}
+			"You have nothing with which to burn it.";
+	],
+	initial "A scroll lies on the window sill.",
+	has legible; 
+
+Diggable Clearing "Clearing"
+	with n_to ThickForest,
+	     e_to Path,
+	     description "The woodland seems to have retreated a little here,
+			almost as if the trees are afraid of the house. To
+			the north the forest is thicker, and a faint path
+			leads to the east.";
+
+CliffRoom Path "Path"
+	with n_to UnderBlastedTree,
+	     w_to Clearing,	
+	     s_to Clifftop,
+	     description "You are standing on a rough path, which curves 
+		from west to south. There is a cliff edge to the east, 
+		and a forest to the north.";
+
+Diggable SideOfHouse "Side of House"
+	with description "This is a narrow, deserted north-south passage 
+			between the garden wall and the blind wall of the
+			house. The vegetation here looks pale and unhealthy;
+			even the weeds are stunted.",
+	n_to CornerOfHouse,
+	s_to CrumblingWall,
+	has light;
+
+Object BackOfHallway "Back of Hallway"
+	with description "The further away from the front hall you get, the
+			decoration in this passageway becomes more basic, ugly
+			and functional. These walls were never papered, only
+			whitewashed, and that a long time ago. To the
+			north and south, the passage continues.",
+	n_to EntranceToKitchen,
+	s_to GloomyPassage,
+	has light;
+
+Object DarkAlcove "Dark Alcove"
+	with description "In the light of your candle, you can see that the
+			ceiling of this small chamber was originally plastered
+		        to resemble a seashell. Several chunks of plaster have 
+			since fallen, leaving bare laths. Arched
+			doorways lead to the south and east.",
+	s_to PoolOfLight,
+	e_to SmallDarkRoom,
+	hasnt light;
+
+Scoreable -> Coins "bag of coins"
+	with name 'bag' 'coins',
+	description "Antique coins, in reasonable condition.";
+
+Object SmallDarkRoom "Small Dark Room"
+	with description "This room has no natural light, and only a reluctant
+			glimmer from the narrow doorway at the eastern end 
+			prevents it being as black as night. An archway leads 
+			west into darkness.",
+	w_to DarkAlcove,
+	e_to SpiralStaircase,
+	has light;	! yes, really
+
+Object SpiralStaircase "Spiral Staircase"
+	with description "You are standing at the foot of a spiral 
+			staircase. A narrow doorway leads west.",
+	w_to SmallDarkRoom,
+	n_to DustyRoom,
+	u_to DustyRoom,
+	has light;
+
+Object WidePassage "Wide Passage"
+	with description "This dusty, deserted passage curves from south
+			  to east. It is filled with the smells of mould,
+			  dry rot and decay.",
+	s_to TrophyRoom,
+	e_to SlipperySteps,
+	has light;
+
+Object SlipperySteps "Slippery Steps"
+	with description "A broken window pane has admitted rain into this
+			  staircase, and the wooden treads of the steps 
+			  are now slick with algae. At the top of the 
+			  staircase a door leads to the west; the stairs
+			  continue downward.",
+	w_to WidePassage,
+	u_to WidePassage,
+	s_to Cellar,
+	d_to Cellar,
+	has light;
+
+CliffRoom Clifftop "Clifftop"
+	with description "You are on a narrow north-south path between the
+			house and the cliff. From below, you hear the 
+			waves lapping greedily.",
+	s_to CliffPath1,
+	n_to Path;
+
+Diggable CrumblingWall "Crumbling Wall"
+	with description "A wing of the house protrudes here to meet the 
+			 garden wall, leaving a dead end from which the 
+			 only way you can go is north.",
+	n_to SideOfHouse,
+	has light;
+
+Object GloomyPassage "Gloomy Passage"
+	with description "An unprepossessing passage, running from north to
+			  south. Pale patches on the walls show where 
+			  trophies or pictures once hung.",
+	n_to BackOfHallway,
+	s_to FrontHall,
+	has light;
+
+Scoreable -> VacuumCleaner "vacuum cleaner"
+	with description "It's battery-powered, but the cover of the battery
+		compartment seems to be missing.",
+	name 'vacuum' 'cleaner' 'portable',
+	initial "A portable vacuum cleaner lies discarded against one wall.",
+	before [;
+		SwitchOn: if (Batteries notin player) 
+				"You flick the switch, but since the battery
+				compartment is empty nothing happens.";
+			  print "You push the batteries into the compartment 
+				 and flick the switch. The motor roars into
+				 life, kicking up no end of a racket. ";
+
+			  if (player in DustyRoom)
+				print "^You make a few attempts to clear 
+					the dust, but it's like trying to
+					move a mountain with only a teaspoon. ";
+
+			  if (player in UpperGallery && UpperGallery.ghosts_active < 2)
+			  {
+				print "^The dust motes swirl and, for a 
+					moment, take on the form of a hooded,
+					cloaked figure. Waving impotently,
+					it is sucked into the nozzle of the
+					vacuum cleaner and is lost to view. ";
+				UpperGallery.ghosts_active = 2;	
+			  }
+			  "^Tiring of the noise, you turn the vacuum cleaner
+			   off again. The batteries won't stay in their
+			   compartment, so you retrieve them.";
+	],
+	has switchable;
+
+Object PoolOfLight "Pool of light"
+	with description "High overhead, a grimy skylight grudgingly admits
+			the light of day. The sitting room is to the south,
+			and dark doorways lead to the north and east.",
+	     s_to SittingRoom,
+	     n_to 
+		[;
+			if (Candle notin player || Candle hasnt light)
+			{
+				"It's too dark to go that way without a light.";
+			}
+			return DarkAlcove;
+		],
+	     e_to 
+		[;
+			if (Candle notin player || Candle hasnt light)
+			{
+				"It's too dark to go that way without a light.";
+			}
+			return VaultedHall;
+		],
+	has light;
+
+Scoreable -> Batteries "batteries"
+	with name 'batteries',
+	     article "some",
+	     description "Fairly chunky lantern batteries, stuck together 
+			with duct tape.";
+
+!
+! This location description is based on the sample by Tyler and Howarth, in 
+! the 'longer descriptions' section of their book. However, they go on to
+! say "light filters in from the east", which isn't possible: the room to the
+! east is one of the game's dark rooms.
+!
+Object VaultedHall "Vaulted Hall"
+	with description "You have entered a vast, vaulted chamber with 
+			pillars extending many times your height above you.
+			The hall continues to the east, and an elaborate
+			doorway leads to the west.",
+		w_to PoolOfLight,
+		e_to HallWithDoor,
+	hasnt light;
+
+Object HallWithDoor "East End Of Hall"
+	with description "At this end of the hallway, the pillars form a 
+			curved apse, interrupted by two doorways to the
+			east and south. The eastern doorway gapes emptily,
+			but the southern door is still in place. The hall
+			continues to the west.",
+		w_to VaultedHall,
+		e_to TrophyRoom,
+		s_to WoodenDoor,
+	hasnt light;
+
+Scoreable -> Statue "statue"
+	with name 'statue' 'statuette' 'oscar' 'oswin',
+	     description "A golden statue, about a foot high, on a black 
+			plinth. He looks a bit like Uncle Oswin.";
+
+Object Pillars "pillars"
+	with name 'pillar' 'pillars',
+	     description "Black marble, carved with macabre designs.",
+	     found_in VaultedHall HallWithDoor
+	has scenery;
+
+Object TrophyRoom "Trophy Room"
+	with description "This room is lined with distorted, rotting shapes
+			that might once have been stuffed animals. Archways
+			lead north, south and west.",
+	     w_to HallWithDoor,
+	     n_to WidePassage,
+	     s_to DiningRoom,
+	hasnt light;
+
+Object -> Animals "stuffed animals"
+	with description "Decayed, worthless, and so fragile that they'd 
+			  probably disintegrate if you tried to move them.",
+	name 'animals' 'stuffed'
+	has static scenery;
+
+Object Cellar "Cellar"
+	with description "This is a low, cobweb-hung chamber. Its walls are 
+			massive stone blocks, on which sturdy wooden beams 
+			support the floor. There is a smell of damp and 
+			mould in the air.",
+	     n_to SlipperySteps,
+	     s_to DeepCellar,
+	     e_to BarredWindow,
+	     before [; Dig:
+			if (Shovel in player && BarredWindow hasnt open)
+			{
+				give BarredWindow open;
+				"The earth around the bars is quite soft and
+				with the aid of the shovel, you soon manage
+				to remove the bars."; 
+			}
+		],	
+	has light;
+!
+! Make the BarredWindow an Inform door, too.
+!
+Object BarredWindow "barred window"
+	with description [;
+			if (self has open) "Now that you've dug the bars 
+					out, there's probably enough space to
+					squeeze through";
+			if (self in CliffPath1) "The window is barred, but
+					from this side you can't see how the
+					bars are fixed.";
+			"The bars are set in earth, firmly enough that they
+			don't move when shaken by hand.";
+		],
+	name 'window' 'barred',
+	when_closed [;
+		if (self in CliffPath1) "There is a barred window 
+				in the wall of the house.";
+		"There is a barred window in the eastern wall.";
+		],
+	when_open [;
+			if (self in CliffPath1) "There is a square hole in
+					the wall of the house, leading west.";
+			"A hole in the wall leads east.";
+		],
+	     door_to [;
+		if (self in Cellar) return CliffPath1;
+		return Cellar;
+	     ],
+	     door_dir [;
+		if (self in Cellar) return e_to;
+		return w_to;
+	     ], 
+	     found_in Cellar CliffPath1,
+	has static door;
+
+CliffRoom CliffPath1 "Cliff Path"
+	with description "Perhaps when the house was built this strip of 
+			land was wider, and the sea reduced it to its present
+			size over the years. If so, it won't be many years 
+			before it reaches the foundations of the house. 
+			The path continues to north and south.",
+	     n_to Clifftop,
+	     w_to BarredWindow,
+	     s_to CliffPath2;
+
+Object Cupboard "Cupboard"
+    with  description "If you weren't the only person in here, this could 
+                       be cramped. As it is, it's merely dusty and 
+                       uncomfortable. Hanging from a hook is a shredded
+                       mass of fabric, that might once have been a coat.",
+          s_to Closet,
+     has  light;
+
+Object -> Coat "coat"
+     with name 'coat',
+          before [;
+		Take: "If you tried to take the coat off its hook, it would 
+                      probably disintegrate.";
+	   ],
+     has static open container scenery;
+
+Scoreable -> -> Key "key"
+     with name 'key',
+          description "A large, heavy iron key.";
+
+Object FrontHall "Front Hall"
+     with description "This is a grim, unwelcoming space, that looks as if it 
+			was designed to make visitors feel unwelcome and 
+			insignificant. The hall extends to the south, and
+			there are doors to the north and east.",
+	  n_to GloomyPassage,
+          s_to FrontLobby,
+          e_to SittingRoom,
+     has  light;
+
+Object SittingRoom "Sitting Room"
+     with description "This room looks as if it was aiming for the 
+			atmosphere of a gentlemen's club, with large, 
+			leather-upholstered chairs and faded prints on
+			the wall. Doors lead north, south and west.",
+	  n_to PoolOfLight,
+          w_to FrontHall,
+          s_to Library,
+     has  light;
+
+Object -> Furniture "furniture"
+    with name 'furniture' 'sofa' 'settee' 'chair' 'chairs',
+	description "The leather is old, faded and cracked.",
+     has static scenery supporter;
+
+Object SecretRoom "Secret Room"
+     with description "This room looks as if it was once part of the study,
+			until the thin lath and plaster wall was built 
+			to conceal it. To your slight disappointment, there
+			aren't any skeletons or instruments of torture. Also,
+			apart from the hole you made in the south wall, there
+			isn't any way in.",
+	  s_to Study,
+     has light;
+
+Scoreable -> BookOfSpells "leather-bound book"
+	with name 'book' 'magic' 'spells' 'leather',
+	   description "Handwritten in a spidery hand, the book describes 
+			rituals for summoning demons, controlling the weather,
+			enslaving young women and so forth. On the last page,
+			a different hand has hastily written 'Use this word 
+			with care: XZANFAR.'",
+	initial "A book is wedged in the smashed remains of the wall: it looks
+		as if your handiwork with the axe broke its hiding place
+		open.",
+	react_before [;
+		Xzanfar:
+			if (Painting in player && painting hasnt general)
+			{
+				give painting general;
+				"The portrait you are carrying shimmers with
+				light. For a moment, its surface seems to
+				bulge as if something is trying to escape
+				from the canvas, but it quickly reverts to
+				normal.";
+			}
+!
+! The original game required the player to say 'xzanfar' in the correct room;
+! in other rooms, it would randomly teleport the player to any of the 64 rooms 
+! in the original map. Do the same here, if the conditions for removing the
+! magical barrier are not met.
+!
+			print "^^ >> Foof! << ^^";
+			PlayerTo(random (DarkCorner, OvergrownGarden,	
+					ByWoodpile, Yard, Weedpatch, Forest,
+					ThickForest, UnderBlastedTree, 
+					CornerOfHouse, EntranceToKitchen,
+					Kitchen, SculleryDoor, DustyRoom,
+					RearTurretRoom, Clearing, Path,
+					SideOfHouse, BackOfHallway, DarkAlcove,
+					SmallDarkRoom, SpiralStaircase, 
+					WidePassage, SlipperySteps, Clifftop,
+					CrumblingWall, GloomyPassage, 
+					PoolOfLight, VaultedHall, HallWithDoor,
+					TrophyRoom, Cellar, CliffPath1, 
+					Cupboard, FrontHall, SittingRoom,
+					SecretRoom, SteepMarbleStairs,
+					DiningRoom, DeepCellar, CliffPath2,
+					Closet, FrontLobby, Library, Study,
+					CobwebbyRoom, ColdChamber, SpookyRoom,
+					CliffPathByMarsh, Verandah, FrontPorch,
+					FrontTower, SlopingCorridor, 
+					UpperGallery, MarshByWall, Marsh,
+					SoggyPath, ByRailing, FrontGate,
+					ByRailings, BeneathTower, 
+					CrumblingFacade, FallenBrickwork,
+					StoneArch, CrumblingClifftop));
+			rtrue;
+	];
+
+
+Object SteepMarbleStairs "Steep Marble Stairs"
+     with description "A dim light shining from a clerestory high above 
+			illuminates this staircase, carved with superb
+			craftsmanship and somewhat more dubious taste. The
+			balusters are carved to resemble bones, and the newel
+			posts are topped with marble skulls. The stairs lead
+			down to a door, and upward to a landing.",
+	  n_to WoodenDoor,
+	  d_to WoodenDoor,
+	  u_to CobwebbyRoom,
+	  s_to CobwebbyRoom,	
+     has light;
+
+Object DiningRoom "Dining Room" 
+	with description "This dim, ill-proportioned, gloomy chamber has an
+			oppressive atmosphere, as if a miasma of past 
+			debaucheries hangs around it. Or maybe that's just
+			dry rot you can smell. The only doorway is to the
+			north.",
+	 n_to TrophyRoom,
+	 has light;
+
+Object -> DiningTable "dining table"
+	with name 'dining' 'table',
+	     description "Rosewood, by the look of it. It's much too big to
+			  fit through the door, which raises the question of
+			  how it got here in the first place. Maybe the 
+			  house was built around it.",
+	has static;
+
+Object DeepCellar "Deep Cellar"
+ 	with n_to Cellar,
+	    description "Standing in this confined, cramped, chilly space, your 
+			head almost touches the ceiling. The floor here is 
+			rough, looking as if it's been hacked out of the rock
+			on which the house was built. The only light is coming
+			from the doorway to the north."
+	has light;
+
+Object -> Coffin "coffin"
+	with name 'coffin',
+	description [;
+			print "It's very obviously a coffin, painted black and 
+				standing on a plinth in the middle of the 
+				cellar. You can't help noticing how well-oiled 
+				the hinges are. ";
+			if (self has open) print "The interior is lined with
+						purple velvet.";
+			"";
+			],
+	has static openable container;
+
+Scoreable -> -> Ring "ring"
+	with name 'ring',
+	description "Gold, set with a single emerald.",
+	has clothing;
+
+CliffRoom CliffPath2 "Cliff Path"
+	with description "The path here is barely visible, just a slight 
+			  depression in the tangled grass. It continues to
+			  north and south.",
+	n_to CliffPath1,
+	s_to CliffPathByMarsh,
+	has light;
+
+Object Closet "Closet"
+    with  description "This small room adjoins the lobby, and shares its 
+                       tiled floor and peeling wallpaper. Dim light filters
+                       in through small, cobwebbed windows near the ceiling.
+                       The lobby is to the east, and to the north is a
+                       walk-in cupboard.",
+          e_to FrontLobby,
+	  n_to Cupboard,
+     has  light;
+
+Object FrontLobby "Front Lobby"
+    with  description "Lit by cracked, dusty stained glass windows, the 
+		       lobby is a bare, chilly space. Your footsteps echo
+                       on cracked tiles, and the paper on the walls is 
+                       faded and peeling.",
+          initial [; 
+		     if (FrontDoor has open) {
+		     print "A sudden gust of wind catches the front door,
+                            and, creakingly, it begins to move. Even as you
+                            spin round, it slams with a boom that echoes
+                            through the house.^";  
+                     give FrontDoor ~openable ~open; } ],
+          n_to  FrontHall,
+          w_to  Closet,
+          s_to  FrontDoor,
+     has  light;
+
+Object Library "Library of evil books"
+       with description "Compared to some of the other rooms in the house, 
+			this library looks comparatively untouched. The 
+			shelves are lined with tomes bound in black leather.
+			Doorways between the shelves lead north and east.",	
+            n_to SittingRoom,
+	    e_to Study,
+       has  light; 
+
+Object -> Books "books on the shelves"
+       with description [;
+			if (self hasnt general)
+			{
+				give self general;
+				box "> EXAMINE BOOKS"
+                                    ""
+                                    "Dey is all in Latin."
+                                    ""
+                                    "           -- Bugsy (part 2)";
+			}
+			"Dey is all in Lighan.";
+			],
+            name 'books' 'shelves' 'tome' 'tomes',
+            before [;
+		Take: "The books are chained to their shelves.";
+              ],
+       has  static scenery legible;
+ 
+Scoreable -> Candlestick "candlestick"
+     with name 'candlestick';
+
+Object Study "Study"
+       with description [;
+			if (hole hasnt general) "There is a hole in the north
+					    wall, about the size of your fist.";
+			else "There is a hole in the north wall, easily
+			      large enough to walk through.";
+		],
+	    before [;
+			Examine: if (noun == n_obj) <<Examine hole>>;
+		],
+	    w_to library,
+	    n_to [;
+			if (hole hasnt general) "You won't fit through there.";
+			return SecretRoom;
+		],
+	has light;	
+
+Object -> Desk "large mahogany desk"
+      with name 'desk' 'mahogany',
+	description "In an antique shop it might sell for a few hundred pounds.
+		Shame you've no way of getting it there.",
+      has static container openable ~open;
+
+Scoreable -> -> Candle "candle"
+      with llimit 60,
+           name 'candle',
+	   before [;
+		Burn:   if (self has light)
+				"It's already alight.";
+			if (Matches notin player)
+				"You have nothing to light it with.";
+		        if (Candlestick notin player)
+				"Without something to hold the candle 
+				upright and in one place while you strike
+				a match, this isn't going to work.";
+			if (self.llimit < 1)
+				"There isn't enough candle left to light.";
+			give self light;
+			StartDaemon(self);
+			"It casts a flickering light.";
+
+		Blow, Extinguish:
+			if (self has light)
+			{
+				give self ~light;
+				StopDaemon(self);
+				"Extinguished.";
+			}
+			"The candle is already out.";
+	   ],
+           description [;
+		if (self has light) 
+			print "The candle is burning with a flickering light. ";
+		else	print "The candle is not lit. ";
+
+                if (self.llimit == 0) "It's a stub. There's not enough left 
+                                       of it to relight.";
+		else if (self.llimit < 15) "It doesn't look as if it would last 
+                                       for much longer.";
+		else if (self.llimit < 30) "It's less than half the length
+                                       it was when you first lit it.";
+		else if (self.llimit < 60) "There's plenty of it left.";
+		else                 "In fact, it looks as if it's never been
+				      lit.";
+		],
+	daemon [;
+		 if (self has light)
+		 {
+			self.llimit = self.llimit - 1;
+			if (self.llimit == 1)
+			{
+				self.llimit = 0;
+				give self ~light;
+				StopDaemon(self);
+				"The candle flickers and goes out!";
+			}
+			if (self.llimit == 10)
+			{
+				"The candle is waning.";
+			}
+		 }
+		];
+ 
+Object -> Hole "hole"
+      with name 'hole' 'wall',
+      description "There is definitely a large space beyond the hole.",
+	has static scenery;
+
+Object CobwebbyRoom "Cobwebby Landing"
+	with description "This landing was originally decorated with marble
+			carvings, as macabre as those on the staircase to
+			the north. Now it's hard to make them out under their
+			covering of spider webs. A doorway leads east, and the
+			landing continues to the south.",
+	n_to SteepMarbleStairs,
+	s_to UpperGallery,
+	e_to ColdChamber,
+	has light;
+
+Object ColdChamber "Cold Chamber"
+	with description "It's not as if the rest of the house is warm, but
+			  even so, the sudden drop in temperature on entering
+			  this room made you shiver. Carved runes surround the
+			  western doorway; there is a more conventional door
+			  to the east.",
+	e_to SpookyRoom,
+	w_to [;
+		if (Painting in player && Painting hasnt general) {
+			"The eyes of the painting glow, and you find 
+			yourself repelled by an invisible barrier.";
+		}
+		return CobwebbyRoom;
+	],
+	has light;
+
+Object -> Runes "runes"
+	with name 'rune' 'runes',
+	     description "You aren't familiar with the alphabet that was used.",
+	has scenery;
+
+
+Object SpookyRoom "Spooky Room"
+	with description "Maybe this was once a bedroom, but it's long been
+			cleared of any furniture. It doesn't feel empty, 
+			though. Wherever you stand and whichever direction 
+			you face in, you're sure that somebody is 
+			standing behind you, peering over your shoulder 
+			with sharp, inquisitive eyes. The only door is to
+			the west.",
+	w_to ColdChamber,
+	has light;
+
+Scoreable -> Painting "portrait"
+	with name 'painting' 'portrait',
+	     initial "There is a portrait hanging on the wall.",
+	     description "It depicts a cadaverous man, dressed in an 
+			  old-fashioned dark suit.";
+
+CliffRoom CliffPathByMarsh "Cliff Path by Marsh"
+	with description "Here the path winds inland from the cliff
+			 edge. On the west side, there is a marshy, 
+			 water-filled ditch between the path and the house.
+			 The path continues to the north and south.",
+	n_to CliffPath2,
+	s_to SoggyPath,
+	has light;	
+
+!
+! Make the boat a full-on Inform vehicle.
+!
+Object -> Boat "boat"
+   with name 'boat',
+   description "A large and clumsy boat.",
+   initial "A boat is pulled up at the edge of the marsh.",
+   before [ way;
+	Take: "It's too big and heavy to carry.";
+	Go: way = location.(noun.door_dir)();
+	    if (~~(way ofclass Rowable)) {
+		print "You can't row on solid ground.^";
+		return 2;
+	    }
+	    return 1;
+	],
+   has enterable open container;
+
+
+
+
+Object Verandah "Rubble-strewn verandah"
+    with  description "A cast-iron verandah runs along the front of this part
+                       of the house. Most of its glass roof is missing, 
+                       scattered on the ground beneath along with fragments 
+                       that have fallen from the building itself. The 
+                       front porch is to the east, and the garden extends to
+                       the south.",
+          s_to ByRailing,
+          e_to FrontPorch,
+    has light;
+
+Object FrontPorch "Front porch"
+    with  description "The drive comes to an end here, in the shadow of the
+                       looming tower. A short flight of stone steps leads 
+                       north through the front door. To the west is a 
+                       verandah and the drive leads south.",
+	  s_to FrontGate,
+          w_to Verandah,
+          n_to FrontDoor,
+    has   light;
+
+Object FrontTower "Front Tower"
+	with description "This tall, square room forms the top level of the
+			  front tower. Its walls echo with your footsteps. 
+			  The only door is to the east.",
+	e_to SlopingCorridor,
+	has light;
+
+Scoreable -> Goblet "goblet"
+	with description "Gold, inlaid with semiprecious stones. There are
+			some rusty stains on the inner surface you'd rather
+			not think about.",
+	name 'goblet';
+
+Object SlopingCorridor "Sloping Corridor"
+	with description "Nothing about this corridor is straight; it slopes
+			  upward to the west and downward to the east, and
+			  the floor has a definite tilt to it, as if the 
+			  front of the house has subsided over the years.",
+	e_to UpperGallery,
+	w_to FrontTower,
+	has light;
+
+Object UpperGallery "Upper Gallery"
+	with ghosts_active 0,
+	     description "Tall, narrow windows admit slender shafts of 
+			daylight into the gallery, illuminating bare stone
+			walls. Dust motes swirl and dance in the light.",
+	n_to CobwebbyRoom,
+	w_to SlopingCorridor,
+	before 
+	[;
+!
+! The original BASIC used two entries in the flags array: 
+! F(27) roughly equivalent to UpperGallery.general  if ghosts prevent movement
+! F(24) roughly equivalent to VacuumCleaner.general if ghosts disposed of
+!
+! Combine them into UpperGallery.ghosts_active.
+!
+		Go: if (self.ghosts_active == 0 && random(2) == 1)
+		    {
+			self.ghosts_active = 1;
+		    }
+		    if (self.ghosts_active == 1) 
+			"The dust motes swirl and, for a
+			moment, take on the form of a hooded, cloaked figure.
+			It stretches out an arm in your direction, and you 
+			find that you cannot move.";
+
+	],
+	has light;
+
+
+
+Rowable MarshByWall "Marsh by wall"
+    with  description "This is a narrow strip of ground between the house,
+			which blocks your path to the north and west, and 
+			an impassable marsh to the east.",
+	  s_to FallenBrickwork;
+
+Rowable Marsh "Marsh"
+    with  description "The marsh has reached the walls of the house here,
+		       lapping against the base of the brickwork. To the
+                       south, you can make out the crumbling remains of a
+                       stone arch, and the marsh continues to the west.",
+	  s_to StoneArch,
+	  w_to MarshByWall;
+
+Rowable SoggyPath "Soggy Path"
+    private swamp_count 0,
+    with  description "The raised bank of the path tails away, sinking below
+                       the surface of a trackless marsh. To the west, the 
+                       turrets of the house can be made out.",
+	    n_to CliffPath2,
+	    w_to [;
+		    if (player in Boat) return Marsh;
+		    
+		    if (self.swamp_count == 0) {
+			self.swamp_count = 1;
+			"You stride boldly into the marsh, and within three
+                        paces have sunk to your waist. It is only by some
+		        effort that you manage to extricate yourself.";
+		    }
+		    deadflag = 3;
+		    "You wade once more into the marsh, and this time become
+		    firmly stuck. Your cries for help are 
+                    eventually heard, but it is not until nearly midnight that
+		    you are finally rescued by the fire brigade, your zeal for 
+                    adventure completely quenched.";
+		 ];
+
+Diggable ByRailing "By twisted railing"
+    with  description "Iron railings, distorted and rusty but still firm,
+		       border the silent, weed-strewn garden. To the north
+                       is the verandah of the house, and the overgrown drive
+		       is to the east.",
+	  e_to  FrontGate,
+	  n_to  Verandah,
+    has   light;
+
+Diggable FrontGate "Path through iron gate"
+    with  description "The drive, now merely a winding track through dense 
+		       vegetation, passes here through an iron gate into the 
+		       grounds of the abandoned house. The drive leads north, 
+                       and the desolate remains of the garden extend to east 
+                       and west.",
+	  w_to  ByRailing,
+	  n_to  FrontPorch,
+	  e_to  ByRailings,
+	  s_to  [;
+    		if (score == 17) << Score >>;
+		"You've come all this way. You're not going to turn back now.";
+		],
+    has   light;
+
+! 
+Diggable ByRailings "By railings"
+    with  description "This is a narrow strip of land running east-west 
+                       between the high, grim railings and the dilapidated 
+                       house. Presumably it was once part of the garden, but 
+                       now it it is the domain only of rough grass, ivy and 
+                       tree saplings.",
+          w_to FrontGate,
+          e_to BeneathTower,
+    has   light;
+
+Diggable BeneathTower "Beneath Front Tower"
+    with  description "The front tower stands against the sky, its shape 
+                       looking subtly distorted. The only windows you can
+                       see are several floors up. The path continues to 
+                       the east and west.",
+          w_to ByRailings,
+          e_to CrumblingFacade,
+    has   light;
+
+Diggable CrumblingFacade "Debris from Crumbling Facade"
+    with  description "Even though the building here is supported by several 
+                       sturdy buttresses, enough rubble has fallen here to
+                       make it doubtful how long this part of the house will
+                       stand. The path runs east-west at the base of the wall.",
+          w_to BeneathTower,
+	  e_to FallenBrickwork,
+	  before [;
+!
+! This is the nearest Haunted House has to a Debris Room, so I couldn't 
+! resist.
+!
+		Xyzzy:  print "^^ >> Foof! << ^^";
+			PlayerTo(WellHouse);
+			rtrue;
+	  ],
+    has   light;
+
+Scoreable -> Aerosol "aerosol can"
+    with  name 'aerosol' 'can',
+	  article "an",
+	  description "By its weight, the can seems to be nearly full. It
+                       has a handwritten label reading 'Baticide'.",
+	  react_before [;
+		Spray: if (noun == Bats && location == RearTurretRoom)
+			{
+				remove Bats;
+				"They didn't like that at all. With squeaky
+				coughing noises, they swirl out of the tower
+				and are lost to sight.";
+			}
+			"Hissssss.";
+	  ];
+
+Diggable FallenBrickwork "Fallen brickwork"
+    with description "At this corner of the house, you are forced to pick 
+	              your way through large lumps of brickwork. To the south
+                      the garden railings still block passage, but the way 
+		      is clear to the north, east and west.",
+	 n_to MarshByWall,
+         w_to CrumblingFacade,
+	 e_to StoneArch,
+    has  light; 
+
+Object -> Brickwork
+    with name 'brick' 'bricks' 'brickwork',
+         description "The raw edges on these bricks suggest that until 
+		      comparatively recently they were part of the house,
+                      possibly a turret.",
+     has scenery static;
+
+Rowable StoneArch "Rotting stone arch"
+        private swamp_count 0,
+	with description "This arch must have been built as a garden folly,
+                          a romantic imitation ruin. Now it's a real ruin,
+                          overgrown with ivy, and the only question is 
+                          whether it will sink into the marshy ground before 
+                          the retreating cliff crumbles altogether. Dark,
+                          foul-smelling water laps at the foot of the arch
+                          and extends to the north. A cliff is to the east, 
+                          and the house is visible to the west.",
+	    w_to FallenBrickwork,
+	    e_to CrumblingClifftop,
+	    n_to [;
+		    if (player in Boat) return Marsh;
+		    
+		    if (self.swamp_count == 0) {
+			self.swamp_count = 1;
+			"You stride boldly into the marsh, and within three
+                        paces have sunk to your waist. It is only by some
+		        effort that you manage to extricate yourself.";
+		    }
+		    deadflag = 3;
+		    "You wade once more into the marsh, and this time become
+		    firmly stuck. Your cries for help are 
+                    eventually heard, but it is not until nearly midnight that
+		    you are finally rescued by the fire brigade, your zeal for 
+                    adventure completely quenched.";
+		 ],
+	has light;
+
+CliffRoom CrumblingClifftop "Crumbling clifftop"
+        with description "This is a small patch of land at the top of the
+			  cliffs, and gives the impression that the next
+                          wave might make it even smaller. You can see the
+                          archway to the west, but on all other sides there
+                          is only a sheer drop to the sea.",
+             w_to StoneArch;
+
+Object WellHouse "Well House"
+	with description "You are inside a building, a well house for a 
+			  large spring.",
+	before [;
+		Xyzzy:  print "^^ >> Foof! << ^^";
+			PlayerTo(CrumblingFacade);
+			rtrue;
+	],
+	hasnt light;
+
+Object -> Spring "spring"
+	with name 'spring',
+	     description [;
+			print "^^ Boiiinnnngggggg! ^^";
+			PlayerTo(BeneathTower);
+			rtrue;
+		],
+	has scenery static;
+
+!
+! Make the front door a full Inform door, rather than just a message on first 
+! entering the lobby.
+!
+Object FrontDoor "front door"
+    with  found_in FrontLobby FrontPorch,
+          name 'door' 'front', 
+          before [;
+		   Open: if (self in FrontLobby) "The handle on this side is,
+				unfortunately, missing. There is no way to 
+                                open the door.";
+			 else if (self hasnt openable) "You turn the handle, 
+                               but nothing happens. Something in the mechanism
+                               must be broken.";
+	  ],
+          description [;
+                       print "While it could certainly do with a lick of 
+                              varnish, the door is still formidably solid and 
+                              forbidding. ";
+		       if (self in FrontLobby) "The handle on this side is
+                       	    missing."; 
+		       else "";	],
+          when_open "The front door stands ajar.",
+          when_closed "The front door is firmly closed.",
+          door_to [; if (self in FrontLobby) return FrontPorch;
+                     return FrontLobby; ],
+          door_dir [; if (self in FrontLobby) return s_to;
+                     return n_to; ],
+     has  static door openable;
+
+!
+! Also make the huge wooden door a full-on door.
+!
+Object WoodenDoor "huge wooden door"
+	with description "It's easily twice your height, and by the look of
+			it, twice your weight as well.",
+	     name 'door' 'wooden',
+	     when_closed "The door is closed.",
+	     when_open "The door is open.",
+	     with_key Key,
+	     door_to [;
+		if (self in HallWithDoor) return SteepMarbleStairs;
+		return HallWithDoor;
+	     ],
+	     door_dir [;
+		if (self in HallWithDoor) return s_to;
+		return n_to;
+	     ], 
+	     found_in HallWithDoor SteepMarbleStairs
+	has static door openable lockable locked;
+
+
+
+
+
+! ----------------------------------------------------------------------------
+!
+! Functions
+!
+! ----------------------------------------------------------------------------
+
+[ ReadSub; <<Examine noun>>; ];
+
+[ SpraySub; 
+	"You have nothing to spray.";
+];
+
+[ DeathMessage;
+	if (deadflag == 3) 
+		print "You nearly died of hypothermia";
+];
+
+[ ExtinguishSub;
+
+	"That can't be extinguished because it isn't burning.";
+];
+
+[ XyzzySub;
+
+	"Nothing happens.";
+];
+
+[ XzanfarSub;
+
+	"Nothing happens.";
+];
+
+
+[ DigSub;
+	if (Shovel notin player)
+	{
+		"You have nothing to dig with.";
+	}
+	if (location ofclass Diggable)
+	{
+		"You dig out a few shovelfuls of earth. Finding nothing, 
+		 you fill in your hole again.";
+	}	
+	else if (location ofclass Rowable)
+	{
+		"You try to dig, but the ground here is so soft that your 
+		 hole just collapses.";
+	}	
+	"The ground here is too hard to dig.";
+];
+
+[ ScoreSub;
+    if (score == 17)
+    {
+	if (player in FrontGate)
+	{
+		print "Double score for reaching here!^";
+		deadflag = 2;
+		score = 34;
+	}
+	else print "You have everything -- return to the front gate for 
+		    final score.^";
+    }
+    L__M(##Score, 1);
+    PrintRank();
+];
+
+
+
+[ GamePreRoutine ;
+   if (action == ##Go && location == thedark)
+   {
+	"It's too dark to move.";
+   }
+   rfalse;
+];
+! ----------------------------------------------------------------------------
+! Grammar
+!
+! The grammar section includes the file "Grammar" and will later include
+! extensions to the standard grammar library.
+!
+! ----------------------------------------------------------------------------
+
+Include "Grammar";
+
+Extend "read" first * legible                         -> Read;
+
+Verb 'extinguish' 'unlight' 'snuff' * noun		-> Extinguish;
+
+Extend 'dig' replace
+	* -> Dig;
+
+Verb 'spray' * noun                                   	-> Spray;
+Verb 'xyzzy' 'plugh' * 					-> Xyzzy;
+Verb 'xzanfar' * 					-> Xzanfar;
+Extend 'say' first * 'xzanfar'				-> Xzanfar;

@@ -1,0 +1,96 @@
+
+A
+0
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII#############MXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIJ###########################IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIJ#################################LIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIX######################################IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIJ###########################################LIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII###############################################LIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    II.III.III.III.III.III.III.III.III.II#############ZZ####################################LI.III.III.III.III.III.III.III.III.II
+    III.III.III.III.III.III.III.III.III.J############MZ#######################################.III.III.III.III.III.III.III.III.I.
+    .II.II.II.II.II.II.II.II.III.III.IJ###########MMXIIIIMMM$$$$###############################LII.II.II.II.II.II.II.II.II.II.II.
+    I.II.II.II.I.I.I.II.II....II.II.IJ######MMIIIII.........IIIIIXMMM$#########################L.II.I.I..II.I..I.II.I..II..I.II..
+    I..II..I.I.I.I.I.I.I..I..II..I..J####$MI..............IIIXXXXXXMMMM$#########################L.I..I..I.I.I.I.I.IIII..I.I.IIII
+    I..I...I..I...I..I..I..I.I..I..J####$$XXII...................XMMM$$###########################I..I..I..I..I...I..I..I..I...II
+    .I....I.....I.....I....I....I.####MXII.........................XXXMM$##########################L..I....I....I....I....I.....I
+    .I.....I.......I........I....I#####MXII..........................IIXMMMMM$######################.....I.....I......I........I.
+    ............................######MMXIII.......................IIIXXXXMM$#########################...........................
+    .........................IZZ#######XII......................IIIIIIIXXXXX$$$#######################MIXIXI.........I......XI...
+    ........................IZZ######XXIII......................IIIIIIIIXXXXXMM$$######################IIIIX.......IIII...IIXIIIX
+    ......................IZZM######MXII..................................IIIXXM$#######################IIIXXIIIIIIIIIIIIIXIIIIIX
+    ......................ZZZM####$$XIIIII..................IIIIIII.....IIIIXXX$$#######################LXXXXX.IIIIIIIIIIXIIIIXXX
+    MXX..................IZZZ########XIIIIIIXXXII..........XXMMMMMXXXXXXXXXXXXM$$#######################XXXXXXXIIIIIIIIIXXIIIIXXX
+    MMMMXI...............ZZZZ##########XXMM$$####MI......I$########$MMMXXMMM$$$$$#######################XXXXXXXXXXXIXIIXXXXXIXXXX
+    MMMMMJ...............MZZM##############FXXM$##I....IX$####$XXIXX$$$#######$M$######################LXXXXXXXXXXXIXIXXXIXXXXMXX
+    MMMMMJ...............MZZM############$$$####MI##...IX#####$$$$$####$$$####$MXM$######################XXXIXXXXXXXXXXXMMXXXXMXM
+    MMMMMJ.....MXXX.X....LZ##########IM###MIM#####MX...I####$$$MX.I########$MMXIXM$######################XXXMXXMXXMXXMXXMXMMMXXXX
+    XXXX......XXXMXIML...###########IIIIXIII.IFFFFIX...I$$MMXXI....FFFFFMNIIIIIIXX$######################XXMXXXMXMMMMMMXXXMMMMMH#
+    XMMX....CXMMMMMXMJ..C##########MXIIIIIIXXXXMXII....IMMXXXIIIIIXXXXXMMM.....IXMM######################XMMXMMXXMXMXXMXMMMMXMMMM
+    M$MXIIIXMMMMMMMMMJ..############XI......IIIII......IMMXXII..IIXIIIII.....IIIX$$######################JMMMMMMMXXXXMXXMMMMMMHMM
+    X$MMXIIMMMMMXXXMMMM#$$$########$XI.................IMMXII................IIXX$$######################MMMMXMXMXMXMXMXMXMXMMMMM
+    $M$$MXX$$MMMXMMM$$M#$$M#######$$XII................IXXXII...............IIIXM$$######################NNNNNXMXMXNXMXNXHXMXNXMM
+    MMM$$MXMMM$$MMMMMMM#MMM#########II.................IIIIII...............IIXX$$M######################MXXIIMMAIIIIIII..IIIIIIM
+    MM$$$M$$$$$$$MNMXX$$$$$##########XII..............IIIIXXI..............IIIXM$#########################ZHXHXHXMAXNXMCXMNC$XMMX
+    NMXXIMMMMM$MMNMMMM#MM#############XII......II.....IIXIWLI.............IIIXX$$#########################IJXHMXHMMXHWHEMNXNXMXHX
+    XMMXMNMNM$MNNMMMM################$$XII......XX. .Z####$$$............IIIXXX$$#########################XIHXMXMNXNEMWNXMEXMXXMM
+    MMMXXXNMXNXMNMNMMX################$XII........$$#######$MI..........IIIXXX$$$#########################JHMMNKXWWXMMXXXMWHZMXX#
+    MXNXXXXNMMXXMXMMNMM###############$XXII.........######MXI..........IIIIXXXX$$##########################MMXNMMXMXNMZXNXMNXMMMN
+    WWEXFXMNMXEXXXAMMMM###############$$XXII.........IXXXXXIIIIIIII...IIIXXX$$$$###########################XXNIXXMXMXNXZXNXZXXHXX
+    XFXMIMMXMMXMXMMMAMM################$XXIIIIX$X.II.IIXXXMMM$##$MI....IXXXMMM$$###########################XNMZHNMXXMNXMZXMZXMZXM
+    XXFNMMNAMXMAXMXMMIM################$XII....$###$L.MM$#######II......IXXMM$$############################MXMXMMMJJMXXMXHZXWMHNX
+    XXXXZZMXMMMXMXMMMIM##################I..............IXXXMIIII.......IXX$$$##############################XNMMMMMMJMIIIXXIIXXXM
+    XMNXNXXMAHXIXMMXMXX###################$I........MM$$XXXXXXXXI......IIXX$$###############################XMMXMXJIJMHZXXXMMWNXH
+    MNNXNXMXMXNMXMXMMI#####################M$XI....IIIIXXII.IIXXX......IXX$$################################NXMXMXMMXXHXNXZWXWXWX
+    NXXXNNXXMIMIMIMIMIX#######################I...................IIXXX$$$$##################################XXINXIXHXXMXHIXMHMMX
+    NMNXMXMXMMXMMMXMMMM#######################$$I.............IXXXXX$$$$$####################################XNXIXIXXHXZMXIXXWXMX
+    MXMMMMXMXXMMXMXMMXX#########################$I..........IIIXXXXX$$$######################################XXNMNMXXXHXXIXXXMMXX
+    MXXXXIIIIIIIIIIIIIII##########################$I.....IIXXX$$$$$$#########################################XXXIIIXMXXXIXMMMXMMI
+    MMMXXXXXMMMMMXXXXIIII#####################################################################################XXNXMXZXXXXXIXXXXXX
+    MXXXXXXIIIIIIIIIIIIII#####################################################$$MMMM$$########################XXZXZXMXMXMXZX IIII
+    XMMIXXXIIIIIIIIIIIIIII#############################IXMMM$$#############$$$$MMMMM$#########################IXZHNXMXNZMXNXIXNXX
+    IIIXXIIIIIIIIIIIIIIIIIII###########################IIXXX$$M$#########D$$MMMMMMMMM$########################L22XMFHMEZMXXXXXXXM
+    IIIIIIIIIIIIIIIIIIIIIIII###########################IIIIXXXXMM$$$$$$$$$MMMMMXXXMMMM$#######################LXMXXMMMMXXII9IIXIX
+    IIIIIIIIIIIXXXXXXXXXXIII###########################XI...IIXXXXXMMMMMMMMMMXXIIXXXM$$$######################MXMXXXXIIIIIIIIIXMM
+    IIIIIIIIIIIIIIIIIIIXIIII###########################XI...IIIXXXXMMMMMMMXXXXXIIIIIXXM$$$######################MXMXMIIIXXMXMMXMM
+    MIIIXMXXMXIIIIIIIIXXXIII############################XIIIIIIIIXXXXMXXXXXXXXII.IIIXXX$$#######################IXXMXXHXXIXXXIXXX
+    $MMMMXXXXX$IIMMMMXXXXXI#############################XIII....IIXXXXXXXXXIII......IIXM$########################XMXXAXXAIXXXIIIX
+    M$MMMMMXMMXMHXXMMMMXXXX#########################MFXXIIII....NIIIXXXXXII.........IIXXM$X#######################XXXIXXIXMIXMIII
+    XMMWXNXCXRMMMIIXXXXXIX#######################$$$XXIIII......N.IIIIIXI.......N...IIIXXMM$$M###X#X###############IXIXMMXIXNXXIN
+    XXXXXXXXXXMMXIIIXXIIXJ#####################XIII.................IIIII............IIXXM$M########################XXIXMWWXXXIXX
+    IXIIIXXXIXMMXIIIXXXXI####################LXXI.....................III...........NIJJJI####MM#X$XC#I##############LXXMXIIIIXMX
+    XCXMXIXNXCXMMXIIXXXX###################I........................................IJJIXJM######X#M#MIM##############LXXEXBXNIIX
+    MMXXXIIXNM\XXIXXXXI##################LII........................................IJIJL##M###M$M#X#X#M##########C####LXSSBMMXXI
+    XXXXMIINMNMXMXXXXX##################J.I..........................................JIJJ#M#####M$$M#X############M#####MXIXXNXIX
+    MN<16>XMIXXMXMXXXXXI##################JIX...........................................I.X##MX##MM###M#####################MMXMNXWM
+    IXIXXMIXMIXMXXXI##################$MXXM..........................................I.I$DMMZ#$#XX#M####M#################XXXXNZM
+    XXXIIXIXIXIXIII##################JMXXJ..........................................IJXI.%%M###M###X########<1>####M##########LXXXHX
+    XXXXMXXXMXMXMM##################JXIIII..........................................JJII###M###M##IWWNWMM########M####MMM####XXII
+    XXMXXMMMMXXXX###################XJJII...........................................JJI$##M#Z##M##IX####MM#JJX##XXMMMMMM####MMMMX
+    XXXXXXXXMMXX#################JI##JJJ.I.........................................IJI.JI#%#XM$M#$XM###MMXXIXMMMMMX####XXXMMMMMMX
+    MMMXXXXMX##################JII#JJII............................................J.JJX$M#M#M#XXMM#JJJFFFM####MIIIXMM#####MMMIII
+    MMMXXXX####################XI#IJJ..............................................JI.JX#JXMMMMMMMFFIIIIMMMMMXXIIINNMMMMMMM<5>MNMMMM
+    MXXXXMMMMMM$#############IJIIIXJJ............................................IJ.JJX&IXJJJJJJXMMMXMXXIIXMXXXMMMMMMMMMMMMMMMMMM
+    IIXMMMMMMMM$####<2>#######$I.....I..................................................JJJJIIXMMMMMXXIIXMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    IIMMMMMMMMMM##########MML....J.................................................J.I.I.ZMMMHMMIIIMZZMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    IMMMMMMMMMMM###########MMML.....................................................II.XMMMMMI.IXXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    MMMMMMMWMWMM#########MMMMMM..........&....I...............................IXX.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    MMMMMMMMMMMMM#######JWMMMMMMMML..........II..................................MMMMMMIIXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    MMMMMMMMMMM########WWMMWWMMMMMMMMMLI.IIIIIII..............................IJMMMMMIXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    MMMMMMMMMMM#######WN*W*XM*WZMMMMMMMMMMM$IXIII............................IMMMMM.IXXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    MMWMMMWMMWW######MWMWIIMWW*I*IWNWMMMMMMMMMMMMMLX......................I.XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXMMMMMWMMWMMMMMWMMMWMM
+    MMWMWWMMMMM#####WMMNMWMWEX*MWMWMXXMWMWMMMHMHHMHMMMMMMMXXMMMMMMMMMIXXMMMMMFIJMMMNMMMM***MMMMMWMWMMMMMAMMMMMUMMMMMMMMMMMMMMMMMW
+    HMMMWHWMMWW###M*WWNMWWMXXMWMNWXXSMMHWNXXMWWMWWNMWMMMMMHHMMMM#MMMMM#MMMMMI.XMMMMXXMMMMMMMMMMMWXIMM*HMMM++MWHMMHMMMHHHM*MMWWMMM
+    WMMWWWMNMWM###W#MMM*MMXMWMWMMW++WMMMM**IWWMWNMMMMMNMNWMMWMNHMMMMMMXXMMNFIIMMMMMI*M*NMMMMMMMNMMMM**H**MMMMMWMMMMWHHHHMMMMWMWHW
+    MWMMMWMWMMMW#MMM\MMMMXMMMMMXEXMMMMMXIIWWMWM*NMWXXWMMMW**NWNNMMZMNM*IXMMMMXMMM*XMMMEMMMWWMHMMMXMMM*I*NMMMNMMWMWNWMMWWHWWMWWMWW
+    MMWWMMMWMMMWMMMM*MMM*MMMMMM*MMMMMMXXIWHWWIWWMMMWWWIIXXMMMWMMMMXMMNNNMMMMMMMMMNMHWNMMMMMHNMW*MMXNN*XMNMHMWWHNHMMNMXXXMMADER*M*
+ŠŠŠŠŠŠŠŠŠŠ
+HF

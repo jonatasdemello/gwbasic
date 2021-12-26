@@ -1,0 +1,23 @@
+to eyes
+setc 11
+repeat 36[fd 10 rt 10 repeat 6[fd 2 lt 60] linea]
+repeat 36[fd 10 lt 10 repeat 6[fd 2 rt 60] lineb]
+end
+
+to linea
+setc 12
+rt 90
+fd 10
+bk 10
+lt 90
+setc 11
+end
+
+to lineb
+setc 12
+lt 90
+fd 10
+bk 10
+rt 90
+setc 11
+end

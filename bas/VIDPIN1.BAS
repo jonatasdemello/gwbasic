@@ -1,0 +1,231 @@
+1 CLS:PRINT TAB(25);"PINBALL"
+2 PRINT TAB(20);"Creative Computing"
+3 PRINT TAB(18);"Morristown, New Jersey"
+4 PRINT:PRINT:PRINT
+5 HS=3684
+8 DIM R$(10),P$(20),L(2)
+9 GOSUB 9500
+10 A1=0:A0=0:X9=0:GOTO 20
+15 RANDOMIZE(VAL(RIGHT$(TIME$,2))):RETURN
+20 PRINT "Welcome to Computer Pinball!!"
+30 PRINT "Would you like Instructions to this"
+35 PRINT "Fantastic Game";
+40 INPUT Q$:IF LEFT$(Q$,1)="y" THEN GOSUB 1010
+45 PRINT "How about a picture of the table";
+46 INPUT Q$:IF LEFT$(Q$,1)<>"n" THEN GOSUB 6010
+50 PRINT:B=5
+55 S=0:P=0
+60 T$="ABCDEFGHIJ":PRINT
+61 FOR Z=1 TO 10:R$(Z)=" ":NEXT Z:Z3=0
+70 A1=0
+71 A7=0
+80 IF B<=0 THEN 290
+100 GOSUB 15
+105 L(1)=2+INT((RND*1)*6):L(2)=INT((RND*1)*14)+1
+110 GOSUB 15
+115 C=1+INT((RND*1)*7):A1=0
+120 PRINT "The Ball is now at (";L(1);",";L(2);")."
+130 IF MID$(P$(L(1)),L(2),1)=" " THEN 150
+140 GOSUB 2010
+150 IF A7=7 THEN 280
+160 IF A1<>4 THEN 180
+170 GOTO 260
+180 L(1)=L(1)+1
+190 A1=0
+200 GOSUB 15
+205 L(2)=L(2)+INT((RND*1)*3)-2
+210 GOSUB 15
+211 IF L(2)<2 OR L(2)>15 THEN L(1)=L(1)+INT(1+(RND*1)*3)-2
+215 GOSUB 15
+216 IF L(2)<2 OR L(2)>15 THEN L(2)=INT(2+(RND*1)*13)
+230 IF L(1)=>2 AND L(1)<=20 THEN GOTO 130
+240 GOSUB 15
+245 L(1)=INT(1+(RND*1)*7)
+250 GOTO 130
+260 GOSUB 4010
+270 IF A0=1 THEN 400
+280 ON X9+1 GOTO 60,340
+285 PRINT "You have played your seventh Ball and scored";P;"points!"
+286 PRINT "You're very Good!":GOTO 351
+290 PRINT "You have played your five Balls, and have scored"
+293 PRINT "a total of";P;"points."
+300 IF P<1600 THEN 9999
+305 PRINT:PRINT "*** BONUS BALL ***":FOR A=1 TO 1000:NEXT
+310 B=B+1
+320 X9=1
+330 GOTO 60
+340 PRINT "You have played your sixth Ball and scored";P;"points!"
+341 X9=2
+350 IF P<2200 THEN 9999 ELSE 359
+351 IF P<3500 AND SB=0 THEN 9999 ELSE SB=1:GOTO 359
+352 IF P<5500 AND SA=0 THEN 9999 ELSE SA=1:GOTO 359
+359 PRINT:PRINT "*** BONUS BALL ***":FOR A=1 TO 1000:NEXT
+360 B=B+1:S=3
+370 GOTO 60
+380 GOTO 2010
+390 GOTO 150
+400 L(1)=2+INT((RND*1)*7)
+405 L(2)=2+INT((RND*1)*13):X=0:Y=0
+410 GOTO 110
+1010 PRINT:PRINT
+1030 PRINT "Instructions are Out of Order."
+1350 PRINT:PRINT:RETURN
+2010 IF MID$(P$(L(1)),L(2),1)="O" THEN 2070
+2019 GOSUB 15
+2020 IF INT((RND*1)+.5)=<>1 THEN 2022
+2021 IF MID$(P$(L(1)),L(2),1)="/" OR MID$(P$(L(1)),L(2),1)="\" THEN 2160
+2022 S8=INT((RND*1)*6+1)
+2023 FOR S7=1 TO S8:SOUND P+56,1:NEXT S7
+2025 IF MID$(P$(L(1)),L(2),1)<="J" AND MID$(P$(L(1)),L(2),1)=>"A" THEN 2190
+2040 GOSUB 3010
+2050 RETURN
+2070 PRINT:PRINT "Too Bad... You've gone right through a chute hole":PRINT " (";CHR$(34);"O";CHR$(34);" on the Table.)"
+2075 PRINT "To console you, I will give you an extra"
+2090 GOSUB 15
+2095 Q=INT((RND*1)*141)
+2100 P=P+Q
+2110 PRINT Q;"points, to bring your Total to";P;".":BEEP
+2115 PRINT "You now have";B-1;"Balls left."
+2120 B=B-1
+2130 A7=7
+2140 GOSUB 5010
+2150 RETURN
+2160 GOSUB 15
+2165 L(1)=L(1)+(1+INT((RND*1)*4))-(1+INT((RND*1)*4))
+2170 GOSUB 15
+2175 L(2)=2+INT((RND*1)*14)
+2180 RETURN
+2190 PRINT
+2200 FOR Q=1 TO 10
+2203 IF R$(Q)=MID$(P$(L(1)),L(2),1) THEN 2275
+2204 NEXT Q
+2205 Z3=Z3+1:R$(Z3)=MID$(P$(L(1)),L(2),1)
+2210 PRINT:PRINT "Tab ";R$(Z3);" down..."
+2255 IF Z3=10 THEN GOSUB 5010
+2260 RETURN
+2275 RETURN
+3010 IF MID$(P$(L(1)),L(2),1)=CHR$(8) THEN RETURN
+3015 IF MID$(P$(L(1)),L(2),1)="]" THEN RETURN
+3017 IF MID$(P$(L(1)),L(2),1)="[" THEN RETURN
+3018 IF MID$(P$(L(1)),L(2),1)="^" THEN 3110
+3019 A1=0
+3020 IF MID$(P$(L(1)),L(2),1)="=" THEN 3410
+3030 C=C-1
+3040 IF C=0 THEN 3110
+3050 IF MID$(P$(L(1)),L(2),1)="!" OR MID$(P$(L(1)),L(2),1)="\" THEN 3110
+3060 IF MID$(P$(L(1)),L(2),1)="/" OR MID$(P$(L(1)),L(2),1)="-" THEN 3110
+3070 GOSUB 15
+3075 IF INT(1+(RND*1)*25)=4 THEN GOSUB 6010
+3080 IF MID$(P$(L(1)),L(2),1)="$" THEN 3230
+3090 IF MID$(P$(L(1)),L(2),1)="*" THEN 3280
+3100 GOTO 3320
+3110 A1=4
+3120 GOTO 3390
+3130 IF L(2)<6 THEN GOTO 3180
+3140 IF L(2)<11 THEN 3200
+3150 GOSUB 15
+3160 D=2:IF INT(1+(RND*1)*2)=1 THEN D=D+(1+INT((RND*1)*3))-2:IF D>3 THEN D=D-3
+3170 RETURN
+3180 GOSUB 15
+3185 D=1:IF INT(1+(RND*1)*2)=1 THEN D=INT((RND*1)*3)+D
+3190 RETURN
+3200 GOSUB 15
+3205 D=2:IF INT(1+(RND*1)*2)=1 THEN D=D+INT((RND*1)*3):IF D>3 THEN D=D-3
+3210 RETURN
+3230 GOSUB 15
+3235 Q=45+INT((RND*1)*146)
+3240 GOSUB 6010:PRINT "You've hit the Jackpot and won";Q;"points!!"
+3250 P=P+Q
+3260 PRINT "You now have";P;"points!"
+3270 GOTO 3360
+3280 GOSUB 15
+3285 Q=INT((RND*1)*64)+1:P=P+Q
+3290 GOSUB 6010:PRINT "You receive";Q;"points from the Bumper at";L(1);",";L(2);"."
+3300 PRINT "Score:";P
+3310 GOTO 3360
+3320 GOSUB 15
+3325 Q=15*(1+(INT((RND*1)*6))):P=P+Q
+3330 GOSUB 6010:PRINT "You get";Q;"points from Gate ";MID$(P$(L(1)),L(2),1);"."
+3340 PRINT "Score:";P
+3360 GOSUB 15
+3365 L(1)=L(1)-INT(1+(RND*1)*3)-INT(1+(RND*1)*2)
+3370 GOSUB 15
+3375 L(2)=L(2)-3+INT((RND*1)*5)+1
+3380 RETURN
+3390 GOSUB 7850
+3400 GOTO 3130
+3410 GOSUB 15
+3415 L(1)=L(1)-(1+INT((RND*1)*5))
+3420 GOSUB 15
+3425 L(2)=L(2)-2+(1+INT((RND*1)*4))
+3430 RETURN
+4010 PRINT "Ball approaches Flippers.  Enter the two Flippers"
+4020 INPUT "you wish to flip, in the form  X,Y ";V,W
+4025 IF V<1 OR V>3 OR W<1 OR W>3 THEN 4010
+4030 IF V=D OR W=D THEN 4110
+4040 PRINT:PRINT "No, you have chosen to protect the wrong Flippers."
+4060 PRINT "Now you have"B-1;"balls left.":BEEP
+4070 B=B-1
+4080 A0=0
+4090 GOSUB 5010
+4100 RETURN
+4110 A0=1
+4120 GOSUB 15
+4130 C=INT(1+(RND*1)*5)
+4140 RETURN
+5010 IF Z3=10 THEN 5090
+5020 IF Z3=0 THEN RETURN
+5030 PRINT "Your Ball knocked down";Z3;"Tags!!"
+5040 PRINT "For this Stellar Performance, you are awarded"
+5050 PRINT "*****";10*Z3;"*****";:PRINT "  Points!!"
+5060 P=P+10*Z3
+5080 GOTO 5120
+5090 P=P+250
+5100 PRINT "*****You knocked down all 1O Tags!!!*****"
+5110 PRINT "You are awarded 25O Points and an Extra Ball!"
+5114 B=B+1
+5120 PRINT "Score:";P:RETURN
+6010 PRINT
+6020 COLOR 7,0:CLS:PRINT TAB(55);" P I C T U R E ":PRINT TAB(55);"****************"
+6040 FOR Q=1 TO L(1)-1:PRINT TAB(55);P$(Q):NEXT Q
+6044 PRINT TAB(55);MID$(P$(L(1)),1,ABS(L(2)-1));:COLOR 15,0:PRINT "#";:COLOR 7,0:PRINT MID$(P$(L(1)),L(2)+1,16-L(2))
+6050 FOR Q=L(1)+1 TO 20:PRINT TAB(55);P$(Q):NEXT Q:LOCATE 3
+6060 PRINT:PRINT "The Ball was at the ";CHR$(34);"#";CHR$(34);".":PRINT "****************"
+6100 RETURN
+7850 GOSUB 15
+7855 L(2)=ABS(L(2)-2+INT(1+(RND*1)*4))
+7860 IF L(2)<=15 THEN RETURN
+7870 GOSUB 15
+7875 L(2)=1+INT((RND*1)*10):RETURN
+9500 P$(1)="  "
+9501 FOR Q=1 TO 12:P$(1)=P$(1)+CHR$(254):NEXT Q
+9502 P$(1)=P$(1)+"  "
+9510 P$(2)=" O            O "
+9520 P$(3)="O   *  *  *    O"
+9530 P$(4)="O  A  B  C  D  O"
+9540 P$(5)="O    *   *     O"
+9550 P$(6)="O * *  $  *  * O"
+9560 P$(7)="O    *   *     O"
+9570 P$(8)="O* E  F  G  H *O"
+9580 P$(9)="O   *  *  *    O"
+9590 P$(10)="O===        ===O"
+9600 P$(11)="O  1 2 3 4 5   O"
+9610 P$(12)="O * 6 7 8 9  * O"
+9620 P$(13)="O===   O    ===O"
+9630 P$(14)="O  O   O    O  O"
+9640 P$(15)="!!!          !!!"
+9650 P$(16)="O  \        /  O"
+9660 P$(17)="O   \  I J /   O"
+9670 P$(18)="O    \    /    O"
+9680 P$(19)="O     \  /     O"
+9690 P$(20)="\------!!----^-/"
+9700 RETURN
+9999 IF P<HS THEN 10090
+10090 PRINT "Come play again sometime!!":END
+10100 IF P<HS THEN 9999
+10110 PRINT:PRINT "You have beaten the High Score!!!!!"
+10120 PRINT "Now you must raise the High Score."
+10130 PRINT "To do this, simply put";P
+10140 PRINT "in after the ";CHR$(34);"=";CHR$(34);" sign.":PRINT:EDIT 5
+10150 GOTO 9999
+

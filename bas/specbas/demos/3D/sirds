@@ -1,0 +1,35 @@
+ZXASCII
+AUTO -1
+PROG sirds
+10 REM Stereogram generator
+20 DEF FN irnd(x)=INT(x+0.5)
+30 LET dpi=72: LET e=FN irnd(2.5*dpi): LET mu=1/3
+40 DEF FN separation(z)=INT(FN irnd((1-mu*z)*e/(2-mu*z)))
+50 GO SUB 290
+60 LET ri=0: LET gi=1: LET bi=0.35: FOR f=0 TO 255: PALETTE f,ri*f,gi*f,bi*f: NEXT f
+70 GO SUB 100
+80 GO SUB 150
+90 PAUSE 0: STOP 
+100 REM Generate Depth Map
+110 REM Assumes graphic bank dmimg holds the depth information
+120 LET w=GFXw dmimg: LET h=GFXh dmimg: DIM dm(w,h) BASE 0
+130 LET curwin=cWIN: WINDOW GRAPHIC dmimg: FOR y=0 TO h-1: FOR x=0 TO w-1: LET dm(x,y)=POINT(x,y)/255: NEXT x: NEXT y
+140 WINDOW curwin: RETURN 
+150 REM Create autostereogram in current window
+160 LET maxx=GFXw dmimg: LET maxy=GFXh dmimg: GO SUB 100
+170 FOR y=0 TO maxy-1: DIM pix(maxx) BASE 0: DIM same(maxx) BASE 0: FOR x=0 TO maxx-1: LET same(x)=x: NEXT x
+180 FOR x=0 TO maxx-1: LET s=FN separation(dm(x,y)): LET lft=x-s/2: LET rgt=lft+s
+190 IF NOT(0<=lft AND rgt<maxx) THEN GO TO 260
+200 IF 0<=lft AND rgt<maxx THEN LET t=1: DO: LET zt=dm(x,y)+2*(2-mu*dm(x,y))*t/(mu*e)
+210 LET vis=dm(x-t,y)<zt AND dm(x+t,y)<zt
+220 INC t: LOOP UNTIL NOT(vis AND zt<1)
+230 IF NOT vis THEN GO TO 260
+240 LET l=same(lft): DO WHILE l<>lft AND l<>rgt: IF l<rgt THEN LET lft=l: LET l=same(lft) ELSE LET same(lft)=rgt: LET lft=rgt: LET l=same(lft): LET rgt=l
+250 LOOP : LET same(lft)=rgt
+260 NEXT x
+270 FOR x=maxx-1 TO 0 STEP -1: LET pix(x)=IIF(same(x)=x,RND*256,pix(same(x))): PLOT INK pix(x);x,y: NEXT x: NEXT y
+280 RETURN 
+290 REM Generate sample image
+300 GRAPHIC NEW dmimg,SCRw,SCRh: WINDOW GRAPHIC dmimg
+310 FOR y=0 TO SCRh-1: FOR x=0 TO SCRw-1: PLOT INK ((SIN(x/35)*128+SIN(y/28)*32+SIN((x+y)/16)*64)+256)/2;x,y: NEXT x: NEXT y
+320 WINDOW 0: RETURN 

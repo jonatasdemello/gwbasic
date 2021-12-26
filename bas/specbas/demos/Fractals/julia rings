@@ -1,0 +1,32 @@
+ZXASCII
+AUTO -1
+PROG julia rings
+10 REM Julia Rings
+20 WINDOW DEPTH 0,32: CLS 0
+30 LET dw=800: LET dh=480: DIM lx(dw) BASE 0: DIM ly(dh) BASE 0
+40 LET xmin=-2: LET xmax=2: LET ymin=-1.5: LET ymax=1.5
+50 LET deltax=(xmax-xmin)/(dw-1): LET deltay=(ymax-ymin)/(dh-1)
+60 FOR i=0 TO dw-1: LET lx(i)=xmin+i*deltax: NEXT i: FOR i=0 TO dh-1: LET ly(i)=ymin+i*deltay: NEXT i: LET i_last=0
+70 LET maxiter=20: LET maxsize=4: LET fr=0
+80 LET fr=(fr+1) & $7fffffff: LET theta=fr*PI/180: LET p=COS(theta)*SIN(theta*.7)*.6: LET q=SIN(theta)+SIN(theta)*.6
+90 LET cmagsqr=(p*p+q*q): LET cmag=SQR(cmagsqr): LET drad=.04: LET drad_l=(cmag-drad): LET drad_l=drad_l*drad_l: LET drad_h=cmag+drad: LET drad_h=drad_h*drad_h
+100 FOR py=0 TO (dh/2): LET ty=ly(py): FOR px=0 TO dw-1
+110 LET x=lx(px): LET y=ty: LET xsquare=0: LET ysquare=0: LET ztot=0: LET i=0
+120 DO WHILE i<maxiter AND (xsquare+ysquare)<maxsize
+130 LET xsquare=x*x: LET ysquare=y*y: LET ytemp=x*y*2: LET x=xsquare-ysquare+p: LET y=ytemp+q: LET zmag=(x*x+y*y)
+140 IF zmag<drad_h AND zmag>drad_l AND i>0 THEN LET ztot=ztot+(1-(ABS(zmag-cmagsqr)/drad)): LET i_last=i
+150 INC i
+160 IF zmag>4 THEN EXIT 
+170 LOOP 
+180 IF ztot>0 THEN LET i=INT(SQR ztot*500) ELSE LET i=0
+190 IF i<256 THEN LET r=i ELSE LET r=255
+200 IF i<512 AND i>255 THEN LET g=i-256 ELSE IF i>=512 THEN LET g=255 ELSE LET g=0
+210 IF i<=768 AND i>511 THEN LET b=i-512 ELSE IF i>=768 THEN LET b=255 ELSE LET b=0
+220 LET tmp=((r+g+b)*.33) & 255: LET r=((r+g+tmp)*.33) & 255: LET g=((g+b+tmp)*.33) & 255: LET b=((b+r+tmp)*.33) & 255
+230 CASE i_last MOD 3
+240 WHEN 1: LET tmp=r: LET r=g: LET g=b: LET b=tmp
+250 WHEN 2: LET tmp=r: LET b=g: LET r=b: LET g=tmp
+260 END CASE
+270 PLOT INK (r SHL 16)+(g SHL 8)+b;px,py;dw-px,dh-py
+280 NEXT px: NEXT py
+290 GO TO 80

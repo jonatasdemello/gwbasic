@@ -1,0 +1,254 @@
+30,0,0,35,10,1,45,20,1,40,0,1,45,0,0,50,10,1,160,400,0,130,355,1
+125,350,1,100,315,1,90,290,1,90,275,1,80,270,1,70,260,1,70,295,1
+80,305,1,90,320,1,100,345,1,125,380,1,115,385,1,100,370,1,95,365,1
+80,340,1,80,335,1,70,320,1,65,320,1,50,305,1,60,305,1,60,300,1
+50,285,1,50,250,1,40,225,1,20,215,1,15,215,1,20,210,1,5,165,1
+15,160,1,5,160,1,0,145,1,0,120,1,10,100,1,15,85,1,35,45,1
+35,20,1,50,25,1,50,35,1,55,25,1,50,15,1,50,10,1,105,30,1
+110,31,1,145,40,1,170,45,1,215,50,1,275,55,1,295,55,1,305,60,1
+325,60,1,340,65,1,350,50,1,370,55,1,380,65,1,390,80,1,420,85,1
+435,75,1,425,85,1,435,90,1,435,100,1,420,95,1,420,125,1,410,140,1
+445,120,1,450,120,1,445,120,1,435,115,1,440,110,1,465,100,1,465,95,1
+495,65,1,525,0,1,545,0,0,530,10,1,500,65,1,485,80,1,470,100,1
+475,100,1,470,110,1,450,115,1,450,120,1,445,130,1,435,135,1,420,145,1
+410,140,1,405,140,1,415,125,1,410,110,1,400,115,1,405,105,1,390,95,1
+380,100,1,375,115,1,380,130,1,375,145,1,370,150,1,365,140,1,360,120,1
+370,100,1,360,110,1,360,95,1,370,90,1,395,90,1,380,80,1,370,85,1
+355,80,1,355,70,1,335,85,1,330,85,1,330,80,1,320,85,1,340,65,1
+405,90,0,410,85,1,415,90,1,405,90,1,485,80,0,495,80,1,510,75,1
+510,70,1,515,70,1,520,60,1,516,48,1,520,35,1,525,40,1,530,30,1
+535,35,1,540,55,1,550,60,1,535,75,1,525,95,1,525,100,1,530,110,1
+535,110,1,535,105,1,540,115,1,530,120,1,525,120,1,525,125,1,520,127,1
+505,135,1,502,138,1,520,135,1,520,130,1,505,135,1,502,136,1,500,142,1,504,143,1,505,152,1
+500,165,1,490,155,1,490,160,1,495,175,1,495,190,1,490,185,1,480,165,1
+470,165,1,475,165,1,480,180,1,485,180,1,480,190,1,485,190,1,485,195,1
+490,200,1,490,205,1,485,210,1,495,210,1,490,215,1,490,225,1,470,240,1
+450,270,1,445,280,1,445,290,1,455,310,1,470,345,1,470,360,1,460,365,1
+440,335,1,440,325,1,435,330,1,435,310,1,420,300,1,415,305,1,405,305,1
+400,300,1,380,300,1,375,295,1,370,300,1,355,300,1,345,300,1,345,305,1
+355,305,1,360,310,1,355,320,1,350,315,1,345,320,1,330,310,1,325,315,1
+310,310,1,295,315,1,275,330,1,265,340,1,265,365,1,260,380,1,260,400,1
+265,365,0,250,360,1,235,335,1,220,310,1,205,310,1,200,320,1,190,320,1
+180,310,1,180,295,1,165,280,1,145,275,1,145,280,1,135,280,1,115,280,1
+75,255,1,75,250,1,50,250,1
+70,260,0,75,255,1,75,250,1,85,230,1
+80,220,1,35,155,1,50,115,1,10,100,1,80,220,0,85,205,1,90,205,1
+90,195,1,105,130,1,75,122,1,50,115,1,75,122,1,80,100,1,90,95,1
+95,70,1,65,60,1,45,60,1,40,50,1,35,45,1,95,70,0,95,60,1
+105,30,1,110,31,1,105,45,1,115,70,1,110,75,1,120,80,1,120,90,1
+130,95,1,145,95,1,135,135,1,105,130,1,145,95,0,208,105,1,210,90,1
+215,50,1,210,90,1,208,105,1,200,155,1,152,150,1,132,147,1,135,135,1
+152,150,0,145,205,1,135,280,1,90,195,0,145,205,1,210,215,1,210,220,1
+205,280,1,165,275,1,165,280,1,210,215,0,220,215,1,226,158,1,200,155,1
+210,220,0,240,220,1,240,245,1,265,255,1,290,255,1,300,260,1,305,260,1
+305,280,1,310,295,1,310,310,1,300,260,0,300,215,1,220,215,1,300,215,1
+300,190,1,295,180,1,290,175,1,224,175,1,290,175,1,285,165,1,280,145,1
+275,140,1,260,135,1,204,130,1,280,145,0,280,105,1,275,100,1,280,95,1
+210,90,1,280,95,1,275,55,1,355,300,0,355,295,1,335,295,1,335,290,1
+340,280,1,335,265,1,345,240,1,350,225,1,355,220,1,355,210,1,340,195,1
+345,190,1,340,190,1,330,170,1,330,165,1,335,155,1,340,150,1,340,145,1
+335,140,1,330,125,1,325,120,1,315,110,1,315,95,1,320,90,1,320,85,1
+335,265,0,305,265,1,350,225,0,345,225,1,345,220,1,300,220,1,330,165,0
+285,165,1,330,125,0,280,125,1,380,300,0,380,290,1,435,290,1,440,295,1
+440,290,1,445,290,1,345,240,0,365,238,1,395,235,1,405,235,1,420,235,1,425,230,1
+455,230,1,470,240,1,365,238,0,365,270,1,365,300,1,395,235,0,405,270,1
+405,290,1,420,235,0,450,270,1,355,220,0,414,211,1,435,210,1,405,235,1,435,210,1
+490,205,1,360,95,0,335,85,1,335,140,0,365,140,1,370,150,0,370,190,1
+365,200,1,365,210,1,360,205,1,355,210,1,365,205,0,375,200,1,390,190,1
+397,180,1,395,142,1,375,145,1,395,142,1,405,140,1,397,180,0,420,185,1
+430,200,1,414,211,1,435,135,0,438,150,1,435,165,1,420,185,1,430,200,1
+435,205,1,445,195,1,445,190,1,460,175,1,470,165,1,460,165,1,450,170,1
+450,163,1,440,165,1,438,150,1,450,163,0,490,155,1,490,175,1,495,175,1
+490,185,0,495,185,1,490,155,0,495,145,1,490,140,1,495,135,1,502,136,1
+495,135,1,485,125,1,445,135,1,445,130,1,495,80,0,496,95,1,498,95,1
+500,110,1,502,121,1,505,135,1,502,121,1,519,116,1,520,127,1,519,116,1
+525,115,1,525,120,1,500,110,0,510,106,1,525,100,1,510,106,1,509,95,1,511,90,1,510,75,1
+515,70,0,521,95,1,525,95,1,0,0,0,550,0,1,550,400,1,0,400,1,0,0,1
+100,100,10,100,250,10,250,150,10,325,300,10,350,100,10,400,225,10,400,150,10
+480,160,10,510,125,10,515,80,10
+50,80,11,200,200,11,250,75,11,310,200,11,400,130,11,350,85,11,410,250,11
+440,180,11,500,150,11,500,85,11
+70,50,13,120,170,13,250,100,13,250,230,13,350,150,13,350,250,13,450,250,13
+480,100,13,515,132,13,492,170,13
+450,150,12,50,200,12,150,100,12,250,300,12,380,250,12,300,150,12
+400,200,12,450,220,12,510,110,12
+50,150,14,150,50,14,150,250,14,250,200,14,300,100,14,320,250,14
+380,170,14,440,300,14,450,200,14,494,186,14,530,50,14,523,120,14
+350,60,9,430,135,9,450,110,9,500,250,9,20,20,9,50,350,9
+300,40,6,540,25,6,200,350,6,60,270,6,40,10,6,410,89,6
+ALABAMA,MONTGOMERY,AL,3444165,51609,CAMELLIA,SOUTHERNPINE,YELLOWHAMMER
+ALASKA,JUNEAU,AK,302173,586412,FORGET-ME-NOT,SITKA SPRUCE,WILLOW PTARMIGAN
+ARIZONA,PHOENIX,AZ,1772482,113909,SAGUARO CACTUS,PALO VERDE,CACTUS WREN
+ARKANSAS,LITTLE ROCK,AR,1923295,53104,APPLE BLOSSOM,PINE,MOCKINGBIRD
+CALIFORNIA,SACRAMENTO,CA,19153134,158693,GOLDEN POPPY,CALIFORNIA REDWOOD, CALIFORNIA VALLEY QUAIL
+COLORADO,DENVER,CO,2207259,104247,ROCKY MOUNTAIN COLUMBINE,BLUE SPRUCE, LARK BUNTING
+CONNECTICUT,HARTFORD,CT,3032217,5009,MOUNTAIN LAUREL,WHITE OAK,ROBIN
+DELAWARE,DOVER,DE,548104,2057,PEACH BLOSSOM,AMERICAN HOLLY,BLUE HEN CHICKEN
+FLORIDA,TALLAHASSEE,FL,6789443,58560,ORANGE BLOSSOM,SABAL PALM,MOCKING BIRD
+GEORGIA,ATLANTA,GA,4589575,58876,CHEROKEE ROSE,LIVE OAK,BROWN THRASHER
+HAWAII,HONOLULU,HI,769913,6450,HIBISCUS,KUKUI (CANDLENUT),NENE (HAWAIIAN GOOSE)
+IDAHO,BOISE,ID,713008,83557,MOCK ORANGE,WESTERN WHITE PINE,MOUNTAIN BLUEBIRD
+ILLINOIS,SPRINGFIELD,IL,11113976,56400,VIOLET,OAK,CARDINAL
+INDIANA,INDIANAPOLIS,IN,5193669,36291,PEONY,TULIP TREE,CARDINAL
+IOWA,DES MOINES,IA,2825041,56290,WILD ROSE,OAK,EASTERN GOLDFINCH
+KANSAS,TOPEKA,KS,2249071,82264,SUNFLOWER,COTTONWOOD,WESTERN MEADOWLARK
+KENTUCKY,FRANKFORT,KY,3219311,40395,GOLDENROD,TULIP POPLAR,CARDINAL
+LOUISIANA,BATON ROUGE,LA,3643180,48523,MAGNOLIA,CYPRESS,LOUISIANA BROWN PELICAN
+MAINE,AUGUSTA,ME,993663,33215,WHITE PINE CONE AND TASSEL,WHITE PINE,CHICKADEE
+MARYLAND,ANNAPOLIS,MD,3922399,10577,BLACK-EYED SUSAN,WHITE OAK,BALTIMORE ORIOLE
+MASSACHUSETTS,BOSTON,MA,5689170,8257,MAYFLOWER,AMERICAN ELM,CHICKADEE
+MICHIGAN,LANSING,MI,8875083,58216,APPLE BLOSSOM,WHITE PINE,ROBIN
+MINNESOTA,ST.PAUL,MN,3805069,84068,SHOWY LADY'S-SLIPPER,NORWAY PINE,LOON
+MISSISSIPPI,JACKSON,MS,2216912,47716,MAGNOLIA,MAGNOLIA,MOCKINGBIRD
+MISSOURI,JEFFERSON CITY,MO,4677399,69686,HAWTHORN,FLOWERING DOGWOOD,BLUEBIRD
+MONTANA,HELENA,MT,694409,147138,BITTERROOT,PONDEROSA PINE,WESTERN MEADOWLARK
+NEBRASKA,LINCOLN,NE,1483791,77227,GOLDENROD,AMERICAN ELM,WESTERN MEADOWLARK
+NEVADA,CARSON CITY,NV,488738,110540,SAGEBRUSH,SINGLE-LEAF PINON,MOUNTAIN BLUEBIRD
+NEW HAMPSHIRE,CONCORD,NH,737681,9304,PURPLE LILAC,WHITE BIRCH,PURPLE FINCH
+NEW JERSEY,TRENTON,NJ,7168164,7836,VIOLET,RED OAK,EASTERN GOLDFINCH
+NEW MEXICO,SANTA FE,NM,1016000,121666,YUCCA,PINON,ROAD RUNNER
+NEW YORK,ALBANY,NY,18241266,49576,ROSE,SUGAR MAPLE,BLUEBIRD
+NORTH CAROLINA,RALEIGH,NC,5082059,52586,FLOWERING DOGWOOD,PINE,CARDINAL
+NORTH DAKOTA,BISMARK,ND,617761,70665,WILD PRAIRIE ROSE,AMERICAN ELM,WESTERN MEADOWLARK
+OHIO,COLUMBUS,OH,10652017,41222,SCARLET CARNATION,BUCKEYE,CARDINAL
+OKLAHOMA,OKLAHOMA CITY,OK,2559253,69919,MISTLETOE,REDBUD,SCISSOR-TAILED FLYCATCHER
+OREGON,SALEM,OR,2091385,96981,OREGON GRAPE,DOUGLAS FIR,WESTERN MEADOWLARK
+PENNSYLVANIA,HARRISBURG,PA,11793909,45333,MOUNTAIN LAUREL,HEMLOCK,RUFFED GROUSE
+RHODE ISLAND,PROVIDENCE,RI,949723,1214,VIOLET,RED MAPLE,RHODE ISLAND RED
+SOUTH CAROLINA,COLUMBIA,SC,2590516,31055,YELLOW JESSAMINE,PALMETTO,CAROLINA WREN
+SOUTH DAKOTA,PIERRE,SD,666257,77047,PASQUEFLOWER,BLACK HILLS SPRUCE,RING-NECKED PHEASANT
+TENNESSEE,NASHVILLE,TN,3924164,42244,IRIS,TULIP POPLAR,MOCKINGBIRD
+TEXAS,AUSTIN,TX,11196730,267338,BLUEBONNET,PECAN,MOCKINGBIRD
+UTAH,SALT LAKE CITY,UT,1059273,84916,SEGO LILY,BLUE SPRUCE,SEAGULL
+VERMONT,MONTPELIER,VT,444732,9609,RED CLOVER,SUGAR MAPLE,HERMIT THRUSH
+VIRGINIA,RICHMOND,VA,4648494,40817,FLOWERING DOGWOOD,none,CARDINAL
+WASHINGTON,OLYMPIA,WA,3409169,68192,COAST RHODODENDRON,WESTERN HEMLOCK,WILLOW GOLDFINCH
+WEST VIRGINIA,CHARLESTON,WV,1744237,24181,RHODODENDRON,SUGAR MAPLE,CARDINAL
+WISCONSIN,MADISON,WI,4417933,56154,WOOD VIOLET,SUGAR MAPLE,ROBIN
+WYOMING,CHEYENNE,WY,332416,97914,INDIAN PAINTBRUSH,COTTONWOOD,MEADOWLARK
+PACIFIC OCEAN, PC, ATLANTIC OCEAN, AT, CANADA, CN, MEXICO, MX
+ST. LAWRENCE, ST, LAKE HURON, LH, LAKE ONTARIO, LO
+LAKE MICHIGAN, LM, LAKE ERIE, LE, LAKE SUPERIOR, LS
+GULF OF MEXICO,GM
+350,220,405,310,12,0,0,0,0,0,60,170,150,300,10
+300,218,375,275,14,0,70,100,280,12,130,140,250,220,11
+500,110,525,140,10,475,150,500,180,13,375,275,475,375,14
+375,225,475,300,11,0,0,0,0,0,70,25,150,150,10
+325,125,375,225,13,350,125,425,210,14,250,125,350,175,12
+200,150,325,216,14,350,175,450,225,12,300,250,375,325,10
+500,25,550,100,14,445,150,500,200,10,495,100,550,125,12
+325,50,425,150,11,250,50,350,150,14,325,225,375,325,13
+275,150,375,250,11,100,0,225,120,14,180,120,300,180,10
+25,100,120,225,14,500,60,525,110,10,475,125,525,175,11
+100,200,225,300,14,425,75,525,150,13,400,200,500,250,12
+200,40,300,120,11,375,120,450,200,10,175,200,325,275,13
+0,25,100,125,11,425,110,500,175,12,500,100,530,130,14
+400,225,475,275,13,200,75,300,150,13,325,200,450,250,10
+150,200,325,375,12,75,125,175,250,13,475,60,525,120,11
+410,150,500,225,14,0,0,120,100,13,400,125,475,225,11
+300,75,375,150,10,100,75,225,175,12
+0,0,200,400,9,250,50,550,400,9,0,0,550,200,6
+0,200,380,400,6,450,0,545,100,9,395,75,435,120,9
+435,100,475,120,9,355,90,395,150,9,400,120,450,150,9
+300,25,395,90,9
+Alabama has a statue in honor of a bug (the boll weevil).   
+Helen Keller's birth place was Tuscumbia- Alabama.             
+Alaska is closer to Russia than it is to any state of the U.S.  
+Alaska has a longer coast line than all of the other states.    
+Arizona has the worlds largest canyon (the Grand Canyon).       
+Arizona has 17 national monuments more than any other state.    
+Arkansas passed a resolution on how to say its name.            
+Arkansas has the only diamond mine in North America.            
+The largest living things in the world are in California (Sequoias).
+More kinds of minerals are mined in California than any other state.
+Colorado is the highest state.                                  
+The city of Boulder owns a glacier for its water supply.        
+Connecticut had the first written constitution in the U.S.      
+More people work manufacturing in Connecticut than in any state.
+Deleware is the first state in the U.S.                         
+Flour was first made in a single mill in Deleware.              
+Flordia has more lakes than any other state (30'000+).        
+The Everglades is one of the worlds largest swamps.             
+An Atlanta drugstore was the first to serve Coca-Cola in 1887.  
+Georgia is the largest state east of the Mississippi River.     
+Hawaii is the only state that is not part of North America.     
+Hawaii has the worlds largest orchid-growing business.          
+Idaho grew 27 billion potatoes in one year.                     
+The first electricity from nuclear reactions was made in Idaho. 
+O'Hare airport-Chicago has a plane taking off or landing each minute
+Chicago is one of the busiest sea ports in the world.           
+Indiana has the third largest cave in the U.S. Wyandotte cave.  
+New Harmony- Indiana was the first location of co-ed classes.  
+Iowa has the largest state fair in the U.S.                     
+More people of Iowa than any other state can read and write.    
+Kansas grows more wheat than any other state.                   
+More than half of the private planes in the U.S. are built in Kansas
+The worlds largest base ball bat manufacturing plant is in Kentucky.
+Kentucky was the first state west of the Appalachian Mountains. 
+The worlds longest bridge is north of New Orleans (24 miles long).
+Jazz Music was first played in New Orleans- Louisiana.         
+Maine is the most eastern state in the U.S.                     
+Maine is first in Manufacturing of Wooden Tooth picks.          
+The Star-Spangled Banner was written off shore from Baltimore.  
+The state sport of Maryland is jousting.                        
+The first college in the Colonies was Harvard at Cambridge- MA.
+Other firsts for MA are public school- printing press- and subway.
+More cars and trucks are built in Detroit than any other city.  
+Michigan has more campsites than any other state.               
+More butter comes from Minnesota than any other state.          
+One of the Worlds greatest medical centers is Mayo Clinic in MN.
+Jackson has the largest Model of the Mississippi R. to warn of flood
+Mississippi has more tree farms than any other state.           
+Eight states border Missouri.                                   
+The Pony Express had its eastern end in Missouri.               
+The first woman elected to Congress was Jeanette Rankin from Montana
+Almost all the mustard grown in the U.S. comes from Montana.    
+Wagon wheel ruts can still be seen by some roads in Nebraska.   
+Nebraska has the only National Forests completely planted by man.
+Nevada is the only state where most kinds of gambling are legal.
+Most of Nevada is still owned by the U.S. Government.           
+New Hampshire was the first colony to set up its own government.
+New Hampshire has the shortest coast line of any state on the oceans
+The first professional baseball game was played in Ney Jersey.  
+Samuel Morse invented the telegraph in New Jersey.              
+The first Atomic Bomb was set off in New Mexico in 1945.        
+The oldest public building- the Palace of the Govenors- is in NM.
+The port of New York is the biggest and the busiest in the U.S. 
+New York City was the first National Capitol of the U.S.        
+The first successful airplane flight was made at Kitty Hawk- NC.
+The worlds largest denim mill is in Greensboro- North Carolina.
+Underground fires in coal beds in ND have been burnning for decades.
+North Dakota has more people working on farms than any other state.
+Hot dogs - ice cream cones- and cracker jack all came from Ohio.
+Ohio is third in manufacturing behind New York and California.  
+More Indains live in Oklahoma than any other state.             
+Choctaw words OKLA meaning people and HUMMA for red giving Oklahoma.
+Oregon has the deepest lake in the U.S. Crater Lake at 1'932 feet.
+Oregon is the only state that mines nickel.                     
+The worlds largest chocolate factory is in Hershey- Pennsylvania.
+The worlds first oil well was drilled in Pennsylvania.          
+Rhode Island was the last colony to become a state.             
+RI has more people per square mile than any state except New Jersey.
+More Revolutionary War battles were fought in South Carolina.   
+The first opera and symphony orchestra were heard in South Carolina.
+The largest producing gold mine is in South Dakota.             
+Almost all of South Dakota is used for farms and ranches.       
+The Tennessee River runs through the state twice.               
+W.C.Handy the father of the Blues style of music lived in Memphis.
+More land is farmed in Texas than any other state.              
+Texas has the most different types of wild flowers.             
+The water in Great Salt Lake is 4 times as salty as the ocean.  
+The Mormons picked Utah because noone else wanted that land.    
+Vermount was the first state in which all men could vote.       
+Vermount was the 14th state in the Union.                       
+More Presidents were born in Virgina than any other state.      
+The first sucessful English colony was here at Jamestowm- Virgina.
+Washington is the only state named for a President.             
+WWII was ended here aboard the USS.Missouri in Washington.      
+More than half the worlds marbles are made in Clarkesburg- WV. 
+Coal is found under more than half of West Virgina.             
+The first kindergarten in the U.S. was opened in 1856 in Wisconsin.
+The first statewide bicycle trail was set up in Wisconsin.      
+American women first voted in Wyoming.                          
+The first U.S. National Monument is in Wyoming (Devils Tower)   
+

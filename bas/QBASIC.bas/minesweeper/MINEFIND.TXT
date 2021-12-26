@@ -1,0 +1,28 @@
+                     +--------------------------------+
+                     | M I N E F I N D   Version 1.00 |
+                     +--------------------------------+
+
+
+This is a Mindesweeper kind of game. You need to find all clear areas.
+Some areas have numbers, they show you how many mines are around this
+area. You can mark mines with the space key and clear a area with the 
+enter key. Abort the game with the ESC key, for all other things use the
+arrow keys.
+
+Start this game with the file 'MINEFIND.EXE'.
+
+This game was programmed in QBasic 4.5 and is working without problems in
+QBasic 1.0 from DOS.
+
+       
+ History:
+ ~~~~~~~~
+
+ Version 1.00                                       2003-03-22
+---------------------------------------------------------------
+ - First public release of this game.
+
+
+
+EMail: folker.fritz@gmx.de
+Homepage: http://www.quickbasic.6x.to

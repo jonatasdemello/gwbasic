@@ -1,0 +1,139 @@
+10 PRINT "THIS GAME IS ONLY FOR COOL PEOPLE": RANDOMIZE TIMER: CLS
+20 FOR A = 1 TO 1000: NEXT A
+30 PRINT
+40 PRINT "HOW EXPENSIVE IS THIS LUXURY CAR?(2000-12000)"
+50 PRINT
+60 PRINT "        /-----\         "
+70 PRINT "       /   |   \        "
+80 PRINT "------/---------\-----  "
+90 PRINT "| /\              /\ |__"
+95 PRINT "-|OO|------------|OO|==="
+98 PRINT "  \/              \/    "
+100 B = INT(10000 * RND) + 2000
+110 INPUT C
+120 IF D < 2 AND C - 500 > B THEN D = D + 1: PRINT "WRONG,TRY AGAIN, IT'S LESS": SOUND 262, 10: GOTO 110
+125 IF D < 2 AND C + 500 < B THEN D = D + 1: PRINT "WRONG,TRY AGAIN, IT'S MORE": SOUND 262, 10: GOTO 110
+130 IF B < 6000 THEN
+131 LOCATE 7, 10: PRINT "YUGO"
+132 LOCATE 4, 1: SOUND 262, 8: SOUND 184, 8
+133 PRINT "        /-----\         "
+134 PRINT "       \  U/O  /        "
+135 PRINT "____--/--Y-G----\-____  "
+136 PRINT "|XX\    / [X / X  /\X|__"
+137 PRINT "-|OO|------------|XO|=\ "
+138 PRINT "  --              --   \"
+139 LOCATE 4, 1: SOUND 131, 8: SOUND 92, 8
+140 PRINT "        /___            "
+141 PRINT "       / U /--//        "
+142 PRINT "   _--/_Y___O_--\-____  "
+143 PRINT "---\ X  / [G / X  _\X|__"
+144 PRINT "-|OO|__X__X_/____|XO|=\ "
+145 PRINT "  --             '--'  \"
+146 LOCATE 4, 1: SOUND 65, 16
+147 PRINT "                        "
+148 PRINT "       / X-_--          "
+149 PRINT "    _-/_)U_/_X/-\-_X_   "
+150 PRINT " X X Y (G [X^ O/{* \ |_ "
+151 PRINT "-| O| }X  X_/ !   XO| \ "
+152 PRINT "@ /- X-X-X  X\- -' -':_\"
+153 END IF
+155 IF B > 5999 AND B < 9000 THEN LOCATE 7, 7: PRINT "COOLCAR": SOUND 262, 10: SOUND 392, 10
+158 IF B > 8999 THEN LOCATE 7, 7: PRINT "AWESOCAR": SOUND 392, 10: SOUND 523, 10
+160 IF D = 2 AND (C - 500 > B OR C + 500 < B) THEN PRINT : PRINT : PRINT : PRINT : PRINT : PRINT : PRINT : PRINT : PRINT "IT COSTS $"; B: D = 10
+170 FOR A = 1 TO 8000: NEXT A: CLS : IF D = 10 THEN D = 0: GOTO 20
+180 SC = SC + ((3 - D) * 100)
+185 CLS : PRINT "SCORE :"; SC
+190 PRINT : PRINT "WHAT ARE THE DIMENSIONS OF THIS NICE OBJECT?(1-9)(1-9)(1-9)"
+200 PRINT "    /---------/|     "
+210 PRINT "  /_________/  |     "
+220 PRINT "  |         |  |     "
+230 PRINT "  |         |  |     "
+240 PRINT "  |         |  /     "
+250 PRINT "  |_________|/       "
+260 AA = INT(9 * RND) + 1
+262 BB = INT(9 * RND) + 1
+263 IF BB = AA THEN 262
+264 CC = INT(9 * RND) + 1
+265 IF CC = BB OR CC = AA THEN 264
+270 INPUT E
+272 INPUT F
+273 IF E = F THEN PRINT "NO NUMBERS ARE THE SAME, YOU LOSE THIS ROUND.": FOR A = 1 TO 5000: NEXT A: GOTO 185
+274 INPUT G
+275 IF G = F OR G = E THEN PRINT "NO NUMBERS ARE THE SAME, YOU LOSE THIS ROUND.": FOR A = 1 TO 5000: NEXT A: GOTO 185
+276 H = 0
+280 IF (E = AA OR E = BB OR E = CC) THEN H = H + 1
+281 IF (F = AA OR F = BB OR F = CC) THEN H = H + 1
+282 IF (G = AA OR G = BB OR G = CC) THEN H = H + 1
+285 IF H = 3 THEN PRINT "YOU'RE AWESOME": SOUND 1047, 10: SC = SC + 500: GOTO 300
+286 IF H = 2 THEN PRINT "2 OUT OF 3": SOUND 523, 10: SC = SC + 300: GOTO 300
+287 IF H = 1 THEN PRINT "YOU GOT 1 OF THEM": SOUND 262, 10: SC = SC + 100: GOTO 300
+295 PRINT "YOU STINK, BUT THEY WERE "; AA; BB; CC: SOUND 62, 10: FOR A = 1 TO 5000: NEXT A: GOTO 185
+300 PRINT "THEY WERE "; AA; BB; CC: FOR A = 1 TO 5000: NEXT A
+305 CLS : PRINT "SCORE :"; SC
+310 PRINT
+320 PRINT "WHAT GRADE IS THIS NICE SCHOOL BOY IN?(1-12)"
+325 PRINT
+326 GOSUB 330
+327 GOTO 490
+330 PRINT "                    XXXXX     "
+340 PRINT "                  XXXXXXXXX   "
+350 PRINT "                  XX|'.'|XX   "
+360 PRINT "                   []\-/[]    "
+370 PRINT "                    \___/     "
+380 PRINT "                 /-/-| |-\-\  "
+390 PRINT "                 | |     | |  "
+400 PRINT "                 | |     | |  "
+410 PRINT "                 | |     | |  "
+420 PRINT "                 |||     |||  "
+430 PRINT "                   |-----|    "
+440 PRINT "                   |  .  |    "
+450 PRINT "                   |  |  |    "
+460 PRINT "                   |  |  |    "
+470 PRINT "                /---  |  ---\ "
+480 PRINT "                |-----|-----| "
+485 RETURN
+490 A = INT(12 * RND) + 1
+500 INPUT B
+510 IF A + 1 = B OR A - 1 = B THEN PRINT "CLOSE ENOUGH. IT WAS "; A: SOUND 262, 10: FOR A = 1 TO 5000: NEXT A: SC = SC + 100: GOTO 600
+520 IF A = B THEN PRINT "RIGHT!": SOUND 523, 10: FOR A = 1 TO 5000: NEXT A: SC = SC + 300: GOTO 600
+530 IF A <> B AND A - 1 <> B AND A + 1 <> B THEN PRINT "WRONG! IT WAS"; A: SOUND 62, 10: FOR A = 1 TO 5000: NEXT A: GOTO 305
+600 CLS : PRINT "SCORE: "; SC
+610 PRINT
+620 PRINT "HOW MANY CORN PLANTS ARE GOING TO GROW IN THIS CORN FIELD?(10-200)"
+630 PRINT
+640 PRINT "        |------------------|        "
+650 PRINT "       /|------------------|\       "
+660 PRINT "      //....................\\      "
+670 PRINT "     //......................\\     "
+680 PRINT "    |---------------------------|   "
+690 PRINT "    |---------------------------|   "
+700 A = (INT(20 * RND) + 1) * 10
+710 INPUT B
+720 IF A / 10 <> INT(A / 10) THEN PRINT "MULTIPLE OF TEN, PLEASE": SOUND 62, 10: FOR A = 1 TO 5000: NEXT A: GOTO 600
+730 IF A + 10 = B OR A - 10 = B THEN PRINT "CLOSE ENOUGH. IT WAS "; A: SOUND 262, 10: FOR A = 1 TO 5000: NEXT A: SC = SC + 200: GOTO 760
+735 IF A + 20 = B OR A - 20 = B THEN PRINT "IN THE AREA. IT WAS"; A: SOUND 131, 10: FOR A = 1 TO 5000: NEXT A: SC = SC + 100: GOTO 760
+740 IF A = B THEN PRINT "RIGHT!": SOUND 523, 10: FOR A = 1 TO 5000: NEXT A: SC = SC + 300: GOTO 760
+750 IF A <> B AND A - 10 <> B AND A + 10 <> B THEN PRINT "WRONG! IT WAS"; A: SOUND 62, 10: FOR A = 1 TO 5000: NEXT A: GOTO 600
+760 CLS : PRINT "SCORE: "; SC
+770 PRINT
+780 PRINT "WHAT GRADE WILL THIS NICE JUNIOR GET ON HIS SAT'S?(200-800)(200-800)"
+790 PRINT
+800 GOSUB 330
+810 PRINT
+820 AA = ((INT(13 * RND) + 1) * 50) + 150
+830 BB = ((INT(13 * RND) + 1) * 50) + 150
+840 INPUT "MATH"; A
+850 INPUT "VERBAL"; B
+860 IF A / 50 <> INT(A / 50) OR B / 50 <> INT(B / 50) THEN PRINT "MULTIPLES OF 50,PLEASE": SOUND 62, 10: FOR A = 1 TO 5000: NEXT A: GOTO 760
+870 PRINT "THE GRADES WERE MATH -"; AA; ", VERBAL -"; BB
+880 IF A = AA AND B = BB THEN PRINT "YOU GOT THEM BOTH RIGHT!": SOUND 1047, 10: FOR A = 1 TO 5000: NEXT A: SC = SC + 500: GOTO 1000
+890 IF A = AA AND (B - 50 = BB OR B + 50 = BB) THEN PRINT "MATH WAS RIGHT,VERBAL WAS CLOSE.": SOUND 523, 10: FOR A = 1 TO 10000: NEXT A: SC = SC + 400: GOTO 1000
+900 IF B = BB AND (A - 50 = AA OR A + 50 = AA) THEN PRINT "VERBAL WAS RIGHT,MATH WAS CLOSE.": SOUND 523, 10: FOR A = 1 TO 10000: NEXT A: SC = SC + 400: GOTO 1000
+902 IF A = AA THEN PRINT "MATH WAS RIGHT": SOUND 262, 10: FOR A = 1 TO 10000: NEXT A: SC = SC + 400: GOTO 1000
+905 IF B = BB THEN PRINT "VERBAL WAS RIGHT": SOUND 262, 10: FOR A = 1 TO 10000: NEXT A: SC = SC + 400: GOTO 1000
+910 IF (B - 50 = BB OR B + 50 = BB) AND (A - 50 = AA OR A + 50 = AA) THEN PRINT "BOTH WERE CLOSE": SOUND 262, 10: FOR A = 1 TO 10000: NEXT A: SC = SC + 300: GOTO 1000
+920 IF (B - 50 = BB OR B + 50 = BB) THEN PRINT "VERBAL WAS CLOSE": SOUND 131, 10: FOR A = 1 TO 10000: NEXT A: SC = SC + 200: GOTO 1000
+930 IF (A - 50 = AA OR A + 50 = AA) THEN PRINT "MATH WAS CLOSE": SOUND 131, 10: FOR A = 1 TO 10000: NEXT A: SC = SC + 200: GOTO 1000
+940 PRINT "YOU STINK": SOUND 62, 10: FOR A = 1 TO 10000: NEXT A: GOTO 760
+1000 CLS : PRINT "SCORE: "; SC
+

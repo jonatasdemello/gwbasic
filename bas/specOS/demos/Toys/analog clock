@@ -1,0 +1,19 @@
+ZXASCII
+AUTO -1
+PROG analog clock
+10 REM Analog Clock with sweep-second-hand
+20 PALETTE 8,0,90,82: PALETTE 4,50,255,50: SCREEN LOCK: DEGREES
+30 LET xc=SCRw/2: LET yc=SCRh/2: LET os=SECONDS TIME: LET swinc=0
+40 CLS : CIRCLE INK 0;xc,yc,150 FILL 
+50 FOR f=0 TO 59: TEXT INK 3;PAPER 0;MOVE -3+xc+COS(6*f)*136,-6+yc+SIN(6*f)*136;".": NEXT f
+60 RESTORE : FOR f=0 TO 11
+70 IF f MOD 3 THEN CIRCLE INK 4;xc+COS(30*f)*136,yc+SIN(30*f)*136,3 FILL ELSE READ a$,x,y: PRINT PAPER 0;MOVE x,y;SCALE 2,2;INK 10;a$
+80 NEXT f
+90 LET t=TIME: LET s=SECONDS t-15: LET m=MINUTES t-15: LET h=(30*((HOUR t MOD 12)-15))+30*(m/60): LET m=(6*m)+6*(s/60): LET s=6*s
+100 IF os=s THEN INC swinc,6/50 ELSE LET swinc=0
+110 LET os=s: INC s,swinc
+120 DRAW INK 12;xc,yc TO xc+COS(s)*120,yc+SIN(s)*120
+130 POLYGON INK 10;xc-2,yc TO xc+COS(m)*100,yc+SIN(m)*100 TO xc,yc-2
+140 POLYGON INK 9;xc-3,yc TO xc+COS(h)*80,yc+SIN(h)*80 TO xc,yc-3
+150 IF INKEY$="" THEN WAIT SCREEN : GO TO 40
+160 DATA "12",xc-16,yc-144,"3",xc+128,yc-8,"6",xc-8,yc+128,"9",xc-144,yc-8

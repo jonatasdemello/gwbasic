@@ -1,0 +1,17 @@
+
+David Ahl's Basic Computer Games
+
+
+This archive contains a copy of the book on Word 2003 format.  The "(abridged)" 
+version is a copy of the book without the program code, since electronic copies 
+of the programs are included here.  (It's better for printing, if you don't need 
+a hard copy of the programs.)
+
+READ_ME.NOW is the readme file that was on the Web site where I found this book 
+(http://www.atariarchives.org/bca/).
+
+M.BAS is the menu file for the games.  The other .BAS files are the games 
+themselves.
+
+Enjoy the games!
+-Leon Baradat

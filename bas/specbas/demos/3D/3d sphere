@@ -1,0 +1,10 @@
+ZXASCII
+AUTO -1
+PROG 3d sphere
+10 FOR i=0 TO 255: PALETTE i,i,i,i: NEXT i: CLS 128: LET sw=SCRw/2,sh=SCRh/2
+20 DIM light=20,20,-50 BASE 0
+30 LET l=SQR(light(0)*light(0)+light(1)*light(1)+light(2)*light(2)),light(0)=light(0)/l,light(1)=light(1)/l,light(2)=light(2)/l
+40 LET r=100,k=4,amb=.1
+50 FOR i=INT -r TO INT(r+.5): LET x=i+.5: FOR j=INT(-2*r) TO INT(2*r+.5): LET y=j/2+.5
+60 IF x*x+y*y>r*r THEN GO TO 70 ELSE LET v0=x,v1=y,v2=SQR(r*r-x*x-y*y),l=SQR(v0*v0+v1*v1+v2*v2),v0=v0/l,v1=v1/l,v2=v2/l: PLOT INK MIN(((MIN(0,light(0)*v0+light(1)*v1+light(2)*v2)^k)+amb)*255,255);x+sw,y+sh
+70 NEXT j: NEXT i

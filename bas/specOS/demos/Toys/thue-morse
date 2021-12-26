@@ -1,0 +1,6 @@
+ZXASCII
+AUTO -1
+PROG thue-morse
+10 REM Thue-Morse sequence
+20 LET c=10,a$="0"*2^(c-1): LET a,r=1: DO: FOR f=1 TO a: LET a$(a+f)=CHR$((49-CODE a$(f))+48): NEXT f: INC a,a: INC r: LOOP UNTIL r=c
+30 PRINT a$

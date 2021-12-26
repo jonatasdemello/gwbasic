@@ -1,0 +1,10 @@
+ZXASCII
+AUTO -1
+PROG ripples2
+10 GRAPHIC NEW circles,320,256: WINDOW GRAPHIC circles
+20 CLS 8: LET b=0: FOR a=7 TO 1: CIRCLE INK b*8;160,128,10*a FILL: LET b=1-b: NEXT a
+30 DIM pic$(256) BASE 0: FOR y=0 TO 255: LET pic$(y)=PEEK$(circles,320*y,320): NEXT y
+40 WINDOW 0: GRAPHIC ERASE circles: LET d=0: LET offy=(SCRh-256)/2: LET offx=(SCRw-320)/2
+100 FOR a=1 TO 253: INC d,PI/18: IF d>(2*PI) THEN LET d=0
+110 LET c=SIN d*((MOUSEx/800)*8): LET e=SIN d*((MOUSEy/480)*8): IF a+e IN [0 TO 255] THEN POKE$ 0,((a+offy)*SCRw)+c+offx,pic$(a+e)
+120 NEXT a: WAIT SCREEN: CLS: GO TO 100

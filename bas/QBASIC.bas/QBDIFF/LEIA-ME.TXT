@@ -1,0 +1,38 @@
+--- QB Diff ---
+
+TIPO: Utilitário.
+
+DESCRIÇÃO: Compara dois arquivos e verifica se são iguais, byte a
+byte.
+
+INSTRUÇÕES: Digite os caminhos (se necessário) e os nomes dos arquivos
+a comparar (ex: C:\QBASIC\QBASIC.EXE e A:\QBASIC.EXE). Os arquivos
+devem ter o mesmo tamanho. O programa vai verificar os arquivos e
+informar se são iguais ou não. Se forem, o programa é finalizado. Se
+houver sequer um byte diferente, ele terminará a verificação e
+perguntará se você quer saber quais bytes são diferentes. Se você
+escolher sim, os números ("posições") de todos os bytes
+não-coincidentes desses arquivos serão mostrados. Se não quiser mais
+vê-los, aperte ESC para sair.
+
+NOTAS: Este programa não é compatível com nomes extensos (acima de 8
+caracteres + 3 da extensão). Para utilizá-lo com arquivos ou pastas
+que tenham nomes extensos, descubra o nome correspondente do MS-DOS
+nas suas propriedades (geralmente as 6 primeiras letras + ~1) e use-o
+no programa.
+
+Este programa foi criado inicialmente para testar se o Ultra COD
+(outro programa meu) funcionava direitinho, mas aí ele acabou se
+tornando um outro programa, útil para algumas situações, por exemplo:
+um arquivo aparenta estar corrompido e aí você quer saber se está ou
+não; basta fazer uma comparação entre ele e o original, usando o
+QB Diff.
+
+O nome "QB Diff" vem de QB -> QBasic (óbvio) e Diff -> esse tipo de
+programa, que compara arquivos byte a byte.
+
+
+
+Por André Willik Valenti
+   Web: www.willik.cjb.net
+E-mail: qbasic@willik.cjb.net

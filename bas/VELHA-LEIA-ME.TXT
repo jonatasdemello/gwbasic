@@ -1,0 +1,17 @@
+--- Jogo da velha ---
+
+TIPO: Jogo.
+
+DESCRIÇÃO: Precisa de alguma?
+
+INSTRUÇÕES: Ver no jogo.
+
+NOTAS: Meu primeiro jogo jogável! Não está muito bem feito e o código
+está muito complicado. Isso é porque nesta época eu ainda não sabia
+muito sobre QBasic, mas já é um bom começo!
+
+
+
+Por André Willik Valenti
+   Web: www.willik.cjb.net
+E-mail: qbasic@willik.cjb.net
