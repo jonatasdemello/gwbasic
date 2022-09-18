@@ -1,0 +1,34 @@
+dim scores(10)
+data 55,33,877,99,44,101,21,88,105,1
+rem DBGTUTOR.ASI.  This program is for use with the debugger tutorial.
+rem It is a sample bubble sort program containing bugs.
+   gosub readscores:
+   rem sort the array scores()
+   print "Sorting..."
+   for i=i to 9
+      for j=1 to 9
+          j1=j+1
+          if scores(j)>scores(j1) then swapentries:
+continuesort:
+          next j
+   next i
+   rem now print the results
+   print "Here are the sorted scores: "
+   for i=1 to 10
+      print scores(i);
+   next i
+   end
+swapentries:
+   rem this code will swap two entries in the array
+   holdentry=scores(j)
+   scores(j)=scores(j1)
+   scores(j1)=holdentry
+   goto continuesort:
+readscores:
+      print "Orignal Scores:"
+      for i=1 to 10
+          read scores(i)
+          print scores(i);
+      next i
+      print ""
+   return

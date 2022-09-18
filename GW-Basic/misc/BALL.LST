@@ -1,0 +1,99 @@
+Wed Feb 15 20:46:04 1995            ASIC 5.00 COMPILER             Page 1
+
+Source File:  D:\BASIC\BALL.ASI
+
+00039    * LOCATE STATEMENT 'CURSOR' PARAMETER NOT SUPPORTED
+00039       ** E009 ** Keyword Unknown: 'CURSOR'
+00054    * LOCATE STATEMENT 'CURSOR' PARAMETER NOT SUPPORTED
+00054       ** E009 ** Keyword Unknown: 'CURSOR'
+00067    * LOCATE STATEMENT 'CURSOR' PARAMETER NOT SUPPORTED
+00067       ** E009 ** Keyword Unknown: 'CURSOR'
+00082    * LOCATE STATEMENT 'CURSOR' PARAMETER NOT SUPPORTED
+00082       ** E009 ** Keyword Unknown: 'CURSOR'
+00095    * LOCATE STATEMENT 'CURSOR' PARAMETER NOT SUPPORTED
+00095       ** E009 ** Keyword Unknown: 'CURSOR'
+00109    16:  SYNTAX ERROR
+00109       ** E009 ** Keyword Unknown: 16:
+00114    * LOCATE STATEMENT 'CURSOR' PARAMETER NOT SUPPORTED
+00114       ** E009 ** Keyword Unknown: 'CURSOR'
+00121    17:  SYNTAX ERROR
+00121       ** E009 ** Keyword Unknown: 17:
+00153    24:  SYNTAX ERROR
+00153       ** E009 ** Keyword Unknown: 24:
+00173    30:  SYNTAX ERROR
+00173       ** E009 ** Keyword Unknown: 30:
+00177    31:  SYNTAX ERROR
+00177       ** E009 ** Keyword Unknown: 31:
+00206    *** 'KEY' STATEMENT NOT SUPPORTED
+00206       ** E009 ** Keyword Unknown: 'KEY'
+00209    *** 'ON' STATEMENT NOT SUPPORTED
+00209       ** E009 ** Keyword Unknown: 'ON'
+00212    *** 'PLAY' STATEMENT NOT SUPPORTED
+00212       ** E009 ** Keyword Unknown: 'PLAY'
+00221    * COLOR STATEMENT--BACKGROUND PARAMETER NOT CONVERTED
+00221       ** E013 ** Syntax Error
+00224 :COLOR 15,0,0:FOR I=1 TO 9000:NEXT: RESUME 1298
+00224       ** E009 ** Keyword Unknown: :
+00225    42:  SYNTAX ERROR
+00225       ** E009 ** Keyword Unknown: 42:
+00229    *** 'ON' STATEMENT NOT SUPPORTED
+00229       ** E009 ** Keyword Unknown: 'ON'
+00232 ,0:CLS:END
+00232       ** E009 ** Keyword Unknown: 0:
+00233    44:  SYNTAX ERROR
+00233       ** E009 ** Keyword Unknown: 44:
+00240    *** 'PLAY' STATEMENT NOT SUPPORTED
+00240       ** E009 ** Keyword Unknown: 'PLAY'
+00243    SYNTAX ERROR
+00243       ** E012 ** No keywords in source line **
+00246    *** 'KEY' STATEMENT NOT SUPPORTED
+00246       ** E009 ** Keyword Unknown: 'KEY'
+00249    *** 'CIRCLE' STATEMENT NOT SUPPORTED
+00249       ** E009 ** Keyword Unknown: 'CIRCLE'
+00252    *** 'PAINT' STATEMENT NOT SUPPORTED
+00252       ** E009 ** Keyword Unknown: 'PAINT'
+00255    *** 'GET' STATEMENT NOT SUPPORTED
+00255       ** E009 ** Keyword Unknown: 'GET'
+00258    *** 'LINE' STATEMENT NOT SUPPORTED
+00258       ** E009 ** Keyword Unknown: 'LINE'
+00261    *** 'LINE' STATEMENT NOT SUPPORTED
+00261       ** E009 ** Keyword Unknown: 'LINE'
+Wed Feb 15 20:46:04 1995            ASIC 5.00 COMPILER             Page 2
+
+Source File:  D:\BASIC\BALL.ASI
+
+00271        * FLOATING POINT CONSTANT MUST BE CONVERTED TO FORMAT 9999999999999.99999
+00271       ** E009 ** Keyword Unknown: 9999999999999.99999
+00274        *** 'SIN' FUNCTION NOT SUPPORTED
+00274       ** E009 ** Keyword Unknown: 'SIN'
+00275        56:  SYNTAX ERROR
+00275       ** E009 ** Keyword Unknown: 56:
+00281        *** 'LINE' STATEMENT NOT SUPPORTED
+00281       ** E009 ** Keyword Unknown: 'LINE'
+00284        *** 'LINE' STATEMENT NOT SUPPORTED
+00284       ** E009 ** Keyword Unknown: 'LINE'
+00287        *** 'LINE' STATEMENT NOT SUPPORTED
+00287       ** E009 ** Keyword Unknown: 'LINE'
+00301            63:  SYNTAX ERROR
+00301       ** E009 ** Keyword Unknown: 63:
+00304 ,Y2),A
+00304       ** E012 ** No keywords in source line **
+00305            64:  SYNTAX ERROR
+00305       ** E009 ** Keyword Unknown: 64:
+00306            *** 'PLAY' STATEMENT NOT SUPPORTED
+00306       ** E009 ** Keyword Unknown: 'PLAY'
+00307            *** 'PUT' STATEMENT NOT SUPPORTED
+00307       ** E009 ** Keyword Unknown: 'PUT'
+00310            *** 'PUT' STATEMENT NOT SUPPORTED
+00310       ** E009 ** Keyword Unknown: 'PUT'
+00311            65:  SYNTAX ERROR
+00311       ** E009 ** Keyword Unknown: 65:
+00314            66:  SYNTAX ERROR
+00314       ** E009 ** Keyword Unknown: 66:
+00315            66:  SYNTAX ERROR
+00315       ** E009 ** Keyword Unknown: 66:
+00329            68:  SYNTAX ERROR
+00329       ** E009 ** Keyword Unknown: 68:
+00329 68:00329       ** E021 ** FOR without NEXT at Source Line: #267
+00329 68:00329       ** E021 ** FOR without NEXT at Source Line: D
+Created:  D:\BASIC\BALL.DBG

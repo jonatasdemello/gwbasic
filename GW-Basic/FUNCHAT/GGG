@@ -1,0 +1,1316 @@
+Connect R
+Larry
+Hi! I'm going to send the file HANGROOM.PIC to you now!
+\#PIC
+PSET
+ 4 
+ 4 
+ 15 
+C 0
+C 1
+BOX
+ 4 
+ 4 
+ 635 
+ 411 
+ 1 
+PSET
+ 4 
+ 4 
+ 1 
+L1
+U1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+BOX
+ 3 
+ 3 
+ 636 
+ 412 
+ 9 
+PSET
+ 3 
+ 3 
+ 9 
+L1
+U1
+C 10
+C 11
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+C 10
+C 11
+BOX
+ 2 
+ 2 
+ 637 
+ 413 
+ 11 
+PSET
+ 2 
+ 2 
+ 11 
+L1
+U1
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+BOX
+ 1 
+ 1 
+ 638 
+ 414 
+ 9 
+PSET
+ 1 
+ 1 
+ 9 
+L1
+U1
+C 10
+C 11
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+BOX
+ 0 
+ 0 
+ 639 
+ 415 
+ 1 
+PSET
+ 0 
+ 0 
+ 1 
+PSET
+ 14 
+ 354 
+ 15 
+C 0
+C 1
+BOX
+ 14 
+ 354 
+ 625 
+ 395 
+ 1 
+PSET
+ 14 
+ 354 
+ 1 
+L1
+U1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+BOX
+ 13 
+ 353 
+ 626 
+ 396 
+ 9 
+PSET
+ 13 
+ 353 
+ 9 
+L1
+U1
+C 10
+C 11
+BOX
+ 12 
+ 352 
+ 627 
+ 397 
+ 11 
+PSET
+ 12 
+ 352 
+ 11 
+L1
+U1
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+BOX
+ 11 
+ 351 
+ 628 
+ 398 
+ 9 
+PSET
+ 11 
+ 351 
+ 9 
+L1
+U1
+C 10
+C 11
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+BOX
+ 10 
+ 350 
+ 629 
+ 399 
+ 1 
+PSET
+ 10 
+ 350 
+ 1 
+PSET
+ 340 
+ 50 
+ 15 
+C 0
+C 1
+BOX
+ 340 
+ 50 
+ 567 
+ 303 
+ 1 
+PSET
+ 340 
+ 50 
+ 1 
+L1
+U1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+BOX
+ 339 
+ 49 
+ 568 
+ 304 
+ 9 
+PSET
+ 339 
+ 49 
+ 9 
+L1
+U1
+C 10
+C 11
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+C 10
+C 11
+BOX
+ 338 
+ 48 
+ 569 
+ 305 
+ 11 
+PSET
+ 338 
+ 48 
+ 11 
+L1
+U1
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+C 2
+C 3
+C 4
+C 5
+C 6
+C 7
+C 8
+C 9
+BOX
+ 337 
+ 47 
+ 570 
+ 306 
+ 9 
+PSET
+ 337 
+ 47 
+ 9 
+L1
+U1
+C 10
+C 11
+C 12
+C 13
+C 14
+C 15
+C 0
+C 1
+BOX
+ 336 
+ 46 
+ 571 
+ 307 
+ 1 
+PSET
+ 336 
+ 46 
+ 1 
+PSET
+ 355 
+ 242 
+ 15 
+C 0
+C 1
+C 2
+C 3
+C 4
+C 5
+C 6
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+D1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+R1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+L1
+L1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+U1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+L1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+D1
+PSET
+ 357 
+ 248 
+ 15 
+FILL
+ 357 
+ 248 
+ 6 
+ 6 
+PSET
+ 356 
+ 232 
+ 15 
+FILL
+ 356 
+ 232 
+ 6 
+ 6 
+***
+How did it look!
+Great!!!!
+\#ACTION
+Larry is smiling
+I'm going to go now, bye!
+\#ACTION
+Larry waved "Goodbye!" to you
+
+
+

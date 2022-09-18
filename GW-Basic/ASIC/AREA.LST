@@ -1,0 +1,7 @@
+Wed Feb 15 20:46:56 1995            ASIC 5.00 COMPILER             Page 1
+
+Source File:  AREA.ASI
+
+00022        * END STATEMENT WON'T CLOSE OPEN FILES AUTOMATICALLY
+00022       ** E009 ** Keyword Unknown: WON'T
+Created:  AREA.DBG

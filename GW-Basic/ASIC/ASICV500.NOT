@@ -1,0 +1,23 @@
+                       ASIC 5.00 Version Notes--08/07/94
+
+New Features in Version 5
+
+     *  New GWBASIC to ASIC Conversion Utility (BAS2ASI)
+     *  Create and call external subroutines written in ASIC
+     *  Enhanced Integrated Environment
+        -   Integrated with BAS2ASI
+        -   Pop-up help for ASCII Character codes
+        -   Optional "Auto Indent" mode
+        -   "New" option added to File Menu for creating new source files
+        -   /MONO command line option forces ASIC to display in B/W
+        -   /NOMOUSE forces ASIC to ignore the mouse, if present
+        -   Backspace key will join 2 adjacent lines when pressed in column 1
+        -   "Enter" key will now insert a new line in Overstr and Insert Modes
+     *  New Compiler Statements and Features
+        -   New conditional operators "<=", "<>", and ">=" 
+        -   Variables names can include "_" characters for readbility
+        -   FILELEN statement will return the length (in bytes) of a disk file
+        -   GETDRIVE statement will return the current disk drive
+        -   GETREGS statement will retrieve CPU registers to ASIC variables
+        -   SETREGS statement will set CPU registers based on the content of
+            ASIC variables

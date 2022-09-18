@@ -1,0 +1,15 @@
+Thu Feb 16 17:33:41 1995            ASIC 5.00 COMPILER             Page 1
+
+Source File:  TEST4.ASI
+
+00017  IF A > 639 THEN GOSUB C
+00017       ** E013 ** Syntax Error
+00019 IF B > 349 THEN CLOSE  BEEP: GOTO BB
+00019       ** E013 ** Syntax Error
+00020 LOCATE 23: COLOR 15: PRINT "Line "; B
+00020       ** E009 ** Keyword Unknown: 23:
+00021 GOTO A
+00021       ** E013 ** Syntax Error
+00028 
+00028       ** E014 ** Undefined Symbol:  BEEP:
+Created:  TEST4.DBG

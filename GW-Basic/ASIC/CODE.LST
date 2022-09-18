@@ -1,0 +1,172 @@
+Thu Mar 09 21:40:02 1995            ASIC 5.00 COMPILER             Page 1
+
+Source File:  CODE.ASI
+
+00010 COLOR 11
+00010       ** E013 ** Syntax Error
+00012 10 OPEN "I", 1, OLDFILE$
+00012       ** E013 ** Syntax Error
+00014 LINE INPUT #1, S$
+00014       ** E013 ** Syntax Error
+00015 ** E004 ** DIM Statements must precede all except REMs
+00018 20
+00018       ** E012 ** No keywords in source line **
+00019 SS$(A) = MID$(S$, A, 1)
+00019       ** E013 ** Syntax Error
+00021 IF A < 255 THEN GOTO 20
+00021       ** E013 ** Syntax Error
+00024 30
+00024       ** E012 ** No keywords in source line **
+00025 IF SS$(A) = "a" THEN SS$(A) = "m": GOTO 50
+00025       ** E009 ** Keyword Unknown: :
+00026 IF SS$(A) = "b" THEN SS$(A) = "n": GOTO 50
+00026       ** E009 ** Keyword Unknown: :
+00027 IF SS$(A) = "c" THEN SS$(A) = "b": GOTO 50
+00027       ** E009 ** Keyword Unknown: :
+00028 IF SS$(A) = "d" THEN SS$(A) = "v": GOTO 50
+00028       ** E009 ** Keyword Unknown: :
+00029 IF SS$(A) = "e" THEN SS$(A) = "c": GOTO 50
+00029       ** E009 ** Keyword Unknown: :
+00030 IF SS$(A) = "f" THEN SS$(A) = "x": GOTO 50
+00030       ** E009 ** Keyword Unknown: :
+00031 IF SS$(A) = "g" THEN SS$(A) = "z": GOTO 50
+00031       ** E009 ** Keyword Unknown: :
+00032 IF SS$(A) = "h" THEN SS$(A) = "l": GOTO 50
+00032       ** E009 ** Keyword Unknown: :
+00033 IF SS$(A) = "i" THEN SS$(A) = "k": GOTO 50
+00033       ** E009 ** Keyword Unknown: :
+00034 IF SS$(A) = "j" THEN SS$(A) = "j": GOTO 50
+00034       ** E009 ** Keyword Unknown: :
+00035 IF SS$(A) = "k" THEN SS$(A) = "h": GOTO 50
+00035       ** E009 ** Keyword Unknown: :
+00036 IF SS$(A) = "l" THEN SS$(A) = "g": GOTO 50
+00036       ** E009 ** Keyword Unknown: :
+00037 IF SS$(A) = "m" THEN SS$(A) = "f": GOTO 50
+00037       ** E009 ** Keyword Unknown: :
+00038 IF SS$(A) = "n" THEN SS$(A) = "d": GOTO 50
+00038       ** E009 ** Keyword Unknown: :
+00039 IF SS$(A) = "o" THEN SS$(A) = "s": GOTO 50
+00039       ** E009 ** Keyword Unknown: :
+00040 IF SS$(A) = "p" THEN SS$(A) = "a": GOTO 50
+00040       ** E009 ** Keyword Unknown: :
+00041 IF SS$(A) = "q" THEN SS$(A) = "p": GOTO 50
+00041       ** E009 ** Keyword Unknown: :
+00042 IF SS$(A) = "r" THEN SS$(A) = "o": GOTO 50
+00042       ** E009 ** Keyword Unknown: :
+00043 IF SS$(A) = "s" THEN SS$(A) = "i": GOTO 50
+00043       ** E009 ** Keyword Unknown: :
+00044 IF SS$(A) = "t" THEN SS$(A) = "u": GOTO 50
+00044       ** E009 ** Keyword Unknown: :
+00045 IF SS$(A) = "u" THEN SS$(A) = "y": GOTO 50
+Thu Mar 09 21:40:02 1995            ASIC 5.00 COMPILER             Page 2
+
+Source File:  CODE.ASI
+
+00045       ** E009 ** Keyword Unknown: :
+00046 IF SS$(A) = "v" THEN SS$(A) = "t": GOTO 50
+00046       ** E009 ** Keyword Unknown: :
+00047 IF SS$(A) = "w" THEN SS$(A) = "r": GOTO 50
+00047       ** E009 ** Keyword Unknown: :
+00048 IF SS$(A) = "x" THEN SS$(A) = "e": GOTO 50
+00048       ** E009 ** Keyword Unknown: :
+00049 IF SS$(A) = "y" THEN SS$(A) = "w": GOTO 50
+00049       ** E009 ** Keyword Unknown: :
+00050 IF SS$(A) = "z" THEN SS$(A) = "q": GOTO 50
+00050       ** E009 ** Keyword Unknown: :
+00051 IF SS$(A) = "A" THEN SS$(A) = "Q": GOTO 50
+00051       ** E009 ** Keyword Unknown: :
+00052 IF SS$(A) = "B" THEN SS$(A) = "W": GOTO 50
+00052       ** E009 ** Keyword Unknown: :
+00053 IF SS$(A) = "C" THEN SS$(A) = "E": GOTO 50
+00053       ** E009 ** Keyword Unknown: :
+00054 IF SS$(A) = "D" THEN SS$(A) = "R": GOTO 50
+00054       ** E009 ** Keyword Unknown: :
+00055 IF SS$(A) = "E" THEN SS$(A) = "T": GOTO 50
+00055       ** E009 ** Keyword Unknown: :
+00056 IF SS$(A) = "F" THEN SS$(A) = "Y": GOTO 50
+00056       ** E009 ** Keyword Unknown: :
+00057 IF SS$(A) = "G" THEN SS$(A) = "U": GOTO 50
+00057       ** E009 ** Keyword Unknown: :
+00058 IF SS$(A) = "H" THEN SS$(A) = "I": GOTO 50
+00058       ** E009 ** Keyword Unknown: :
+00059 IF SS$(A) = "I" THEN SS$(A) = "O": GOTO 50
+00059       ** E009 ** Keyword Unknown: :
+00060 IF SS$(A) = "J" THEN SS$(A) = "P": GOTO 50
+00060       ** E009 ** Keyword Unknown: :
+00061 IF SS$(A) = "K" THEN SS$(A) = "A": GOTO 50
+00061       ** E009 ** Keyword Unknown: :
+00062 IF SS$(A) = "L" THEN SS$(A) = "S": GOTO 50
+00062       ** E009 ** Keyword Unknown: :
+00063 IF SS$(A) = "M" THEN SS$(A) = "D": GOTO 50
+00063       ** E009 ** Keyword Unknown: :
+00064 IF SS$(A) = "N" THEN SS$(A) = "F": GOTO 50
+00064       ** E009 ** Keyword Unknown: :
+00065 IF SS$(A) = "O" THEN SS$(A) = "G": GOTO 50
+00065       ** E009 ** Keyword Unknown: :
+00066 IF SS$(A) = "P" THEN SS$(A) = "H": GOTO 50
+00066       ** E009 ** Keyword Unknown: :
+00067 IF SS$(A) = "Q" THEN SS$(A) = "J": GOTO 50
+00067       ** E009 ** Keyword Unknown: :
+00068 IF SS$(A) = "R" THEN SS$(A) = "K": GOTO 50
+00068       ** E009 ** Keyword Unknown: :
+00069 IF SS$(A) = "S" THEN SS$(A) = "L": GOTO 50
+00069       ** E009 ** Keyword Unknown: :
+00070 IF SS$(A) = "T" THEN SS$(A) = "Z": GOTO 50
+00070       ** E009 ** Keyword Unknown: :
+00071 IF SS$(A) = "U" THEN SS$(A) = "X": GOTO 50
+00071       ** E009 ** Keyword Unknown: :
+00072 IF SS$(A) = "V" THEN SS$(A) = "C": GOTO 50
+00072       ** E009 ** Keyword Unknown: :
+00073 IF SS$(A) = "W" THEN SS$(A) = "V": GOTO 50
+Thu Mar 09 21:40:02 1995            ASIC 5.00 COMPILER             Page 3
+
+Source File:  CODE.ASI
+
+00073       ** E009 ** Keyword Unknown: :
+00074 IF SS$(A) = "X" THEN SS$(A) = "B": GOTO 50
+00074       ** E009 ** Keyword Unknown: :
+00075 IF SS$(A) = "Y" THEN SS$(A) = "N": GOTO 50
+00075       ** E009 ** Keyword Unknown: :
+00076 IF SS$(A) = "Z" THEN SS$(A) = "M": GOTO 50
+00076       ** E009 ** Keyword Unknown: :
+00077 IF SS$(A) = "1" THEN SS$(A) = "0": GOTO 50
+00077       ** E009 ** Keyword Unknown: :
+00078 IF SS$(A) = "2" THEN SS$(A) = "1": GOTO 50
+00078       ** E009 ** Keyword Unknown: :
+00079 IF SS$(A) = "3" THEN SS$(A) = "9": GOTO 50
+00079       ** E009 ** Keyword Unknown: :
+00080 IF SS$(A) = "4" THEN SS$(A) = "2": GOTO 50
+00080       ** E009 ** Keyword Unknown: :
+00081 IF SS$(A) = "5" THEN SS$(A) = "8": GOTO 50
+00081       ** E009 ** Keyword Unknown: :
+00082 IF SS$(A) = "6" THEN SS$(A) = "3": GOTO 50
+00082       ** E009 ** Keyword Unknown: :
+00083 IF SS$(A) = "7" THEN SS$(A) = "7": GOTO 50
+00083       ** E009 ** Keyword Unknown: :
+00084 IF SS$(A) = "8" THEN SS$(A) = "4": GOTO 50
+00084       ** E009 ** Keyword Unknown: :
+00085 IF SS$(A) = "9" THEN SS$(A) = "6": GOTO 50
+00085       ** E009 ** Keyword Unknown: :
+00086 IF SS$(A) = "0" THEN SS$(A) = "5": GOTO 50
+00086       ** E009 ** Keyword Unknown: :
+00087 IF SS$(A) = " " THEN SS$(A) = "_": GOTO 50
+00087       ** E009 ** Keyword Unknown: :
+00088 50
+00088       ** E012 ** No keywords in source line **
+00090 IF A > 255 THEN A = 1: S$ = "": GOTO 60
+00090       ** E009 ** Keyword Unknown: 1:
+00091 GOTO 30
+00091       ** E013 ** Syntax Error
+00093 60
+00093       ** E012 ** No keywords in source line **
+00094 S$ = S$ + SS$(A)
+00094       ** E013 ** Syntax Error
+00096 IF A > 255 THEN GOTO 70
+00096       ** E013 ** Syntax Error
+00097 GOTO 60
+00097       ** E013 ** Syntax Error
+00098 70
+00098       ** E012 ** No keywords in source line **
+00100 GOTO 10
+00100       ** E013 ** Syntax Error
+Created:  CODE.DBG

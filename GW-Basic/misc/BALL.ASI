@@ -1,0 +1,328 @@
+
+   REM 95  REM Version 1.10 (C)Copyright IBM Corp 1981, 1982
+   REM Version 1.10 (C)Copyright IBM Corp 1981, 1982
+
+   REM 940 REM The IBM Personal Computer Ball
+   REM The IBM Personal Computer Ball
+
+   REM 960 REM Licensed Material - Program Property of IBM
+   REM Licensed Material - Program Property of IBM
+
+   REM 975 DEF SEG
+   rem"4:  Syntax error"
+
+   REM 980 SAMPLES$="NO"
+   SAMPLES$ = "NO"
+
+   REM 990 GOTO 1010
+   GOTO L1010:
+
+   REM 1000 SAMPLES$="YES"
+   SAMPLES$ = "YES"
+
+   REM 1010 KEY OFF:SCREEN 0,1:COLOR 15,0,0:WIDTH 40:CLS:LOCATE 5,19:PRINT "IBM"
+L1010:
+
+
+
+   REM 1020 LOCATE 7,12,0:PRINT "Personal Computer"
+   ASIC3@ = 0
+   rem"* LOCATE statement 'cursor' parameter not supported"
+   LOCATE 7 , 12
+   ASIC0$ = "Personal Computer"
+   PRINT ASIC0$
+
+   REM 1030 COLOR 10,0:LOCATE 10,9,0:PRINT CHR$(213)+STRING$(21,205)+CHR$(184)
+   COLOR 10 , 0
+   ASIC3@ = 0
+   * LOCATE statement 'cursor' parameter not supported
+   LOCATE 10 , 9
+   ASIC0@ = 213
+   ASIC0$ = CHR$ ( ASIC0@ )
+   ASIC0@ = 21
+   ASIC1@ = 205
+   ASIC1$ = STRING$ ( ASIC0@ , ASIC1@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   ASIC0@ = 184
+   ASIC1$ = CHR$ ( ASIC0@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   PRINT ASIC0$
+
+   REM 1040 LOCATE 11,9,0:PRINT CHR$(179)+"        BALL         "+CHR$(179)
+   ASIC3@ = 0
+   * LOCATE statement 'cursor' parameter not supported
+   LOCATE 11 , 9
+   ASIC0@ = 179
+   ASIC0$ = CHR$ ( ASIC0@ )
+   ASIC1$ = "        BALL         "
+   ASIC0$ = ASIC0$ + ASIC1$
+   ASIC0@ = 179
+   ASIC1$ = CHR$ ( ASIC0@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   PRINT ASIC0$
+
+   REM 1050 LOCATE 12,9,0:PRINT CHR$(179)+STRING$(21,32)+CHR$(179)
+   ASIC3@ = 0
+   * LOCATE statement 'cursor' parameter not supported
+   LOCATE 12 , 9
+   ASIC0@ = 179
+   ASIC0$ = CHR$ ( ASIC0@ )
+   ASIC0@ = 21
+   ASIC1@ = 32
+   ASIC1$ = STRING$ ( ASIC0@ , ASIC1@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   ASIC0@ = 179
+   ASIC1$ = CHR$ ( ASIC0@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   PRINT ASIC0$
+
+   REM 1060 LOCATE 13,9,0:PRINT CHR$(179)+"    Version 1.10     "+CHR$(179)
+   ASIC3@ = 0
+   * LOCATE statement 'cursor' parameter not supported
+   LOCATE 13 , 9
+   ASIC0@ = 179
+   ASIC0$ = CHR$ ( ASIC0@ )
+   ASIC1$ = "    Version 1.10     "
+   ASIC0$ = ASIC0$ + ASIC1$
+   ASIC0@ = 179
+   ASIC1$ = CHR$ ( ASIC0@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   PRINT ASIC0$
+
+   REM 1070 LOCATE 14,9,0:PRINT CHR$(212)+STRING$(21,205)+CHR$(190)
+   ASIC3@ = 0
+   * LOCATE statement 'cursor' parameter not supported
+   LOCATE 14 , 9
+   ASIC0@ = 212
+   ASIC0$ = CHR$ ( ASIC0@ )
+   ASIC0@ = 21
+   ASIC1@ = 205
+   ASIC1$ = STRING$ ( ASIC0@ , ASIC1@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   ASIC0@ = 190
+   ASIC1$ = CHR$ ( ASIC0@ )
+   ASIC0$ = ASIC0$ + ASIC1$
+   PRINT ASIC0$
+
+   REM 1080 COLOR 15,0:LOCATE 17,4,0:PRINT "(C) Copyright IBM Corp 1981, 1982
+   16:  Syntax error
+
+   REM 1090 COLOR 14,0:LOCATE 23,7,0:PRINT "Press space bar to continue"
+   COLOR 14 , 0
+   ASIC2@ = 0
+   * LOCATE statement 'cursor' parameter not supported
+   LOCATE 23 , 7
+   ASIC0$ = "Press space bar to continue"
+   PRINT ASIC0$
+
+   REM 1100 IF INKEY$<>"" THEN GOTO 1100
+L1100:
+   17:  Syntax error
+
+   REM 1110 CMD$ = INKEY$
+L1110:
+   CMD$ = INKEY$
+
+   REM 1120 IF CMD$ = "" THEN GOTO 1110
+   IF CMD$ = "" THEN
+       GOTO L1110:
+   ENDIF
+
+   REM 1130 IF CMD$ = CHR$(27) THEN GOTO 1298
+   ASIC0$ = CMD$
+   ASIC0@ = 27
+   ASIC1$ = CHR$ ( ASIC0@ )
+   IF ASIC0$ = ASIC1$ THEN
+       GOTO L1298:
+   ENDIF
+
+   REM 1140 IF CMD$ = " " THEN GOTO 1160
+   IF CMD$ = " " THEN
+       GOTO L1160:
+   ENDIF
+
+   REM 1150 GOTO 1110
+   GOTO L1110:
+
+   REM 1160 DEF SEG=0
+L1160:
+   DEFSEG = 0
+
+   REM 1170 IF (PEEK(&H410) AND &H30)<>&H30 THEN DEF SEG:GOTO 1291
+   24:  Syntax error
+
+   REM 1180 WIDTH 80:CLS:LOCATE 3,1
+   WIDTH 80
+   CLS
+   LOCATE 3 , 1
+
+   REM 1190 PRINT "HOLD IT!"
+   PRINT "HOLD IT!"
+
+   REM 1200 PRINT "YOU'RE NOT USING THE COLOR/GRAPHICS MONITOR ADAPTER!"
+   PRINT "YOU'RE NOT USING THE COLOR/GRAPHICS MONITOR ADAPTER!"
+
+   REM 1210 PRINT "THIS PROGRAM USES GRAPHICS AND REQUIRES THAT ADAPTER."
+   PRINT "THIS PROGRAM USES GRAPHICS AND REQUIRES THAT ADAPTER."
+
+   REM 1220 PRINT "PRESS THE SPACE BAR TO CONTINUE."
+   PRINT "PRESS THE SPACE BAR TO CONTINUE."
+
+   REM 1230 DEF SEG
+   30:  Syntax error
+
+   REM 1240 IF INKEY$<>"" THEN GOTO 1240
+L1240:
+   31:  Syntax error
+
+   REM 1250 CMD$ = INKEY$
+L1250:
+   CMD$ = INKEY$
+
+   REM 1260 IF CMD$ = "" THEN GOTO 1250
+   IF CMD$ = "" THEN
+       GOTO L1250:
+   ENDIF
+
+   REM 1270 IF CMD$ = CHR$(27) THEN GOTO 1298
+   ASIC0$ = CMD$
+   ASIC0@ = 27
+   ASIC1$ = CHR$ ( ASIC0@ )
+   IF ASIC0$ = ASIC1$ THEN
+       GOTO L1298:
+   ENDIF
+
+   REM 1280 IF CMD$ = " " THEN GOTO 1298
+   IF CMD$ = " " THEN
+       GOTO L1298:
+   ENDIF
+
+   REM 1290 GOTO 1250
+   GOTO L1250:
+
+   REM 1291 KEY OFF
+L1291:
+   *** 'KEY' statement not supported
+
+   REM 1292 ON ERROR GOTO 1295
+   *** 'ON' statement not supported
+
+   REM 1293 PLAY "p16"
+   *** 'PLAY' statement not supported
+
+   REM 1294 GOTO 1300
+   GOTO L1300:
+
+   REM 1295 COLOR 31,0,0
+L1295:
+   ASIC2@ = 0
+   COLOR 31 , 0
+   * COLOR Statement--Background parameter not converted
+
+   REM 1296 PRINT "THIS PROGRAM REQUIRES ADVANCED BASIC -- USE COMMAND 'BASICA'"
+:COLOR 15,0,0:FOR I=1 TO 9000:NEXT: RESUME 1298
+   42:  Syntax error
+
+   REM 1298 ON ERROR GOTO 0
+L1298:
+   *** 'ON' statement not supported
+
+   REM 1299 SCREEN 0,1:IF SAMPLES$="YES" THEN CHAIN"samples",1000 ELSE COLOR 7,0
+,0:CLS:END
+   44:  Syntax error
+
+   REM 1300 REM
+L1300:
+   REM
+
+   REM 1410 PLAY "mfl32t067"
+   *** 'PLAY' statement not supported
+
+   REM 1420 DEFINT A-Z: DIM B(280): DIM A(150)
+   Syntax Error
+
+   REM 1430 CLS:SCREEN 1,0:COLOR 8,0:KEY OFF
+   *** 'KEY' statement not supported
+
+   REM 1440 CIRCLE (160,100),10,2
+   *** 'CIRCLE' statement not supported
+
+   REM 1450 PAINT (160,100),2,2
+   *** 'PAINT' statement not supported
+
+   REM 1460 GET (150,90)-(170,110),A
+   *** 'GET' statement not supported
+
+   REM 1470 CLS:LINE (19,0)-(299,177),,B
+   *** 'LINE' statement not supported
+
+   REM 1480 LINE (20,1)-(300,178),,B
+   *** 'LINE' statement not supported
+
+   REM 1490 LOCATE 24,11:PRINT" Press ESC to exit ";
+   LOCATE 24 , 11
+   PRINT " Press ESC to exit " ;
+
+   REM 1500 FOR X=20 TO 280 STEP 4
+   FOR X = 20 TO 280
+       ASIC0@ = 4 -1
+       X = X + ASIC0@
+       * Floating point constant must be converted to format 9999999999999.99999
+
+       REM 1510 B(X)=159-CINT(ABS(SIN(X*7.853981E-02)*X)\2)
+       *** 'SIN' function not supported
+       56:  Syntax error
+
+       REM 1520 NEXT: L=7: Y2=150
+       Y2 = 150
+
+       REM 1530 LINE (223,3)-(253,175),3,BF
+       *** 'LINE' statement not supported
+
+       REM 1540 LINE (191,3)-(222,175),2,BF
+       *** 'LINE' statement not supported
+
+       REM 1550 LINE (160,3)-(190,175),1,BF
+       *** 'LINE' statement not supported
+
+       REM 1560 FOR D=0 TO 1
+L1560:
+       FOR D = 0 TO 1
+
+           REM 1570 S=20+D*260:E=280-D*260
+           ASIC2@ = D * 260
+           ASIC0@ = 20 + ASIC2@
+           S = ASIC0@
+           ASIC2@ = D * 260
+           E = 280 - ASIC2@
+
+           REM 1580 FOR X=S TO E STEP 4-8*D
+           63:  Syntax error
+
+           REM 1590 Y=B(X): N=(170-Y2)\5:PLAY "L=L;T255;N=N;": IF F THEN PUT (X2
+,Y2),A
+           64:  Syntax error
+           *** 'PLAY' statement not supported
+           *** 'PUT' statement not supported
+
+           REM 1600 PUT (X,Y),A: X2=X: Y2=Y: F=-1: NEXT
+           *** 'PUT' statement not supported
+           65:  Syntax error
+
+           REM 1610 L=(L+7) MOD 64:NEXT
+           66:  Syntax error
+           66:  Syntax error
+
+           REM 1615 A$=INKEY$:IF A$=CHR$(27) THEN 1298
+L1615:
+           ASIC0$ = INKEY$
+           A$ = ASIC0$
+           ASIC0$ = A$
+           ASIC0@ = 27
+           ASIC1$ = CHR$ ( ASIC0@ )
+           IF ASIC0$ = ASIC1$ THEN
+               GOTO L1298:
+           ENDIF
+
+           REM 1620 IF A$<>"" THEN 1615 ELSE GOTO 1560
+           68:  Syntax error

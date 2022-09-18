@@ -1,0 +1,27 @@
+Here is the QBasic Desktop!
+
+It makes it easier to run QBasic files, and DOS program!
+
+To Use it:
+
+1:   Copy ALL of the files to the \DESKTOP directory
+     
+2:   Run DESKTOP.BAT
+
+
+
+   Then, for the first time, choose the name "TopUser" at the top
+of the user list. 
+
+
+
+  To add files to the program lists, choose  "Re-Configure the desktop.
+from the list.  Then choose "Edit menu items." from the configuration list.
+
+   Then, choose a the list you want to add the program to.  Choose the spot
+where the program should go, press enter, and enter the information you are
+asked.  ALL FILES MUST BE ON THE SAME DRIVE AS THE DESKTOP FILES!!!
+
+  
+
+        Created by Larry Strong,  Finished  Mon, Oct. 31, 1994 (Halloween!) 

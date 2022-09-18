@@ -1,0 +1,6 @@
+screen 0
+Width 40
+Color 14,0
+Print"This is a TEST!!!"
+Color 5,0
+print"It Worked!"

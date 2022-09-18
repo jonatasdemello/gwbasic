@@ -1,0 +1,57 @@
+rem callsrch.asi
+rem Copyright (c) 1993 by David A. Visti -- All rights reserved
+rem this program demonstrates how to call an assembly language subroutine
+rem from ASIC.  To run this program, you must also have an assembler (such
+rem as Borland's Turbo Assembler, or Microsoft's Assembler.
+rem Here are the steps to build this program from the DOS command line
+rem Step 1) Assemble the file SRCH.ASM:
+rem
+rem                     TASM SRCH               <--Borland
+rem                     MASM SRCH               <--Microsoft
+rem Step 2) Compile the ASIC program and link to the assembler object file:
+rem                     ASICC CALLSRCH B/OBJ OBJ=SRCH LNK=C:\DOS
+rem
+rem         (Note:  Make sure that the "LNK=" parameter points to the
+rem          directory on your hard disk that contains the file: LINK.EXE)
+rem
+rem Instead of following "Step 2)" above, you can build CALLSRCH from the
+rem integrated enviroment:
+rem        o   Open the "Compile" Menu, Select "Advanced Options"
+rem        o   Select "obJects Names", and enter: SRCH    for the object name
+rem        o   Select "Obj output file" option
+rem        o   Select "Link path", and enter: C:\DOS      or whatever
+rem                                                       directory LINK.EXE
+rem                                                       is located in
+rem        o   Close menu and press <F10> to compile program.
+rem
+rem
+rem this program calls SRCH.ASM, an assembly language subroutine that will
+rem search an ASIC string array for a string, and return the element number
+rem of the array in which it found the search string.  If the search string
+rem is not found, SRCH returns an element number of "-1".
+rem call SRCH as follows:
+rem  CALL SUB "SRCH" (stringarray$(0),arraysize,searchstring$,returnval)
+dim names$(4)
+data "Tim","Jim","Dave","John","George"
+for i=0 to 4
+   read names$(i)
+next i
+search$="George"
+gosub search:
+search$="Sally"
+gosub search:
+end
+
+search:
+   call sub "srch" (names$(0),4,search$,sub1)
+   if sub1>-1 then
+      print "Found ";
+      print search$;
+      print " in element ";
+      print sub1
+   else
+      print search$;
+      print " not found in array"
+   endif
+   return
+

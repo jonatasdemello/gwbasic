@@ -1,0 +1,27 @@
+SCREEN 9
+OPEN "O", 1, "test.pic"
+color 14,1
+LOCATE 1, 0
+ PRINT "It worked!"
+A = 0
+B = 0
+ C = 0
+ L = 0
+A:
+E = POINT(A, B)
+PRINT #1, A
+ PRINT #1, B
+  PRINT #1, E
+A = A + 1
+ IF A > 639 THEN gosub c
+ B = B + 1
+IF B > 349 THEN CLOSE  BEEP: GOTO BB
+LOCATE 23: COLOR 15: PRINT "Line "; B
+GOTO A
+
+C:
+A = 0
+B = B + 1
+return
+BB:
+

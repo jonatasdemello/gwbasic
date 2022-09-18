@@ -1,0 +1,828 @@
+1  SCREEN 1: SCREEN 0: COLOR 3, 0: CLS : PLAY "mb a8>c4<a16a#8>c4<p4a8>c4<a16a#8>c4p4a8a4f16g8f8d8f8a8f8f8g8f4p8<"
+2 PRINT "ษออออออออออออออออออออออออออออออออออออออป"
+3 PRINT "บ S L O T M A N I A ! !                บ"
+4 PRINT "บ                                      บ"
+5 PRINT "บ                                      บ"
+6 PRINT "บ  A SUPER SLOT MACHINE GAME!!         บ": PRINT "ศออออออออออออออออออออออออออออออออออออออผ"
+7 LOCATE 2, 3, 0, 7: COLOR 9: PRINT "S L O T M A N I A ! !"
+8 LOCATE 5, 4, 0, 7: PRINT "A SUPER SLOT MACHINE GAME!!"
+9 LOCATE 7, 1, 0, 7: COLOR 31: PRINT "<<<<<<<<<<<<< PRESS  ENTER >>>>>>>>>>>>>"
+10 INPUT enter
+11 COLOR 3: PRINT "DO YOU NEED INSTRUCTIONS? Y OR N?": B = 5
+12 B$ = INKEY$: IF B$ = "" THEN GOTO 12
+13 IF B$ = "n" THEN GOTO 27
+14 IF B$ = "Y" OR B$ = "y" THEN GOTO 17
+15 IF B$ = "N" THEN GOTO 27
+16 PRINT "SORRY. PLEASE RE-ENTER.": GOTO 12
+17 COLOR 14, 0: CLS : PLAY "MB C64D64E64F32"
+18 PRINT "        Welcome to SLOTMANIA!"
+19 COLOR 3, 0: PRINT "SLOTMANIA is a game where you stop"
+20 PRINT "the spinner and win a certain amount of $$$$$"
+21 PRINT "Press enter to stop the spinner."
+22 PRINT "Between each round there is a bonus round."
+23 PRINT "There are instructions on how to play the bonus round"
+24 PRINT "before each round."
+25 PRINT "PRESS ANY KEY TO SEE THE CHART."
+26 B$ = INKEY$: IF B$ = "" THEN GOTO 26
+27 COLOR 3, 0: CLS
+28 PRINT ""; CHR$(5); "  "; CHR$(5); "  "; CHR$(5); "  =  $15.00"
+29 PRINT ""; CHR$(4); "  "; CHR$(4); "  "; CHR$(4); "  =  $10.00"
+30 PRINT ""; CHR$(3); "  "; CHR$(3); "  "; CHR$(3); "  =  $5.00"
+31 PRINT ""; CHR$(6); "  "; CHR$(6); "  "; CHR$(6); "  =  $4.50"
+32 PRINT ""; CHR$(6); "  "; CHR$(5); "  "; CHR$(6); "  =  $4.00"
+33 PRINT ""; CHR$(5); "  "; CHR$(6); "  "; CHR$(5); "  =  $2.00"
+34 PRINT ""; CHR$(4); "  "; CHR$(5); "  "; CHR$(4); "  =  $1.00"
+35 PRINT ""; CHR$(3); "  "; CHR$(5); "  "; CHR$(3); "  =   75"
+36 PRINT ""; CHR$(4); "  "; CHR$(6); "  "; CHR$(4); "  =   25"
+37 PRINT ""
+38 PRINT ""
+40 PRINT "Here is the chart for round 1."
+41 PRINT ""
+42 PRINT "Press enter to begin"
+43 INPUT enter
+44 COLOR 3, 0: CLS : PLAY "MB C64D64E64F64E64D64C32"
+45 PRINT "Please enter your name."
+46 INPUT n$
+47 GOTO 49: PRINT "A PRINTER???"
+49 PRINT "Ok! Get ready to go!"
+371 REM "NOTHING HERE!"
+50 INPUT a$: X = X + 2
+51 COLOR 14, 0: CLS : PLAY "MB C64D64E64F64E64D64C32"
+52 PRINT "         ÿษอออออออออออออออออป"
+53 PRINT "          บ                 บ"
+54 PRINT "          บ*****************บ"
+55 PRINT "          บ*   X   X   X   *บ"
+56 PRINT "          บ*****************บ"
+57 PRINT "          บ                 บ"
+58 PRINT "          ศอออออออออออออออออผ"
+59 COLOR 5: PRINT "          SCORE $"; X; "         "
+60 COLOR 15: PRINT "          "; n$; "               "
+61 RANDOMIZE TIMER: a = INT(RND * 15): IF a = 1 THEN GOTO 76
+62 IF a = 2 THEN GOTO 81
+63 IF a = 3 THEN GOTO 86
+64 IF a = 4 THEN GOTO 91
+65 IF a = 5 THEN GOTO 96
+66 IF a = 6 THEN GOTO 101
+67 IF a = 7 THEN GOTO 106
+68 IF a = 8 THEN GOTO 111
+69 IF a = 9 THEN GOTO 116
+70 IF a = 10 THEN GOTO 121
+71 IF a = 11 THEN GOTO 126
+72 IF a = 12 THEN GOTO 131
+73 IF a = 13 THEN GOTO 136
+74 IF a = 14 THEN GOTO 141
+75 IF a = 15 THEN GOTO 146
+
+76 a = 1: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(4); "   "; CHR$(6); ""
+77 C$ = INKEY$: IF C$ = "" THEN GOTO 81
+78 GOTO 200
+79 PRINT "EXTRA!"
+80 PRINT "EXTRA!"
+81 a = 2: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); ""
+82 C$ = INKEY$: IF C$ = "" THEN GOTO 86
+83 GOTO 200
+84 PRINT "EXTRA!"
+85 PRINT "EXTRA!"
+86 a = 3: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(5); "   "; CHR$(5); "   "; CHR$(5); ""
+87 C$ = INKEY$: IF C$ = "" THEN GOTO 91
+88 GOTO 200
+89 PRINT "EXTRA!"
+90 PRINT "EXTRA!"
+91 a = 4: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(5); ""
+92 C$ = INKEY$: IF C$ = "" THEN GOTO 96
+93 GOTO 200
+94 PRINT "EXTRA!"
+95 PRINT "EXTRA!"
+96 a = 5: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(4); "   "; CHR$(6); "   "; CHR$(4); ""
+97 C$ = INKEY$: IF C$ = "" THEN GOTO 101
+98 GOTO 200
+100 PRINT "EXTRA!"
+101 a = 6: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(6); ""
+102 C$ = INKEY$: IF C$ = "" THEN GOTO 106
+103 GOTO 200
+104 PRINT "EXTRA!"
+105 PRINT "EXTRA!"
+106 a = 7: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(3); ""
+107 C$ = INKEY$: IF C$ = "" THEN GOTO 111
+108 GOTO 200
+109 PRINT "EXTRA!"
+110 PRINT "EXTRA!"
+111 a = 8: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); ""
+112 C$ = INKEY$: IF C$ = "" THEN GOTO 116
+113 GOTO 200
+114 PRINT "EXTRA!"
+115 PRINT "EXTRA!"
+116 a = 9: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(4); "   "; CHR$(4); "   "; CHR$(4); ""
+117 C$ = INKEY$: IF C$ = "" THEN GOTO 121
+118 GOTO 200
+119 PRINT "EXTRA!"
+120 PRINT "EXTRA!"
+121 a = 10: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(6); ""
+122 C$ = INKEY$: IF C$ = "" THEN GOTO 126
+123 GOTO 200
+124 PRINT "EXTRA!"
+125 PRINT "EXTRA!"
+126 a = 11: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(4); "   "; CHR$(4); ""
+127 C$ = INKEY$: IF C$ = "" THEN GOTO 131
+128 GOTO 200
+129 PRINT "EXTRA!"
+130 PRINT "EXTRA!"
+131 a = 12: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(4); "   "; CHR$(5); "   "; CHR$(4); ""
+132 C$ = INKEY$: IF C$ = "" THEN GOTO 136
+133 GOTO 200
+134 PRINT "EXTRA!"
+135 PRINT "EXTRA!"
+136 a = 13: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(6); ""
+137 C$ = INKEY$: IF C$ = "" THEN GOTO 141
+138 GOTO 200
+139 PRINT "EXTRA!"
+140 PRINT "EXTRA!"
+141 a = 14: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(3); ""
+142 C$ = INKEY$: IF C$ = "" THEN GOTO 146
+143 GOTO 200
+144 PRINT "EXTRA!"
+145 PRINT "EXTRA!"
+146 a = 15: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); ""
+147 C$ = INKEY$: IF C$ = "" THEN GOTO 76
+148 GOTO 200
+149 PRINT "EXTRA!"
+150 PRINT "EXTRA!"
+200 X = X - .25
+201 B = B - 1
+202 IF a = 1 THEN GOTO 216
+203 IF a = 2 THEN GOTO 217
+204 IF a = 3 THEN GOTO 218
+205 IF a = 4 THEN GOTO 216
+206 IF a = 5 THEN GOTO 220
+207 IF a = 6 THEN GOTO 221
+208 IF a = 7 THEN GOTO 222
+209 IF a = 8 THEN GOTO 223
+210 IF a = 9 THEN GOTO 224
+211 IF a = 10 OR a = 11 THEN GOTO 216
+212 IF a = 12 THEN GOTO 227
+213 IF a = 13 THEN GOTO 228
+214 IF a = 14 THEN GOTO 229
+215 IF a = 15 THEN GOTO 230
+216 PLAY "<<<<C2>>>>": GOTO 231
+217 BEEP: X = X + 5: GOTO 231
+218 PLAY "C16D16E16F16G16A16B16>C2<": X = X + 15: GOTO 231
+219 GOTO 216
+220 BEEP: X = X + .25: GOTO 231
+221 BEEP: X = X + 4.5: GOTO 231
+222 BEEP: X = X + .75: GOTO 231
+223 BEEP: X = X + 5: GOTO 231
+224 PLAY ">>>C16C16C16C16<<<": X = X + 10: GOTO 231
+225 REM "EXTRA"
+226 REM "EXTRA"
+227 BEEP: X = X + 1: GOTO 231
+228 BEEP: X = X + 4.5: GOTO 231
+229 BEEP: X = X + .75: GOTO 231
+230 BEEP: X = X + 5: GOTO 231
+231 IF B <= 0 THEN GOTO 300
+232 LOCATE 12, 11, 1, 7: PRINT "YOU HAVE "; B; " SPIN(S) LEFT"
+233 LOCATE 13, 11, 1, 7: PRINT "PRESS <ENTER>": INPUT enter
+234 GOTO 51
+300 COLOR 9, 0: CLS : PLAY "a8>c4<a16a#8>c4<p4a8>c4<a16a#8>c4p4a8a4f16g8f8d8f8a8f8f8g8f4p8< "
+301 PRINT "Wow!!!": PRINT "You made it to bonus round #1!": PRINT "": PRINT "Would you like to play?": PRINT "": PRINT "(Press Q to quit)"
+302 a$ = INKEY$: IF a$ = "" THEN GOTO 302
+303 IF a$ = "y" THEN GOTO 310
+304 IF a$ = "n" THEN GOTO 350
+305 IF a$ = "q" THEN GOTO 5555
+306 IF a$ = "Y" THEN GOTO 310
+307 IF a$ = "N" THEN GOTO 350
+308 IF a$ = "Q" THEN GOTO 5555
+309 SOUND 200, 5: SOUND 100, 5: GOTO 302
+310 CLS
+311 COLOR 5: PRINT "Now what would you like to bet?"
+312 COLOR 9: PRINT "You will win 3 to 1 odds"
+313 PRINT "if you choose the correct number."
+315 COLOR 15, 0: PRINT "You have $"; X; " to bet with."
+316 INPUT bet
+317 IF bet > X THEN PRINT "TOO HIGH": GOTO 316
+318 IF bet < 0 THEN PRINT "TOO LOW!": GOTO 316
+319 PLAY "C8C16F": CLS
+320 RANDOMIZE TIMER: n = INT(RND * 4)
+321 COLOR 3: PRINT "The number has been chosen,"
+322 COLOR 15: PRINT "Can you guess what it is?"
+323 INPUT GUESS
+324 IF GUESS > 4 THEN PRINT "TOO HIGH": GOTO 323
+325 IF GUESS = n THEN GOTO 328
+326 PLAY "<<<C16C16C16C16>>>": PRINT "SORRY. THE NUMBER WAS "; n
+327 X = X - bet: GOTO 335
+328 COLOR 31: PRINT "YOU'RE RIGHT!!!!": PLAY "a8>c4<a16a#8>c4<p4a8>c4<a16a#8>c4p4a8a4f16g8f8d8f8a8f8f8g8f4p8<": bet = bet * 3: X = X + bet: GOTO 335
+335 PRINT "": PRINT "": PRINT ""
+336 COLOR 15: PRINT "Press <ENTER> to begin round 2"
+337 INPUT enter: GOTO 350
+350 COLOR 14, 0: CLS : BEEP: PRINT ""; CHR$(5); "  "; CHR$(5); "  "; CHR$(5); "  = $500.00"
+351 PRINT ""; CHR$(4); "  "; CHR$(4); "  "; CHR$(4); "  = $250.00"
+352 PRINT ""; CHR$(3); "  "; CHR$(3); "  "; CHR$(3); "  = $125.00"
+353 PRINT ""; CHR$(6); "  "; CHR$(6); "  "; CHR$(6); "  = $100.50"
+354 PRINT ""; CHR$(6); "  "; CHR$(5); "  "; CHR$(6); "  = $75.00"
+355 PRINT ""; CHR$(5); "  "; CHR$(6); "  "; CHR$(5); "  = $50.00"
+356 PRINT ""; CHR$(4); "  "; CHR$(5); "  "; CHR$(4); "  = $25.00"
+357 PRINT ""; CHR$(3); "  "; CHR$(5); "  "; CHR$(3); "  = $15.00"
+358 PRINT ""; CHR$(4); "  "; CHR$(6); "  "; CHR$(4); "  = $10.00"
+359 COLOR 15: PRINT "$  $  $  = EXTRA BONUS ROUND"
+360 PRINT ""
+362 PRINT "Here is the chart for round 2"
+363 PRINT ""
+364 PRINT "Press enter to begin"
+365 INPUT a$: SOUND 1500, 2: COLOR 15, 0: CLS : PRINT "Would you like instructions about the": PRINT "extra bonus rounds?": INPUT a$: IF a$ = "Y" THEN GOTO 5000
+    IF a$ = "y" THEN GOTO 5000
+    IF a$ = "n" THEN GOTO 372
+369 IF a$ = "N" THEN GOTO 372
+370 PRINT "Press enter to go on": INPUT enter: X = X - 2:
+372 IF X <= 1.9999999# THEN GOTO 5555
+374 COLOR 9, 0: CLS : PLAY "MB C64D64E64F64E64D64C32": PRINT "         ÿษอออออออออออออออออป"
+375 PRINT "          บ                 บ"
+376 PRINT "          บ*****************บ"
+377 PRINT "          บ*   X   X   X   *บ"
+378 PRINT "          บ*****************บ"
+379 PRINT "          บ                 บ"
+380 PRINT "          ศอออออออออออออออออผ"
+381 COLOR 5: PRINT "          SCORE $"; X; "         "
+382 COLOR 15: PRINT "          "; n$; "               "
+383 RANDOMIZE TIMER: a = INT(RND * 20): IF a = 1 THEN GOTO 384
+384 IF a = 2 THEN GOTO 408
+385 IF a = 3 THEN GOTO 413
+386 IF a = 4 THEN GOTO 418
+387 IF a = 5 THEN GOTO 423
+388 IF a = 6 THEN GOTO 428
+389 IF a = 7 THEN GOTO 433
+390 IF a = 8 THEN GOTO 438
+391 IF a = 9 THEN GOTO 443
+392 IF a = 10 THEN GOTO 448
+393 IF a = 11 THEN GOTO 453
+394 IF a = 12 THEN GOTO 458
+395 IF a = 13 THEN GOTO 463
+396 IF a = 14 THEN GOTO 468
+397 IF a = 15 THEN GOTO 473
+398 IF a = 16 THEN GOTO 478
+399 IF a = 17 THEN GOTO 483
+400 IF a = 18 THEN GOTO 488
+401 IF a = 19 THEN GOTO 493
+402 IF a = 20 THEN GOTO 498
+403 a = 1: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(4); "   "; CHR$(4); "": PLAY "C64"
+404 C$ = INKEY$: IF C$ = "" THEN GOTO 408
+405 IF C$ = "Q" THEN GOTO 5559
+406 GOTO 515
+407 PRINT "EXTRA"
+408 a = 2: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(4); "   "; CHR$(6); "": PLAY "F64"
+409 C$ = INKEY$: IF C$ = "" THEN GOTO 413
+410 IF C$ = "Q" THEN GOTO 5559
+411 GOTO 515
+412 PRINT "EXTRA"
+413 a = 3: LOCATE 4, 16, 1, 7: COLOR 15: PRINT "$   $   $": PLAY "C32"
+414 C$ = INKEY$: IF C$ = "" THEN GOTO 418
+415 IF C$ = "Q" THEN GOTO 5559
+416 GOTO 531
+417 PRINT "EXTRA"
+418 a = 4: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(4); "   "; CHR$(6); "": PLAY "F64"
+419 C$ = INKEY$: IF C$ = "" THEN GOTO 423
+420 IF C$ = "Q" THEN GOTO 5559
+421 GOTO 515
+422 PRINT "EXTRA"
+423 a = 5: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(5); "   "; CHR$(5); "": PLAY "C64"
+424 C$ = INKEY$: IF C$ = "" THEN GOTO 428
+425 IF C$ = "Q" THEN GOTO 5559
+426 GOTO 515
+427 PRINT "EXTRA"
+428 a = 6: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(6); "": PLAY "F64"
+429 C$ = INKEY$: IF C$ = "" THEN GOTO 433
+430 IF C$ = "Q" THEN GOTO 5559
+431 GOTO 515
+432 PRINT "EXTRA"
+433 a = 7: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(4); "": PLAY "C64"
+434 C$ = INKEY$: IF C$ = "" THEN GOTO 438
+435 IF C$ = "Q" THEN GOTO 5559
+436 GOTO 515
+437 PRINT "EXTRA"
+438 a = 8: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(5); "": PLAY "F64"
+439 C$ = INKEY$: IF C$ = "" THEN GOTO 443
+440 IF C$ = "Q" THEN GOTO 5559
+441 GOTO 515
+442 PRINT "EXTRA"
+443 a = 9: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(3); "": PLAY "C64"
+444 C$ = INKEY$: IF C$ = "" THEN GOTO 448
+445 IF C$ = "Q" THEN GOTO 5559
+446 GOTO 515
+447 PRINT "EXTRA"
+448 a = 10: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(5); "   "; CHR$(3); "": PLAY "F64"
+449 C$ = INKEY$: IF C$ = "" THEN GOTO 453
+450 IF C$ = "Q" THEN GOTO 5559
+451 GOTO 500
+452 PRINT "EXTRA"
+453 a = 11: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(6); "   "; CHR$(3); "": PLAY "C64"
+454 C$ = INKEY$: IF C$ = "" THEN GOTO 458
+455 IF C$ = "Q" THEN GOTO 5559
+456 GOTO 515
+457 PRINT "EXTRA"
+458 a = 12: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(3); "": PLAY "F64"
+459 C$ = INKEY$: IF C$ = "" THEN GOTO 463
+460 IF C$ = "Q" THEN GOTO 5559
+461 GOTO 515
+462 PRINT "EXTRA"
+463 a = 13: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); "": PLAY "C64"
+464 C$ = INKEY$: IF C$ = "" THEN GOTO 468
+465 IF C$ = "Q" THEN GOTO 5559
+466 GOTO 515
+467 PRINT "EXTRA"
+468 a = 14: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "F64"
+469 C$ = INKEY$: IF C$ = "" THEN GOTO 473
+470 IF C$ = "Q" THEN GOTO 5559
+471 GOTO 515
+472 PRINT "EXTRA"
+473 a = 14: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "F64"
+474 C$ = INKEY$: IF C$ = "" THEN GOTO 478
+475 IF C$ = "Q" THEN GOTO 5559
+476 GOTO 515
+477 PRINT "EXTRA"
+478 a = 15: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(6); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "C64"
+479 C$ = INKEY$: IF C$ = "" THEN GOTO 483
+480 IF C$ = "Q" THEN GOTO 5559
+481 GOTO 515
+482 PRINT "EXTRA"
+483 a = 16: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "F64"
+484 C$ = INKEY$: IF C$ = "" THEN GOTO 488
+485 IF C$ = "Q" THEN GOTO 5559
+486 GOTO 515
+487 PRINT "EXTRA"
+488 a = 17: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(5); "   "; CHR$(4); "": PLAY "C64"
+489 C$ = INKEY$: IF C$ = "" THEN GOTO 493
+490 IF C$ = "Q" THEN GOTO 5559
+491 GOTO 515
+492 PRINT "EXTRA"
+493 a = 18: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(4); "": PLAY "F64"
+494 C$ = INKEY$: IF C$ = "" THEN GOTO 498
+495 IF C$ = "Q" THEN GOTO 5559
+496 GOTO 515
+497 PRINT "EXTRA"
+498 a = 19: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(6); "   "; CHR$(4); "": PLAY "C64"
+499 C$ = INKEY$: IF C$ = "" THEN GOTO 503
+500 IF C$ = "Q" THEN GOTO 5559
+501 GOTO 515
+502 PRINT "EXTRA"
+503 a = 20: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(4); "": PLAY "F64"
+504 C$ = INKEY$: IF C$ = "" THEN GOTO 403
+505 IF C$ = "Q" THEN GOTO 5559
+506 GOTO 515
+507 PRINT "ROUND  2"
+515 IF a = 1 THEN GOTO 530
+516 IF a = 2 OR a = 4 THEN GOTO 545
+517 IF a = 3 THEN GOTO 531
+518 IF a = 5 THEN GOTO 532
+519 IF a = 6 THEN GOTO 533
+520 IF a = 7 OR a = 10 THEN GOTO 545
+521 IF a = 8 THEN GOTO 534
+522 IF a = 9 THEN GOTO 535
+523 IF a = 11 OR a = 12 THEN GOTO 545
+524 IF a = 13 THEN GOTO 536
+525 IF a = 14 OR a = 16 THEN GOTO 545
+526 IF a = 15 THEN GOTO 537
+527 IF a = 17 THEN GOTO 538
+528 IF a = 18 OR a = 20 THEN GOTO 545
+529 IF a = 19 THEN GOTO 539
+530 PLAY "MB >>>C64C64C64C64<<<": X = X + 250: GOTO 372
+531 PLAY "MB C8C16F": S = S + 1: GOTO 546
+532 PLAY "MB C16D16E16F16G": X = X + 500: GOTO 546
+533 BEEP: X = X + 100: GOTO 546
+534 BEEP: X = X + 50: GOTO 546
+535 BEEP: X = X + 15: GOTO 546
+536 BEEP: X = X + 125: GOTO 546
+537 BEEP: X = X + 75: GOTO 546
+538 BEEP: X = X + 25: GOTO 546
+539 BEEP: X = X + 10: GOTO 546
+545 SOUND 150, 10: GOTO 546
+546 B$ = INKEY$: IF B$ = "" THEN GOTO 546
+547 IF X >= 2500 THEN GOTO 550 ELSE GOTO 372
+550 COLOR 14, 0: CLS : PLAY "MB C8C16F"
+551 REM""
+552 PRINT "Hey! You're pretty good!!!"
+553 COLOR 3: PRINT "You made it to the 2nd Bonus Round!!"
+554 PRINT "": COLOR 9: PRINT "Do you want to play?"
+555 a$ = INKEY$: IF a$ = "" THEN GOTO 555
+556 IF a$ = "Y" OR a$ = "y" THEN GOTO 559
+557 IF a$ = "N" OR a$ = "n" THEN GOTO 585
+558 SOUND 150, 10: GOTO 555
+559 COLOR 14, 0: SOUND 1500, 2: CLS : PRINT "Good! Enter your bet now!": PRINT ""
+560 COLOR 15: PRINT "You have  $"; X; "": INPUT bet
+561 IF bet > X THEN PRINT "TOO HIGH": GOTO 560
+562 IF bet < 0 THEN PRINT "TOO LOW!": GOTO 560
+563 COLOR 14, 0: CLS : PRINT "Now!  Press enter to start the spinner!"
+564 INPUT enter
+565 COLOR 14, 0: CLS : PLAY "MB F64": PRINT "$ $ $"
+566 a$ = INKEY$: IF a$ = "" THEN GOTO 568
+567 GOTO 575
+568 COLOR 4, 0: CLS : PLAY "MB C64": PRINT "$ S $"
+570 a$ = INKEY$: IF a$ = "" THEN GOTO 565
+571 SOUND 200, 5: SOUND 100, 5: PRINT "YOU LOST"
+572 X = X - bet
+573 INPUT a$: GOTO 585
+574 PRINT "EXTRA"
+575 COLOR 19: PLAY "MB C32D32E32F32G": PRINT "Good for you!!!"
+576 bet = bet * 3
+577 X = X + bet
+578 INPUT a$
+579 GOTO 585
+585 IF S >= 1 THEN GOTO 587
+586 GOTO 784
+587 COLOR 14, 0: CLS : PLAY "MB >>>>C16C16C16C16<<<<"
+588 PRINT "Extra Bonus Game!"
+589 COLOR 3: PRINT "Do you want to play?"
+590 COLOR 9: PRINT "OR! Trade it in for $50.00!"
+591 COLOR 5: PRINT "Press P to Play, T to Trade."
+592 a$ = INKEY$: IF a$ = "" THEN GOTO 592
+593 IF a$ = "P" OR a$ = "p" THEN GOTO 600
+594 IF a$ = "T" OR a$ = "t" THEN GOTO 596
+595 SOUND 150, 10: GOTO 592
+596 X = X + 50: S = S - 1: GOTO 585
+597 GOTO 579
+598 REM ""
+599 REM ""
+600 COLOR 15, 0: CLS : PLAY "MB C8C16F"
+601 PRINT "YOU HAVE 5 SPINS."
+602 PRINT "YOU CAN GET UP TO $1000!"
+603 PRINT "PRESS ENTER"
+604 INPUT a$: LET B = 5
+605 COLOR 15, 1: CLS :
+606 PRINT ""; CHR$(5); "  "; CHR$(5); "  "; CHR$(5); "   =   $1000"
+607 PRINT ""; CHR$(4); "  "; CHR$(4); "  "; CHR$(4); "   =   $500"
+608 PRINT ""
+609 PRINT "ANYTHING ELSE GIVES YOU $0"
+610 PRINT ""
+611 PRINT "THIS IS THE CHART FOR THE EXTRA BONUS ROUND"
+612 PRINT ""
+613 PRINT "PRESS ENTER TO GO ON"
+614 INPUT a$
+615 COLOR 3, 0: CLS : PLAY "MB C64D64E64F64E64D64C32"
+616 PRINT "         ÿษอออออออออออออออออป"
+617 PRINT "          บ                 บ"
+618 PRINT "          บ*****************บ"
+619 PRINT "          บ*   X   X   X   *บ"
+620 PRINT "          บ*****************บ"
+621 PRINT "          บ                 บ"
+622 PRINT "          ศอออออออออออออออออผ"
+623 COLOR 14: PRINT "          SCORE $"; X; "         "
+624 GOTO 625: COLOR 5: PRINT "          SCORE $"; X; "         "
+625 COLOR 15: PRINT "          "; n$; "               "
+626 RANDOMIZE TIMER: a = INT(RND * 15): IF a = 1 THEN GOTO 641
+627 IF a = 2 THEN GOTO 646
+628 IF a = 3 THEN GOTO 651
+629 IF a = 4 THEN GOTO 656
+630 IF a = 5 THEN GOTO 661
+631 IF a = 6 THEN GOTO 666
+632 IF a = 7 THEN GOTO 700
+633 IF a = 8 THEN GOTO 705
+634 IF a = 9 THEN GOTO 710
+635 IF a = 10 THEN GOTO 715
+636 IF a = 11 THEN GOTO 720
+637 IF a = 12 THEN GOTO 700
+638 IF a = 13 THEN GOTO 730
+639 IF a = 14 THEN GOTO 735
+640 IF a = 15 THEN GOTO 740
+641 a = 1: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(4); "   "; CHR$(6); ""
+642 C$ = INKEY$: IF C$ = "" THEN GOTO 646
+643 GOTO 746
+644 PRINT ""
+645 PRINT ""
+646 a = 2: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); ""
+647 C$ = INKEY$: IF C$ = "" THEN GOTO 651
+648 GOTO 746
+649 PRINT ""
+650 PRINT ""
+651 a = 3: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(5); "   "; CHR$(5); "   "; CHR$(5); ""
+652 C$ = INKEY$: IF C$ = "" THEN GOTO 656
+653 GOTO 746
+654 REM""
+655 REM""
+656 a = 4: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(5); ""
+657 C$ = INKEY$: IF C$ = "" THEN GOTO 661
+658 GOTO 746
+659 PRINT ""
+660 PRINT ""
+661 a = 5: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(4); "   "; CHR$(6); "   "; CHR$(4); ""
+662 C$ = INKEY$: IF C$ = "" THEN GOTO 665
+663 GOTO 746
+664 PRINT ""
+665 a = 6: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(6); ""
+666 C$ = INKEY$: IF C$ = "" THEN GOTO 700
+667 GOTO 746
+668 PRINT ""
+669 PRINT ""
+700 a = 7: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(3); ""
+701 C$ = INKEY$: IF C$ = "" THEN GOTO 705
+702 GOTO 746
+703 PRINT ""
+704 PRINT ""
+705 a = 8: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); ""
+706 C$ = INKEY$: IF C$ = "" THEN GOTO 710
+707 GOTO 746
+708 PRINT ""
+709 PRINT ""
+710 a = 9: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(4); "   "; CHR$(4); "   "; CHR$(4); ""
+711 C$ = INKEY$: IF C$ = "" THEN GOTO 715
+712 GOTO 746
+713 PRINT ""
+714 PRINT ""
+715 a = 10: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(6); ""
+716 C$ = INKEY$: IF C$ = "" THEN GOTO 720
+717 GOTO 746
+718 PRINT ""
+719 PRINT ""
+720 a = 11: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(4); "   "; CHR$(4); ""
+721 C$ = INKEY$: IF C$ = "" THEN GOTO 731
+728 GOTO 746
+729 PRINT ""
+730 PRINT ""
+731 a = 13: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(6); ""
+732 C$ = INKEY$: IF C$ = "" THEN GOTO 736
+733 GOTO 746
+734 REM "EXTRA!"
+735 REM "EXTRA!"
+736 a = 14: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB C64": PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(3); ""
+737 C$ = INKEY$: IF C$ = "" THEN GOTO 741
+738 GOTO 746
+739 REM "EXTRA!"
+740 REM"EXTRA!"
+741 a = 15: LOCATE 4, 16, 1, 7: COLOR 15: PLAY "MB F64": PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); ""
+742 C$ = INKEY$: IF C$ = "" THEN GOTO 746
+743 GOTO 746
+744 REM "EXTRA!"
+745 REM "EXTRA!"
+746 X = X - 0
+747 B = B - 1
+748 IF a = 1 THEN GOTO 766
+749 IF a = 2 THEN GOTO 766
+750 IF a = 3 THEN GOTO 770
+751 IF a = 4 THEN GOTO 766
+752 IF a = 5 THEN GOTO 766
+753 IF a = 6 THEN GOTO 766
+754 IF a = 7 THEN GOTO 766
+755 IF a = 8 THEN GOTO 766
+756 IF a = 9 THEN GOTO 764
+757 IF a = 10 OR a = 11 THEN GOTO 766
+759 IF a = 13 THEN GOTO 766
+760 IF a = 14 THEN GOTO 766
+761 IF a = 15 THEN GOTO 766
+762 PLAY "<<<<C2>>>>": GOTO 231
+763 BEEP: X = X + 5: GOTO 231
+764 PLAY ">>>C16C16C16C16<<<": X = X + 500: GOTO 777
+765 GOTO 216
+766 PLAY "<<<<C16C16C16C16>>>>": GOTO 777
+767 SOUND 150, 10: COLOR 3, 0: CLS
+768 PRINT "SORRY NO SPINS LEFT!"
+769 PRINT "YOU HAVE $"; X; " <PRESS ENTER>": INPUT a$: S = S - 1: GOTO 585
+770 PLAY "C16D16E16F16G16A16B16>C2<": X = X + 1000: GOTO 777
+771 REM ""
+772 REM ""
+773 BEEP: X = X + 1: GOTO 231
+774 BEEP: X = X + 4.5: GOTO 231
+775 BEEP: X = X + .75: GOTO 231
+776 BEEP: X = X + 5: GOTO 231
+777 IF B <= 0 THEN GOTO 767
+778 LOCATE 12, 11, 1, 7: PRINT "YOU HAVE "; B; " SPIN(S) LEFT"
+779 LOCATE 13, 11, 1, 7: PRINT "PRESS <ENTER>": INPUT enter
+780 GOTO 615
+784 GOTO 850
+850 COLOR 9, 0: CLS : BEEP: PRINT ""; CHR$(5); "  "; CHR$(5); "  "; CHR$(5); "  = $500.00"
+851 PRINT ""; CHR$(4); "  "; CHR$(4); "  "; CHR$(4); "  = $4000.00"
+852 PRINT ""; CHR$(3); "  "; CHR$(3); "  "; CHR$(3); "  = $3500.00"
+853 PRINT ""; CHR$(6); "  "; CHR$(6); "  "; CHR$(6); "  = $3000.00"
+854 PRINT ""; CHR$(6); "  "; CHR$(5); "  "; CHR$(6); "  = $2500.00"
+855 PRINT ""; CHR$(5); "  "; CHR$(6); "  "; CHR$(5); "  = $2000.00"
+856 PRINT ""; CHR$(4); "  "; CHR$(5); "  "; CHR$(4); "  = $1500.00"
+857 PRINT ""; CHR$(3); "  "; CHR$(5); "  "; CHR$(3); "  = $1000.00"
+858 PRINT ""; CHR$(4); "  "; CHR$(6); "  "; CHR$(4); "  = $500.00"
+859 PRINT ""
+860 PRINT ""
+862 PRINT "Here is the chart for round 3"
+863 PRINT ""
+864 PRINT "Press enter to begin": INPUT enter: GOTO 870
+865 INPUT a$: SOUND 1500, 2: COLOR 15, 0: CLS : PRINT "Would you like instructions about the": PRINT "extra bonus rounds?": INPUT a$: IF a$ = "Y" THEN GOTO 5000
+866 IF a$ = "y" THEN GOTO 5000
+867 IF a$ = "n" THEN GOTO 372
+869 IF a$ = "N" THEN GOTO 372
+870 PRINT "Press enter to go on": INPUT enter: X = X - 5:
+872 IF X <= 4.9999999# THEN GOTO 5555
+874 COLOR 5, 0: CLS : PLAY "MB C64D64E64F64E64D64C32": PRINT "         ÿษอออออออออออออออออป"
+875 PRINT "          บ                 บ"
+876 PRINT "          บ*****************บ"
+877 PRINT "          บ*   X   X   X   *บ"
+878 PRINT "          บ*****************บ"
+879 PRINT "          บ                 บ"
+880 PRINT "          ศอออออออออออออออออผ"
+881 COLOR 5: PRINT "          SCORE $"; X; "         "
+882 COLOR 15: PRINT "          "; n$; "               "
+883 RANDOMIZE TIMER: a = INT(RND * 20): IF a = 1 THEN GOTO 884
+884 IF a = 2 THEN GOTO 908
+885 IF a = 3 THEN GOTO 913
+886 IF a = 4 THEN GOTO 918
+887 IF a = 5 THEN GOTO 923
+888 IF a = 6 THEN GOTO 928
+889 IF a = 7 THEN GOTO 933
+890 IF a = 8 THEN GOTO 938
+891 IF a = 9 THEN GOTO 943
+892 IF a = 10 THEN GOTO 948
+893 IF a = 11 THEN GOTO 953
+894 IF a = 12 THEN GOTO 958
+895 IF a = 13 THEN GOTO 963
+896 IF a = 14 THEN GOTO 968
+897 IF a = 15 THEN GOTO 973
+898 IF a = 16 THEN GOTO 978
+899 IF a = 17 THEN GOTO 983
+900 IF a = 18 THEN GOTO 988
+901 IF a = 19 THEN GOTO 993
+902 IF a = 20 THEN GOTO 998
+903 a = 1: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(4); "   "; CHR$(4); "": PLAY "C64"
+904 C$ = INKEY$: IF C$ = "" THEN GOTO 908
+905 IF C$ = "Q" THEN GOTO 5559
+906 GOTO 1015
+907 PRINT "EXTRA"
+908 a = 2: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(4); "   "; CHR$(6); "": PLAY "F64"
+909 C$ = INKEY$: IF C$ = "" THEN GOTO 913
+910 IF C$ = "Q" THEN GOTO 5559
+911 GOTO 1015
+912 PRINT "EXTRA"
+913 a = 3: LOCATE 4, 16, 1, 7: COLOR 15: PRINT "$   $   $": PLAY "C32"
+914 C$ = INKEY$: IF C$ = "" THEN GOTO 918
+915 IF C$ = "Q" THEN GOTO 5559
+916 GOTO 1031
+917 PRINT "EXTRA"
+918 a = 4: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(4); "   "; CHR$(6); "": PLAY "F64"
+919 C$ = INKEY$: IF C$ = "" THEN GOTO 923
+920 IF C$ = "Q" THEN GOTO 5559
+921 GOTO 1015
+922 PRINT "EXTRA"
+923 a = 5: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(5); "   "; CHR$(5); "": PLAY "C64"
+924 C$ = INKEY$: IF C$ = "" THEN GOTO 928
+925 IF C$ = "Q" THEN GOTO 5559
+926 GOTO 1015
+927 PRINT "EXTRA"
+928 a = 6: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(6); "": PLAY "F64"
+929 C$ = INKEY$: IF C$ = "" THEN GOTO 933
+930 IF C$ = "Q" THEN GOTO 5559
+931 GOTO 1015
+932 PRINT "EXTRA"
+933 a = 7: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(6); "   "; CHR$(6); "   "; CHR$(4); "": PLAY "C64"
+934 C$ = INKEY$: IF C$ = "" THEN GOTO 938
+935 IF C$ = "Q" THEN GOTO 5559
+936 GOTO 1015
+937 PRINT "EXTRA"
+938 a = 8: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(5); "": PLAY "F64"
+939 C$ = INKEY$: IF C$ = "" THEN GOTO 943
+940 IF C$ = "Q" THEN GOTO 5559
+941 GOTO 1015
+942 PRINT "EXTRA"
+943 a = 9: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(3); "": PLAY "C64"
+944 C$ = INKEY$: IF C$ = "" THEN GOTO 948
+945 IF C$ = "Q" THEN GOTO 5559
+946 GOTO 1015
+947 PRINT "EXTRA"
+948 a = 10: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(5); "   "; CHR$(3); "": PLAY "F64"
+949 C$ = INKEY$: IF C$ = "" THEN GOTO 953
+950 IF C$ = "Q" THEN GOTO 5559
+951 GOTO 1000
+952 PRINT "EXTRA"
+953 a = 11: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(6); "   "; CHR$(3); "": PLAY "C64"
+954 C$ = INKEY$: IF C$ = "" THEN GOTO 958
+955 IF C$ = "Q" THEN GOTO 5559
+956 GOTO 1015
+957 PRINT "EXTRA"
+958 a = 12: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(3); "": PLAY "F64"
+959 C$ = INKEY$: IF C$ = "" THEN GOTO 963
+960 IF C$ = "Q" THEN GOTO 5559
+961 GOTO 1015
+962 PRINT "EXTRA"
+963 a = 13: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(3); "   "; CHR$(3); "": PLAY "C64"
+964 C$ = INKEY$: IF C$ = "" THEN GOTO 968
+965 IF C$ = "Q" THEN GOTO 5559
+966 GOTO 1015
+967 PRINT "EXTRA"
+968 a = 14: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "F64"
+969 C$ = INKEY$: IF C$ = "" THEN GOTO 973
+970 IF C$ = "Q" THEN GOTO 5559
+971 GOTO 1015
+972 PRINT "EXTRA"
+973 a = 14: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "F64"
+974 C$ = INKEY$: IF C$ = "" THEN GOTO 978
+975 IF C$ = "Q" THEN GOTO 5559
+976 GOTO 1015
+977 PRINT "EXTRA"
+978 a = 15: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(6); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "C64"
+979 C$ = INKEY$: IF C$ = "" THEN GOTO 983
+980 IF C$ = "Q" THEN GOTO 5559
+981 GOTO 1015
+982 PRINT "EXTRA"
+983 a = 16: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(6); "": PLAY "F64"
+984 C$ = INKEY$: IF C$ = "" THEN GOTO 988
+985 IF C$ = "Q" THEN GOTO 5559
+986 GOTO 1015
+987 PRINT "EXTRA"
+988 a = 17: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(5); "   "; CHR$(4); "": PLAY "C64"
+989 C$ = INKEY$: IF C$ = "" THEN GOTO 993
+990 IF C$ = "Q" THEN GOTO 5559
+991 GOTO 1015
+992 PRINT "EXTRA"
+993 a = 18: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(3); "   "; CHR$(5); "   "; CHR$(4); "": PLAY "F64"
+994 C$ = INKEY$: IF C$ = "" THEN GOTO 998
+995 IF C$ = "Q" THEN GOTO 5559
+996 GOTO 1015
+997 PRINT "EXTRA"
+998 a = 19: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(4); "   "; CHR$(6); "   "; CHR$(4); "": PLAY "C64"
+999 C$ = INKEY$: IF C$ = "" THEN GOTO 1003
+1000 IF C$ = "Q" THEN GOTO 5559
+1001 GOTO 1015
+1002 PRINT "EXTRA"
+1003 a = 20: LOCATE 4, 16, 1, 7: COLOR 15: PRINT ""; CHR$(5); "   "; CHR$(6); "   "; CHR$(4); "": PLAY "F64"
+1004 C$ = INKEY$: IF C$ = "" THEN GOTO 903
+1005 IF C$ = "Q" THEN GOTO 5559
+1006 GOTO 1015
+1007 PRINT "ROUND  3"
+1015 IF a = 1 THEN GOTO 1030
+1016 IF a = 2 OR a = 4 THEN GOTO 1045
+1017 IF a = 3 THEN GOTO 1031
+
+1018 IF a = 5 THEN GOTO 1032
+1019 IF a = 6 THEN GOTO 1033
+1020 IF a = 7 OR a = 10 THEN GOTO 1045
+1021 IF a = 8 THEN GOTO 1034
+1022 IF a = 9 THEN GOTO 1035
+1023 IF a = 11 OR a = 12 THEN GOTO 1045
+1024 IF a = 13 THEN GOTO 1036
+1025 IF a = 14 OR a = 16 THEN GOTO 1045
+1026 IF a = 15 THEN GOTO 1037
+1027 IF a = 17 THEN GOTO 1038
+1028 IF a = 18 OR a = 20 THEN GOTO 1045
+1029 IF a = 19 THEN GOTO 1039
+1030 PLAY "MB >>>C64C64C64C64<<<": X = X + 4000: GOTO 872
+1031 BEEP: X = X + 2: GOTO 1046
+1032 PLAY "MB C16D16E16F16G": X = X + 3500: GOTO 1046
+1033 BEEP: X = X + 3000: GOTO 1046
+1034 BEEP: X = X + 2500: GOTO 1046
+1035 BEEP: X = X + 2000: GOTO 1046
+1036 BEEP: X = X + 1500: GOTO 1046
+1037 BEEP: X = X + 1000: GOTO 1046
+1038 BEEP: X = X + 500: GOTO 1046
+1039 BEEP: X = X + 250: GOTO 1046
+1045 SOUND 150, 10: GOTO 1046
+1046 B$ = INKEY$: IF B$ = "" THEN GOTO 1046
+1047 IF X >= 15000 THEN GOTO 1050 ELSE GOTO 872
+1050 COLOR 14, 0: CLS : PLAY "a8>c4<a16a#8>c4<p4a8>c4<a16a#8>c4p4a8a4f16g8f8d8f8a8f8f8g8f4p8<"
+1051 PRINT "You made $"; X; "!!!!!!!!!!"
+1052 COLOR 3: PRINT "Great job!!!!!!!!!"
+1053 COLOR 9: PRINT "NOW! Here's your chance to make a new HIGH SCORE!!!!!"
+1054 COLOR 5: PRINT "Here's another number guessing game!"
+1055 COLOR 15: PRINT "Place your bet!"
+1056 INPUT bet: IF bet < 0 THEN SOUND 200, 5: SOUND 100, 5: GOTO 1056
+1057 IF bet > X THEN SOUND 200, 5: SOUND 100, 5: GOTO 1056
+1058 RANDOMIZE TIMER: n = INT(RND * 5)
+1059 COLOR 14: PRINT "The number has been chosen!"
+1060 COLOR 3: PRINT "Choose a number from 0 to 5"
+1061 INPUT number: IF number < 0 THEN SOUND 200, 5: SOUND 100, 5: GOTO 1061
+1062 IF number > 5 THEN SOUND 200, 5: SOUND 100, 5: GOTO 1061
+1063 IF number = n THEN PLAY "a8>c4<a16a#8>c4<p4a8>c4<a16a#8>c4p4a8a4f16g8f8d8f8a8f8f8g8f4p8<": COLOR 31: PRINT "You're Right!!!!!": bet = bet * 2: X = X + bet
+1064 SOUND 200, 5: SOUND 100, 5: COLOR 20: PRINT "You're WRONG!": X = X - bet
+1065 COLOR 14, 0: CLS : SOUND 1500, 2
+1066 OPEN "I", 1, "Slots.Dat"
+1067 INPUT #1, Name$
+1068 INPUT #1, Score: CLOSE
+1069 PRINT "HIGH SCORE:"
+1070 COLOR 3: PRINT "By: "
+1071 LOCATE 2, 6, 1, 7: COLOR 15: PRINT Name$
+1072 LOCATE 3, 5, 1, 7: PRINT "$ "; Score; ""
+1073 IF X > Score THEN COLOR 31: BEEP: BEEP: BEEP: PRINT "You have a new high score!!!!!": COLOR 3: PRINT "": PRINT "Please enter the name you want to putin the list:": INPUT Newname$
+1074 IF X <= Score THEN COLOR 15: PRINT "": PRINT "Sorry, you don't have a new high score.": PRINT "Play Again!!!": INPUT enter: GOTO 6000
+1075 OPEN "O", 1, "Slots.dat"
+1076 PRINT #1, Newname$
+1077 PRINT #1, X
+1078 COLOR 14, 0: CLS : SOUND 1500, 2: PRINT "A NEW HIGH SCORE!!!:"
+1079 COLOR 15: PRINT Newname$
+1080 COLOR 3: PRINT X
+1081 INPUT enter
+1082 GOTO 6000
+5000 COLOR 14, 0: CLS : BEEP:
+5001 PRINT "In some rounds you can get EXTRA BONUS ROUNDS"
+5002 PRINT "If you get $ $ $ on the spinner you get one"
+5003 PRINT "There is always at least 1 bonus game"
+5004 PRINT "between each round. If you get"
+5005 PRINT "an EXTRA BONUS ROUND you can choose if "
+5006 PRINT "you want to play it or trade them"
+5007 PRINT "in for $50 each. You cannot"
+5008 PRINT "trade in the regular bonus round."
+5009 PRINT ""
+5010 PRINT " PRESS ENTER TO GO ON"
+5011 INPUT enter: GOTO 372
+5550 COLOR 15, 4: CLS : PLAY "MB F32E32D32C"
+5551 PRINT "YOU DON'T HAVE ENOUGH MONEY"
+5552 PRINT "TO PAY FOR ANOTHER SPIN"
+5553 PRINT ""
+5554 PRINT "   G A M E   O V E R": INPUT enter: END
+5555 COLOR 15, 4: CLS : PLAY "MB G64F64E64D64C"
+5556 PRINT "SORRY! YOU HAVE NO MONEY LEFT!"
+5557 PRINT "PLEASE WAIT"
+5558 INPUT enter: END
+5559 COLOR 15, 4: CLS : PRINT "     GAME OVER "
+5560 PRINT " "
+5561 END
+6000 COLOR 14, 0: CLS : PLAY "a8>c4<a16a#8>c4<p4a8>c4<a16a#8>c4p4a8a4f16g8f8d8f8a8f8f8g8f4p8<": PRINT "Goodbye!! Come again!": END
+

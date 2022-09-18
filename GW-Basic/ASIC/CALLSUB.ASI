@@ -1,0 +1,7 @@
+REM callsub.asi--calls ASIC subroutine TESTSUB.ASI
+REM (see ASIC.DOC--SUB statement for more information)
+PRINT "DOLLAR AMOUNT";
+INPUT DOL@
+CALL SUB "PrintDollars" (DOL@)
+PRINT DOL@
+

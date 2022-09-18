@@ -1,0 +1,136 @@
+REM FILEDEMO.ASI
+
+REM This is an ASIC demo program which illustrates how to perform various file
+REM operations.
+
+REM Part I - Creates an ASCII file easily readable by GWBASIC/BASICA and others 
+REM Part II - Reads an ASCII file with strings delimited by CR/LF
+REM Part III - Creates a 5 record random file and allows you to display and
+REM            update any record.
+REM Part IV - Appends a record using the OPEN statement with Append option
+REM Part V  - Appends a record to a file OPEN in random I/O mode ("R")
+REM           and then lists all records in the file.
+
+REM Note:  This sample code does not check the ERROR system variable after
+REM        most OPEN/CLOSE/INPUT#/PRINT# statements.  However, when writing
+REM        "real" programs you should always add a statement to check for
+REM        errors, such as "IF ERROR>0 THEN PROCESSERROR:" after EVERY
+REM        OPEN/CLOSE/INPUT#/PRINT# statement.
+
+
+REM Part I - Creating a file readable by GWBASIC/BASICA and other programs.
+REM Write file FILEDEMO.001 with a string and integer delimited by comma,
+REM with a carriage return/line feed sequence at the end
+CR$=CHR$(13)
+LF$=CHR$(10)
+CRLF$=CR$+LF$
+OPEN "O", 1,"FILEDEMO.001"
+APPLES=100
+PRINT #1, "Apples" NONULL
+APPLES$=STR$(APPLES)
+PRINT #1,"," NONULL
+PRINT #1, APPLES$ NONULL
+PRINT #1, CRLF$ NONULL
+CLOSE 1
+
+REM Part II - Reading a "normal" ASCII DOS file (CR/LF delimited).
+REM Reads FILEDEMO.001 which was written in part I, and displays it's contents. 
+OPEN "I", 1, "FILEDEMO.001"
+INPUT #1,APPLES$ CRLF
+PRINT APPLES$
+CLOSE 1
+
+REM PART III - Using a random file
+REM  Create a file FILEDEMO.002
+OPEN "O",1,"FILEDEMO.002"
+REM Create five "records" with a single integer field, set initial values 1-5.
+REM File is written in normal ASIC format for integers (2 binary bytes).
+FOR I=1 TO 5
+   PRINT #1,i
+NEXT I
+CLOSE 1
+REM Process FILEDEMO.002 randomly
+REM Prompt for a record to modify, show the current value, accept a new value
+REM from the user, and then write the new value.
+OPEN "R",1,"FILEDEMO.002"
+GETRECNO:
+   PRINT "ENTER RECORD # TO MODIFY";
+   INPUT RECNO
+   IF RECNO<1 THEN
+       PRINT "RECORD # MUST BE GREATER THAN 0"
+       GOTO GETRECNO:
+   ELSE
+       IF RECNO>5 THEN
+           PRINT "RECORD # MUST BE LESS THAN 5"
+           GOTO GETRECNO:
+       ENDIF
+   ENDIF
+FILEOFFSET=RECNO*2
+FILEOFFSET=FILEOFFSET - 2
+REM FILEOFFSET NOTES:  In this example, each record contains one integer field
+REM that is two bytes long.  Must subtract two since first record starts at
+REM offset=0.
+NEWPOS=FILEPOS(1,FILEOFFSET)
+INPUT #1, VALUE
+PRINT "CURRENT VALUE IS ";
+PRINT VALUE
+PRINT "ENTER NEW VALUE ";
+INPUT VALUE
+NEWPOS=FILEPOS(1,FILEOFFSET)
+PRINT #1, VALUE
+CLOSE 1
+
+REM PART IV - Append a record to the random file FILEDEMO.002
+REM Append option 1 - Use OPEN with the "A" option if the file is not open.
+REM Add record #6 with a value of 99
+OPEN "A",1,"FILEDEMO.002"
+PRINT #1, 99
+CLOSE 1
+
+REM Append option 2 - If file is already open random ("R"), use the file pos to 
+REM move to the end of the file, and then write the record
+REM add record # 7
+OPEN "R",1,"FILEDEMO.002"
+X=FILEPOS(1,EOF)
+PRINT #1, 999
+
+REM Now position file to beginning, and display all values by reading file
+REM sequentially
+NEWPOS=FILEPOS(1,0)
+RECNO=0
+READALL:
+   INPUT #1,VALUE
+   IF ERROR>0 THEN
+       PRINT "File Status = ";
+       PRINT ERROR
+       PRINT "Records Read = ";
+       PRINT RECNO
+       CLOSE 1
+       GOTO EXIT:
+   ENDIF
+   RECNO=RECNO+1
+   PRINT "Record # ";
+   PRINT RECNO;
+   PRINT " ";
+   PRINT VALUE
+   GOTO READALL:
+EXIT: REM clean up disk
+   PRINT "Do you want to delete the work files created by this program"
+   print "'FILEDEMO.001 and FILEDEMO.002' (Y/N)";
+   INPUT x$
+   x$=UCASE$(x$)
+   IF x$="Y" THEN
+       KILL "filedemo.001"
+       KILL "filedemo.002"
+       PRINT "Work files deleted"
+   ENDIF
+   END
+
+
+
+
+
+
+
+
+

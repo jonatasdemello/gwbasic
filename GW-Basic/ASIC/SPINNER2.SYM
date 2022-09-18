@@ -1,0 +1,935 @@
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 1
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+ERROR                                                     INT-VAR       016A
+EXTENDED                                                  INT-VAR       0180
+DEFSEG                                                    INT-VAR       018E
+2                                                         INT-CON       0002
+"*********************"                                   STR-CON       0004
+3                                                         INT-CON       001A
+"*  SUPER  SPINNER   *"                                   STR-CON       001C
+4                                                         INT-CON       0032
+"*                   *"                                   STR-CON       0034
+5                                                         INT-CON       004A
+"*      TWO          *"                                   STR-CON       004C
+6                                                         INT-CON       0062
+7                                                         INT-CON       0064
+PLAY                                                      INT-VAR       01C6
+8                                                         INT-CON       0066
+15                                                        INT-CON       0068
+13                                                        INT-CON       006A
+9                                                         INT-CON       006C
+10                                                        INT-CON       006E
+"<<WELCOME TO SUPER SPINNER # 2>>"                        STR-CON       0070
+11                                                        INT-CON       0091
+"WHAT IS YOUR NAME? "                                     STR-CON       0093
+12                                                        INT-CON       00A7
+A$                                                        STR-VAR       01C8
+"HELLO "                                                  STR-CON       00A9
+"!"                                                       STR-CON       0219
+20                                                        INT-CON       00B0
+21                                                        INT-CON       00B2
+ENTER                                                     INT-VAR       021B
+22                                                        INT-CON       00B4
+14                                                        INT-CON       00B6
+23                                                        INT-CON       00B8
+"C16D16E16F16G16F16E16D16C16"                             STR-CON       021D
+24                                                        INT-CON       00BA
+25                                                        INT-CON       00BC
+"    SPINS       :   SCORE NEEDED"                        STR-CON       0239
+26                                                        INT-CON       00BE
+"      1         :    300 or less          <<R>>"         STR-CON       025A
+27                                                        INT-CON       00C0
+"      3         :    301 - 1000           <<O>>"         STR-CON       028A
+28                                                        INT-CON       00C2
+"      5         :    1001 - 1500          <<U>>"         STR-CON       02BA
+29                                                        INT-CON       00C4
+"      7         :    1501 - 2000          <<N>>"         STR-CON       02EA
+30                                                        INT-CON       00C6
+"      9         :    2001 - 2500          <<D>>"         STR-CON       031A
+31                                                        INT-CON       00C8
+"      11        :    2501 - 3500          << >>"         STR-CON       034A
+32                                                        INT-CON       00CA
+"      15        :    3501 and up          <<1>>"         STR-CON       037A
+THE                                                       INT-VAR       03AA
+POINTS                                                    INT-VAR       03AC
+RANGE                                                     INT-VAR       03AE
+FROM                                                      INT-VAR       03B0
+100                                                       INT-CON       00CC
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 2
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+1                                                         INT-CON       00CE
+500                                                       INT-CON       00D0
+34                                                        INT-CON       00D2
+"PRESS <ENTER> NOW"                                       STR-CON       03B2
+35                                                        INT-CON       00D4
+36                                                        INT-CON       00D6
+37                                                        INT-CON       00D8
+0                                                         INT-CON       00DA
+38                                                        INT-CON       00DC
+39                                                        INT-CON       00DE
+S                                                         INT-VAR       03C4
+42                                                        INT-CON       00E0
+B$                                                        STR-VAR       03C6
+43                                                        INT-CON       00E2
+""                                                        STR-CON       0417
+45                                                        INT-CON       00E4
+44                                                        INT-CON       00E6
+200                                                       INT-CON       00E8
+46                                                        INT-CON       00EA
+A                                                         INT-VAR       0418
+48                                                        INT-CON       00EC
+49                                                        INT-CON       00EE
+51                                                        INT-CON       00F0
+50                                                        INT-CON       00F2
+53                                                        INT-CON       00F4
+54                                                        INT-CON       00F6
+56                                                        INT-CON       00F8
+55                                                        INT-CON       00FA
+57                                                        INT-CON       00FC
+59                                                        INT-CON       041A
+60                                                        INT-CON       041C
+62                                                        INT-CON       041E
+61                                                        INT-CON       0420
+63                                                        INT-CON       0422
+65                                                        INT-CON       0424
+66                                                        INT-CON       0426
+68                                                        INT-CON       0428
+67                                                        INT-CON       042A
+69                                                        INT-CON       042C
+71                                                        INT-CON       042E
+72                                                        INT-CON       0430
+74                                                        INT-CON       0432
+73                                                        INT-CON       0434
+75                                                        INT-CON       0436
+77                                                        INT-CON       0438
+78                                                        INT-CON       043A
+80                                                        INT-CON       043C
+79                                                        INT-CON       043E
+81                                                        INT-CON       0440
+83                                                        INT-CON       0442
+84                                                        INT-CON       0444
+86                                                        INT-CON       0446
+85                                                        INT-CON       0448
+87                                                        INT-CON       044A
+89                                                        INT-CON       044C
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 3
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+90                                                        INT-CON       044E
+92                                                        INT-CON       0450
+91                                                        INT-CON       0452
+93                                                        INT-CON       0454
+95                                                        INT-CON       0456
+96                                                        INT-CON       0458
+98                                                        INT-CON       045A
+97                                                        INT-CON       045C
+99                                                        INT-CON       045E
+101                                                       INT-CON       0460
+102                                                       INT-CON       0462
+104                                                       INT-CON       0464
+103                                                       INT-CON       0466
+105                                                       INT-CON       0468
+107                                                       INT-CON       046A
+108                                                       INT-CON       046C
+110                                                       INT-CON       046E
+109                                                       INT-CON       0470
+111                                                       INT-CON       0472
+113                                                       INT-CON       0474
+114                                                       INT-CON       0476
+116                                                       INT-CON       0478
+115                                                       INT-CON       047A
+117                                                       INT-CON       047C
+119                                                       INT-CON       047E
+120                                                       INT-CON       0480
+122                                                       INT-CON       0482
+121                                                       INT-CON       0484
+123                                                       INT-CON       0486
+125                                                       INT-CON       0488
+126                                                       INT-CON       048A
+40                                                        INT-CON       048C
+127                                                       INT-CON       048E
+216                                                       INT-CON       0490
+201                                                       INT-CON       0492
+217                                                       INT-CON       0494
+202                                                       INT-CON       0496
+228                                                       INT-CON       0498
+203                                                       INT-CON       049A
+218                                                       INT-CON       049C
+204                                                       INT-CON       049E
+219                                                       INT-CON       04A0
+205                                                       INT-CON       04A2
+220                                                       INT-CON       04A4
+206                                                       INT-CON       04A6
+221                                                       INT-CON       04A8
+207                                                       INT-CON       04AA
+222                                                       INT-CON       04AC
+208                                                       INT-CON       04AE
+209                                                       INT-CON       04B0
+223                                                       INT-CON       04B2
+210                                                       INT-CON       04B4
+224                                                       INT-CON       04B6
+211                                                       INT-CON       04B8
+225                                                       INT-CON       04BA
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 4
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+212                                                       INT-CON       04BC
+226                                                       INT-CON       04BE
+213                                                       INT-CON       04C0
+214                                                       INT-CON       04C2
+227                                                       INT-CON       04C4
+215                                                       INT-CON       04C6
+"EXTRA LINE # 1"                                          STR-CON       04C8
+229                                                       INT-CON       04D7
+230                                                       INT-CON       04D9
+300                                                       INT-CON       04DB
+232                                                       INT-CON       04DD
+"<<<<<SCORE: "                                            STR-CON       04DF
+X                                                         INT-VAR       04EC
+" SPINS: "                                                STR-CON       04EE
+">>>>>"                                                   STR-CON       04F7
+233                                                       INT-CON       04FD
+"WOULD YOU LIKE TO GO ON?"                                STR-CON       04FF
+234                                                       INT-CON       0518
+235                                                       INT-CON       051A
+"Y"                                                       STR-CON       051C
+236                                                       INT-CON       051E
+"N"                                                       STR-CON       0520
+301                                                       INT-CON       0522
+302                                                       INT-CON       0524
+"YOU NOW HAVE A SCORE OF "                                STR-CON       0526
+"."                                                       STR-CON       053F
+303                                                       INT-CON       0541
+304                                                       INT-CON       0543
+305                                                       INT-CON       0545
+1001                                                      INT-CON       0547
+306                                                       INT-CON       0549
+1501                                                      INT-CON       054B
+307                                                       INT-CON       054D
+2001                                                      INT-CON       054F
+308                                                       INT-CON       0551
+2501                                                      INT-CON       0553
+309                                                       INT-CON       0555
+3501                                                      INT-CON       0557
+310                                                       INT-CON       0559
+"YOU NOW HAVE "                                           STR-CON       055B
+" SPINS "                                                 STR-CON       0569
+311                                                       INT-CON       0571
+"ROUND # 2: POINTS RANGE FROM 500 - 15,000 POINTS."       STR-CON       0573
+312                                                       INT-CON       05A5
+"THERE IS A MINI BONUS GAME IN THIS ROUND."               STR-CON       05A7
+313                                                       INT-CON       05D1
+"YOU NEED A TOTAL OF 40,000 POINTS TO GO TO ROUND # 3"    STR-CON       05D3
+314                                                       INT-CON       0608
+315                                                       INT-CON       060A
+"<<<<<<<<<<GOOD LUCK "                                    STR-CON       060C
+">>>>>>>>>>"                                              STR-CON       0621
+316                                                       INT-CON       062C
+"PRESS <ENTER> NOW."                                      STR-CON       062E
+317                                                       INT-CON       0641
+318                                                       INT-CON       0643
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 5
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+319                                                       INT-CON       0645
+320                                                       INT-CON       0647
+321                                                       INT-CON       0649
+323                                                       INT-CON       064B
+324                                                       INT-CON       064D
+326                                                       INT-CON       064F
+325                                                       INT-CON       0651
+600                                                       INT-CON       0653
+327                                                       INT-CON       0655
+329                                                       INT-CON       0657
+330                                                       INT-CON       0659
+332                                                       INT-CON       065B
+331                                                       INT-CON       065D
+333                                                       INT-CON       065F
+335                                                       INT-CON       0661
+336                                                       INT-CON       0663
+338                                                       INT-CON       0665
+337                                                       INT-CON       0667
+339                                                       INT-CON       0669
+341                                                       INT-CON       066B
+342                                                       INT-CON       066D
+344                                                       INT-CON       066F
+343                                                       INT-CON       0671
+345                                                       INT-CON       0673
+347                                                       INT-CON       0675
+348                                                       INT-CON       0677
+350                                                       INT-CON       0679
+349                                                       INT-CON       067B
+351                                                       INT-CON       067D
+353                                                       INT-CON       067F
+354                                                       INT-CON       0681
+356                                                       INT-CON       0683
+355                                                       INT-CON       0685
+357                                                       INT-CON       0687
+359                                                       INT-CON       0689
+360                                                       INT-CON       068B
+362                                                       INT-CON       068D
+361                                                       INT-CON       068F
+363                                                       INT-CON       0691
+365                                                       INT-CON       0693
+366                                                       INT-CON       0695
+368                                                       INT-CON       0697
+367                                                       INT-CON       0699
+369                                                       INT-CON       069B
+371                                                       INT-CON       069D
+372                                                       INT-CON       069F
+374                                                       INT-CON       06A1
+373                                                       INT-CON       06A3
+375                                                       INT-CON       06A5
+377                                                       INT-CON       06A7
+378                                                       INT-CON       06A9
+380                                                       INT-CON       06AB
+379                                                       INT-CON       06AD
+381                                                       INT-CON       06AF
+383                                                       INT-CON       06B1
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 6
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+384                                                       INT-CON       06B3
+386                                                       INT-CON       06B5
+385                                                       INT-CON       06B7
+387                                                       INT-CON       06B9
+389                                                       INT-CON       06BB
+390                                                       INT-CON       06BD
+392                                                       INT-CON       06BF
+391                                                       INT-CON       06C1
+393                                                       INT-CON       06C3
+395                                                       INT-CON       06C5
+396                                                       INT-CON       06C7
+398                                                       INT-CON       06C9
+397                                                       INT-CON       06CB
+399                                                       INT-CON       06CD
+401                                                       INT-CON       06CF
+402                                                       INT-CON       06D1
+404                                                       INT-CON       06D3
+403                                                       INT-CON       06D5
+405                                                       INT-CON       06D7
+407                                                       INT-CON       06D9
+408                                                       INT-CON       06DB
+410                                                       INT-CON       06DD
+409                                                       INT-CON       06DF
+411                                                       INT-CON       06E1
+413                                                       INT-CON       06E3
+414                                                       INT-CON       06E5
+416                                                       INT-CON       06E7
+415                                                       INT-CON       06E9
+417                                                       INT-CON       06EB
+16                                                        INT-CON       06ED
+419                                                       INT-CON       06EF
+420                                                       INT-CON       06F1
+422                                                       INT-CON       06F3
+421                                                       INT-CON       06F5
+423                                                       INT-CON       06F7
+17                                                        INT-CON       06F9
+425                                                       INT-CON       06FB
+426                                                       INT-CON       06FD
+428                                                       INT-CON       06FF
+427                                                       INT-CON       0701
+429                                                       INT-CON       0703
+18                                                        INT-CON       0705
+431                                                       INT-CON       0707
+432                                                       INT-CON       0709
+434                                                       INT-CON       070B
+433                                                       INT-CON       070D
+19                                                        INT-CON       070F
+435                                                       INT-CON       0711
+437                                                       INT-CON       0713
+438                                                       INT-CON       0715
+440                                                       INT-CON       0717
+439                                                       INT-CON       0719
+441                                                       INT-CON       071B
+443                                                       INT-CON       071D
+444                                                       INT-CON       071F
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 7
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+446                                                       INT-CON       0721
+445                                                       INT-CON       0723
+447                                                       INT-CON       0725
+449                                                       INT-CON       0727
+450                                                       INT-CON       0729
+452                                                       INT-CON       072B
+451                                                       INT-CON       072D
+453                                                       INT-CON       072F
+455                                                       INT-CON       0731
+456                                                       INT-CON       0733
+458                                                       INT-CON       0735
+457                                                       INT-CON       0737
+459                                                       INT-CON       0739
+461                                                       INT-CON       073B
+462                                                       INT-CON       073D
+464                                                       INT-CON       073F
+463                                                       INT-CON       0741
+465                                                       INT-CON       0743
+467                                                       INT-CON       0745
+468                                                       INT-CON       0747
+469                                                       INT-CON       0749
+501                                                       INT-CON       074B
+"<<<MINI BONUS>>>"                                        STR-CON       074D
+502                                                       INT-CON       075E
+"C32D32E32D32C32D32E32D32C32"                             STR-CON       0760
+503                                                       INT-CON       077C
+"YOU CAN BET WHAT YOU HAVE"                               STR-CON       077E
+504                                                       INT-CON       0798
+"AND WIN HALF OF IT + WHAT YOU BET."                      STR-CON       079A
+505                                                       INT-CON       07BD
+"WANNA PLAY "                                             STR-CON       07BF
+506                                                       INT-CON       07CB
+507                                                       INT-CON       07CD
+510                                                       INT-CON       07CF
+508                                                       INT-CON       07D1
+512                                                       INT-CON       07D3
+514                                                       INT-CON       07D5
+"TYPE IN HOW MUCH YOU WANT"                               STR-CON       07D7
+515                                                       INT-CON       07F1
+"TO BET."                                                 STR-CON       07F3
+516                                                       INT-CON       07FB
+"THIS IS HOW MUCH YOU HAVE:"                              STR-CON       07FD
+517                                                       INT-CON       0818
+XX                                                        INT-VAR       081A
+518                                                       INT-CON       081C
+B                                                         INT-VAR       081E
+519                                                       INT-CON       0820
+-1                                                        INT-CON       0822
+522                                                       INT-CON       0824
+520                                                       INT-CON       0826
+524                                                       INT-CON       0828
+525                                                       INT-CON       082A
+526                                                       INT-CON       082C
+527                                                       INT-CON       082E
+529                                                       INT-CON       0830
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 8
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+530                                                       INT-CON       0832
+532                                                       INT-CON       0834
+531                                                       INT-CON       0836
+550                                                       INT-CON       0838
+533                                                       INT-CON       083A
+535                                                       INT-CON       083C
+536                                                       INT-CON       083E
+537                                                       INT-CON       0840
+552                                                       INT-CON       0842
+551                                                       INT-CON       0844
+553                                                       INT-CON       0846
+560                                                       INT-CON       0848
+"GOOD JOB "                                               STR-CON       084A
+"!!!!!!"                                                  STR-CON       0854
+561                                                       INT-CON       085B
+"YOUR NEW SCORE IS "                                      STR-CON       085D
+562                                                       INT-CON       0870
+563                                                       INT-CON       0872
+ENTER:                                                    LABEL         0000
+700                                                       INT-CON       0874
+570                                                       INT-CON       0876
+"OH MY!!! YOU LOST "                                      STR-CON       0878
+"!!"                                                      STR-CON       088B
+571                                                       INT-CON       088E
+"HERE IS YOUR SCORE: "                                    STR-CON       0890
+572                                                       INT-CON       08A5
+573                                                       INT-CON       08A7
+643                                                       INT-CON       08A9
+601                                                       INT-CON       08AB
+625                                                       INT-CON       08AD
+602                                                       INT-CON       08AF
+626                                                       INT-CON       08B1
+603                                                       INT-CON       08B3
+604                                                       INT-CON       08B5
+627                                                       INT-CON       08B7
+605                                                       INT-CON       08B9
+606                                                       INT-CON       08BB
+628                                                       INT-CON       08BD
+607                                                       INT-CON       08BF
+629                                                       INT-CON       08C1
+608                                                       INT-CON       08C3
+630                                                       INT-CON       08C5
+609                                                       INT-CON       08C7
+631                                                       INT-CON       08C9
+610                                                       INT-CON       08CB
+611                                                       INT-CON       08CD
+632                                                       INT-CON       08CF
+612                                                       INT-CON       08D1
+633                                                       INT-CON       08D3
+613                                                       INT-CON       08D5
+634                                                       INT-CON       08D7
+614                                                       INT-CON       08D9
+635                                                       INT-CON       08DB
+615                                                       INT-CON       08DD
+636                                                       INT-CON       08DF
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 9
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+616                                                       INT-CON       08E1
+617                                                       INT-CON       08E3
+618                                                       INT-CON       08E5
+637                                                       INT-CON       08E7
+619                                                       INT-CON       08E9
+638                                                       INT-CON       08EB
+620                                                       INT-CON       08ED
+639                                                       INT-CON       08EF
+621                                                       INT-CON       08F1
+640                                                       INT-CON       08F3
+622                                                       INT-CON       08F5
+641                                                       INT-CON       08F7
+623                                                       INT-CON       08F9
+624                                                       INT-CON       08FB
+642                                                       INT-CON       08FD
+C64                                                       INT-VAR       08FF
+701                                                       INT-CON       0901
+702                                                       INT-CON       0903
+750                                                       INT-CON       0905
+703                                                       INT-CON       0907
+"<<<<<SCORE "                                             STR-CON       0909
+704                                                       INT-CON       0915
+705                                                       INT-CON       0917
+706                                                       INT-CON       0919
+707                                                       INT-CON       091B
+T                                                         INT-VAR       091D
+751                                                       INT-CON       091F
+"YOUR TOTAL SCORE:"                                       STR-CON       0921
+752                                                       INT-CON       0933
+"          ROUND 1: "                                     STR-CON       0935
+753                                                       INT-CON       0949
+"       +  ROUND 2: "                                     STR-CON       094B
+754                                                       INT-CON       095F
+"--------------------------------"                        STR-CON       0961
+755                                                       INT-CON       0982
+"          TOTAL:   "                                     STR-CON       0984
+": PLAY "                                                 STR-CON       0998
+C64D64E64F64G64F64E64D64C64D64E64F64G64F                  INT-VAR       09A0
+64E64D64C64                                               INT-VAR       09A2
+1002                                                      INT-CON       09A4
+NS                                                        INT-VAR       09A6
+YOU                                                       INT-VAR       09A8
+MUST                                                      INT-VAR       09AA
+TAKE                                                      INT-VAR       09AC
+1005                                                      INT-CON       09AE
+1006                                                      INT-CON       09B0
+1007                                                      INT-CON       09B2
+1008                                                      INT-CON       09B4
+1009                                                      INT-CON       09B6
+1010                                                      INT-CON       09B8
+1012                                                      INT-CON       09BA
+1013                                                      INT-CON       09BC
+1015                                                      INT-CON       09BE
+1014                                                      INT-CON       09C0
+1150                                                      INT-CON       09C2
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 10
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+1016                                                      INT-CON       09C4
+1018                                                      INT-CON       09C6
+1019                                                      INT-CON       09C8
+1021                                                      INT-CON       09CA
+1020                                                      INT-CON       09CC
+1022                                                      INT-CON       09CE
+1024                                                      INT-CON       09D0
+1025                                                      INT-CON       09D2
+1027                                                      INT-CON       09D4
+1026                                                      INT-CON       09D6
+1028                                                      INT-CON       09D8
+1030                                                      INT-CON       09DA
+1031                                                      INT-CON       09DC
+1033                                                      INT-CON       09DE
+1032                                                      INT-CON       09E0
+1034                                                      INT-CON       09E2
+1036                                                      INT-CON       09E4
+1037                                                      INT-CON       09E6
+1039                                                      INT-CON       09E8
+1038                                                      INT-CON       09EA
+1040                                                      INT-CON       09EC
+1042                                                      INT-CON       09EE
+1043                                                      INT-CON       09F0
+1045                                                      INT-CON       09F2
+1044                                                      INT-CON       09F4
+1046                                                      INT-CON       09F6
+1048                                                      INT-CON       09F8
+1049                                                      INT-CON       09FA
+1051                                                      INT-CON       09FC
+1050                                                      INT-CON       09FE
+1052                                                      INT-CON       0A00
+1054                                                      INT-CON       0A02
+1055                                                      INT-CON       0A04
+1057                                                      INT-CON       0A06
+1056                                                      INT-CON       0A08
+1058                                                      INT-CON       0A0A
+1060                                                      INT-CON       0A0C
+1061                                                      INT-CON       0A0E
+1063                                                      INT-CON       0A10
+1062                                                      INT-CON       0A12
+1064                                                      INT-CON       0A14
+1066                                                      INT-CON       0A16
+1067                                                      INT-CON       0A18
+1069                                                      INT-CON       0A1A
+1068                                                      INT-CON       0A1C
+1070                                                      INT-CON       0A1E
+1072                                                      INT-CON       0A20
+1073                                                      INT-CON       0A22
+1074                                                      INT-CON       0A24
+1161                                                      INT-CON       0A26
+1151                                                      INT-CON       0A28
+1162                                                      INT-CON       0A2A
+1152                                                      INT-CON       0A2C
+1163                                                      INT-CON       0A2E
+1153                                                      INT-CON       0A30
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 11
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+1170                                                      INT-CON       0A32
+1154                                                      INT-CON       0A34
+1164                                                      INT-CON       0A36
+1155                                                      INT-CON       0A38
+1165                                                      INT-CON       0A3A
+1156                                                      INT-CON       0A3C
+1166                                                      INT-CON       0A3E
+1157                                                      INT-CON       0A40
+1167                                                      INT-CON       0A42
+1158                                                      INT-CON       0A44
+1159                                                      INT-CON       0A46
+1168                                                      INT-CON       0A48
+1160                                                      INT-CON       0A4A
+1169                                                      INT-CON       0A4C
+175                                                       INT-CON       0A4E
+1176                                                      INT-CON       0A50
+1177                                                      INT-CON       0A52
+1200                                                      INT-CON       0A54
+1179                                                      INT-CON       0A56
+"PRESS <ENTER> "                                          STR-CON       0A58
+1180                                                      INT-CON       0A67
+1181                                                      INT-CON       0A69
+1201                                                      INT-CON       0A6B
+BB                                                        INT-VAR       0A6D
+1207                                                      INT-CON       0A6F
+1202                                                      INT-CON       0A71
+"THAT'S THE END OF ROUND THREE. HERE IS YOUR SCORE:"      STR-CON       0A73
+1203                                                      INT-CON       0AA6
+1204                                                      INT-CON       0AA8
+1205                                                      INT-CON       0AAA
+1206                                                      INT-CON       0AAC
+50000                                                     INT-CON       0AAE
+1208                                                      INT-CON       0AB0
+"NOW IT'S TIME FOR THE BONUS ROUND "                      STR-CON       0AB2
+"!!!!"                                                    STR-CON       0AD5
+1209                                                      INT-CON       0ADA
+"C32D32E32F32E32D32C32D32E32F32E32D32C32D32E32F32E32D32C32STR-CON       0ADC
+1210                                                      INT-CON       0B1F
+1211                                                      INT-CON       0B21
+1213                                                      INT-CON       0B23
+"THE BONUS ROUND IS COMPOSED OF 4 BONUS ROUNDS."          STR-CON       0B25
+1214                                                      INT-CON       0B54
+"YOU COULD SCORE REAL BIG, OR LOSE IT ALL."               STR-CON       0B56
+1215                                                      INT-CON       0B80
+1216                                                      INT-CON       0B82
+1217                                                      INT-CON       0B84
+"KEEP IN MIND THAT YOU COULD GET SOMETHING SUBTRACTED IN BSTR-CON       0B86
+1218                                                      INT-CON       0BC7
+"HERE IS YOUR SCORE:"                                     STR-CON       0BC9
+1219                                                      INT-CON       0BDD
+"NOW. BET "                                               STR-CON       0BDF
+"!!!"                                                     STR-CON       0BE9
+1220                                                      INT-CON       0BED
+BB:                                                       LABEL         0000
+1221                                                      INT-CON       0BEF
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 12
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+1225                                                      INT-CON       0BF1
+1227                                                      INT-CON       0BF3
+"GOOD JOB."                                               STR-CON       0BF5
+1228                                                      INT-CON       0BFF
+"PRESS <ENTER> TO START THE SPINNER "                     STR-CON       0C01
+1229                                                      INT-CON       0C25
+1234                                                      INT-CON       0C27
+1235                                                      INT-CON       0C29
+1237                                                      INT-CON       0C2B
+1236                                                      INT-CON       0C2D
+1250                                                      INT-CON       0C2F
+1239                                                      INT-CON       0C31
+1240                                                      INT-CON       0C33
+1231                                                      INT-CON       0C35
+1241                                                      INT-CON       0C37
+1252                                                      INT-CON       0C39
+1251                                                      INT-CON       0C3B
+1255                                                      INT-CON       0C3D
+"C8D8E8C16C16D16D16E16E16A8A#8A8G8A16A16A#16A#16B16B16>C2<STR-CON       0C3F
+1253                                                      INT-CON       0C79
+1254                                                      INT-CON       0C7B
+1260                                                      INT-CON       0C7D
+"<<<<<C1>>>>>"                                            STR-CON       0C7F
+1256                                                      INT-CON       0C8C
+3000                                                      INT-CON       0C8E
+1262                                                      INT-CON       0C90
+"<<<BONUS #2>>>"                                          STR-CON       0C92
+1263                                                      INT-CON       0CA1
+1264                                                      INT-CON       0CA3
+"WANT TO TRY IT "                                         STR-CON       0CA5
+"?"                                                       STR-CON       0CB5
+1265                                                      INT-CON       0CB7
+1266                                                      INT-CON       0CB9
+1269                                                      INT-CON       0CBB
+1267                                                      INT-CON       0CBD
+1311                                                      INT-CON       0CBF
+"OKAY!!!!."                                               STR-CON       0CC1
+1270                                                      INT-CON       0CCB
+"PRESS <ENTER> TO START THE SPINNER."                     STR-CON       0CCD
+1271                                                      INT-CON       0CF1
+1275                                                      INT-CON       0CF3
+1276                                                      INT-CON       0CF5
+1278                                                      INT-CON       0CF7
+1277                                                      INT-CON       0CF9
+1305                                                      INT-CON       0CFB
+1280                                                      INT-CON       0CFD
+1281                                                      INT-CON       0CFF
+1283                                                      INT-CON       0D01
+1282                                                      INT-CON       0D03
+1285                                                      INT-CON       0D05
+1286                                                      INT-CON       0D07
+1288                                                      INT-CON       0D09
+1287                                                      INT-CON       0D0B
+1290                                                      INT-CON       0D0D
+1291                                                      INT-CON       0D0F
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 13
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+1293                                                      INT-CON       0D11
+1292                                                      INT-CON       0D13
+1295                                                      INT-CON       0D15
+1296                                                      INT-CON       0D17
+1273                                                      INT-CON       0D19
+1297                                                      INT-CON       0D1B
+1310                                                      INT-CON       0D1D
+1306                                                      INT-CON       0D1F
+1314                                                      INT-CON       0D21
+1307                                                      INT-CON       0D23
+1312                                                      INT-CON       0D25
+1308                                                      INT-CON       0D27
+1313                                                      INT-CON       0D29
+1309                                                      INT-CON       0D2B
+B:                                                        LABEL         0000
+4000                                                      INT-CON       0D2D
+OTO                                                       INT-VAR       0D2F
+1315                                                      INT-CON       0D31
+1316                                                      INT-CON       0D33
+"<<<BONUS SCORE: "                                        STR-CON       0D35
+" TOTAL SCORE (WITH BONUS): "                             STR-CON       0D46
+1317                                                      INT-CON       0D62
+"IN BONUS 3 YOU COULD WIN UP TO 200,000 POINTS!!!"        STR-CON       0D64
+1319                                                      INT-CON       0D95
+1320                                                      INT-CON       0D97
+1323                                                      INT-CON       0D99
+1321                                                      INT-CON       0D9B
+1327                                                      INT-CON       0D9D
+1328                                                      INT-CON       0D9F
+1330                                                      INT-CON       0DA1
+1329                                                      INT-CON       0DA3
+1400                                                      INT-CON       0DA5
+1332                                                      INT-CON       0DA7
+1333                                                      INT-CON       0DA9
+1335                                                      INT-CON       0DAB
+1334                                                      INT-CON       0DAD
+1337                                                      INT-CON       0DAF
+1338                                                      INT-CON       0DB1
+1340                                                      INT-CON       0DB3
+1339                                                      INT-CON       0DB5
+1342                                                      INT-CON       0DB7
+1343                                                      INT-CON       0DB9
+1345                                                      INT-CON       0DBB
+1344                                                      INT-CON       0DBD
+1347                                                      INT-CON       0DBF
+1348                                                      INT-CON       0DC1
+1350                                                      INT-CON       0DC3
+1349                                                      INT-CON       0DC5
+1352                                                      INT-CON       0DC7
+1353                                                      INT-CON       0DC9
+1325                                                      INT-CON       0DCB
+1354                                                      INT-CON       0DCD
+1406                                                      INT-CON       0DCF
+1401                                                      INT-CON       0DD1
+1407                                                      INT-CON       0DD3
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 14
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+1402                                                      INT-CON       0DD5
+1410                                                      INT-CON       0DD7
+1403                                                      INT-CON       0DD9
+1408                                                      INT-CON       0DDB
+1404                                                      INT-CON       0DDD
+1405                                                      INT-CON       0DDF
+1409                                                      INT-CON       0DE1
+1411                                                      INT-CON       0DE3
+1412                                                      INT-CON       0DE5
+1413                                                      INT-CON       0DE7
+"WELL, BONUS 4 "                                          STR-CON       0DE9
+1414                                                      INT-CON       0DF8
+"HERE'S YOUR CHANCE TO DOUBLE YOUR ENTIRE SCORE, WITH THE STR-CON       0DFA
+1415                                                      INT-CON       0E39
+1416                                                      INT-CON       0E3B
+"IF YOU WIN, YOU GET A CERTIFICATE, AND A SPECIAL MESSAGE.STR-CON       0E3D
+1417                                                      INT-CON       0E77
+"ARE YOU GOING TO TRY "                                   STR-CON       0E79
+1418                                                      INT-CON       0E8F
+1419                                                      INT-CON       0E91
+1422                                                      INT-CON       0E93
+1420                                                      INT-CON       0E95
+1426                                                      INT-CON       0E97
+1427                                                      INT-CON       0E99
+1429                                                      INT-CON       0E9B
+1428                                                      INT-CON       0E9D
+1440                                                      INT-CON       0E9F
+1431                                                      INT-CON       0EA1
+1432                                                      INT-CON       0EA3
+1424                                                      INT-CON       0EA5
+1433                                                      INT-CON       0EA7
+1442                                                      INT-CON       0EA9
+1441                                                      INT-CON       0EAB
+1443                                                      INT-CON       0EAD
+"CONGRADULATIONS "                                        STR-CON       0EAF
+"!!! YOU ARE NOW A SUPER SPINNER 2 MASTER!!"              STR-CON       0EC0
+2002                                                      INT-CON       0EEB
+"TURN ON YOUR PRINTER AND PRESS ANY KEY, OR N IF YOU DON'TSTR-CON       0EED
+2003                                                      INT-CON       0F27
+"HAVE A PRINTER."                                         STR-CON       0F29
+2004                                                      INT-CON       0F39
+2005                                                      INT-CON       0F3B
+2050                                                      INT-CON       0F3D
+2006                                                      INT-CON       0F3F
+2008                                                      INT-CON       0F41
+2007                                                      INT-CON       0F43
+2009                                                      INT-CON       0F45
+"*********************************************************STR-CON       0F47
+2010                                                      INT-CON       0F8A
+2011                                                      INT-CON       0F8C
+"**                                                       STR-CON       0F8E
+2012                                                      INT-CON       0FD1
+"**   T H I S   C E R T I F I C A T E   I S   G I V E N   STR-CON       0FD3
+2013                                                      INT-CON       1016
+2014                                                      INT-CON       1018
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 15
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+2015                                                      INT-CON       101A
+"                       ***"                              STR-CON       101C
+"***                           "                          STR-CON       1037
+2016                                                      INT-CON       1056
+2017                                                      INT-CON       1058
+"**  T O   R E C O G N I Z E   T H A T   H E / S H E   H ASTR-CON       105A
+2018                                                      INT-CON       109D
+2019                                                      INT-CON       109F
+"**  W O N   S U P E R   S P I N N E R   2   W I T H   A  STR-CON       10A1
+2020                                                      INT-CON       10E4
+2021                                                      INT-CON       10E6
+"**  S C O R E   O F :                                    STR-CON       10E8
+2022                                                      INT-CON       112B
+2023                                                      INT-CON       112D
+"***"                                                     STR-CON       112F
+2024                                                      INT-CON       1133
+2025                                                      INT-CON       1135
+"**             C O N G R A D U L A T I O N S             STR-CON       1137
+2026                                                      INT-CON       117A
+2027                                                      INT-CON       117C
+"**             signed: MICHAEL SAO PEDRO (designer)      STR-CON       117E
+2028                                                      INT-CON       11C1
+2029                                                      INT-CON       11C3
+2051                                                      INT-CON       11C5
+"HERE'S THE MESSAGE:"                                     STR-CON       11C7
+2052                                                      INT-CON       11DB
+"TO GET INTO MIKE'S PRIVATE STUFF, THE PASSWORD IS: ROTHBLSTR-CON       11DD
+3001                                                      INT-CON       121A
+"I'M SORRY. YOU LOSE. HERE IS YOUR SCORE: "               STR-CON       121C
+3003                                                      INT-CON       1246
+50001                                                     INT-CON       1248
+"I"                                                       STR-CON       124A
+"SCORE.SPN"                                               STR-CON       124C
+50002                                                     INT-CON       1256
+H                                                         INT-VAR       1258
+50003                                                     INT-CON       125A
+50005                                                     INT-CON       125C
+50006                                                     INT-CON       125E
+50007                                                     INT-CON       1260
+"O"                                                       STR-CON       1262
+50008                                                     INT-CON       1264
+T:                                                        LABEL         0000
+50009                                                     INT-CON       1266
+50010                                                     INT-CON       1268
+"NAME.SPN"                                                STR-CON       126A
+50012                                                     INT-CON       1273
+50013                                                     INT-CON       1275
+60000                                                     INT-CON       1277
+60001                                                     INT-CON       1279
+60002                                                     INT-CON       127B
+60003                                                     INT-CON       127D
+N$                                                        STR-VAR       127F
+60006                                                     INT-CON       12D0
+"HIGH SCORE: "                                            STR-CON       12D2
+60007                                                     INT-CON       12DF
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 16
+
+Symbol Table Listing for: 
+
+SYMBOL NAME                                             SYMBOL TYPE    ADDRESS
+
+"MADE BY: "                                               STR-CON       12E1
+60017                                                     INT-CON       12EB
+"YOUR SCORE:"                                             STR-CON       12ED
+60019                                                     INT-CON       12F9
+60022                                                     INT-CON       12FB
+60020                                                     INT-CON       12FD
+65000                                                     INT-CON       12FF
+32F32G32A32                                               INT-VAR       1301
+60023                                                     INT-CON       1303
+"BYE BYE "                                                STR-CON       1305
+65001                                                     INT-CON       130E
+">C4<G8G8A8G8P4B8>C4<C64>C64<"                            STR-CON       1310
+65002                                                     INT-CON       132D
+SYSTEM                                                    INT-VAR       132F

@@ -1,0 +1,3 @@
+SCREEN 9: CLS : SOUND 1500, 2: A = 0: B = 0
+PSET (
+

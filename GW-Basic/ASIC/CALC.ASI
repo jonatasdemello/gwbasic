@@ -1,0 +1,557 @@
+rem CALC.ASI - A simple RPN Calculator written in ASIC
+rem Copyright 1993 by David A. Visti--All rights reserved
+rem RPN stands for Reverse Polish Notation.  Calculators which use
+rem RPN are somewhat different than standard calculators which use algebraic
+rem notation.  The difference between the approaches is probably best
+rem illustrated with an example:
+rem with a standard calculator, to evaluate:   (1 + 2) * (5 + 6)
+rem you would have to decide how to enter the data.  In this case, you
+rem would perhaps enter the following key strokes:
+rem        <1> <+> <2> <=> <store-mem> <5> <+> <6> <=> <*> <recall-mem> <=>
+rem With an RPN calculator, you would enter:
+rem        <1> <enter> <2> <+> <5> <enter> <6> <+> <*>
+rem Other functions included in this sample program are (besides +,-,*,/) are:
+rem "Clr"      Clear (set to 0) all stack entries (X, Y, Z, and A).
+rem "clX"      Clears the "X" stack entry.
+rem "xY"      Swaps the values of the "X" and "Y" stack entries
+rem "Pop"      Pops the X entry off the stack (discards it), moves the "Y"
+rem            stack entry into the "X" stack entry, moves the "Z" stack
+rem            entry into the "Y" stack entry, and moves the "A" stack entry
+rem            into the "Z" stack entry.
+rem "Sgn"      Changes the sign of the "X" stack entry.  If positive, changes
+rem            to negative.  If negative, changes to positive.
+rem "Quit"     Terminate the program and exit to DOS.
+rem Note that all of the above functions are labeled on the calculator with
+rem one character capitalized.  If you are using the keyboard, press this
+rem letter to select the function.  For example, press "Q" to Quit.  If you
+rem are using the mouse, click on the calculator key with the left mouse
+rem button.
+dim stack@(3)
+dim keys(22)
+dim keysx(22)
+dim keysy(22)
+rem   0  1  2  3  4  5  6  7  8  9  .  C  X  Y  S  P  Q <Ù  +  -  *  /
+data 48,49,50,51,52,53,54,55,56,57,46,67,88,89,83,80,81,61,43,45,42,47
+rem data for x coords for each of the above keys
+data 26,26,32,38,26,32,38,26,32,38,32,26,26,32,32,38,44,38,44,44,44,44
+rem data for y coords for each of the above keys
+data 21,19,19,19,17,17,17,15,15,15,21,11,13,13,11,11,11,21,21,19,17,15
+
+rem PROGRAM LOGIC BEGINS HERE
+cls
+gosub readdata:
+gosub chkscrn:
+gosub drawscrn:
+gosub detectmouse:
+gosub displaystack:
+gosub inloop:
+
+readdata:
+   for i=1 to 22
+       read keys(i)
+   next i
+   for i=1 to 22
+       read keysx(i)
+   next i
+   for i=1 to 22
+       read keysy(i)
+   next i
+   return
+
+detectmouse:
+   rem detect/init mouse function is function 0
+   rem all mouse calls load a function into the AX register
+   ax=0
+   gosub mouse:
+   if ax=-1 then
+       rem when ax=-1, mouse was found
+       mousefound=1
+       rem make mouse visible
+       gosub showmouse:
+   else
+       rem no mouse was found
+       mousefound=0
+   endif
+
+chkscrn:  rem determine display type and point to video memory
+   vidtype=zmode
+   if vidtype=1 then
+       defseg=&hexb800
+       color 14,1
+   else
+       defseg=&hexb000
+   endif
+   return
+
+drawscrn:  rem draw calculator image on screen
+   gosub movecursorright25:
+   print "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿"
+   gosub movecursorright25:
+   print "³              CALC.ASI ³"
+   gosub movecursorright25:
+   print "ÃÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³a³                     ³"
+   gosub movecursorright25:
+   print "ÃÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³z³                     ³"
+   gosub movecursorright25:
+   print "ÃÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³y³                     ³"
+   gosub movecursorright25:
+   print "ÃÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³x³                     ³"
+   gosub movecursorright25:
+   print "ÃÄÁÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³ Clr ³ Sgn ³ Pop ³ Quit³"
+   gosub movecursorright25:
+   print "ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÁÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³ clX ³ xY ³           ³"
+   gosub movecursorright25:
+   print "ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÂÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³  7  ³  8  ³  9  ³  /  ³"
+   gosub movecursorright25:
+   print "ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³  4  ³  5  ³  6  ³  *  ³"
+   gosub movecursorright25:
+   print "ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³  1  ³  2  ³  3  ³  -  ³"
+   gosub movecursorright25:
+   print "ÃÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄ´"
+   gosub movecursorright25:
+   print "³  0  ³  .  ³ <ÄÙ ³  +  ³"
+   gosub movecursorright25:
+   print "ÀÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÙ"
+   return
+
+movecursorright25:  rem position cursor 25 spaces right on current line
+   x=pos(0)
+   y=csrlin
+   x=x+25
+   locate y,x
+   return
+
+inloop:    rem loop here until user quits
+   rem loop endlessly until user selects "Q"
+   while (x=x)
+      char$=inkey$
+      if mousefound=1 then
+           gosub readmouse:
+      endif
+      if char$="" then inloop:
+      char$=ucase$(char$)
+      gosub analyzechar:
+      if char$="Q" then
+          gosub flashkeyon:
+          gosub flashkeyoff:
+          gosub hidemouse:
+          rem Quit
+          cls
+          end
+      else
+          if char$="C" then
+              rem Clear Stack
+              inbuf$=""
+              for i=0 to 3
+                   stack@(i)=0.0
+              next i
+              gosub flashkeyon:
+              gosub displaystack:
+              gosub flashkeyoff:
+          else
+              if char$="S" then
+                  rem Change Sign of X entry of Stack
+                  gosub flashkeyon:
+                  if inbuf$="" then
+                      stack@(0)=stack@(0) * -1.0
+                      gosub displaystack:
+                  else
+                     x$=left$(inbuf$,1)
+                     if x$="-" then
+                         n=len(inbuf$)
+                         n=n-1
+                         inbuf$=right$(inbuf$,n)
+                     else
+                         inbuf$="-"+inbuf$
+                     endif
+                     gosub displayinbuf:
+                  endif
+                  gosub flashkeyoff:
+              else
+                  if chartype$="DIGIT" then
+                      gosub flashkeyon:
+                      rem Accumulate user input
+                      inbuf$=inbuf$+char$
+                      gosub displayinbuf:
+                      gosub flashkeyoff:
+                  else
+                      if chartype$="OPERATOR" then
+                          gosub operator:
+                      else
+                           if char$="Y" then
+                               rem swap x and y stack entry
+                               gosub flashkeyon:
+                               if inbuf$="" then
+                                  inbuf@=stack@(0)
+                               else
+                                  gosub convertnum:
+                                  inbuf$=""
+                               endif
+                               if ERROR=0 then
+                                  stack@(0)=stack@(1)
+                                  stack@(1)=inbuf@
+                                  gosub displaystack:
+                                  gosub flashkeyoff:
+                               endif
+                           else
+                               if char$="P" then
+                                   rem pop x entry off stack
+                                   gosub flashkeyon:
+                                   stack@(0)=stack@(1)
+                                   stack@(1)=stack@(2)
+                                   stack@(2)=stack@(3)
+                                   gosub displaystack:
+                                   gosub flashkeyoff:
+                               else
+                                   if char$="X" then
+                                       rem clear x entry on stack
+                                       gosub flashkeyon:
+                                       stack@(0)=0.0
+                                       inbuf$=""
+                                       gosub displaystack:
+                                       gosub flashkeyoff:
+                                   endif
+                               endif
+                           endif
+                      endif
+                  endif
+              endif
+          endif
+      endif
+   wend
+   return
+
+analyzechar:   rem identify what user character is
+   chartype$="UNKNOWN"
+   char=asc(char$)
+   if char$="." then
+       chartype$="DIGIT"
+   else
+       if char=13 then
+           rem <enter>
+           chartype$="OPERATOR"
+           char$="="
+       else
+           if char$="+" then
+               chartype$="OPERATOR"
+           else
+               if char$="-" then
+                   chartype$="OPERATOR"
+               else
+                   if char$="*" then
+                       chartype$="OPERATOR"
+                   else
+                       if char$="/" then
+                           chartype$="OPERATOR"
+                       else
+                           if char$="=" then
+                               rem allow "=" as a synonym for <enter>
+                               chartype$="OPERATOR"
+                           else
+                              if char$>"9" then
+                              else
+                                  if char$<"0" then
+                                  else
+                                      chartype$="DIGIT"
+                                  endif
+                              endif
+                           endif
+                       endif
+                   endif
+               endif
+           endif
+       endif
+   endif
+   return
+
+displayinbuf:  rem display user input
+   z$=inbuf$
+   n=len(z$)
+   if n>19 then
+       z$=left$(z$,19)
+       n=19
+   endif
+   if n<19 then
+       n=19-n
+       x$=space$(n)
+       z$=x$+z$
+   endif
+   locate 9,29
+   rem if color display, display white on blue
+   if vidtype=1 then
+       color 15,1
+   endif
+   print z$;
+   return
+
+displaystack:  rem display stack
+   y=3
+   n=3
+   for i=0 to 3
+       locate y,29
+       y=y+2
+       x$=str$(stack@(n))
+       n=n-1
+       if vidtype=1 then
+           if i<3 then
+               rem display first 3 entries with regular white on color systems
+               color 7,1
+           else
+               rem display x stack entry in bright white on color systems
+               color 15,1
+           endif
+       endif
+       print x$;
+   next i
+   return
+operator: rem user entered an operator + - * / = <enter>
+   if inbuf$>"" then
+      gosub convertnum:
+      if ERROR >0 then
+           return
+      endif
+   endif
+   if char$="/" then
+       gosub flashkeyon:
+       gosub pushifinput:
+       if (stack@(1)=0.0) then
+          inbuf$="Divide By Zero"
+          gosub displayinbuf:
+          inbuf$=""
+       else
+           stack@(0)=stack@(0)/stack@(1)
+           gosub drop:
+       endif
+       gosub flashkeyoff:
+   else
+       if char$="*" then
+           gosub flashkeyon:
+           gosub pushifinput:
+           stack@(0)=stack@(0)*stack@(1)
+           gosub drop:
+           gosub flashkeyoff:
+       else
+           if char$="+" then
+               gosub flashkeyon:
+               gosub pushifinput:
+               stack@(0)=stack@(0)+stack@(1)
+               gosub drop:
+               gosub flashkeyoff:
+           else
+               if char$="-" then
+                   gosub flashkeyon:
+                   gosub pushifinput:
+                   stack@(0)=stack@(0)-stack@(1)
+                   gosub drop:
+                   gosub flashkeyoff:
+               else
+                   if char$="=" then
+                       gosub flashkeyon:
+                       gosub push:
+                       gosub flashkeyoff:
+                   endif
+               endif
+           endif
+       endif
+   endif
+   return
+
+push:  rem push current input to stack
+   stack@(3)=stack@(2)
+   stack@(2)=stack@(1)
+   stack@(1)=stack@(0)
+   if inbuf$>"" then
+       stack@(0)=inbuf@
+   endif
+   inbuf$=""
+   gosub displaystack:
+   return
+
+pushifinput:   rem if user has entered some characters, then push to stk
+   if inbuf$>"" then
+       gosub push:
+   endif
+   return
+
+drop:  rem clean up stack after math
+   stack@(1)=stack@(2)
+   stack@(2)=stack@(3)
+   gosub displaystack:
+   return
+
+flashkeyon:    rem display calc key in reverse video when "pressed"
+               rem expects char$ to contain the key pressed
+   gosub computexy:
+   rem check if both coords are 0, if so, not a valid key--don't flash it
+   z=x+y
+   if z=0 then
+       return
+   endif
+   gosub hidemouse:
+   rem timerval@ will be used by flashkeyoff: to delay reseting key
+   rem so reverse highlighting is visible
+   timerval@=timer
+   timerval@=abs(timerval@)
+   offset=y*160
+   x1=x*2
+   offset=offset+x1
+   offset=offset+1
+   if vidtype=1 then
+       rem dark yellow on blue background
+       vid=97
+   else
+       rem reverse video for monochrome systems
+       vid=112
+   endif
+   rem poke the attribute video bytes with new color to make key appear
+   rem to flash
+   for i=1 to 5
+      poke offset,vid
+      offset=offset+2
+   next i
+   gosub showmouse:
+   return
+
+flashkeyoff:    rem restore normal video on key pressed
+                rem expects char$ to contain key pressed
+   gosub computexy:
+   rem check if both coords are 0, if so, not a valid key--don't reset flash
+   z=x+y
+   if z=0 then
+       return
+   endif
+waitloop:
+   x@=timer
+   x@=abs(x@)
+   x@=x@-timerval@
+   x@=abs(x@)
+   if x@<2@ then waitloop:
+   gosub hidemouse:
+   offset=y*160
+   x1=x*2
+   offset=offset+x1
+   offset=offset+1
+   if vidtype=1 then
+       rem reset key to default colors
+       vid=30
+   else
+       rem reset monochrome system key to normal attribute
+       vid=07
+   endif
+   for i=1 to 5
+      poke offset,vid
+      offset=offset+2
+   next i
+   gosub showmouse:
+   return
+
+mouse:  rem mouse interrupt caller (INT 33h)
+   INT86(&HEX33,AX,BX,CX,DX,NA,NA,NA,NA,NA)
+   return
+
+readmouse:  rem read mouse input and store in char$ to simulate keyboard
+   rem check if user has pressed a key, if so, ignore mouse
+   if char$>"" then
+       return
+   endif
+
+   rem get mouse button status and position
+   ax=3
+   gosub mouse:
+   mousex=cx
+   mousey=dx
+   if bx=1 then
+       rem left mouse button is being pressed, wait for release
+       buttondown=1
+       while (buttondown=1)
+           ax=3
+           gosub mouse:
+           newmousex=cx
+           newmousey=dx
+           if bx=0 then
+               buttondown=0
+           endif
+       wend
+       rem the reason we are checking to see if the mouse has moved
+       rem is to give the user a chance to "bail out".  If he pressed the
+       rem mouse button by mistake, he can move it and release it.
+       if mousex=newmousex then
+           if mousey=newmousey then
+               rem convert mouse coords to row/col
+               mousey=mousey/8
+               mousex=mousex/8
+               gosub interpretloc:
+           endif
+       endif
+   endif
+   return
+
+interpretloc:  rem figure out if the mouse pointer was on a button when clicked 
+       rem expects mouse coords in: mousex, mousey
+   for i=1 to 22
+       startx=keysx(i)
+       endx=startx+4
+       if mousex<startx then
+       else
+           if mousex>endx then
+           else
+               if mousey=keysy(i) then
+                   char$=chr$(keys(i))
+                   return
+               endif
+           endif
+       endif
+   next i
+   return
+
+computexy:  rem try to find a key location match for character in "char$"
+   x=0
+   y=0
+   char=asc(char$)
+   for i=1 to 22
+       if char=keys(i) then
+           rem matched
+           x=keysx(i)
+           y=keysy(i)
+           return
+       endif
+   next i
+   return
+
+hidemouse: rem turn off mouse cursor
+   ax=2
+   gosub mouse:
+   return
+
+showmouse: rem turn on mouse cursor
+   ax=1
+   gosub mouse:
+   return
+
+convertnum: rem convert inbuf$ string to decimal format in inbuf
+   inbuf@=val(inbuf$)
+   if error>0 then
+       inbuf$="Input Error"
+       gosub displayinbuf:
+       inbuf$=""
+       inbuf@=0.0
+   endif
+   return

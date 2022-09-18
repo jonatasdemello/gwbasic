@@ -1,0 +1,12 @@
+SUB "PrintDollars" (NumToPrint@)
+
+   REM Sample ASIC subroutine (called by CALLSUB.ASI--see ASIC.DOC, SUB stmt)
+   REM prints parameter "NumToPrint@" in format #.##
+   X$=STR$(NumToPrint@)
+   X$ = LEFT$(X$,16)
+   X$=LTRIM$(X$)
+   PRINT X$
+   NumToPrint@ = 0@
+
+ENDSUB
+

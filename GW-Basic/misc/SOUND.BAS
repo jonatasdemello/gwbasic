@@ -1,0 +1,7 @@
+SCREEN 12
+A:
+COLOR 15: PRINT "Sound?"
+INPUT A
+SOUND A, 2
+GOTO A
+

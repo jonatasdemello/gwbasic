@@ -1,0 +1,78 @@
+SCREEN 9: CLS
+RANDOMIZE TIMER
+APL:
+B$ = INKEY$
+IF B$ = "" THEN
+A = 225
+B = 100
+
+RANO:
+E = INT(RND * 640)
+IF E < 100 OR E > 580 THEN GOTO RANO
+
+RANP:
+F = INT(RND * 350)
+IF F < 80 OR F > 290 THEN GOTO RANP
+
+A:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), CO
+B = B + 5
+IF B > 260 THEN GOTO B
+GOTO A
+
+B:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), CO
+A = A + 5
+IF A > 415 THEN GOTO C
+GOTO B
+
+C:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), CO
+B = B - 5
+IF B < 100 THEN GOTO D
+GOTO C
+
+D:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), CO
+A = A - 5
+IF A < 225 THEN GOTO EDD
+GOTO D
+
+EDD:
+A = 225
+B = 100
+
+E:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), 0
+B = B + 5
+IF B > 260 THEN GOTO F
+GOTO E
+
+F:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), 0
+A = A + 5
+IF A > 415 THEN GOTO G
+GOTO F
+
+G:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), 0
+B = B - 5
+IF B < 100 THEN GOTO H
+GOTO G
+
+H:
+CO = INT(RND * 15)
+LINE (E, F)-(A, B), 0
+A = A - 5
+IF A < 225 THEN GOTO APL
+GOTO H
+END IF
+END
+

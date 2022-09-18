@@ -1,0 +1,1914 @@
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 1
+
+Source File:  SPINNER2.ASI
+
+00002 1 SCREEN 2: SCREEN 0: COLOR 15, 1: CLS
+00002       ** E009 ** Keyword Unknown: 2:
+00003 2 PRINT "*********************"
+00003       ** E013 ** Syntax Error
+00004 3 PRINT "*  SUPER  SPINNER   *"
+00004       ** E013 ** Syntax Error
+00005 4 PRINT "*                   *"
+00005       ** E013 ** Syntax Error
+00006 5 PRINT "*      TWO          *"
+00006       ** E013 ** Syntax Error
+00007 6 PRINT "*********************"
+00007       ** E013 ** Syntax Error
+00008 7 PLAY "MB C8D8E8C16C16D16D16E16E16A8A#8A8G8A16A16A#16A#16A16A16G16G16A16A16A#16
+00008       ** E006 ** Unmatched Quote ('"') in source line
+00008 7 PLAY "MB C8D8E8C16C16D16D16E16E16A8A#8A8G8A16A16A#16A#16A16A16G16G16A16A16A#16
+00008       ** E012 ** No keywords in source line **
+00009 A#16B16B16C4>C64<C64"
+00009       ** E006 ** Unmatched Quote ('"') in source line
+00009 A#16B16B16C4>C64<C64"
+00009       ** E009 ** Keyword Unknown: A#
+00010 8 COLOR 15, 13
+00010       ** E013 ** Syntax Error
+00011 9 CLS
+00011       ** E013 ** Syntax Error
+00012 10 PRINT "<<WELCOME TO SUPER SPINNER # 2>>"
+00012       ** E013 ** Syntax Error
+00013 11 PRINT "WHAT IS YOUR NAME? "
+00013       ** E013 ** Syntax Error
+00014 12 INPUT A$
+00014       ** E013 ** Syntax Error
+00015 13 PRINT "HELLO "; A$; "!"
+00015       ** E013 ** Syntax Error
+00016 20 PRINT "WELL THEN, IF YOU'VE PLAYED THE PAST TWO SUPER SPINNERS THEN YOU KNOW 
+00016       ** E006 ** Unmatched Quote ('"') in source line
+00016 20 PRINT "WELL THEN, IF YOU'VE PLAYED THE PAST TWO SUPER SPINNERS THEN YOU KNOW 
+00016       ** E013 ** Syntax Error
+00017 HOW TO PLAY. PRESS <ENTER> TO GO ON. OH!!! BY THE
+00017       ** E009 ** Keyword Unknown: PLAY.
+00018  WAY USE Y FOR YES AND N FOR NO AND PLEASE TURN YOUR PRINTER ON."
+00018       ** E006 ** Unmatched Quote ('"') in source line
+00018  WAY USE Y FOR YES AND N FOR NO AND PLEASE TURN YOUR PRINTER ON."
+00018       ** E009 ** Keyword Unknown: ON.
+00019 21 INPUT ENTER
+00019       ** E013 ** Syntax Error
+00020 22 COLOR 15, 14
+00020       ** E013 ** Syntax Error
+00021 23 PLAY "C16D16E16F16G16F16E16D16C16"
+00021       ** E012 ** No keywords in source line **
+00022 24 CLS
+00022       ** E013 ** Syntax Error
+00023 25 PRINT "    SPINS       :   SCORE NEEDED"
+00023       ** E013 ** Syntax Error
+00024 26 PRINT "      1         :    300 or less          <<R>>"
+00024       ** E013 ** Syntax Error
+00025 27 PRINT "      3         :    301 - 1000           <<O>>"
+00025       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 2
+
+Source File:  SPINNER2.ASI
+
+00026 28 PRINT "      5         :    1001 - 1500          <<U>>"
+00026       ** E013 ** Syntax Error
+00027 29 PRINT "      7         :    1501 - 2000          <<N>>"
+00027       ** E013 ** Syntax Error
+00028 30 PRINT "      9         :    2001 - 2500          <<D>>"
+00028       ** E013 ** Syntax Error
+00029 31 PRINT "      11        :    2501 - 3500          << >>"
+00029       ** E013 ** Syntax Error
+00030 32 PRINT "      15        :    3501 and up          <<1>>"
+00030       ** E013 ** Syntax Error
+00031 33 PRINT "": PRINT "WHEN IT COMES TIME, PRESS ANY KEY TO STOP THE SPINNER. THE
+00031       ** E006 ** Unmatched Quote ('"') in source line
+00031 33 PRINT "": PRINT "WHEN IT COMES TIME, PRESS ANY KEY TO STOP THE SPINNER. THE
+00031       ** E009 ** Keyword Unknown: :
+00032 CORE & SPINS ARE SHOWN AFTER YOUR SPIN.": PRINT "
+00032       ** E009 ** Keyword Unknown: &
+00033 THE POINTS RANGE FROM 100 - 1,500 POINTS"
+00033       ** E006 ** Unmatched Quote ('"') in source line
+00033 THE POINTS RANGE FROM 100 - 1,500 POINTS"
+00033       ** E013 ** Syntax Error
+00034 34 PRINT "PRESS <ENTER> NOW"
+00034       ** E013 ** Syntax Error
+00035 35 INPUT ENTER
+00035       ** E013 ** Syntax Error
+00036 36 SCREEN 1
+00036       ** E013 ** Syntax Error
+00037 37 SCREEN 0
+00037       ** E013 ** Syntax Error
+00038 38 COLOR 15, 13
+00038       ** E013 ** Syntax Error
+00040 40 CLS : A = 0
+00040       ** E009 ** Keyword Unknown: :
+00041 41 PRINT "150 POINTS": PLAY "F64"
+00041       ** E009 ** Keyword Unknown: :
+00042 42 B$ = INKEY$
+00042       ** E013 ** Syntax Error
+00043 43 IF B$ = "" THEN GOTO 45
+00043       ** E013 ** Syntax Error
+00044 44 GOTO 200
+00044       ** E013 ** Syntax Error
+00045 45 CLS
+00045       ** E013 ** Syntax Error
+00046 46 A = 1
+00046       ** E013 ** Syntax Error
+00047 47 PRINT "300 POINTS": PLAY "A64"
+00047       ** E009 ** Keyword Unknown: :
+00048 48 B$ = INKEY$
+00048       ** E013 ** Syntax Error
+00049 49 IF B$ = "" THEN GOTO 51
+00049       ** E013 ** Syntax Error
+00050 50 GOTO 200
+00050       ** E013 ** Syntax Error
+00051 51 CLS : A = 2
+00051       ** E009 ** Keyword Unknown: :
+00052 52 PRINT "BANKRUPT": PLAY "C64"
+00052       ** E009 ** Keyword Unknown: :
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 3
+
+Source File:  SPINNER2.ASI
+
+00053 53 B$ = INKEY$
+00053       ** E013 ** Syntax Error
+00054 54 IF B$ = "" THEN GOTO 56
+00054       ** E013 ** Syntax Error
+00055 55 GOTO 200
+00055       ** E013 ** Syntax Error
+00056 56 CLS
+00056       ** E013 ** Syntax Error
+00057 57 A = 3
+00057       ** E013 ** Syntax Error
+00058 58 PRINT "500 POINTS": PLAY "D64"
+00058       ** E009 ** Keyword Unknown: :
+00059 59 B$ = INKEY$
+00059       ** E013 ** Syntax Error
+00060 60 IF B$ = "" THEN GOTO 62
+00060       ** E013 ** Syntax Error
+00061 61 GOTO 200
+00061       ** E013 ** Syntax Error
+00062 62 CLS
+00062       ** E013 ** Syntax Error
+00063 63 A = 4
+00063       ** E013 ** Syntax Error
+00064 64 PRINT "400 POINTS": PLAY "E64"
+00064       ** E009 ** Keyword Unknown: :
+00065 65 B$ = INKEY$
+00065       ** E013 ** Syntax Error
+00066 66 IF B$ = "" THEN GOTO 68
+00066       ** E013 ** Syntax Error
+00067 67 GOTO 200
+00067       ** E013 ** Syntax Error
+00068 68 CLS
+00068       ** E013 ** Syntax Error
+00069 69 A = 5
+00069       ** E013 ** Syntax Error
+00070 70 PRINT "200 POINTS": PLAY "G64"
+00070       ** E009 ** Keyword Unknown: :
+00071 71 B$ = INKEY$
+00071       ** E013 ** Syntax Error
+00072 72 IF B$ = "" THEN GOTO 74
+00072       ** E013 ** Syntax Error
+00073 73 GOTO 200
+00073       ** E013 ** Syntax Error
+00074 74 CLS
+00074       ** E013 ** Syntax Error
+00075 75 A = 6
+00075       ** E013 ** Syntax Error
+00076 76 PRINT "100 + SPIN": PLAY "B64"
+00076       ** E009 ** Keyword Unknown: :
+00077 77 B$ = INKEY$
+00077       ** E013 ** Syntax Error
+00078 78 IF B$ = "" THEN GOTO 80
+00078       ** E013 ** Syntax Error
+00079 79 GOTO 200
+00079       ** E013 ** Syntax Error
+00080 80 CLS
+00080       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 4
+
+Source File:  SPINNER2.ASI
+
+00081 81 A = 7
+00081       ** E013 ** Syntax Error
+00082 82 PRINT "1,500 POINTS": PLAY "F64"
+00082       ** E009 ** Keyword Unknown: :
+00083 83 B$ = INKEY$
+00083       ** E013 ** Syntax Error
+00084 84 IF B$ = "" THEN GOTO 86
+00084       ** E013 ** Syntax Error
+00085 85 GOTO 200
+00085       ** E013 ** Syntax Error
+00086 86 CLS
+00086       ** E013 ** Syntax Error
+00087 87 A = 8
+00087       ** E013 ** Syntax Error
+00088 88 PRINT "BANKRUPT": PLAY "A64"
+00088       ** E009 ** Keyword Unknown: :
+00089 89 B$ = INKEY$
+00089       ** E013 ** Syntax Error
+00090 90 IF B$ = "" THEN GOTO 92
+00090       ** E013 ** Syntax Error
+00091 91 GOTO 200
+00091       ** E013 ** Syntax Error
+00092 92 CLS
+00092       ** E013 ** Syntax Error
+00093 93 A = 9
+00093       ** E013 ** Syntax Error
+00094 94 PRINT "1,000 POINTS": PLAY "C64"
+00094       ** E009 ** Keyword Unknown: :
+00095 95 B$ = INKEY$
+00095       ** E013 ** Syntax Error
+00096 96 IF B$ = "" THEN GOTO 98
+00096       ** E013 ** Syntax Error
+00097 97 GOTO 200
+00097       ** E013 ** Syntax Error
+00098 98 CLS
+00098       ** E013 ** Syntax Error
+00099 99 A = 10
+00099       ** E013 ** Syntax Error
+00100 100 PRINT "800 POINTS": PLAY "E64"
+00100       ** E009 ** Keyword Unknown: :
+00101 101 B$ = INKEY$
+00101       ** E013 ** Syntax Error
+00102 102 IF B$ = "" THEN GOTO 104
+00102       ** E013 ** Syntax Error
+00103 103 GOTO 200
+00103       ** E013 ** Syntax Error
+00104 104 CLS
+00104       ** E013 ** Syntax Error
+00105 105 A = 11
+00105       ** E013 ** Syntax Error
+00106 106 PRINT "600 POINTS": PLAY "B64"
+00106       ** E009 ** Keyword Unknown: :
+00107 107 B$ = INKEY$
+00107       ** E013 ** Syntax Error
+00108 108 IF B$ = "" THEN GOTO 110
+00108       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 5
+
+Source File:  SPINNER2.ASI
+
+00109 109 GOTO 200
+00109       ** E013 ** Syntax Error
+00110 110 CLS
+00110       ** E013 ** Syntax Error
+00111 111 A = 12
+00111       ** E013 ** Syntax Error
+00112 112 PRINT "450 POINTS": PLAY "G64"
+00112       ** E009 ** Keyword Unknown: :
+00113 113 B$ = INKEY$
+00113       ** E013 ** Syntax Error
+00114 114 IF B$ = "" THEN GOTO 116
+00114       ** E013 ** Syntax Error
+00115 115 GOTO 200
+00115       ** E013 ** Syntax Error
+00116 116 CLS
+00116       ** E013 ** Syntax Error
+00117 117 A = 13
+00117       ** E013 ** Syntax Error
+00118 118 PRINT "BANKRUPT": PLAY "D64"
+00118       ** E009 ** Keyword Unknown: :
+00119 119 B$ = INKEY$
+00119       ** E013 ** Syntax Error
+00120 120 IF B$ = "" THEN GOTO 122
+00120       ** E013 ** Syntax Error
+00121 121 GOTO 200
+00121       ** E013 ** Syntax Error
+00122 122 CLS
+00122       ** E013 ** Syntax Error
+00123 123 A = 14
+00123       ** E013 ** Syntax Error
+00124 124 PRINT "1,250 POINTS": PLAY "E64"
+00124       ** E009 ** Keyword Unknown: :
+00125 125 B$ = INKEY$
+00125       ** E013 ** Syntax Error
+00126 126 IF B$ = "" THEN GOTO 40
+00126       ** E013 ** Syntax Error
+00127 127 GOTO 200
+00127       ** E013 ** Syntax Error
+00128 200 IF A = 0 THEN GOTO 216
+00128       ** E013 ** Syntax Error
+00129 201 IF A = 1 THEN GOTO 217
+00129       ** E013 ** Syntax Error
+00130 202 IF A = 2 THEN GOTO 228
+00130       ** E013 ** Syntax Error
+00131 203 IF A = 3 THEN GOTO 218
+00131       ** E013 ** Syntax Error
+00132 204 IF A = 4 THEN GOTO 219
+00132       ** E013 ** Syntax Error
+00133 205 IF A = 5 THEN GOTO 220
+00133       ** E013 ** Syntax Error
+00134 206 IF A = 6 THEN GOTO 221
+00134       ** E013 ** Syntax Error
+00135 207 IF A = 7 THEN GOTO 222
+00135       ** E013 ** Syntax Error
+00136 208 IF A = 8 THEN GOTO 228
+00136       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 6
+
+Source File:  SPINNER2.ASI
+
+00137 209 IF A = 9 THEN GOTO 223
+00137       ** E013 ** Syntax Error
+00138 210 IF A = 10 THEN GOTO 224
+00138       ** E013 ** Syntax Error
+00139 211 IF A = 11 THEN GOTO 225
+00139       ** E013 ** Syntax Error
+00140 212 IF A = 12 THEN GOTO 226
+00140       ** E013 ** Syntax Error
+00141 213 IF A = 13 THEN GOTO 228
+00141       ** E013 ** Syntax Error
+00142 214 IF A = 14 THEN GOTO 227
+00142       ** E013 ** Syntax Error
+00143 215 PRINT "EXTRA LINE # 1"
+00143       ** E013 ** Syntax Error
+00144 216 BEEP: X = X + 150: GOTO 229
+00144       ** E009 ** Keyword Unknown: 150:
+00145 217 BEEP: X = X + 300: GOTO 229
+00145       ** E009 ** Keyword Unknown: 300:
+00146 218 BEEP: X = X + 500: GOTO 229
+00146       ** E009 ** Keyword Unknown: 500:
+00147 219 BEEP: X = X + 400: GOTO 229
+00147       ** E009 ** Keyword Unknown: 400:
+00148 220 BEEP: X = X + 200: GOTO 229
+00148       ** E009 ** Keyword Unknown: 200:
+00149 221 BEEP: X = X + 100: S = S + 1: GOTO 229
+00149       ** E009 ** Keyword Unknown: 100:
+00150 222 PLAY "C16D16E16F16G16A16B16C4>C64<C64": X = X + 1500: GOTO 229
+00150       ** E009 ** Keyword Unknown: :
+00151 223 PLAY "C32D32E32F32G32F32E32D32C4": X = X + 1000: GOTO 229
+00151       ** E009 ** Keyword Unknown: :
+00152 224 BEEP: X = X + 800: GOTO 229
+00152       ** E009 ** Keyword Unknown: 800:
+00153 225 BEEP: X = X + 600: GOTO 229
+00153       ** E009 ** Keyword Unknown: 600:
+00154 226 BEEP: X = X + 450: GOTO 229
+00154       ** E009 ** Keyword Unknown: 450:
+00155 227 PLAY "C32D32E32F32G32A32B32>C32<B32A32G32F32E32D32C32": X = X + 1250: GOTO
+00155       ** E009 ** Keyword Unknown: :
+00156 29
+00156       ** E012 ** No keywords in source line **
+00157 228 PRINT "": PRINT "OH MY!!! A BANKRUPT!!!!": PLAY "<<<<<C2>>>>>": X = 0: GOTO 
+00157       ** E009 ** Keyword Unknown: :
+00158 229
+00158       ** E012 ** No keywords in source line **
+00159 229 S = S - 1
+00159       ** E013 ** Syntax Error
+00160 230 IF S <= 0 THEN GOTO 300
+00160       ** E013 ** Syntax Error
+00161 231 PRINT "PRESS <ENTER> NOW.": INPUT ENTER: CLS
+00161       ** E009 ** Keyword Unknown: :
+00162 232 PRINT "<<<<<SCORE: "; X; " SPINS: "; S; ">>>>>"
+00162       ** E013 ** Syntax Error
+00163 233 PRINT "WOULD YOU LIKE TO GO ON?"
+00163       ** E013 ** Syntax Error
+00164 234 INPUT B$
+00164       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 7
+
+Source File:  SPINNER2.ASI
+
+00165 235 IF B$ = "Y" THEN GOTO 40
+00165       ** E013 ** Syntax Error
+00166 236 IF B$ = "N" THEN GOTO 300
+00166       ** E013 ** Syntax Error
+00167 237 PRINT "RETYPE "; A$; ".": GOTO 234
+00167       ** E009 ** Keyword Unknown: :
+00168 300 SCREEN 2: SCREEN 0: COLOR 15, 9
+00168       ** E009 ** Keyword Unknown: 2:
+00169 301 CLS
+00169       ** E013 ** Syntax Error
+00170 302 PRINT "YOU NOW HAVE A SCORE OF "; X; "."
+00170       ** E013 ** Syntax Error
+00171 303 IF X <= 300 THEN S = 1
+00171       ** E013 ** Syntax Error
+00172 304 IF X >= 301 THEN S = 3
+00172       ** E013 ** Syntax Error
+00173 305 IF X >= 1001 THEN S = 5
+00173       ** E013 ** Syntax Error
+00174 306 IF X >= 1501 THEN S = 7
+00174       ** E013 ** Syntax Error
+00175 307 IF X >= 2001 THEN S = 9
+00175       ** E013 ** Syntax Error
+00176 308 IF X >= 2501 THEN S = 11
+00176       ** E013 ** Syntax Error
+00177 309 IF X >= 3501 THEN S = 15
+00177       ** E013 ** Syntax Error
+00178 310 PRINT "YOU NOW HAVE "; S; " SPINS "; A$; "."
+00178       ** E013 ** Syntax Error
+00179 311 PRINT "ROUND # 2: POINTS RANGE FROM 500 - 15,000 POINTS."
+00179       ** E013 ** Syntax Error
+00180 312 PRINT "THERE IS A MINI BONUS GAME IN THIS ROUND."
+00180       ** E013 ** Syntax Error
+00181 313 PRINT "YOU NEED A TOTAL OF 40,000 POINTS TO GO TO ROUND # 3"
+00181       ** E013 ** Syntax Error
+00182 314 PRINT "YOU NEED A TOTAL OF 60,000 POINTS TO GO TO ROUND # 3 AND THE BONUS RO
+00182       ** E006 ** Unmatched Quote ('"') in source line
+00182 314 PRINT "YOU NEED A TOTAL OF 60,000 POINTS TO GO TO ROUND # 3 AND THE BONUS RO
+00182       ** E013 ** Syntax Error
+00183 UND."
+00183       ** E006 ** Unmatched Quote ('"') in source line
+00183 UND."
+00183       ** E009 ** Keyword Unknown: UND.
+00184 315 PRINT "<<<<<<<<<<GOOD LUCK "; A$; ">>>>>>>>>>"
+00184       ** E013 ** Syntax Error
+00185 316 PRINT "PRESS <ENTER> NOW."
+00185       ** E013 ** Syntax Error
+00186 317 INPUT ENTER
+00186       ** E013 ** Syntax Error
+00187 318 SCREEN 1
+00187       ** E013 ** Syntax Error
+00188 319 SCREEN 0
+00188       ** E013 ** Syntax Error
+00189 320 COLOR 15, 12
+00189       ** E013 ** Syntax Error
+00190 321 A = 0
+00190       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 8
+
+Source File:  SPINNER2.ASI
+
+00191 322 PRINT "BANKRUPT": PLAY "C64"
+00191       ** E009 ** Keyword Unknown: :
+00192 323 B$ = INKEY$
+00192       ** E013 ** Syntax Error
+00193 324 IF B$ = "" THEN GOTO 326
+00193       ** E013 ** Syntax Error
+00194 325 GOTO 600
+00194       ** E013 ** Syntax Error
+00195 326 CLS
+00195       ** E013 ** Syntax Error
+00196 327 A = 1
+00196       ** E013 ** Syntax Error
+00197 328 PRINT "1,250 POINTS": PLAY "F64"
+00197       ** E009 ** Keyword Unknown: :
+00198 329 B$ = INKEY$
+00198       ** E013 ** Syntax Error
+00199 330 IF B$ = "" THEN GOTO 332
+00199       ** E013 ** Syntax Error
+00200 331 GOTO 600
+00200       ** E013 ** Syntax Error
+00201 332 CLS
+00201       ** E013 ** Syntax Error
+00202 333 A = 2
+00202       ** E013 ** Syntax Error
+00203 334 PRINT "2,000 POINTS": PLAY "G64"
+00203       ** E009 ** Keyword Unknown: :
+00204 335 B$ = INKEY$
+00204       ** E013 ** Syntax Error
+00205 336 IF B$ = "" THEN GOTO 338
+00205       ** E013 ** Syntax Error
+00206 337 GOTO 600
+00206       ** E013 ** Syntax Error
+00207 338 CLS
+00207       ** E013 ** Syntax Error
+00208 339 A = 3
+00208       ** E013 ** Syntax Error
+00209 340 PRINT "BANKRUPT": PLAY "B64"
+00209       ** E009 ** Keyword Unknown: :
+00210 341 B$ = INKEY$
+00210       ** E013 ** Syntax Error
+00211 342 IF B$ = "" THEN GOTO 344
+00211       ** E013 ** Syntax Error
+00212 343 GOTO 600
+00212       ** E013 ** Syntax Error
+00213 344 CLS
+00213       ** E013 ** Syntax Error
+00214 345 A = 4
+00214       ** E013 ** Syntax Error
+00215 346 PRINT "2,500 POINTS": PLAY "A64"
+00215       ** E009 ** Keyword Unknown: :
+00216 347 B$ = INKEY$
+00216       ** E013 ** Syntax Error
+00217 348 IF B$ = "" THEN GOTO 350
+00217       ** E013 ** Syntax Error
+00218 349 GOTO 600
+00218       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 9
+
+Source File:  SPINNER2.ASI
+
+00219 350 A = 5
+00219       ** E013 ** Syntax Error
+00220 351 CLS
+00220       ** E013 ** Syntax Error
+00221 352 PRINT "BANKRUPT": PLAY "E64"
+00221       ** E009 ** Keyword Unknown: :
+00222 353 B$ = INKEY$
+00222       ** E013 ** Syntax Error
+00223 354 IF B$ = "" THEN GOTO 356
+00223       ** E013 ** Syntax Error
+00224 355 GOTO 600
+00224       ** E013 ** Syntax Error
+00225 356 A = 6
+00225       ** E013 ** Syntax Error
+00226 357 CLS
+00226       ** E013 ** Syntax Error
+00227 358 PRINT "1,500 POINTS": PLAY "D64"
+00227       ** E009 ** Keyword Unknown: :
+00228 359 B$ = INKEY$
+00228       ** E013 ** Syntax Error
+00229 360 IF B$ = "" THEN GOTO 362
+00229       ** E013 ** Syntax Error
+00230 361 GOTO 600
+00230       ** E013 ** Syntax Error
+00231 362 A = 7
+00231       ** E013 ** Syntax Error
+00232 363 CLS
+00232       ** E013 ** Syntax Error
+00233 364 PRINT "1,750 POINTS": PLAY "C64"
+00233       ** E009 ** Keyword Unknown: :
+00234 365 B$ = INKEY$
+00234       ** E013 ** Syntax Error
+00235 366 IF B$ = "" THEN GOTO 368
+00235       ** E013 ** Syntax Error
+00236 367 GOTO 600
+00236       ** E013 ** Syntax Error
+00237 368 A = 8
+00237       ** E013 ** Syntax Error
+00238 369 CLS
+00238       ** E013 ** Syntax Error
+00239 370 PRINT "3,000 + SPIN": PLAY "F64"
+00239       ** E009 ** Keyword Unknown: :
+00240 371 B$ = INKEY$
+00240       ** E013 ** Syntax Error
+00241 372 IF B$ = "" THEN GOTO 374
+00241       ** E013 ** Syntax Error
+00242 373 GOTO 600
+00242       ** E013 ** Syntax Error
+00243 374 CLS
+00243       ** E013 ** Syntax Error
+00244 375 A = 9
+00244       ** E013 ** Syntax Error
+00245 376 PRINT "5,000 + SPIN": PLAY "G64"
+00245       ** E009 ** Keyword Unknown: :
+00246 377 B$ = INKEY$
+00246       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 10
+
+Source File:  SPINNER2.ASI
+
+00247 378 IF B$ = "" THEN GOTO 380
+00247       ** E013 ** Syntax Error
+00248 379 GOTO 600
+00248       ** E013 ** Syntax Error
+00249 380 CLS
+00249       ** E013 ** Syntax Error
+00250 381 A = 10
+00250       ** E013 ** Syntax Error
+00251 382 PRINT "BANKRUPT": PLAY "B64"
+00251       ** E009 ** Keyword Unknown: :
+00252 383 B$ = INKEY$
+00252       ** E013 ** Syntax Error
+00253 384 IF B$ = "" THEN GOTO 386
+00253       ** E013 ** Syntax Error
+00254 385 GOTO 600
+00254       ** E013 ** Syntax Error
+00255 386 CLS
+00255       ** E013 ** Syntax Error
+00256 387 A = 11
+00256       ** E013 ** Syntax Error
+00257 388 PRINT "2,250 POINTS": PLAY "C64"
+00257       ** E009 ** Keyword Unknown: :
+00258 389 B$ = INKEY$
+00258       ** E013 ** Syntax Error
+00259 390 IF B$ = "" THEN GOTO 392
+00259       ** E013 ** Syntax Error
+00260 391 GOTO 600
+00260       ** E013 ** Syntax Error
+00261 392 CLS
+00261       ** E013 ** Syntax Error
+00262 393 A = 12
+00262       ** E013 ** Syntax Error
+00263 394 PRINT "500 + SPIN": PLAY "D64"
+00263       ** E009 ** Keyword Unknown: :
+00264 395 B$ = INKEY$
+00264       ** E013 ** Syntax Error
+00265 396 IF B$ = "" THEN GOTO 398
+00265       ** E013 ** Syntax Error
+00266 397 GOTO 600
+00266       ** E013 ** Syntax Error
+00267 398 A = 13
+00267       ** E013 ** Syntax Error
+00268 399 CLS
+00268       ** E013 ** Syntax Error
+00269 400 PRINT "7,500 + SPIN": PLAY "A64"
+00269       ** E009 ** Keyword Unknown: :
+00270 401 B$ = INKEY$
+00270       ** E013 ** Syntax Error
+00271 402 IF B$ = "" THEN GOTO 404
+00271       ** E013 ** Syntax Error
+00272 403 GOTO 600
+00272       ** E013 ** Syntax Error
+00273 404 A = 14
+00273       ** E013 ** Syntax Error
+00274 405 CLS
+00274       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 11
+
+Source File:  SPINNER2.ASI
+
+00275 406 PRINT "9,250 + SPIN": PLAY "E64"
+00275       ** E009 ** Keyword Unknown: :
+00276 407 B$ = INKEY$
+00276       ** E013 ** Syntax Error
+00277 408 IF B$ = "" THEN GOTO 410
+00277       ** E013 ** Syntax Error
+00278 409 GOTO 600
+00278       ** E013 ** Syntax Error
+00279 410 CLS
+00279       ** E013 ** Syntax Error
+00280 411 A = 15
+00280       ** E013 ** Syntax Error
+00281 412 PRINT "4,000 POINTS": PLAY "B64"
+00281       ** E009 ** Keyword Unknown: :
+00282 413 B$ = INKEY$
+00282       ** E013 ** Syntax Error
+00283 414 IF B$ = "" THEN GOTO 416
+00283       ** E013 ** Syntax Error
+00284 415 GOTO 600
+00284       ** E013 ** Syntax Error
+00285 416 CLS
+00285       ** E013 ** Syntax Error
+00286 417 A = 16
+00286       ** E013 ** Syntax Error
+00287 418 PRINT "MINI BONUS GAME": PLAY "G64"
+00287       ** E009 ** Keyword Unknown: :
+00288 419 B$ = INKEY$
+00288       ** E013 ** Syntax Error
+00289 420 IF B$ = "" THEN GOTO 422
+00289       ** E013 ** Syntax Error
+00290 421 GOTO 600
+00290       ** E013 ** Syntax Error
+00291 422 CLS
+00291       ** E013 ** Syntax Error
+00292 423 A = 17
+00292       ** E013 ** Syntax Error
+00293 424 PRINT "BANKRUPT": PLAY "A64"
+00293       ** E009 ** Keyword Unknown: :
+00294 425 B$ = INKEY$
+00294       ** E013 ** Syntax Error
+00295 426 IF B$ = "" THEN GOTO 428
+00295       ** E013 ** Syntax Error
+00296 427 GOTO 600
+00296       ** E013 ** Syntax Error
+00297 428 CLS
+00297       ** E013 ** Syntax Error
+00298 429 A = 18
+00298       ** E013 ** Syntax Error
+00299 430 PRINT "1,000 POINTS": PLAY "F64"
+00299       ** E009 ** Keyword Unknown: :
+00300 431 B$ = INKEY$
+00300       ** E013 ** Syntax Error
+00301 432 IF B$ = "" THEN GOTO 434
+00301       ** E013 ** Syntax Error
+00302 433 GOTO 600
+00302       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 12
+
+Source File:  SPINNER2.ASI
+
+00303 434 A = 19
+00303       ** E013 ** Syntax Error
+00304 435 CLS
+00304       ** E013 ** Syntax Error
+00305 436 PRINT "950 POINTS": PLAY "G64"
+00305       ** E009 ** Keyword Unknown: :
+00306 437 B$ = INKEY$
+00306       ** E013 ** Syntax Error
+00307 438 IF B$ = "" THEN GOTO 440
+00307       ** E013 ** Syntax Error
+00308 439 GOTO 600
+00308       ** E013 ** Syntax Error
+00309 440 A = 20
+00309       ** E013 ** Syntax Error
+00310 441 CLS
+00310       ** E013 ** Syntax Error
+00311 442 PRINT "10,000 + SPIN": PLAY "D64"
+00311       ** E009 ** Keyword Unknown: :
+00312 443 B$ = INKEY$
+00312       ** E013 ** Syntax Error
+00313 444 IF B$ = "" THEN GOTO 446
+00313       ** E013 ** Syntax Error
+00314 445 GOTO 600
+00314       ** E013 ** Syntax Error
+00315 446 A = 21
+00315       ** E013 ** Syntax Error
+00316 447 CLS
+00316       ** E013 ** Syntax Error
+00317 448 PRINT "2,700 POINTS": PLAY "A64"
+00317       ** E009 ** Keyword Unknown: :
+00318 449 B$ = INKEY$
+00318       ** E013 ** Syntax Error
+00319 450 IF B$ = "" THEN GOTO 452
+00319       ** E013 ** Syntax Error
+00320 451 GOTO 600
+00320       ** E013 ** Syntax Error
+00321 452 CLS
+00321       ** E013 ** Syntax Error
+00322 453 A = 22
+00322       ** E013 ** Syntax Error
+00323 454 PRINT "15,000 + SPIN": PLAY "C64"
+00323       ** E009 ** Keyword Unknown: :
+00324 455 B$ = INKEY$
+00324       ** E013 ** Syntax Error
+00325 456 IF B$ = "" THEN GOTO 458
+00325       ** E013 ** Syntax Error
+00326 457 GOTO 600
+00326       ** E013 ** Syntax Error
+00327 458 CLS
+00327       ** E013 ** Syntax Error
+00328 459 A = 23
+00328       ** E013 ** Syntax Error
+00329 460 PRINT "BANKRUPT": PLAY "A64"
+00329       ** E009 ** Keyword Unknown: :
+00330 461 B$ = INKEY$
+00330       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 13
+
+Source File:  SPINNER2.ASI
+
+00331 462 IF B$ = "" THEN GOTO 464
+00331       ** E013 ** Syntax Error
+00332 463 GOTO 600
+00332       ** E013 ** Syntax Error
+00333 464 A = 24
+00333       ** E013 ** Syntax Error
+00334 465 CLS
+00334       ** E013 ** Syntax Error
+00335 466 PRINT "500 POINTS": PLAY "D64"
+00335       ** E009 ** Keyword Unknown: :
+00336 467 B$ = INKEY$
+00336       ** E013 ** Syntax Error
+00337 468 IF B$ = "" THEN GOTO 320
+00337       ** E013 ** Syntax Error
+00338 469 GOTO 600
+00338       ** E013 ** Syntax Error
+00339 500 CLS
+00339       ** E013 ** Syntax Error
+00340 501 PRINT "<<<MINI BONUS>>>"
+00340       ** E013 ** Syntax Error
+00341 502 PLAY "C32D32E32D32C32D32E32D32C32"
+00341       ** E012 ** No keywords in source line **
+00342 503 PRINT "YOU CAN BET WHAT YOU HAVE"
+00342       ** E013 ** Syntax Error
+00343 504 PRINT "AND WIN HALF OF IT + WHAT YOU BET."
+00343       ** E013 ** Syntax Error
+00344 505 PRINT "WANNA PLAY "; A$; "."
+00344       ** E013 ** Syntax Error
+00345 506 INPUT B$
+00345       ** E013 ** Syntax Error
+00346 507 IF B$ = "Y" THEN GOTO 510
+00346       ** E013 ** Syntax Error
+00347 508 IF B$ = "N" THEN GOTO 512
+00347       ** E013 ** Syntax Error
+00348 509 PRINT "????": GOTO 506
+00348       ** E009 ** Keyword Unknown: :
+00349 510 PRINT "GREAT!!!!": GOTO 514
+00349       ** E009 ** Keyword Unknown: :
+00350 512 PRINT "OK. PRESS <ENTER>": INPUT ENTER: GOTO 700
+00350       ** E009 ** Keyword Unknown: :
+00351 514 PRINT "TYPE IN HOW MUCH YOU WANT"
+00351       ** E013 ** Syntax Error
+00352 515 PRINT "TO BET."
+00352       ** E013 ** Syntax Error
+00353 516 PRINT "THIS IS HOW MUCH YOU HAVE:"
+00353       ** E013 ** Syntax Error
+00354 517 PRINT XX
+00354       ** E013 ** Syntax Error
+00355 518 INPUT B
+00355       ** E013 ** Syntax Error
+00356 519 IF B <= -1 THEN GOTO 522
+00356       ** E013 ** Syntax Error
+00357 520 IF B > XX THEN GOTO 524
+00357       ** E013 ** Syntax Error
+00358 521 PRINT "PRESS <ENTER> NOW.": INPUT ENTER: GOTO 525
+00358       ** E009 ** Keyword Unknown: :
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 14
+
+Source File:  SPINNER2.ASI
+
+00359 522 PRINT "TOO LOW!!!": GOTO 518
+00359       ** E009 ** Keyword Unknown: :
+00360 524 PRINT "TOO HIGH!!": GOTO 518
+00360       ** E009 ** Keyword Unknown: :
+00361 525 CLS
+00361       ** E013 ** Syntax Error
+00362 526 A = 0
+00362       ** E013 ** Syntax Error
+00363 527 CLS
+00363       ** E013 ** Syntax Error
+00364 528 PRINT "W I N": PLAY "F64"
+00364       ** E009 ** Keyword Unknown: :
+00365 529 B$ = INKEY$
+00365       ** E013 ** Syntax Error
+00366 530 IF B$ = "" THEN GOTO 532
+00366       ** E013 ** Syntax Error
+00367 531 GOTO 550
+00367       ** E013 ** Syntax Error
+00368 532 A = 1
+00368       ** E013 ** Syntax Error
+00369 533 CLS
+00369       ** E013 ** Syntax Error
+00370 534 PRINT "LOSE": PLAY "C64"
+00370       ** E009 ** Keyword Unknown: :
+00371 535 B$ = INKEY$
+00371       ** E013 ** Syntax Error
+00372 536 IF B$ = "" THEN GOTO 525
+00372       ** E013 ** Syntax Error
+00373 537 GOTO 550
+00373       ** E013 ** Syntax Error
+00374 550 IF A = 0 THEN GOTO 552
+00374       ** E013 ** Syntax Error
+00375 551 IF A = 1 THEN GOTO 553
+00375       ** E013 ** Syntax Error
+00376 552 PLAY "C32D32E32F32G32A32B32>C32D32E32F32G32A32B32>C32<<C4": B = B / 2: XX = 
+00376       ** E009 ** Keyword Unknown: :
+00377 XX + B: B = 0: GOTO 560
+00377       ** E009 ** Keyword Unknown: 0:
+00378 553 PLAY "<<<<C1>>>>": XX = XX - B: B = 0: GOTO 570
+00378       ** E009 ** Keyword Unknown: :
+00379 560 PRINT "GOOD JOB "; A$; "!!!!!!"
+00379       ** E013 ** Syntax Error
+00380 561 PRINT "YOUR NEW SCORE IS "; XX
+00380       ** E013 ** Syntax Error
+00381 562 PRINT "PRESS <ENTER> NOW."
+00381       ** E013 ** Syntax Error
+00382 563 INPUT ENTER: GOTO 700
+00382       ** E013 ** Syntax Error
+00383 570 PRINT "OH MY!!! YOU LOST "; A$; "!!"
+00383       ** E013 ** Syntax Error
+00384 571 PRINT "HERE IS YOUR SCORE: "; XX; ""
+00384       ** E013 ** Syntax Error
+00385 572 PRINT "PRESS <ENTER> NOW."
+00385       ** E013 ** Syntax Error
+00386 573 INPUT ENTER: GOTO 700
+00386       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 15
+
+Source File:  SPINNER2.ASI
+
+00387 600 IF A = 0 THEN GOTO 643
+00387       ** E013 ** Syntax Error
+00388 601 IF A = 1 THEN GOTO 625
+00388       ** E013 ** Syntax Error
+00389 602 IF A = 2 THEN GOTO 626
+00389       ** E013 ** Syntax Error
+00390 603 IF A = 3 THEN GOTO 643
+00390       ** E013 ** Syntax Error
+00391 604 IF A = 4 THEN GOTO 627
+00391       ** E013 ** Syntax Error
+00392 605 IF A = 5 THEN GOTO 643
+00392       ** E013 ** Syntax Error
+00393 606 IF A = 6 THEN GOTO 628
+00393       ** E013 ** Syntax Error
+00394 607 IF A = 7 THEN GOTO 629
+00394       ** E013 ** Syntax Error
+00395 608 IF A = 8 THEN GOTO 630
+00395       ** E013 ** Syntax Error
+00396 609 IF A = 9 THEN GOTO 631
+00396       ** E013 ** Syntax Error
+00397 610 IF A = 10 THEN GOTO 643
+00397       ** E013 ** Syntax Error
+00398 611 IF A = 11 THEN GOTO 632
+00398       ** E013 ** Syntax Error
+00399 612 IF A = 12 THEN GOTO 633
+00399       ** E013 ** Syntax Error
+00400 613 IF A = 13 THEN GOTO 634
+00400       ** E013 ** Syntax Error
+00401 614 IF A = 14 THEN GOTO 635
+00401       ** E013 ** Syntax Error
+00402 615 IF A = 15 THEN GOTO 636
+00402       ** E013 ** Syntax Error
+00403 616 IF A = 16 THEN GOTO 500
+00403       ** E013 ** Syntax Error
+00404 617 IF A = 17 THEN GOTO 643
+00404       ** E013 ** Syntax Error
+00405 618 IF A = 18 THEN GOTO 637
+00405       ** E013 ** Syntax Error
+00406 619 IF A = 19 THEN GOTO 638
+00406       ** E013 ** Syntax Error
+00407 620 IF A = 20 THEN GOTO 639
+00407       ** E013 ** Syntax Error
+00408 621 IF A = 21 THEN GOTO 640
+00408       ** E013 ** Syntax Error
+00409 622 IF A = 22 THEN GOTO 641
+00409       ** E013 ** Syntax Error
+00410 623 IF A = 23 THEN GOTO 643
+00410       ** E013 ** Syntax Error
+00411 624 IF A = 24 THEN GOTO 642
+00411       ** E013 ** Syntax Error
+00412 625 BEEP: XX = XX + 1250: GOTO 700
+00412       ** E009 ** Keyword Unknown: 1250:
+00413 626 BEEP: XX = XX + 2000: GOTO 700
+00413       ** E009 ** Keyword Unknown: 2000:
+00414 627 BEEP: XX = XX + 2500: GOTO 700
+00414       ** E009 ** Keyword Unknown: 2500:
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 16
+
+Source File:  SPINNER2.ASI
+
+00415 628 BEEP: XX = XX + 1500: GOTO 700
+00415       ** E009 ** Keyword Unknown: 1500:
+00416 629 BEEP: XX = XX + 1750: GOTO 700
+00416       ** E009 ** Keyword Unknown: 1750:
+00417 630 PLAY "C16D16E16D16C16": XX = XX + 3000: S = S + 1: GOTO 700
+00417       ** E009 ** Keyword Unknown: :
+00418 631 PLAY "C64D64E64D64C64D64E64D64C64": XX = XX + 5000: S = S + 1: GOTO 700
+00418       ** E009 ** Keyword Unknown: :
+00419 632 BEEP: XX = XX + 2250: GOTO 700
+00419       ** E009 ** Keyword Unknown: 2250:
+00420 633 BEEP: XX = XX + 500: S = S + 1: GOTO 700
+00420       ** E009 ** Keyword Unknown: 500:
+00421 634 PLAY "C16D16E16F16G16A16B16>C4<": XX = XX + 7500: S = S + 1: GOTO 700
+00421       ** E009 ** Keyword Unknown: :
+00422 635 PLAY "C32D32F32G32A32A#32B32A#32B32>C4<C64>C64<C64": XX = XX + 9250: S = S
+00422       ** E009 ** Keyword Unknown: :
+00423  1: GOTO 700
+00423       ** E009 ** Keyword Unknown: 1:
+00424 636 BEEP: XX = XX + 4000: GOTO 700
+00424       ** E009 ** Keyword Unknown: 4000:
+00425 637 BEEP: XX = XX + 1000: GOTO 700
+00425       ** E009 ** Keyword Unknown: 1000:
+00426 638 BEEP: XX = XX + 950: GOTO 700
+00426       ** E009 ** Keyword Unknown: 950:
+00427 639 PLAY "C8D8E8C16D16E16A16A#16A16A#16B16>C4<C16>C16<C16>C16<C16": XX = XX + 10
+00427       ** E009 ** Keyword Unknown: :
+00428 000: S = S + 1: GOTO 700
+00428       ** E009 ** Keyword Unknown: 000:
+00429 640 BEEP: XX = XX + 2700: GOTO 700
+00429       ** E009 ** Keyword Unknown: 2700:
+00430 641 PLAY "C32D32E32F32G32A32B32>C32D32E32F32G32A32B32C4<<<<C32>>C32<<C32>>>>C4<<
+00430       ** E006 ** Unmatched Quote ('"') in source line
+00430 641 PLAY "C32D32E32F32G32A32B32>C32D32E32F32G32A32B32C4<<<<C32>>C32<<C32>>>>C4<<
+00430       ** E012 ** No keywords in source line **
+00431 C64": XX = XX + 15000: S = S + 1: GOTO 700
+00431       ** E006 ** Unmatched Quote ('"') in source line
+00431 C64": XX = XX + 15000: S = S + 1: GOTO 700
+00431       ** E012 ** No keywords in source line **
+00432 642 BEEP: XX = XX + 500: GOTO 700
+00432       ** E009 ** Keyword Unknown: 500:
+00433 643 PRINT "OH MY!!": PLAY "<<<<<C2>>>>>": XX = 0: GOTO 700
+00433       ** E009 ** Keyword Unknown: :
+00434 700 PRINT "PRESS <ENTER>": INPUT ENTER: CLS
+00434       ** E009 ** Keyword Unknown: :
+00435 701 S = S - 1
+00435       ** E013 ** Syntax Error
+00436 702 IF S <= 0 THEN GOTO 750
+00436       ** E013 ** Syntax Error
+00437 703 PRINT "<<<<<SCORE "; XX; " SPINS: "; S; ">>>>>"
+00437       ** E013 ** Syntax Error
+00438 704 PRINT "WOULD YOU LIKE TO GO ON?"
+00438       ** E013 ** Syntax Error
+00439 705 INPUT B$
+00439       ** E013 ** Syntax Error
+00440 706 IF B$ = "Y" THEN GOTO 320
+00440       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 17
+
+Source File:  SPINNER2.ASI
+
+00441 707 IF B$ = "N" THEN GOTO 750
+00441       ** E013 ** Syntax Error
+00442 708 PRINT "???": GOTO 705
+00442       ** E009 ** Keyword Unknown: :
+00443 750 T = X + XX
+00443       ** E013 ** Syntax Error
+00444 751 PRINT "YOUR TOTAL SCORE:"
+00444       ** E013 ** Syntax Error
+00445 752 PRINT "          ROUND 1: "; X
+00445       ** E013 ** Syntax Error
+00446 753 PRINT "       +  ROUND 2: "; XX
+00446       ** E013 ** Syntax Error
+00447 754 PRINT "--------------------------------"
+00447       ** E013 ** Syntax Error
+00448 755 PRINT "          TOTAL:   "; T
+00448       ** E013 ** Syntax Error
+00449 756 PRINT "": PRINT ""
+00449       ** E009 ** Keyword Unknown: :
+00450 757 IF T >= 60000! THEN GOTO 770
+00450       ** E009 ** Keyword Unknown: 60000!
+00451 758 IF T >= 40000! THEN GOTO 760
+00451       ** E009 ** Keyword Unknown: 40000!
+00452 759 PRINT "YOU DIDN'T MAKE EITHER ROUND.": PLAY "<<<<<C1>>>>>": GOTO 50000
+00452       ** E009 ** Keyword Unknown: :
+00453 760 PRINT "YOU MADE IT TO ROUND 3!!!": PLAY ">>>C32D32E32D32C32D32E32D32C32D32E3
+00453       ** E006 ** Unmatched Quote ('"') in source line
+00453 760 PRINT "YOU MADE IT TO ROUND 3!!!": PLAY ">>>C32D32E32D32C32D32E32D32C32D32E3
+00453       ** E009 ** Keyword Unknown: :
+00454 2D32C32D32E32D32C32<<<": GOTO 1000
+00454       ** E006 ** Unmatched Quote ('"') in source line
+00454 2D32C32D32E32D32C32<<<": GOTO 1000
+00454       ** E009 ** Keyword Unknown: <<
+00455 770 PRINT "YOU HAVE MADE IT TO ROUND 3 &": PRINT "THE BONUS ROUNDS "; A$; "!!!!!
+00455       ** E006 ** Unmatched Quote ('"') in source line
+00455 770 PRINT "YOU HAVE MADE IT TO ROUND 3 &": PRINT "THE BONUS ROUNDS "; A$; "!!!!!
+00455       ** E009 ** Keyword Unknown: :
+00456 ": PLAY "C64D64E64F64G64F64E64D64C64D64E64F64G64F
+00456       ** E012 ** No keywords in source line **
+00457 64E64D64C64": BB = 1: GOTO 1000
+00457       ** E006 ** Unmatched Quote ('"') in source line
+00457 64E64D64C64": BB = 1: GOTO 1000
+00457       ** E012 ** No keywords in source line **
+00458 1000 SCREEN 2: SCREEN 0: COLOR 15, 9
+00458       ** E009 ** Keyword Unknown: 2:
+00459 1001 CLS
+00459       ** E013 ** Syntax Error
+00460 1002 PRINT "ROUND # 3: SAME AS OTHERS!!!! (GOOD LUCK YOU COULD LOSE ALL YOUR POI
+00460       ** E006 ** Unmatched Quote ('"') in source line
+00460 1002 PRINT "ROUND # 3: SAME AS OTHERS!!!! (GOOD LUCK YOU COULD LOSE ALL YOUR POI
+00460       ** E013 ** Syntax Error
+00461 NTS HERE "; A$; "!!!!)"
+00461       ** E006 ** Unmatched Quote ('"') in source line
+00461 NTS HERE "; A$; "!!!!)"
+00461       ** E009 ** Keyword Unknown: !!!!
+00462 1003 PRINT "POINTS RANGE FROM 2,500 - 25,000 (no + spins)": PRINT "YOU GET 3 SPI
+00462       ** E006 ** Unmatched Quote ('"') in source line
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 18
+
+Source File:  SPINNER2.ASI
+
+00462 1003 PRINT "POINTS RANGE FROM 2,500 - 25,000 (no + spins)": PRINT "YOU GET 3 SPI
+00462       ** E009 ** Keyword Unknown: :
+00463 NS YOU MUST TAKE"
+00463       ** E006 ** Unmatched Quote ('"') in source line
+00463 NS YOU MUST TAKE"
+00463       ** E012 ** No keywords in source line **
+00464 1004 PRINT "PRESS <ENTER> NOW.": S = 3
+00464       ** E009 ** Keyword Unknown: :
+00465 1005 INPUT ENTER
+00465       ** E013 ** Syntax Error
+00466 1006 SCREEN 1
+00466       ** E013 ** Syntax Error
+00467 1007 SCREEN 0
+00467       ** E013 ** Syntax Error
+00468 1008 COLOR 15, 9
+00468       ** E013 ** Syntax Error
+00469 1009 CLS
+00469       ** E013 ** Syntax Error
+00470 1010 A = 0
+00470       ** E013 ** Syntax Error
+00471 1011 PRINT "5,000 POINTS": PLAY "C64"
+00471       ** E009 ** Keyword Unknown: :
+00472 1012 B$ = INKEY$
+00472       ** E013 ** Syntax Error
+00473 1013 IF B$ = "" THEN GOTO 1015
+00473       ** E013 ** Syntax Error
+00474 1014 GOTO 1150
+00474       ** E013 ** Syntax Error
+00475 1015 CLS
+00475       ** E013 ** Syntax Error
+00476 1016 A = 1
+00476       ** E013 ** Syntax Error
+00477 1017 PRINT "2,500 POINTS": PLAY "F64"
+00477       ** E009 ** Keyword Unknown: :
+00478 1018 B$ = INKEY$
+00478       ** E013 ** Syntax Error
+00479 1019 IF B$ = "" THEN GOTO 1021
+00479       ** E013 ** Syntax Error
+00480 1020 GOTO 1150
+00480       ** E013 ** Syntax Error
+00481 1021 CLS
+00481       ** E013 ** Syntax Error
+00482 1022 A = 2
+00482       ** E013 ** Syntax Error
+00483 1023 PRINT "4,000 POINTS": PLAY "D64"
+00483       ** E009 ** Keyword Unknown: :
+00484 1024 B$ = INKEY$
+00484       ** E013 ** Syntax Error
+00485 1025 IF B$ = "" THEN GOTO 1027
+00485       ** E013 ** Syntax Error
+00486 1026 GOTO 1150
+00486       ** E013 ** Syntax Error
+00487 1027 CLS
+00487       ** E013 ** Syntax Error
+00488 1028 A = 3
+00488       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 19
+
+Source File:  SPINNER2.ASI
+
+00489 1029 PRINT "BANKRUPT": PLAY "E64"
+00489       ** E009 ** Keyword Unknown: :
+00490 1030 B$ = INKEY$
+00490       ** E013 ** Syntax Error
+00491 1031 IF B$ = "" THEN GOTO 1033
+00491       ** E013 ** Syntax Error
+00492 1032 GOTO 1150
+00492       ** E013 ** Syntax Error
+00493 1033 CLS
+00493       ** E013 ** Syntax Error
+00494 1034 A = 4
+00494       ** E013 ** Syntax Error
+00495 1035 PRINT "10,000 POINTS": PLAY "G64"
+00495       ** E009 ** Keyword Unknown: :
+00496 1036 B$ = INKEY$
+00496       ** E013 ** Syntax Error
+00497 1037 IF B$ = "" THEN GOTO 1039
+00497       ** E013 ** Syntax Error
+00498 1038 GOTO 1150
+00498       ** E013 ** Syntax Error
+00499 1039 CLS
+00499       ** E013 ** Syntax Error
+00500 1040 A = 5
+00500       ** E013 ** Syntax Error
+00501 1041 PRINT "15,000 POINTS": PLAY "B64"
+00501       ** E009 ** Keyword Unknown: :
+00502 1042 B$ = INKEY$
+00502       ** E013 ** Syntax Error
+00503 1043 IF B$ = "" THEN GOTO 1045
+00503       ** E013 ** Syntax Error
+00504 1044 GOTO 1150
+00504       ** E013 ** Syntax Error
+00505 1045 A = 6
+00505       ** E013 ** Syntax Error
+00506 1046 CLS
+00506       ** E013 ** Syntax Error
+00507 1047 PRINT "7,500 POINTS": PLAY "A64"
+00507       ** E009 ** Keyword Unknown: :
+00508 1048 B$ = INKEY$
+00508       ** E013 ** Syntax Error
+00509 1049 IF B$ = "" THEN GOTO 1051
+00509       ** E013 ** Syntax Error
+00510 1050 GOTO 1150
+00510       ** E013 ** Syntax Error
+00511 1051 A = 7
+00511       ** E013 ** Syntax Error
+00512 1052 CLS
+00512       ** E013 ** Syntax Error
+00513 1053 PRINT "9,500 POINTS": PLAY "E64"
+00513       ** E009 ** Keyword Unknown: :
+00514 1054 B$ = INKEY$
+00514       ** E013 ** Syntax Error
+00515 1055 IF B$ = "" THEN GOTO 1057
+00515       ** E013 ** Syntax Error
+00516 1056 GOTO 1150
+00516       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 20
+
+Source File:  SPINNER2.ASI
+
+00517 1057 A = 8
+00517       ** E013 ** Syntax Error
+00518 1058 CLS
+00518       ** E013 ** Syntax Error
+00519 1059 PRINT "BANKRUPT": PLAY "C64"
+00519       ** E009 ** Keyword Unknown: :
+00520 1060 B$ = INKEY$
+00520       ** E013 ** Syntax Error
+00521 1061 IF B$ = "" THEN GOTO 1063
+00521       ** E013 ** Syntax Error
+00522 1062 GOTO 1150
+00522       ** E013 ** Syntax Error
+00523 1063 A = 9
+00523       ** E013 ** Syntax Error
+00524 1064 CLS
+00524       ** E013 ** Syntax Error
+00525 1065 PRINT "25,000 POINTS": PLAY "B64"
+00525       ** E009 ** Keyword Unknown: :
+00526 1066 B$ = INKEY$
+00526       ** E013 ** Syntax Error
+00527 1067 IF B$ = "" THEN GOTO 1069
+00527       ** E013 ** Syntax Error
+00528 1068 GOTO 1150
+00528       ** E013 ** Syntax Error
+00529 1069 A = 10
+00529       ** E013 ** Syntax Error
+00530 1070 CLS
+00530       ** E013 ** Syntax Error
+00531 1071 PRINT "6,000 POINTS": PLAY "G64"
+00531       ** E009 ** Keyword Unknown: :
+00532 1072 B$ = INKEY$
+00532       ** E013 ** Syntax Error
+00533 1073 IF B$ = "" THEN GOTO 1009
+00533       ** E013 ** Syntax Error
+00534 1074 GOTO 1150
+00534       ** E013 ** Syntax Error
+00535 1150 IF A = 0 THEN GOTO 1161
+00535       ** E013 ** Syntax Error
+00536 1151 IF A = 1 THEN GOTO 1162
+00536       ** E013 ** Syntax Error
+00537 1152 IF A = 2 THEN GOTO 1163
+00537       ** E013 ** Syntax Error
+00538 1153 IF A = 3 THEN GOTO 1170
+00538       ** E013 ** Syntax Error
+00539 1154 IF A = 4 THEN GOTO 1164
+00539       ** E013 ** Syntax Error
+00540 1155 IF A = 5 THEN GOTO 1165
+00540       ** E013 ** Syntax Error
+00541 1156 IF A = 6 THEN GOTO 1166
+00541       ** E013 ** Syntax Error
+00542 1157 IF A = 7 THEN GOTO 1167
+00542       ** E013 ** Syntax Error
+00543 1158 IF A = 8 THEN GOTO 1170
+00543       ** E013 ** Syntax Error
+00544 1159 IF A = 9 THEN GOTO 1168
+00544       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 21
+
+Source File:  SPINNER2.ASI
+
+00545 1160 IF A = 10 THEN GOTO 1169
+00545       ** E013 ** Syntax Error
+00546 1161 BEEP: T = T + 5000: GOTO 1175
+00546       ** E009 ** Keyword Unknown: 5000:
+00547 1162 BEEP: T = T + 2500: GOTO 1175
+00547       ** E009 ** Keyword Unknown: 2500:
+00548 1163 BEEP: T = T + 4000: GOTO 1175
+00548       ** E009 ** Keyword Unknown: 4000:
+00549 1164 PLAY "C32D32E32F32G32A32G32F32E32D32C32A#32": T = T + 10000: GOTO 1175
+00549       ** E009 ** Keyword Unknown: :
+00550 1165 PLAY "B32A32G32A32B32G32A32B32G32A32B32C32D32E32": T = T + 15000: GOTO 1175
+00550       ** E009 ** Keyword Unknown: :
+00551 1166 BEEP: T = T + 7500: GOTO 1175
+00551       ** E009 ** Keyword Unknown: 7500:
+00552 1167 BEEP: T = T + 9500: GOTO 1175
+00552       ** E009 ** Keyword Unknown: 9500:
+00553 1168 PLAY "C16D16E16C32C32D32D32E32E32A16A#16A16G16A32A32A#32A#32A32A32G32G32A32
+00553       ** E006 ** Unmatched Quote ('"') in source line
+00553 1168 PLAY "C16D16E16C32C32D32D32E32E32A16A#16A16G16A32A32A#32A#32A32A32G32G32A32
+00553       ** E012 ** No keywords in source line **
+00554 A#32B32B32>C4<C64>C64<C64": T = T + 25000: GOTO 1
+00554       ** E006 ** Unmatched Quote ('"') in source line
+00554 A#32B32B32>C4<C64>C64<C64": T = T + 25000: GOTO 1
+00554       ** E009 ** Keyword Unknown: A#
+00555 175
+00555       ** E012 ** No keywords in source line **
+00556 1169 BEEP: T = T + 6000: GOTO 1175
+00556       ** E009 ** Keyword Unknown: 6000:
+00557 1170 PRINT "OH NO "; A$; "!!!": PLAY "<<<<C2>>>>": T = 0: GOTO 1175
+00557       ** E009 ** Keyword Unknown: :
+00558 1175 PRINT "PRESS <ENTER> NOW.": INPUT ENTER
+00558       ** E009 ** Keyword Unknown: :
+00559 1176 S = S - 1
+00559       ** E013 ** Syntax Error
+00560 1177 IF S <= 0 THEN GOTO 1200
+00560       ** E013 ** Syntax Error
+00561 1178 CLS : PRINT "<<<TOTAL SCORE: "; T; " SPINS: "; S; ">>>"
+00561       ** E009 ** Keyword Unknown: :
+00562 1179 PRINT "PRESS <ENTER> "; A$; "."
+00562       ** E013 ** Syntax Error
+00563 1180 INPUT ENTER
+00563       ** E013 ** Syntax Error
+00564 1181 GOTO 1009
+00564       ** E013 ** Syntax Error
+00565 1200 CLS
+00565       ** E013 ** Syntax Error
+00566 1201 IF BB >= 1 THEN GOTO 1207
+00566       ** E013 ** Syntax Error
+00567 1202 PRINT "THAT'S THE END OF ROUND THREE. HERE IS YOUR SCORE:"
+00567       ** E013 ** Syntax Error
+00568 1203 PRINT T
+00568       ** E013 ** Syntax Error
+00569 1204 PRINT "PRESS <ENTER> NOW."
+00569       ** E013 ** Syntax Error
+00570 1205 INPUT ENTER: CLS
+00570       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 22
+
+Source File:  SPINNER2.ASI
+
+00571 1206 GOTO 50000
+00571       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00571 1206 GOTO 50000
+00571       ** E013 ** Syntax Error
+00572 1207 CLS
+00572       ** E013 ** Syntax Error
+00573 1208 PRINT "NOW IT'S TIME FOR THE BONUS ROUND "; A$; "!!!!"
+00573       ** E013 ** Syntax Error
+00574 1209 PLAY "C32D32E32F32E32D32C32D32E32F32E32D32C32D32E32F32E32D32C32D32E32F32"
+00574       ** E012 ** No keywords in source line **
+00575 1210 PRINT "PRESS <ENTER> NOW."
+00575       ** E013 ** Syntax Error
+00576 1211 INPUT ENTER
+00576       ** E013 ** Syntax Error
+00577 1212 SCREEN 2: SCREEN 0: COLOR 15, 13: CLS
+00577       ** E009 ** Keyword Unknown: 2:
+00578 1213 PRINT "THE BONUS ROUND IS COMPOSED OF 4 BONUS ROUNDS."
+00578       ** E013 ** Syntax Error
+00579 1214 PRINT "YOU COULD SCORE REAL BIG, OR LOSE IT ALL."
+00579       ** E013 ** Syntax Error
+00580 1215 PRINT "IN BONUS 1, YOU BET WHAT YOU WANT TO RISK ON DOUBLING WHAT YOU WAGER
+00580       ** E006 ** Unmatched Quote ('"') in source line
+00580 1215 PRINT "IN BONUS 1, YOU BET WHAT YOU WANT TO RISK ON DOUBLING WHAT YOU WAGER
+00580       ** E013 ** Syntax Error
+00581 ED."
+00581       ** E006 ** Unmatched Quote ('"') in source line
+00581 ED."
+00581       ** E009 ** Keyword Unknown: ED.
+00582 1216 PRINT "IF YOU LOSE, YOU JUST DON'T WIN A BONUS AND NOTHING GETS SUBTRACTED 
+00582       ** E006 ** Unmatched Quote ('"') in source line
+00582 1216 PRINT "IF YOU LOSE, YOU JUST DON'T WIN A BONUS AND NOTHING GETS SUBTRACTED 
+00582       ** E013 ** Syntax Error
+00583 FROM YOUR SCORE."
+00583       ** E006 ** Unmatched Quote ('"') in source line
+00583 FROM YOUR SCORE."
+00583       ** E009 ** Keyword Unknown: SCORE.
+00584 1217 PRINT "KEEP IN MIND THAT YOU COULD GET SOMETHING SUBTRACTED IN BONUS 4."
+00584       ** E013 ** Syntax Error
+00585 1218 PRINT "HERE IS YOUR SCORE:"; T
+00585       ** E013 ** Syntax Error
+00586 1219 PRINT "NOW. BET "; A$; "!!!"
+00586       ** E013 ** Syntax Error
+00587 1220 INPUT BB: B = BB
+00587       ** E013 ** Syntax Error
+00588 1221 IF B > T THEN GOTO 1225
+00588       ** E013 ** Syntax Error
+00589 1222 IF B < 0 THEN GOTO 1226:  ELSE GOTO 1227
+00589       ** E009 ** Keyword Unknown: 1226:
+00590 1225 PRINT "TOO HIGH "; A$; "!!": GOTO 1220
+00590       ** E009 ** Keyword Unknown: :
+00591 1226 PRINT "TOO LOW "; A$; "!!!": GOTO 1220
+00591       ** E009 ** Keyword Unknown: :
+00592 1227 PRINT "GOOD JOB."
+00592       ** E013 ** Syntax Error
+00593 1228 PRINT "PRESS <ENTER> TO START THE SPINNER "; A$; "."
+00593       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 23
+
+Source File:  SPINNER2.ASI
+
+00594 1229 INPUT ENTER
+00594       ** E013 ** Syntax Error
+00595 1230 SCREEN 1: SCREEN 0: COLOR 11, 5
+00595       ** E009 ** Keyword Unknown: 1:
+00596 1231 A = 0: CLS
+00596       ** E009 ** Keyword Unknown: 0:
+00597 1232 PRINT "WIN": PLAY "C64"
+00597       ** E009 ** Keyword Unknown: :
+00598 1234 B$ = INKEY$
+00598       ** E013 ** Syntax Error
+00599 1235 IF B$ = "" THEN GOTO 1237
+00599       ** E013 ** Syntax Error
+00600 1236 GOTO 1250
+00600       ** E013 ** Syntax Error
+00601 1237 A = 1: CLS
+00601       ** E009 ** Keyword Unknown: 1:
+00602 1238 PRINT "LOSE": PLAY "F64"
+00602       ** E009 ** Keyword Unknown: :
+00603 1239 B$ = INKEY$
+00603       ** E013 ** Syntax Error
+00604 1240 IF B$ = "" THEN GOTO 1231
+00604       ** E013 ** Syntax Error
+00605 1241 GOTO 1250
+00605       ** E013 ** Syntax Error
+00606 1250 IF A = 0 THEN GOTO 1252
+00606       ** E013 ** Syntax Error
+00607 1251 IF A = 1 THEN GOTO 1255
+00607       ** E013 ** Syntax Error
+00608 1252 PLAY "C8D8E8C16C16D16D16E16E16A8A#8A8G8A16A16A#16A#16B16B16>C2<"
+00608       ** E012 ** No keywords in source line **
+00609 1253 B = B * 2
+00609       ** E013 ** Syntax Error
+00610 1254 GOTO 1260
+00610       ** E013 ** Syntax Error
+00611 1255 PLAY "<<<<<C1>>>>>"
+00611       ** E012 ** No keywords in source line **
+00612 1256 GOTO 3000
+00612       ** E013 ** Syntax Error
+00613 1260 SCREEN 2: SCREEN 0
+00613       ** E009 ** Keyword Unknown: 2:
+00614 1261 COLOR 15, 1: CLS : PRINT "BONUS SCORE: "; B; " TOTAL SCORE (WITH BONUS): ";
+00614       ** E009 ** Keyword Unknown: 1:
+00615  B + T
+00615       ** E013 ** Syntax Error
+00616 1262 PRINT "<<<BONUS #2>>>"
+00616       ** E013 ** Syntax Error
+00617 1263 PRINT "IN BONUS # 2, YOU COULD GET EITHER 25,000 OR 50,000 POINTS, OR LOSE,
+00617       ** E006 ** Unmatched Quote ('"') in source line
+00617 1263 PRINT "IN BONUS # 2, YOU COULD GET EITHER 25,000 OR 50,000 POINTS, OR LOSE,
+00617       ** E013 ** Syntax Error
+00618  JUST YOUR BONUS."
+00618       ** E006 ** Unmatched Quote ('"') in source line
+00618  JUST YOUR BONUS."
+00618       ** E009 ** Keyword Unknown: BONUS.
+00619 1264 PRINT "WANT TO TRY IT "; A$; "?"
+00619       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 24
+
+Source File:  SPINNER2.ASI
+
+00620 1265 INPUT B$
+00620       ** E013 ** Syntax Error
+00621 1266 IF B$ = "Y" THEN GOTO 1269
+00621       ** E013 ** Syntax Error
+00622 1267 IF B$ = "N" THEN GOTO 1311
+00622       ** E013 ** Syntax Error
+00623 1268 PRINT "???": GOTO 1265
+00623       ** E009 ** Keyword Unknown: :
+00624 1269 PRINT "OKAY!!!!."
+00624       ** E013 ** Syntax Error
+00625 1270 PRINT "PRESS <ENTER> TO START THE SPINNER."
+00625       ** E013 ** Syntax Error
+00626 1271 INPUT ENTER
+00626       ** E013 ** Syntax Error
+00627 1272 SCREEN 1: SCREEN 0: COLOR 15, 13
+00627       ** E009 ** Keyword Unknown: 1:
+00628 1273 A = 0: CLS
+00628       ** E009 ** Keyword Unknown: 0:
+00629 1274 PRINT "25,000 POINTS": PLAY "F64"
+00629       ** E009 ** Keyword Unknown: :
+00630 1275 B$ = INKEY$
+00630       ** E013 ** Syntax Error
+00631 1276 IF B$ = "" THEN GOTO 1278
+00631       ** E013 ** Syntax Error
+00632 1277 GOTO 1305
+00632       ** E013 ** Syntax Error
+00633 1278 A = 1: CLS
+00633       ** E009 ** Keyword Unknown: 1:
+00634 1279 PRINT "LOSE": PLAY "A64"
+00634       ** E009 ** Keyword Unknown: :
+00635 1280 B$ = INKEY$
+00635       ** E013 ** Syntax Error
+00636 1281 IF B$ = "" THEN GOTO 1283
+00636       ** E013 ** Syntax Error
+00637 1282 GOTO 1305
+00637       ** E013 ** Syntax Error
+00638 1283 A = 2: CLS
+00638       ** E009 ** Keyword Unknown: 2:
+00639 1284 PRINT "50,000 POINTS": PLAY "C64"
+00639       ** E009 ** Keyword Unknown: :
+00640 1285 B$ = INKEY$
+00640       ** E013 ** Syntax Error
+00641 1286 IF B$ = "" THEN GOTO 1288
+00641       ** E013 ** Syntax Error
+00642 1287 GOTO 1305
+00642       ** E013 ** Syntax Error
+00643 1288 A = 3: CLS
+00643       ** E009 ** Keyword Unknown: 3:
+00644 1289 PRINT "37,500 POINTS": PLAY "E64"
+00644       ** E009 ** Keyword Unknown: :
+00645 1290 B$ = INKEY$
+00645       ** E013 ** Syntax Error
+00646 1291 IF B$ = "" THEN GOTO 1293
+00646       ** E013 ** Syntax Error
+00647 1292 GOTO 1305
+00647       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 25
+
+Source File:  SPINNER2.ASI
+
+00648 1293 A = 4: CLS
+00648       ** E009 ** Keyword Unknown: 4:
+00649 1294 PRINT "LOSE": PLAY "B64"
+00649       ** E009 ** Keyword Unknown: :
+00650 1295 B$ = INKEY$
+00650       ** E013 ** Syntax Error
+00651 1296 IF B$ = "" THEN GOTO 1273
+00651       ** E013 ** Syntax Error
+00652 1297 GOTO 1305
+00652       ** E013 ** Syntax Error
+00653 1305 IF A = 0 THEN GOTO 1310
+00653       ** E013 ** Syntax Error
+00654 1306 IF A = 1 THEN GOTO 1314
+00654       ** E013 ** Syntax Error
+00655 1307 IF A = 2 THEN GOTO 1312
+00655       ** E013 ** Syntax Error
+00656 1308 IF A = 3 THEN GOTO 1313
+00656       ** E013 ** Syntax Error
+00657 1309 IF A = 4 THEN GOTO 1314
+00657       ** E013 ** Syntax Error
+00658 1310 PLAY "C32D32E32F32G32A32B32>C32<C16E16G16C16>C2<": B = B + 25000: GOTO 1315
+00658       ** E009 ** Keyword Unknown: :
+00659 1311 T = T + B: GOTO 4000
+00659       ** E013 ** Syntax Error
+00660 1312 PLAY "C32D32E32F32G32A32B32>C32D32E32F32G32A32B32>C32D32E32F32G32A32B32>C2<
+00660       ** E006 ** Unmatched Quote ('"') in source line
+00660 1312 PLAY "C32D32E32F32G32A32B32>C32D32E32F32G32A32B32>C32D32E32F32G32A32B32>C2<
+00660       ** E012 ** No keywords in source line **
+00661 <<": B = B + 50000!: GOTO 1315
+00661       ** E006 ** Unmatched Quote ('"') in source line
+00661 <<": B = B + 50000!: GOTO 1315
+00661       ** E009 ** Keyword Unknown: <<
+00662 1313 PLAY "C32D32E32F32G32A32B32>C2<C64>C64<C64>C4<C64": BEEP: B = B + 37500!:
+00662       ** E009 ** Keyword Unknown: :
+00663 OTO 1315
+00663       ** E012 ** No keywords in source line **
+00664 1314 PRINT "OH MY "; A$; "!!": B = 0: GOTO 3000
+00664       ** E009 ** Keyword Unknown: :
+00665 1315 SCREEN 2: SCREEN 0: COLOR 15, 1: CLS
+00665       ** E009 ** Keyword Unknown: 2:
+00666 1316 PRINT "<<<BONUS SCORE: "; B; " TOTAL SCORE (WITH BONUS): "; T + B
+00666       ** E013 ** Syntax Error
+00667 1317 PRINT "IN BONUS 3 YOU COULD WIN UP TO 200,000 POINTS!!!"
+00667       ** E013 ** Syntax Error
+00668 1318 PRINT "IF YOU LOSE, YOU JUST LOSE THE BONUS.": PRINT "WANNA TRY "; A$; "?" 
+00668       ** E009 ** Keyword Unknown: :
+00669 1319 INPUT B$
+00669       ** E013 ** Syntax Error
+00670 1320 IF B$ = "Y" THEN GOTO 1323
+00670       ** E013 ** Syntax Error
+00671 1321 IF B$ = "N" THEN GOTO 1311
+00671       ** E013 ** Syntax Error
+00672 1322 PRINT "???": GOTO 1319
+00672       ** E009 ** Keyword Unknown: :
+00673 1323 PRINT "GREAT "; A$; "!!!!!": PRINT "PRESS <ENTER> NOW.": INPUT ENTER
+00673       ** E009 ** Keyword Unknown: :
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 26
+
+Source File:  SPINNER2.ASI
+
+00674 1324 SCREEN 1: SCREEN 0: COLOR 1, 12
+00674       ** E009 ** Keyword Unknown: 1:
+00675 1325 A = 0: CLS
+00675       ** E009 ** Keyword Unknown: 0:
+00676 1326 PRINT "100,000 POINTS": PLAY "G64"
+00676       ** E009 ** Keyword Unknown: :
+00677 1327 B$ = INKEY$
+00677       ** E013 ** Syntax Error
+00678 1328 IF B$ = "" THEN GOTO 1330
+00678       ** E013 ** Syntax Error
+00679 1329 GOTO 1400
+00679       ** E013 ** Syntax Error
+00680 1330 A = 1: CLS
+00680       ** E009 ** Keyword Unknown: 1:
+00681 1331 PRINT "200,000 POINTS": PLAY "D64"
+00681       ** E009 ** Keyword Unknown: :
+00682 1332 B$ = INKEY$
+00682       ** E013 ** Syntax Error
+00683 1333 IF B$ = "" THEN GOTO 1335
+00683       ** E013 ** Syntax Error
+00684 1334 GOTO 1400
+00684       ** E013 ** Syntax Error
+00685 1335 A = 2: CLS
+00685       ** E009 ** Keyword Unknown: 2:
+00686 1336 PRINT "LOSE": PLAY "B64"
+00686       ** E009 ** Keyword Unknown: :
+00687 1337 B$ = INKEY$
+00687       ** E013 ** Syntax Error
+00688 1338 IF B$ = "" THEN GOTO 1340
+00688       ** E013 ** Syntax Error
+00689 1339 GOTO 1400
+00689       ** E013 ** Syntax Error
+00690 1340 A = 3: CLS
+00690       ** E009 ** Keyword Unknown: 3:
+00691 1341 PRINT "150,000 POINTS": PLAY "F64"
+00691       ** E009 ** Keyword Unknown: :
+00692 1342 B$ = INKEY$
+00692       ** E013 ** Syntax Error
+00693 1343 IF B$ = "" THEN GOTO 1345
+00693       ** E013 ** Syntax Error
+00694 1344 GOTO 1400
+00694       ** E013 ** Syntax Error
+00695 1345 A = 4: CLS
+00695       ** E009 ** Keyword Unknown: 4:
+00696 1346 PRINT "LOSE": PLAY "A64"
+00696       ** E009 ** Keyword Unknown: :
+00697 1347 B$ = INKEY$
+00697       ** E013 ** Syntax Error
+00698 1348 IF B$ = "" THEN GOTO 1350
+00698       ** E013 ** Syntax Error
+00699 1349 GOTO 1400
+00699       ** E013 ** Syntax Error
+00700 1350 A = 5: CLS
+00700       ** E009 ** Keyword Unknown: 5:
+00701 1351 PRINT "125,000 POINTS": PLAY "C64"
+00701       ** E009 ** Keyword Unknown: :
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 27
+
+Source File:  SPINNER2.ASI
+
+00702 1352 B$ = INKEY$
+00702       ** E013 ** Syntax Error
+00703 1353 IF B$ = "" THEN GOTO 1325
+00703       ** E013 ** Syntax Error
+00704 1354 GOTO 1400
+00704       ** E013 ** Syntax Error
+00705 1400 IF A = 0 THEN GOTO 1406
+00705       ** E013 ** Syntax Error
+00706 1401 IF A = 1 THEN GOTO 1407
+00706       ** E013 ** Syntax Error
+00707 1402 IF A = 2 THEN GOTO 1410
+00707       ** E013 ** Syntax Error
+00708 1403 IF A = 3 THEN GOTO 1408
+00708       ** E013 ** Syntax Error
+00709 1404 IF A = 4 THEN GOTO 1410
+00709       ** E013 ** Syntax Error
+00710 1405 IF A = 5 THEN GOTO 1409
+00710       ** E013 ** Syntax Error
+00711 1406 PLAY "C16D16E16C16D16E16G16A16B16>C2<C32>C64<C64>C32<C64": B = B + 100000!:
+00711       ** E009 ** Keyword Unknown: :
+00712  GOTO 1411
+00712       ** E013 ** Syntax Error
+00713 1407 PLAY "C16D16E16C32C32D32D32E32E32A16A#16A16G16A32A32A#32A#32A32A32G32G32A16
+00713       ** E006 ** Unmatched Quote ('"') in source line
+00713 1407 PLAY "C16D16E16C32C32D32D32E32E32A16A#16A16G16A32A32A#32A#32A32A32G32G32A16
+00713       ** E012 ** No keywords in source line **
+00714 A#16B16>C2<C32>C64<C64": B = B + 200000!: GOTO 14
+00714       ** E006 ** Unmatched Quote ('"') in source line
+00714 A#16B16>C2<C32>C64<C64": B = B + 200000!: GOTO 14
+00714       ** E009 ** Keyword Unknown: A#
+00715 11
+00715       ** E012 ** No keywords in source line **
+00716 1408 BEEP: PLAY "C32D32E32F32G32C32>C2<P16B8>C2": BEEP: B = B + 150000!: GOTO 14
+00716       ** E009 ** Keyword Unknown: :
+00717 11
+00717       ** E012 ** No keywords in source line **
+00718 1409 PLAY "C16D16E16F16G16A16B16>C16>>>C2<<<<<C2>": B = B + 125000!: GOTO 1411
+00718       ** E009 ** Keyword Unknown: :
+00719 1410 PLAY "<<<<<C1>>>>>": GOTO 3000
+00719       ** E009 ** Keyword Unknown: :
+00720 1411 SCREEN 2: SCREEN 0: COLOR 15, 1: CLS
+00720       ** E009 ** Keyword Unknown: 2:
+00721 1412 PRINT "<<<BONUS SCORE: "; B; " TOTAL SCORE (WITH BONUS): "; T + B
+00721       ** E013 ** Syntax Error
+00722 1413 PRINT "WELL, BONUS 4 "; A$; "."
+00722       ** E013 ** Syntax Error
+00723 1414 PRINT "HERE'S YOUR CHANCE TO DOUBLE YOUR ENTIRE SCORE, WITH THE BONUS"
+00723       ** E013 ** Syntax Error
+00724 1415 PRINT "ADDED IN!!!! IF YOU LOSE, YOUR SCORE WILL BE SUBTRACTED FROM WHAT YO
+00724       ** E006 ** Unmatched Quote ('"') in source line
+00724 1415 PRINT "ADDED IN!!!! IF YOU LOSE, YOUR SCORE WILL BE SUBTRACTED FROM WHAT YO
+00724       ** E013 ** Syntax Error
+00725 U BET."
+00725       ** E006 ** Unmatched Quote ('"') in source line
+00725 U BET."
+00725       ** E009 ** Keyword Unknown: BET.
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 28
+
+Source File:  SPINNER2.ASI
+
+00726 1416 PRINT "IF YOU WIN, YOU GET A CERTIFICATE, AND A SPECIAL MESSAGE."
+00726       ** E013 ** Syntax Error
+00727 1417 PRINT "ARE YOU GOING TO TRY "; A$; "?"
+00727       ** E013 ** Syntax Error
+00728 1418 INPUT B$
+00728       ** E013 ** Syntax Error
+00729 1419 IF B$ = "Y" THEN GOTO 1422
+00729       ** E013 ** Syntax Error
+00730 1420 IF B$ = "N" THEN GOTO 1311
+00730       ** E013 ** Syntax Error
+00731 1421 PRINT "???": GOTO 1418
+00731       ** E009 ** Keyword Unknown: :
+00732 1422 PRINT "GOOD LUCK "; A$; ".": PRINT "PRESS <ENTER> NOW.": INPUT ENTER
+00732       ** E009 ** Keyword Unknown: :
+00733 1423 SCREEN 1: SCREEN 0: COLOR 15, 1
+00733       ** E009 ** Keyword Unknown: 1:
+00734 1424 A = 0: CLS
+00734       ** E009 ** Keyword Unknown: 0:
+00735 1425 PRINT "WIN": PLAY "C64"
+00735       ** E009 ** Keyword Unknown: :
+00736 1426 B$ = INKEY$
+00736       ** E013 ** Syntax Error
+00737 1427 IF B$ = "" THEN GOTO 1429
+00737       ** E013 ** Syntax Error
+00738 1428 GOTO 1440
+00738       ** E013 ** Syntax Error
+00739 1429 A = 1: CLS
+00739       ** E009 ** Keyword Unknown: 1:
+00740 1430 PRINT "LOSE": PLAY "E64"
+00740       ** E009 ** Keyword Unknown: :
+00741 1431 B$ = INKEY$
+00741       ** E013 ** Syntax Error
+00742 1432 IF B$ = "" THEN GOTO 1424
+00742       ** E013 ** Syntax Error
+00743 1433 GOTO 1440
+00743       ** E013 ** Syntax Error
+00744 1440 IF A = 0 THEN GOTO 1442
+00744       ** E013 ** Syntax Error
+00745 1441 IF A = 1 THEN GOTO 1443
+00745       ** E013 ** Syntax Error
+00746 1442 PLAY "C32D32E32F32G32A32B32>C2<C8D8E8C16C16D16D16E16E16A8A#8A8G8A16A16A#16A
+00746       ** E006 ** Unmatched Quote ('"') in source line
+00746 1442 PLAY "C32D32E32F32G32A32B32>C2<C8D8E8C16C16D16D16E16E16A8A#8A8G8A16A16A#16A
+00746       ** E012 ** No keywords in source line **
+00747 #16A16A16G16G16A8A#8B8>C2<C32>C2<C64": T = T + B:
+00747       ** E006 ** Unmatched Quote ('"') in source line
+00747 #16A16A16G16G16A8A#8B8>C2<C32>C2<C64": T = T + B:
+00747       ** E009 ** Keyword Unknown: #
+00748  T = T * 2: GOTO 2000
+00748       ** E009 ** Keyword Unknown: 2:
+00749 1443 PRINT "OH MY GOD!!!!": PLAY "<<<<<C1>>>>>": T = T - BB: B = 0: BB = 0: GOTO
+00749       ** E009 ** Keyword Unknown: :
+00750  3000
+00750       ** E012 ** No keywords in source line **
+00751 2000 SCREEN 2: SCREEN 0: COLOR 15, 1: CLS
+00751       ** E009 ** Keyword Unknown: 2:
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 29
+
+Source File:  SPINNER2.ASI
+
+00752 2001 PRINT "CONGRADULATIONS "; A$; "!!! YOU ARE NOW A SUPER SPINNER 2 MASTER!!" 
+00752       ** E013 ** Syntax Error
+00753 2002 PRINT "TURN ON YOUR PRINTER AND PRESS ANY KEY, OR N IF YOU DON'T"
+00753       ** E013 ** Syntax Error
+00754 2003 PRINT "HAVE A PRINTER."
+00754       ** E013 ** Syntax Error
+00755 2004 B$ = INKEY$
+00755       ** E013 ** Syntax Error
+00756 2005 IF B$ = "N" THEN GOTO 2050
+00756       ** E013 ** Syntax Error
+00757 2006 IF B$ <> "" THEN GOTO 2008
+00757       ** E013 ** Syntax Error
+00758 2007 IF B$ = "" THEN GOTO 2004
+00758       ** E013 ** Syntax Error
+00759 2008 CLS : PRINT "PRINTING CERTIFICATE NOW "; A$; "."
+00759       ** E009 ** Keyword Unknown: :
+00760 2009 LPRINT "******************************************************************"
+00760       ** E013 ** Syntax Error
+00761 2010 LPRINT "******************************************************************"
+00761       ** E013 ** Syntax Error
+00762 2011 LPRINT "**                                                              **"
+00762       ** E013 ** Syntax Error
+00763 2012 LPRINT "**   T H I S   C E R T I F I C A T E   I S   G I V E N   T O :  **"
+00763       ** E013 ** Syntax Error
+00764 2013 LPRINT "**                                                              **"
+00764       ** E013 ** Syntax Error
+00765 2014 LPRINT "**                                                              **"
+00765       ** E013 ** Syntax Error
+00766 2015 LPRINT "                       ***"; A$; "***                           "
+00766       ** E013 ** Syntax Error
+00767 2016 LPRINT "**                                                              **"
+00767       ** E013 ** Syntax Error
+00768 2017 LPRINT "**  T O   R E C O G N I Z E   T H A T   H E / S H E   H A S     **"
+00768       ** E013 ** Syntax Error
+00769 2018 LPRINT "**                                                              **"
+00769       ** E013 ** Syntax Error
+00770 2019 LPRINT "**  W O N   S U P E R   S P I N N E R   2   W I T H   A         **"
+00770       ** E013 ** Syntax Error
+00771 2020 LPRINT "**                                                              **"
+00771       ** E013 ** Syntax Error
+00772 2021 LPRINT "**  S C O R E   O F :                                           **"
+00772       ** E013 ** Syntax Error
+00773 2022 LPRINT "**                                                              **"
+00773       ** E013 ** Syntax Error
+00774 2023 LPRINT "                       ***"; T; "***"
+00774       ** E013 ** Syntax Error
+00775 2024 LPRINT "**                                                              **"
+00775       ** E013 ** Syntax Error
+00776 2025 LPRINT "**             C O N G R A D U L A T I O N S                    **"
+00776       ** E013 ** Syntax Error
+00777 2026 LPRINT "**                                                              **"
+00777       ** E013 ** Syntax Error
+00778 2027 LPRINT "**             signed: MICHAEL SAO PEDRO (designer)             **"
+00778       ** E013 ** Syntax Error
+00779 2028 LPRINT "******************************************************************"
+00779       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 30
+
+Source File:  SPINNER2.ASI
+
+00780 2029 LPRINT "******************************************************************"
+00780       ** E013 ** Syntax Error
+00781 2050 CLS : PRINT "GREAT JOB "; A$; "!!!!!!!"
+00781       ** E009 ** Keyword Unknown: :
+00782 2051 PRINT "HERE'S THE MESSAGE:"
+00782       ** E013 ** Syntax Error
+00783 2052 PRINT "TO GET INTO MIKE'S PRIVATE STUFF, THE PASSWORD IS: ROTHBLATT"
+00783       ** E013 ** Syntax Error
+00784 2053 PRINT "PRESS <ENTER> NOW "; A$; ".": INPUT ENTER: GOTO 60000
+00784       ** E009 ** Keyword Unknown: :
+00785 3000 SCREEN 2: SCREEN 0: COLOR 15, 1: CLS
+00785       ** E009 ** Keyword Unknown: 2:
+00786 3001 PRINT "I'M SORRY. YOU LOSE. HERE IS YOUR SCORE: "; T
+00786       ** E013 ** Syntax Error
+00787 3002 PRINT "PRESS <ENTER> NOW.": INPUT ENTER
+00787       ** E009 ** Keyword Unknown: :
+00788 3003 GOTO 50000
+00788       ** E013 ** Syntax Error
+00789 4000 SCREEN 2: SCREEN 0: COLOR 15, 1: CLS : PRINT "<<<OKAY. IF YOU WANT TO QUIT 
+00789       ** E006 ** Unmatched Quote ('"') in source line
+00789 4000 SCREEN 2: SCREEN 0: COLOR 15, 1: CLS : PRINT "<<<OKAY. IF YOU WANT TO QUIT 
+00789       ** E009 ** Keyword Unknown: 2:
+00790 YOU CAN. HERE'S YOUR SCORE: "; T; ">>>"
+00790       ** E006 ** Unmatched Quote ('"') in source line
+00790 YOU CAN. HERE'S YOUR SCORE: "; T; ">>>"
+00790       ** E009 ** Keyword Unknown: CAN.
+00791 4001 PRINT "PRESS <ENTER>": INPUT ENTER
+00791       ** E009 ** Keyword Unknown: :
+00792 50000 CHDIR "C:\": CHDIR "BASIC": CHDIR "SAVING"
+00792       ** E009 ** Keyword Unknown: :
+00793 50001 OPEN "I", 1, "SCORE.SPN"
+00793       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00793 50001 OPEN "I", 1, "SCORE.SPN"
+00793       ** E013 ** Syntax Error
+00794 50002 INPUT #1, H
+00794       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00794 50002 INPUT #1, H
+00794       ** E013 ** Syntax Error
+00795 50003 IF T > H THEN GOTO 50005
+00795       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00795 50003 IF T > H THEN GOTO 50005
+00795       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00795 50003 IF T > H THEN GOTO 50005
+00795       ** E013 ** Syntax Error
+00796 50004 CLOSE 1: GOTO 60000
+00796       ** E009 ** Keyword Unknown: 1:
+00797 50005 PRINT "YOU MADE THE HIGH SCORE!": PLAY ">>>>C1<<<<"
+00797       ** E009 ** Keyword Unknown: :
+00798 50006 CLOSE 1
+00798       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00798 50006 CLOSE 1
+00798       ** E013 ** Syntax Error
+00799 50007 OPEN "O", 1, "SCORE.SPN"
+00799       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00799 50007 OPEN "O", 1, "SCORE.SPN"
+00799       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 31
+
+Source File:  SPINNER2.ASI
+
+00800 50008 H = T: PRINT #1, H
+00800       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00800 50008 H = T: PRINT #1, H
+00800       ** E013 ** Syntax Error
+00801 50009 CLOSE 1
+00801       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00801 50009 CLOSE 1
+00801       ** E013 ** Syntax Error
+00802 50010 OPEN "O", 1, "NAME.SPN"
+00802       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00802 50010 OPEN "O", 1, "NAME.SPN"
+00802       ** E013 ** Syntax Error
+00803 50011 N$ = A$: PRINT #1, N$
+00803       ** E009 ** Keyword Unknown: A$:
+00804 50012 CLOSE 1
+00804       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00804 50012 CLOSE 1
+00804       ** E013 ** Syntax Error
+00805 50013 GOTO 60000
+00805       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00805 50013 GOTO 60000
+00805       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00805 50013 GOTO 60000
+00805       ** E013 ** Syntax Error
+00806 60000 OPEN "I", 1, "SCORE.SPN"
+00806       ** E013 ** Syntax Error
+00807 60001 INPUT #1, H
+00807       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00807 60001 INPUT #1, H
+00807       ** E013 ** Syntax Error
+00808 60002 OPEN "I", 2, "NAME.SPN"
+00808       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00808 60002 OPEN "I", 2, "NAME.SPN"
+00808       ** E013 ** Syntax Error
+00809 60003 INPUT #2, N$
+00809       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00809 60003 INPUT #2, N$
+00809       ** E013 ** Syntax Error
+00810 60004 CLOSE 1: CLOSE 2
+00810       ** E009 ** Keyword Unknown: 1:
+00811 60005 SCREEN 1: SCREEN 0: COLOR 14, 1: CLS
+00811       ** E009 ** Keyword Unknown: 1:
+00812 60006 PRINT "HIGH SCORE: "; H
+00812       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00812 60006 PRINT "HIGH SCORE: "; H
+00812       ** E013 ** Syntax Error
+00813 60007 PRINT "MADE BY: "; N$
+00813       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00813 60007 PRINT "MADE BY: "; N$
+00813       ** E013 ** Syntax Error
+00814 60008 PRINT "": PRINT ""
+00814       ** E009 ** Keyword Unknown: :
+00815 60017 PRINT "YOUR SCORE:"; T
+00815       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00815 60017 PRINT "YOUR SCORE:"; T
+00815       ** E013 ** Syntax Error
+Thu Mar 09 17:12:19 1995            ASIC 5.00 COMPILER             Page 32
+
+Source File:  SPINNER2.ASI
+
+00816 60018 PRINT "WOULD YOU LIKE TO PLAY AGAIN "; A$; "?": INPUT B$: CHDIR ".."
+00816       ** E009 ** Keyword Unknown: :
+00817 60019 IF B$ = "Y" THEN GOTO 60022
+00817       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00817 60019 IF B$ = "Y" THEN GOTO 60022
+00817       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00817 60019 IF B$ = "Y" THEN GOTO 60022
+00817       ** E013 ** Syntax Error
+00818 60020 IF B$ = "N" THEN GOTO 65000
+00818       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00818 60020 IF B$ = "N" THEN GOTO 65000
+00818       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00818 60020 IF B$ = "N" THEN GOTO 65000
+00818       ** E013 ** Syntax Error
+00819 60021 PRINT "???": GOTO 60018
+00819       ** E009 ** Keyword Unknown: :
+00820 60022 PRINT "GREAT!": PLAY "MB C32D32E32D32C32D32E32D32C32D32E32D32C32F32G32A32G
+00820       ** E006 ** Unmatched Quote ('"') in source line
+00820 60022 PRINT "GREAT!": PLAY "MB C32D32E32D32C32D32E32D32C32D32E32D32C32F32G32A32G
+00820       ** E009 ** Keyword Unknown: :
+00821 32F32G32A32": S = 0: XX = 0: T = 0: B = 0: BB = 0
+00821       ** E006 ** Unmatched Quote ('"') in source line
+00821 32F32G32A32": S = 0: XX = 0: T = 0: B = 0: BB = 0
+00821       ** E012 ** No keywords in source line **
+00822 : X = 0
+00822       ** E009 ** Keyword Unknown: :
+00823 60023 GOTO 1
+00823       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00823 60023 GOTO 1
+00823       ** E013 ** Syntax Error
+00824 65000 PRINT "BYE BYE "; A$; "!!!"
+00824       ** E013 ** Syntax Error
+00825 65001 PLAY ">C4<G8G8A8G8P4B8>C4<C64>C64<"
+00825       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00825 65001 PLAY ">C4<G8G8A8G8P4B8>C4<C64>C64<"
+00825       ** E012 ** No keywords in source line **
+00826 65002 SYSTEM
+00826       ** E016 ** Integer Constant Not in Range +32767 to -32767
+00826 65002 SYSTEM
+00826       ** E012 ** No keywords in source line **
+00828 
+00828       ** E014 ** Undefined Symbol:  ENTER:
+00828 
+00828       ** E014 ** Undefined Symbol:  BB:
+00828 
+00828       ** E014 ** Undefined Symbol:  B:
+00828 
+00828       ** E014 ** Undefined Symbol:  T:
+Created:  SPINNER2.SYM
+Created:  SPINNER2.DBG
