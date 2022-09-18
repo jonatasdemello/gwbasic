@@ -1,0 +1,51 @@
+[submodule "TheProgramOfTheMonth"]
+	path = TheProgramOfTheMonth
+	url = https://github.com/ttsiodras/TheProgramOfTheMonth.git
+[submodule "StarTrek_BASIC"]
+	path = StarTrek_BASIC
+	url = https://github.com/jacklh9/StarTrek_BASIC.git
+[submodule "korenvliet"]
+	path = korenvliet
+	url = https://github.com/henck/korenvliet.git
+[submodule "Digger"]
+	path = Digger
+	url = https://github.com/nav9/Digger.git
+[submodule "HistoricalGWBASICPrograms"]
+	path = HistoricalGWBASICPrograms
+	url = https://github.com/mbirth/gwbasic.git
+[submodule "Analysis"]
+	path = Analysis
+	url = https://github.com/ElPasoTubeAmps/Analysis.git
+[submodule "RetroBasicCode"]
+	path = RetroBasicCode
+	url = https://github.com/yoann-darche/RetroBasicCode.git
+[submodule "kingdom"]
+	path = kingdom
+	url = https://github.com/Pilcrow182/kingdom.git
+[submodule "assorted/LeventSA"]
+	path = assorted/LeventSA
+	url = https://github.com/LeventSA/GW-Basic-Menu.git
+[submodule "assorted/pmachapman"]
+	path = assorted/pmachapman
+	url = https://github.com/pmachapman/basic-samples.git
+[submodule "assorted/MohammedMaaz"]
+	path = assorted/MohammedMaaz
+	url = https://github.com/MohammedMaaz/GW-Basic-programs.git
+[submodule "assorted/jonatasdemello"]
+	path = assorted/jonatasdemello
+	url = https://github.com/jonatasdemello/gwbasic.git
+[submodule "assorted/ShravanJ"]
+	path = assorted/ShravanJ
+	url = https://github.com/ShravanJ/gwbasic.git
+[submodule "assorted/falcor781"]
+	path = assorted/falcor781
+	url = https://github.com/falcor781/GWBasic.git
+[submodule "assorted/t2farrell"]
+	path = assorted/t2farrell
+	url = https://github.com/t2farrell/classic-gwbasic.git
+[submodule "GW-BASIC-3D"]
+	path = GW-BASIC-3D
+	url = https://github.com/bolner/GW-BASIC-3D.git
+[submodule "MiniNec"]
+	path = MiniNec
+	url = https://github.com/Kees-PA3KJ/MiniNec.git
