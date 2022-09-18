@@ -1,0 +1,46 @@
+'******************* PROGRAMME D'INITIATION DE L'IMPRIMANTE *******************
+
+
+DEBUT :
+       COLOR 11,1:CLS
+       MENU$="IN-IMP.EXE"
+       GOSUB FAITECRAN
+       LOCATE 12,18:PRINT " -- Initiation de l'imprimante Ver 2.1 -- "
+       A$=INPUT$(1):IF A$=CHR$(27) THEN END
+
+
+PROG :
+
+       COLOR 13,0:CLS
+       menu$="CHOIX"
+       GOSUB FAITECRAN
+       LOCATE 10,20:PRINT " -1-  GRAPHIQUE "
+       LOCATE 12,20:PRINT " -2-  NORMAL "
+       LOCATE 14,20:PRINT "<ESC> Pour SORTIR
+       A$=INPUT$(1):IF A$=CHR$(27) THEN CLS:END
+       IF A$="&" OR A$="1" THEN GOTO GRAPHI
+       IF A$="‚" OR A$="2" THEN GOTO NORMAL
+       BEEP:COLOR ,7:CLS:BEEP:COLOR ,4:CLS:BEEP:COLOR ,1:CLS:GOTO PROG
+
+NORMAL :
+LPRINT CHR$(27);"!":CLS:END
+
+GRAPHI :
+LPRINT CHR$(27);"!"
+LPRINT CHR$(18);
+CLS:END
+
+FAITECRAN :
+
+       MENU$=" "+MENU$+" "
+       LONG=LEN(MENU$):IT%=INT((80-LONG)/2)
+       LOCATE 1,IT%:PRINT "É";STRING$(LONG,205);"»";
+       LOCATE 2,1
+       PRINT "É";STRING$(IT%-2,205);"¹";MENU$;"Ì";STRING$(78-IT%-LONG,205);"»";
+       LOCATE 3,IT%:PRINT "È";STRING$(LONG,205);"¼";
+       FOR I=3 TO 22 :LOCATE I,1 :PRINT "º":LOCATE I,80:PRINT "º";:NEXT I
+       LOCATE 23,1:PRINT "È";STRING$(78,205);"¼";
+       LOCATE 4,1
+RETURN
+
+

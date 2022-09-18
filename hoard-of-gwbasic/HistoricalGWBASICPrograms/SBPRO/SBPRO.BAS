@@ -1,0 +1,299 @@
+10 SAVE"sbpro.bak"
+20 WIDTH 80
+30 CLS
+40 COLOR 15,0,0
+50 KEY OFF
+60 OPEN "I",#1,"SBPRO.CFG"
+70 INPUT#1,PATH$
+80 IF PATH$="" THEN GOTO 160
+90 IF MID$(PATH$,2,2)<>":\" THEN GOTO 160
+100 CLOSE #1
+110 CLS:PRINT"Wollen Sie den PATH Ñndern ???"
+120 A$=INKEY$:IF A$="" THEN 120
+130 IF A$="j" OR A$="J" THEN BR=1:GOTO 170
+140 IF A$="n" OR A$="N" THEN GOTO 380
+150 GOTO 120
+160 REM PATH INCORRECT
+170 CLOSE #1
+180 OPEN "O",#1,"SBPRO.CFG"
+190 CLS
+200 IF BR=1 THEN GOTO 220
+210 COLOR 12:PRINT"Der PATH in der Datei SBPRO.CFG ist Falsch oder nicht vorhanden!"
+220 PRINT
+230 PRINT"Bitte berichtigen!"
+240 COLOR 15
+250 PRINT
+260 PRINT"Geben Sie den Path der SBPro - Utilities an"
+270 INPUT"Neuer Path:",PATH$
+280 IF PATH$="" THEN GOTO 340
+290 IF MID$(PATH$,2,2)<>":\" THEN GOTO 340
+300 IF RIGHT$(PATH$,1)<>"\" THEN GOTO 340
+310 WRITE#1,PATH$
+320 CLOSE #1
+330 GOTO 380
+340 REM Fehler bei Eingabe!
+350 CLS
+360 PRINT"PATH INCORRECT!!! Geben Sie auch einen BackSlash am Ende an!"
+370 GOTO 220
+380 REM Hautpprogramm
+390 CLS
+400 COLOR 10
+410 WIDTH 40:PRINT"SoundBlaster Pro - Utility Program"
+420 COLOR 14
+430 PRINT"             Geschrieben in GW-Basic"
+440 PRINT"                       von Markus Birth"
+450 LOCATE 10,1
+460 PRINT"          /≥       ø"
+470 PRINT"         / ≥     ø ≥         €"
+480 PRINT"    …ÕÕ—æ  ≥   ø ≥ ≥       €€€€€‹‹‹‹‹‹‹"
+490 PRINT"LSP ∫  ≥   ≥ ] ≥ ≥ ≥     €€€€€€€€MICRO€"
+500 PRINT"    »ÕÕœ∏  ≥   Ÿ ≥ ≥       €€€€€ﬂﬂﬂﬂﬂﬂﬂ"
+510 PRINT"         \ ≥     Ÿ ≥         €"
+520 PRINT"          \≥       Ÿ"
+530 LOCATE 24,1
+540 PRINT"          Start mit Tastendruck";
+550 A$=INKEY$:IF A$="" THEN 550
+560 CLS
+570 WIDTH 80
+580 COLOR 15
+590 COLOR ,4,0:PRINT"                       SoundBlaster Pro - Utility Program                      "
+600 COLOR 8,0,0
+610 PRINT
+620 PRINT"   ƒƒƒ    ƒƒƒ    ƒƒƒ    ƒƒƒ    ƒƒƒ"
+630 PRINT"  ≥\≥/≥  ≥\≥/≥  ≥\≥/≥  ≥\≥/≥  ≥\≥/≥"
+640 PRINT"   ƒƒƒ    ƒƒƒ    ƒƒƒ    ƒƒƒ    ƒƒƒ"
+650 PRINT"  ≥/≥\≥  ≥/≥\≥  ≥/≥\≥  ≥/≥\≥  ≥/≥\≥"
+660 PRINT"   ƒƒƒ    ƒƒƒ    ƒƒƒ    ƒƒƒ    ƒƒƒ"
+670 PRINT
+680 COLOR 14
+690 PRINT" RECRD - Aufnehmen"
+700 PRINT" PLAYD - Datei abspielen"
+710 PRINT" WV2VC - RIFF WAVE File in Creative Voice File umwandeln"
+720 PRINT" VC2WV - Creative Voice File in RIFF WAVE File umwandeln"
+730 PRINT" JOIVC - 2 Creative Voice Files verbinden"
+740 PRINT" VCHDR - Header fÅr Creative Voice File schreiben"
+750 PRINT" MIXER - SBPro Mixer Einstellungen vornehmen"
+760 PRINT" RDDRV - SoundDriver anzeigen"
+770 PRINT
+780 PRINT" TODOS - Quit"
+790 COLOR 31
+800 LOCATE 20,3:PRINT" Õ ";:COLOR 15:PRINT"Õ Õ Õ Õ"
+810 X=1
+820 FUNCT$="Funktion wÑhlen"
+830 COLOR 15,4
+840 LOCATE 24,1:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+850 A$(X)=INKEY$:IF X>5 THEN GOTO 990:IF A$(X)="" THEN GOTO 840
+860 GOTO 940
+870 GOTO 840
+880 IF X=1 THEN LOCATE 20,4:COLOR 15,0:PRINT A$(X);:COLOR 31:PRINT" Õ":X=X+1:GOTO 930
+890 IF X=2 THEN LOCATE 20,6:COLOR 15,0:PRINT A$(X);:COLOR 31:PRINT" Õ":X=X+1:GOTO 930
+900 IF X=3 THEN LOCATE 20,8:COLOR 15,0:PRINT A$(X);:COLOR 31:PRINT" Õ":X=X+1:GOTO 930
+910 IF X=4 THEN LOCATE 20,10:COLOR 15,0:PRINT A$(X);:COLOR 31:PRINT" Õ":X=X+1:GOTO 930
+920 IF X=5 THEN LOCATE 20,12:COLOR 15,0:PRINT A$(X):X=X+1:GOTO 930
+930 GOTO 830
+940 REM DATA öberprÅfung
+950 READ C$,D$:IF C$="END" THEN RESTORE:GOTO 830
+960 IF A$(X)=C$ OR A$(X)=D$ THEN A$(X)=D$:RESTORE:GOTO 880
+970 GOTO 950
+980 DATA a,A,b,B,c,C,d,D,e,E,f,F,g,G,h,H,i,I,j,J,k,K,l,L,m,M,n,N,o,O,p,P,q,Q,r,R,s,S,t,T,u,U,v,V,w,W,x,X,y,Y,z,Z,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,0,0,-,-,/,/,END,IF
+990 REM Hauptpprog
+1000 FCT$ = A$(1) + A$(2) + A$(3) + A$(4) + A$(5)
+1010 IF FCT$="RECRD" THEN GOTO 1110
+1020 IF FCT$="PLAYD" THEN GOTO
+1030 IF FCT$="WV2VC" THEN GOTO
+1040 IF FCT$="VC2WV" THEN GOTO
+1050 IF FCT$="JOIVC" THEN GOTO
+1060 IF FCT$="VCHDR" THEN GOTO
+1070 IF FCT$="RDDRV" THEN GOTO
+1080 IF FCT$="TODOS" THEN COLOR 15,0,0:CLS:END
+1090 LOCATE 20,3:COLOR 31,0,0:PRINT" Õ ";:COLOR 15,0,0:PRINT"Õ Õ Õ Õ":X=1
+1100 GOTO 830
+1110 REM RECORD FILE
+1120 LOCATE 9,1
+1130 COLOR 15,0,0
+1140 FOR Z=0 TO 11
+1150 PRINT SPACE$(79)
+1160 NEXT Z
+1170 FUNCT$="Aufnahme eines Files"
+1180 COLOR 15,4
+1190 LOCATE 24,1:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+1200 A=1
+1210 X=28
+1220 LOCATE 3,11:COLOR X,0,0:PRINT"ƒƒƒ    ƒƒƒ    ƒƒƒ"
+1230 LOCATE 4,10:PRINT"≥":LOCATE 4,14:PRINT"≥":LOCATE 4,17:PRINT"≥":LOCATE 4,24:PRINT"≥"
+1240 LOCATE 5,11:PRINT"ƒƒƒ":LOCATE 5,18:PRINT"ƒƒƒ"
+1250 LOCATE 6,10:PRINT"≥":LOCATE 6,13:PRINT"\":LOCATE 6,17:PRINT"≥":LOCATE 6,24:PRINT"≥"
+1260 LOCATE 7,18:PRINT"ƒƒƒ":LOCATE 7,25:PRINT"ƒƒƒ"
+1270 IF A=2 THEN GOTO 1320
+1280 A=A+1
+1290 X=12
+1300 FOR Z=0 TO 49999!:NEXT
+1310 GOTO 1220
+1320 COLOR 14,0,0
+1330 LOCATE 9,1
+1340 GOSUB 2710
+1350 LOCATE 9,1:PRINT SPACE$(75)
+1360 PRINT SPACE$(75)
+1370 PRINT SPACE$(75)
+1380 LOCATE 20,1:PRINT SPACE$(75)
+1390 LOCATE 21,1:PRINT SPACE$(75)
+1400 LOCATE 22,1:PRINT SPACE$(75)
+1410 INFO$="TYPE " + PATH$ + "VREC.HLP"
+1420 LOCATE 9,1:COLOR 14
+1430 PRINT"Info:"
+1440 SHELL INFO$
+1450 A$=INKEY$
+1460 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+1470 IF A$="" THEN 1450
+1480 COLOR 15,0,0
+1490 FOR Z=9 TO 23
+1500 LOCATE Z,1:PRINT SPACE$(80);
+1510 NEXT Z
+1520 AUFRUF$=PATH$ + "VREC.EXE " + DATEI$ + " "
+1530 LOCATE 9,1:COLOR 15,0,0
+1540 PRINT"Wollen Sie die Puffergrî·e eingeben?"
+1550 FUNCT$="Puffergrî·e eingeben"
+1560 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+1570 A$=INKEY$:IF A$="" THEN GOTO 1560
+1580 COLOR 15,0,0
+1590 IF A$="n" OR A$="N" THEN GOTO 1700
+1600 IF A$="j" OR A$="J" THEN GOTO 1620
+1610 GOTO 1560
+1620 REM Buffergrî·e eingeben
+1630 LOCATE 9,1:PRINT SPACE$(75)
+1640 COLOR 14,0,0
+1650 LOCATE 9,1
+1660 INPUT"Buffergrî·e [1-32] :",BUFG
+1670 IF BUFG<1 OR BUFG>32 THEN GOTO 1630
+1680 BUFG$=MID$(STR$(BUFG),2,2)
+1690 AUFRUF$=AUFRUF$+"/B:"+BUFG$+" "
+1700 REM Aufnahmequelle
+1710 FUNCT$="Aufnahmequelle eingeben"
+1720 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+1730 COLOR 15,0,0
+1740 LOCATE 10,1
+1750 PRINT"Aufnahmequelle [M]ik/[C]d/[L]ine: "
+1760 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+1770 QUELLE$=INKEY$:IF QUELLE$="" THEN 1760
+1780 IF QUELLE$="M" OR QUELLE$="m" THEN QUELLE$="LINE":GOTO 1820
+1790 IF QUELLE$="C" OR QUELLE$="c" THEN QUELLE$="CD":GOTO 1820
+1800 IF QUELLE$="L" OR QUELLE$="l" THEN QUELLE$="MIK":GOTO 1820
+1810 GOTO 1760
+1820 AUFRUF$=AUFRUF$+"/A:"+QUELLE$
+1830 REM Filter
+1840 LOCATE 11,1:COLOR 15,0,0
+1850 PRINT"Wollen Sie den Filter festlegen?"
+1860 FUNCT$="Filter festlegen"
+1870 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+1880 A$=INKEY$:IF A$="" THEN 1870
+1890 COLOR 15,0,0
+1900 IF A$="j" OR A$="J" THEN 1930
+1910 IF A$="n" OR A$="N" THEN 2030
+1920 GOTO 1870
+1930 REM Filter festlegen
+1940 LOCATE 11,1:PRINT SPACE$(75)
+1950 COLOR 14,0,0
+1960 LOCATE 11,1
+1970 PRINT"Filter eingeben: [T]ief / [H]och"
+1980 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+1990 A$=INKEY$:IF A$="" THEN 1980
+2000 IF A$="t" OR A$="T" THEN AUFRUF$=AUFRUF$+" /F:TIEF":GOTO 2030
+2010 IF A$="h" OR A$="H" THEN AUFRUF$=AUFRUF$+" /F:HOCH":GOTO 2030
+2020 GOTO 1980
+2030 REM Samplingrate
+2040 FUNCT$="Samplingrate eingeben"
+2050 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+2060 LOCATE 12,1:COLOR 15,0,0
+2070 PRINT"Wollen Sie die Samplingrate eingeben?"
+2080 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+2090 A$=INKEY$:IF A$="" THEN 2080
+2100 IF A$="j" OR A$="J" THEN 2130
+2110 IF A$="n" OR A$="N" THEN 2190
+2120 GOTO 2080
+2130 REM Eingabe
+2140 COLOR 15,0,0
+2150 LOCATE 12,1:PRINT SPACE$(75)
+2160 LOCATE 12,1:INPUT"22050 - STEREO / 4000-41000 - MONO : ",SAMPL$
+2170 IF VAL(SAMPL$)<4000 OR VAL(SAMPL$)>41000! THEN GOTO 2150
+2180 AUFRUF$=AUFRUF$+" /S:"+SAMPL$
+2190 REM Aufnahmemodus
+2200 FUNCT$="MONO/STEREO auswÑhlen"
+2210 COLOR 15,0,0
+2220 LOCATE 13,1:PRINT"WÑhlen Sie den Aufnahmemodus: [M]ono/[S]tereo"
+2230 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+2240 A$=INKEY$:IF A$="" THEN GOTO 2230
+2250 IF A$="m" OR A$="M" THEN AUFRUF$=AUFRUF$+" /M:MONO":GOTO 2320
+2260 IF A$="s" OR A$="S" THEN AUFRUF$=AUFRUF$+" /M:STEREO":GOTO 2320
+2270 GOTO 2230
+2280 REM Samplerate falsch
+2290 LOCATE 13,1:COLOR 12,0,0:PRINT"Geht nicht wegen Samplingrate !!!"
+2300 FOR Z=0 TO 10000:NEXT
+2310 GOTO 2200
+2320 REM LINE-Volume
+2330 FUNCT$="LINE-IN LautstÑrke"
+2340 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+2350 LOCATE 14,1:COLOR 15,0,0
+2360 INPUT"Geben Sie die LINE-LautstÑrke (0-15) ein: ",LVOL
+2370 IF LVOL<0 OR LVOL>15 THEN GOTO 2320
+2380 REM Timer
+2390 FUNCT$="Timer Zeit einstellen"
+2400 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+2410 LOCATE 15,1:COLOR 15,0,0
+2420 INPUT"Geben Sie die Aufnahmezeit in SEK ein: ",TMR
+2430 IF TMR<1 OR TMR>65535! THEN GOTO 2380
+2440 AUFRUF$=AUFRUF$+" /T:"+STR$(TMR)
+2450 LOCATE 20,1:COLOR 12,0,0
+2460 PRINT"DrÅcken Sie eine Taste zum Beginnen!"
+2470 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+2480 A$=INKEY$:IF A$="" THEN GOTO 2470
+2490 REM Bildschirm Clearen
+2500 FOR Z=9 TO 23
+2510 COLOR 15,0,0
+2520 LOCATE Z,1:PRINT SPACE$(75)
+2530 NEXT Z
+2540 LOCATE 9,1:COLOR 14,0,0:PRINT AUFRUF$
+2550 PRINT"wird ausgefÅhrt!!!"
+2560 LOCATE 11,1
+2570 AUFRUF$=AUFRUF$+" /Q /X="+CHR$(34)+"ECHO AUFNAHME LUFT!"+CHR$(34)
+2580 SHELL AUFRUF$
+2590 COLOR 15,0,0
+2600 FOR Z=9 TO 23
+2610 LOCATE Z,1:PRINT SPACE$(79)
+2620 NEXT Z
+2630 LOCATE 9,1:COLOR 10,0,0
+2640 PRINT"Aufnahme erfolgreich durchgefÅhrt!!!"
+2650 PRINT:PRINT"Wenn bereit ---> Taste drÅcken"
+2660 FUNCT$="Wartet auf TASTENDRUCK"
+2670 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);
+2680 IF A$="" THEN GOTO 2660
+2690 GOTO 560
+2700 END
+2710 REM Abfrage des Dateinamens
+2720 PRINT"Geben Sie den Dateinamen ein:"
+2730 PRINT
+2740 COLOR 31:PRINT" Õ ";:COLOR 15:PRINT"Õ Õ Õ Õ Õ Õ Õ"
+2750 X=1
+2760 DAT$(X)=INKEY$
+2770 LOCATE 24,1:COLOR 15,4:PRINT USING"Aktuelle Funktion: \                             \      Aktuelle Zeit: &:&:&";FUNCT$;LEFT$(TIME$,2);MID$(TIME$,4,2);RIGHT$(TIME$,2);:IF DAT$(X)="" THEN 2760
+2780 GOSUB 2890
+2790 IF X=1 THEN LOCATE 11,2:COLOR 15,0:PRINT DAT$(X);:COLOR 31:PRINT" Õ"
+2800 IF X=2 THEN LOCATE 11,4:COLOR 15,0:PRINT DAT$(X);:COLOR 31:PRINT" Õ"
+2810 IF X=3 THEN LOCATE 11,6:COLOR 15,0:PRINT DAT$(X);:COLOR 31:PRINT" Õ"
+2820 IF X=4 THEN LOCATE 11,8:COLOR 15,0:PRINT DAT$(X);:COLOR 31:PRINT" Õ"
+2830 IF X=5 THEN LOCATE 11,10:COLOR 15,0:PRINT DAT$(X);:COLOR 31:PRINT" Õ"
+2840 IF X=6 THEN LOCATE 11,12:COLOR 15,0:PRINT DAT$(X);:COLOR 31:PRINT" Õ"
+2850 IF X=7 THEN LOCATE 11,14:COLOR 15,0:PRINT DAT$(X);:COLOR 31:PRINT" Õ"
+2860 IF X=8 THEN LOCATE 11,16:COLOR 15,0:PRINT DAT$(X):GOTO 2960
+2870 X=X+1
+2880 GOTO 2760
+2890 REM Umwandlung KLEIN -> in GROSSbuchstaben
+2900 RESTORE
+2910 READ A$,B$:IF A$="END" THEN GOTO 2940
+2920 IF DAT$(X)=A$ OR DAT$(X)=B$ THEN DAT$(X)=B$:RETURN
+2930 GOTO 2910
+2940 REM Fehler
+2950 GOTO 2760
+2960 REM Ermittlung des Dateinamens
+2970 DATEI$=DAT$(1) + DAT$(2) + DAT$(3) + DAT$(4) + DAT$(5) + DAT$(6) + DAT$(7) + DAT$(8) + ".VOC"
+2980 RETURN
+

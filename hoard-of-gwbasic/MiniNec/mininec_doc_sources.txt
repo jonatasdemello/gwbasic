@@ -1,0 +1,18 @@
+Sources of documentation for MININEC:
+
+
+(1) MININEC is available from National Technical Information Service (NTIS),
+US Department of Commerce, 5285 Port Royal Rd, Springfield, VA 22161, tel
+703-487-4650. Order no. ADA181681 (software and documentation).
+
+(2) A technical reference describing the program is J.C. Logan and
+J.W. Rockway, "The New MININEC (Version 3): A Mini-Numerical Electromagnetic
+Code", NOSC TD 938, Naval Ocean Systems Center, San Diego, CA, 1986. It is
+available as document number ADA181682 from NTIS (see note 1). This is a
+highly technical manual.
+
+(3) J. Rockway, J. Logan, D. Tam and S. Li, "The MININEC System:
+Microcomputer Analysis of Wire Antennas", available from Artech House, 685
+Canton Street, Norwood, MA 02062. Includes several programs with source code
+and a comprehensive manual.
+

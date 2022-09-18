@@ -1,0 +1,68 @@
+Hinweise zu LAUFSCHRIFT II - DAT
+
+Dieses GW-Basic Programm erfordert eine DATENDATEI die folgenderma·en
+aufgebaut ist:
+
+Zeile	Informationen				Beispiel
+00001	SÑtze insgesamt				3
+00002	Text : Satz 1 (mu· in "" stehen)	"Text"
+00003	Farbe: Satz 1 (0-31)			12
+00004	Text : Satz 2				"Satz 2"
+00005	Farbe: Satz 2				10
+00006	Text : Satz 3				"Beispieltext"
+  .	         .				     .
+  .	         .				     .
+  .		 .				     .
+
+Am Ende mu· ein Farbwert stehen!!!
+
+Farbtabelle:
+
+Normale Farben:
+00 - Schwarz       01 - Dunkelblau    02 - DunkelgrÅn    03 - Dunkelcyan
+04 - Dunkelrot     05 - Dunkelviolett 06 - Braun         07 - Hellgrau
+08 - Grau          09 - Blau          10 - HellgrÅn      11 - Hellblau
+12 - Hellrot       13 - Hellviolett   14 - Gelb          15 - Wei·
+
+Blinkende Farben:
+16 - Schwarz       17 - Dunkelblau    18 - DunkelgrÅn    19 - Dunkelcyan
+20 - Dunkelrot     21 - Dunkelviolett 22 - Braun         23 - Hellgrau
+24 - Grau          25 - Blau          26 - HellgrÅn      27 - Hellblau
+28 - Hellrot       29 - Hellviolett   30 - Gelb          31 - Wei·
+
+Hier ein Dateibeispiel:
+
+Datei: LAUFTEXT.L2D
+
+5
+"Laufschrift II - DAT *** Laufschrift II - DAT *** Laufschrift II - DAT"
+12
+"geschrieben in GW-BASIC"
+10
+"von Markus Birth"
+12
+"Musterstrasse 1 in 12345 Musterstadt"
+11
+"Telefon/FAX: (0123) 4567"
+8
+[EOF]
+
+Und hier die ErklÑrung des Files:
+
+5 - DatensÑtze ges.
+"Laufschrift II - DAT *** Laufschrift II - DAT *** Laufschrift II - DAT" - Satz 1
+12 - Farbe 12 (Hellrot)
+"geschrieben in GW-BASIC" - Satz 2
+10 - Farbe 10 (HellgrÅn)
+"von Markus Birth" - Satz 3
+12 - Farbe 12 (wieder Hellrot)
+"Musterstrasse 1 in 12345 Musterstadt" - Satz 4
+11 - Farbe 11 (Hellcyan)
+"Telefon/FAX: (0123) 4567" - Satz 5
+8 - Farbe 8 (Dunkelgrau)
+[EOF]
+
+
+
+Ich hoffe diese Datei konnte helfen.
+                                                    Markus Birth

@@ -1,0 +1,197 @@
+From Jeff Jones  AB6MB
+jeffj@seeker.nystic.com
+jeffj@cbnewsm.cb.att.com
+---------------------------------------------------------------------
+
+Here is some help for new Mininec users who don't have the manual...
+
+How Mininec works is by taking the antenna elements that you specify 
+and divides them into segments. It uses the individual segments to
+calculate the total currents and voltages for your antenna. so the
+more segments the better the accuracy but the longer it takes for
+Mininec to calculate. Mininec will ask you for the number of wires your
+antenna has. A dipole has 1 wire and a 3 element beam would have 3
+wires, one each for the reflector, driven and director elements. Each
+one of those wires will be broken up into the number of segments that
+you specify. 10 is generally a good number to use. 
+
+All individual wires consist of X,Y,Z coordinates. Think of yourself 
+facing broadside to a dipole or where you are now standing the wire 
+being parallel to you. The X coordinate comes out of the dipole at
+a 90 angle right at you. The Y coordinate goes from left to right or
+corresponds to the length of the dipole. The Z coordinate is the height of 
+the dipole above ground. All measurements are in meters. (multiply feet
+by .3048 to convert to meters).
+
+As an example, take the following wire dipole;
+
+Beginning of wire 		End of wire
+X	Y	Z		X	Y	Z
+0	0	10		0	10.19	10
+
+This would be a 20 meter dipole at 10 meters high. Easy right? Sure you say, 
+how did he do that? OK here is how you do it.
+
+Let's start with the beginning of the antenna, in this case a dipole;
+
+First what is X? Remember X is coming out at a 90 degree angle right at you.
+A dipole has nothing that comes out at a 90 angle out at you so X is 0.
+
+Second what is Y? Remember Y corresponds to the length of a dipole. So the
+starting point of the length of a dipole is zero or Y = 0. 
+
+Thirdly what is Z? Remember Z corresponds to the height of a dipole. As this
+end of the dipole is at 10 meters above ground, Z = 10.
+
+Now for the end of the antenna. X is 0 as there is nothing coming out at us
+at 90 degrees. Y is now the endpoint of the dipole and as this antenna is a 
+20 meters dipole Y = 10.19 (meters). Z is the height of the dipole at the 
+endpoint and as it is the same height above ground as the beginning of the
+dipole Z = 10 (meters). 
+
+This is how the dipole looks to Mininec;
+
+                          Length
+                Y = 0                       Y = 10.19
+		-----------------------------
+			     /		    |  H
+                            /		    |  e
+                  X = 0    /                |  i  Z = 10
+                          /		    |  g
+                         /                  |  h
+                        /                   |  t
+
+Remember X is coming straight out of the side of the dipole at a 90 angle 
+right at you.
+
+Now that you have your wire setup, the next step is the concept of 
+Segments. This is how Mininec breaks the wires up for it's computations.
+10 segments is a good number to use to start with. Mininec computes
+the currents and voltages in each segment and uses those results to
+calculate the total efficiency and radiation patterns of your antenna.
+The more segments the better the accuracy and the slower it's computations.
+
+Source Pulses are where you feed your antenna at. If you have a dipole
+divided up into 10 segments then to feed it in the middle you would
+use segment 5. Basically a source pulse is nothing more then what segment
+you feed your antenna at. 
+
+Let's use Mininec now to create a antenna model;
+
+FREQUENCY (MHZ)?  Let's put 14 here.
+
+ENVIRONMENT (+1 FOR FREE SPACE, -1 FOR GROUND PLANE)? Put -1 for real ground.
+
+NUMBER OF MEDIA? Put 1 here
+
+RELATIVE DIELECTRIC CONSTANT, CONDUCTIVITY? 13,.005 works well as this is about 
+average ground.
+
+NO. OF WIRES? Put 1 here as we are modeling a dipole.
+
+NO. OF SEGMENTS? Put 10 here as this a good number for modeling.
+
+END ONE COORDINATES (X,Y,Z)? 0,0,10  (This is beginning end of the dipole 
+ 				      and all numbers are in meters)
+
+END TWO COORDINATES (X,Y,Z)? 0,10.19,10   This is the other end of the dipole
+                                          and 10.19 is the length and 10 is
+                                          height above ground. Both in meters.
+
+                     RADIUS? .001  This the diameter of the wire in meters.
+
+CHANGE WIRE NO. 1 (Y/N)?  If OK put N
+
+  CHANGE GEOMETRY (Y/N)?  If OK put N
+
+NO. OF SOURCES? Put 1 here. This tells the program how many sources of power
+                            are being applied to your antenna. Ie.. coax
+
+PULSE NO., VOLTAGE MAGNITUDE, PHASE (DEGREES)? 5,1,0  This tells Mininec where
+to put the coax at. Remember the 10 pulses? Pulse number 5 is in the middle of
+your antenna. Voltage is 1 volt and forget about the phase just put zero there.
+
+NUMBER OF LOADS? 0  This is for traps, resistors, etc...
+
+You will see a menu with various options. Choose P - COMPUTE FAR FIELD PATTERNS
+
+It will now say BEGIN MATRIX FILL
+
+Nex it will now print out something like this;
+
+PULSE 5		VOLTAGE = ( 1, 0J )
+		CURRENT = ( 9.728E-03, -48.54408 J )
+	      IMPEDANCE = ( 68.27696, -48.54408 J  ) 
+		  POWER = 4.864229E-03 WATTS
+
+CALCULATE PATTERN IN DBI OR VOLTS/METER (D/V)? Put D here for DBI. DBI 
+usually stands for DBs over a Isotropic Dipole. Substract 2-3 DBs to
+get what it would be in the real world as a Isotropic dipole doesn't exist.
+Dipoles are considered to have 2-3 DB gain over a Isotropic Dipolei.
+
+Now Mininec will ask you for ZENITH angles. The Zenith goes from 0 degrees
+straight up to the sky swings directly out to the horizon and then to 180 
+degrees below the antenna all at right angles to the antenna. This corresponds
+to broadside radiation. Still not clear? Think like this, face the horizon,
+put your hand straight up, this is 0 degrees straight up. Okay, now point your
+hand at the horizon, this is a zenith angle of 90 degrees. Point your hand
+at the ground, this is a zenith angle of 180 degrees. Now here is how Mininec
+likes to see it. Put in 0 (starting angle),10 (how many degrees to increment),
+10, (how many times to increment). This works out to start out at 0 degrees
+pointing straight up and increment 10 degrees towards the horizon 10 times.
+Or goes from 0 degrees and steps 10 degrees at a time until it reaches 90 deg.
+At 0 and each 10 degrees Mininec will calculate the strength of the radiation
+pattern in DB's. Also 90,-10,10 will also work. This starts at 90 degrees
+straight off the side and works back up to 0 degrees. This is exactly the
+same as 0,10,10 only it does it backwards. Also you can use even smaller 
+increments like 0,5,20. This will calculate at every 5 degrees from 0 to
+90 degrees. What ZENITH really does is calculate the radiation angles
+off the side of your antenna. So when Mininec asks the following;
+
+ZENITH ANGLE : INITIAL, INCREMENT, NUMBER? Put in 0,10,10. 
+
+Now Mininec will ask you for the Azimuth angles. 0 degrees corresponds to 
+pointing straight out towards the horizon at 90 degrees from the center of the 
+dipole. Imagine you are standing facing the horizon. If you point your hand
+straight out towards the horizon this is Azimuth angle of 0 degrees. Now keep
+it out and move it sideways 10 degrees to your left. This a Azimuth angle of
+10 degrees. If you had moved it to your right this would have been a Azimuth
+angle of -10 degrees. What the Azimuth angle is really good for is seeing
+if there is cloverleaf pattern off the broadside of your dipole or for seeing
+the amount of front, side and back radiation on Yagi antennas. As we are
+not interested in this at this time do the following;
+
+AZIMUTH ANGLE : INITIAL, INCREMENT, NUMBER? Put in 0,0,0
+
+FILE PATTERN (Y/N)? Put N or this will save the results into a file and you 
+                    will have to view the file to see the results.
+
+Mininec will now calculate the Far Field pattern for you. You will see 
+5 columns named respectively; ZENITH ANGLE, AZIMUTH ANGLE, VERTICAL PATTERN (DB)
+HORIZONTAL PATTERN (DB), TOTAL PATTERN (DB). Under the columns with the
+(DB) after their names is the calculated amount of power in DB's your antenna 
+is putting out. The TOTAL PATTERN is what you want to look at. This is the 
+power output in DB's that your antenna is calculated to be radiating and has
+the most useful figures. Due to the way the Mininec calculates using the
+ZENITH ANGLE and numbers of 0,10,10 it will be backwards compared to 
+published antenna radiation pattern charts. 90 degrees is actually 0 degrees
+and 80 is 10, 70 is 20, etc... on antenna radiation pattern charts. You can
+either just convert it in your head or do put 90,-10,10 instead of  0,10,10.
+Then is will correspond to antenna radiation charts. 
+
+For some more good information and help get a copy of the 1991 February QST 
+article called "MININEC: The Other Edge of The Sword". 
+Also get Volume 3 of "The ARRL Antenna Compendium" as there is a great
+article called "Modeling HF Antennas with MININEC" that is really helpful.
+These 2 resources will really deepen your understanding of Mininec!
+
+Here's some good figures for RELATIVE DIELECTRIC CONSTANT and CONDUCTIVITY
+for ground;
+
+    20,.03	Very good ground	Rich soil
+    14,.01	Good ground		Rich soil
+    13, .005  	Average ground		Heavy clay soil
+ 12-14, .002	Poor Ground		Cities, Industrial Areas
+     5, .001	Very poor ground	Cities, Industrial Areas, High building.
+
+

@@ -1,0 +1,26 @@
+10 CLS
+20 PRINT"Dies ist ein Joystick-Test fÅr den HCV 386-DX."
+30 PRINT"DrÅcken Sie eine Taste zum Start !!!"
+40 B$=INKEY$:IF B$="" THEN 40
+50 CLS
+60 PRINT"Left = 4-6     Right = 181-185     Up = 5-7     Down = 127-133"
+70 PRINT"Fire Button 1 = -1                 Fire Button 2 = -1"
+80 LOCATE 15,30
+90 A=STICK(0):B=STICK(1)
+100 C=STRIG(1):D=STRIG(4)
+110 LOCATE 15,26
+120 PRINT USING"Left/Right : ### Up/Down : ###";A;B
+130 LOCATE 16,22
+140 PRINT USING"Fire Button 1 : ## Fire Button 2 : ##";C;D
+150 IF A<90 THEN LOCATE 15,1:PRINT"ÆÆÆ Left"
+160 IF A>120 THEN LOCATE 15,60:PRINT"Right ØØØ"
+170 IF B<100 THEN LOCATE 15,1:PRINT"7 Up"
+180 IF B>120 THEN LOCATE 15,60:PRINT"8 Down"
+190 IF C=-1 THEN LOCATE 16,1:PRINT"6 Fire Button 1"
+195 IF C<>-1 THEN LOCATE 16,1:PRINT"               "
+200 IF D=-1 THEN LOCATE 16,61:PRINT"6 Fire Button 2"
+205 IF D<>-1 THEN LOCATE 16,61:PRINT"               "
+206 IF A>90 AND B>100 THEN LOCATE 15,1:PRINT"        "
+207 IF A<120 AND B<120 THEN LOCATE 15,60:PRINT"         "
+220 GOTO 90
+

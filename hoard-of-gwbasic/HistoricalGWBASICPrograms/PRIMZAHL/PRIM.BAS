@@ -1,0 +1,88 @@
+5 STP=40
+6 DIM TIR(STP+1)
+10 CLS
+20 COLOR 15
+30 INPUT "Geben Sie den Anfangswert fr die Primzahlen an:", ANF
+40 IF ANF = 0 THEN ANF = 1
+50 INPUT "Geben Sie den Maximalwert fr die Primzahlen an:", MAX
+60 CLS
+70 HOUR=VAL(LEFT$(TIME$,2)):MINU=VAL(MID$(TIME$,4,2)):SEC=VAL(RIGHT$(TIME$,2)):TI=MINU+(SEC/100)/.6
+80 DIM V(MAX - ANF)
+90 B = 12
+100 C = 0
+110 L = 1
+120 G = 9
+130 H = 1
+140 A = ANF
+150 U = ANF
+160 FOR Z = 1 TO A
+170 Y = A / Z
+180 HOURD=VAL(LEFT$(TIME$,2)):MIND=VAL(MID$(TIME$,4,2)):SECD=VAL(RIGHT$(TIME$,2))
+181 MIND=MIND+((HOURD-HOUR)*60)
+182 TID=MIND+(SECD/100)/.6
+190 TIDIFF=TID-TI:MN=INT(TIDIFF):SC=(TIDIFF-MN)*100*.6
+195 IF PER=0 THEN 260
+200 NOW=NOW+1
+210 TIR(NOW)=TIDIFF/(PER/100)
+220 IF NOW=STP THEN NOW=0 ELSE 260
+230 FOR NUMM=1 TO STP
+240 TIR=TIR+TIR(NUMM)
+250 NEXT NUMM
+251 TIR=TIR/STP
+252 BM=INT(TIR):BS=((TIR)-BM)*100*.6
+260 LOCATE 1, 1: PRINT USING "Aktuelles Ergebnis: #####.######       Zeit: ##:##";Y;MN;SC
+270 LOCATE 2, 1: PRINT USING "Momentaner Teiler : #####              noch: ##:##";Z;BM;BS
+280 LOCATE 3, 1: PRINT USING "              schon #####x geteilt"; X
+290 LOCATE 4, 1: PRINT USING "Aktuelle Zeile    : #####"; B - 11
+300 LOCATE 5, 1: PRINT USING "Primzahlen insges.: #####"; C
+310 PER = ((A - ANF) * 100) / (MAX - ANF): IF ANF = 1 THEN PER = (A * 100) / MAX
+320 LOCATE 6, 1: PRINT USING "Aktuelle Zahl     : ##### von ##### das sind ###.##%"; A; MAX; PER
+330 LOCATE 7, 1: PRINT USING "               Noch ##### Werte"; MAX - A
+340 LOCATE 11, 1: PRINT SPACE$(80)
+350 IF Y = INT(Y) THEN GOSUB 750
+360 NEXT Z
+370 LOCATE 9, 1: PRINT SPACE$(80)
+380 LOCATE 10, 1: PRINT SPACE$(80)
+390 G = 9
+400 H = 1
+410 IF X = 2 OR A = 1 THEN GOSUB 470
+420 X = 0
+430 A = A + 1
+440 IF A > MAX THEN LOCATE 23, 1: GOTO 560
+450 IF W = 1 THEN GOSUB 530: W = 0
+460 GOTO 160
+470 REM Unterroutine
+480 LOCATE 3, 60: SOUND 2000, .5
+490 COLOR 12, 0, 0: PRINT "Primzahl gefunden...": COLOR 14, 0, 0: C = C + 1: X = 0
+500 LOCATE B, L: PRINT USING"#####";A: L = L + 6: IF L > 75 THEN L = 1: B = B + 1: IF B > 23 THEN B = 12: L = 1
+510 V(U) = A: U = U + 1: W = 1
+520 RETURN
+530 REM Unterroutine
+540 COLOR 15, 0, 0: LOCATE 3, 60: PRINT SPACE$(20)
+550 RETURN
+560 REM Endroutine
+570 PRINT "Wenn fertig Taste drcken..."
+580 A$ = INKEY$: IF A$ = "" THEN 580
+590 CLS
+600 COLOR 14, 0, 0
+610 A = 1
+620 B = 1
+630 C = 1
+640 L = 1
+650 FOR Z = ANF TO MAX
+660 IF V(Z) = 0 THEN GOTO 700
+670 LOCATE B, C: PRINT V(Z)
+680 C = C + 5: IF L > 75 THEN B = B + 1: C = 1: IF B > 23 THEN B = 1
+690 NEXT Z
+700 COLOR 10
+710 LOCATE 23, 1: PRINT "Wenn bereit Taste drcken..."
+720 A$ = INKEY$: IF A$ = "" THEN 720
+730 CLS : COLOR 15, 0, 0
+740 END
+750 REM Teiler in Q
+760 X = X + 1
+770 LOCATE G, H: COLOR 10: PRINT USING "#####";Z: H = H + 6: IF H > 75 THEN G = G + 1: H = 1
+780 IF G > 10 THEN G = 9
+790 COLOR 15
+800 RETURN
+

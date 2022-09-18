@@ -1,0 +1,358 @@
+1000 '
+1010 '
+1020 '
+1030 '
+1040 '
+1050 '
+1060 '
+1070 '
+1080 '
+1090 '
+1100 '==========================================================================
+1110 '                           DEBUT
+1120 '==========================================================================
+1130 DIM ALPHA(255,14):SCREEN 2:KEY OFF:CLS:GOSUB 2380
+1140 DEF SEG:FO=0:CO=7:C$="-":N$="":S$="N":L1=1:H1=1:GOSUB 2930
+1145 IF FO=0 AND CO=7 THEN SCR=2:SCREEN 2:CLS ELSE SCR=1:SCREEN 1:CLS
+1150 ON ERROR GOTO 2920:GOSUB 2840:FO=POINT(319-(SCR=2)*320,199):GOTO 1210
+1160 PAINT (1,1),FO:GOSUB 2760:GOTO 1210
+1170 '--------------------------------------------------------------------------
+1180               TRAITEMENT ET CORRECTION DES PARAMTRES
+1190 '--------------------------------------------------------------------------
+1200 GOSUB 2930::SCREEN SCR:CLS:GOSUB 2840:FLAG=0
+1210 X2=X:Y2=Y:SN=SIN(A):CS=COS(A):L1=L:H1=H:FLAG=FLAG+1:A2=A
+1220 IF ABS(DX)>=L THEN DX=SGN(DX)*(L-1)
+1230 IF ABS(DY)>=H THEN DY=SGN(DY)*(H-1)
+1240 IF IX<>0 THEN IX=1*SGN(IX)
+1250 IF IY<>0 THEN IY=1*SGN(IY)
+1260 IF P<>0 THEN P=P/ABS(P):IF FLAG=2 THEN 1280
+1270 IF P=1 THEN L=1:H=1:GOTO 1210 ELSE IF P=1 THEN L=LEN(A$):H=L:GOTO 1210
+1280 IF P1<>0 THEN P1=1
+1290 IF E<>0 THEN E=1
+1300 FLAG=1:PL=0:D=1:CO=CO+(CO=FO):IF CO=0 THEN CO=8
+1310 '==========================================================================
+1320 '                   PROGRAMME PRINCIPAL
+1330 '==========================================================================
+1340 FOR K=1 TO LEN(A$)
+1350   IF P>0 THEN L=L1*K*P:H=H1*K*P
+1360   IF P<0 THEN L=L1/LEN(A$)*(LEN(A$)-K+1):H=H1/LEN(A$)*(LEN(A$)-K+1)
+1370   CA=ASC(MID$(A$,K,1))
+1380   FOR J=0 TO 7:J1=J*H*SN:J2=J*H*CS:I1=IX*J
+1390     IF P1=1 THEN GOSUB 1600
+1400     V=ALPHA(CA,(J+1)*FLAG+8*PL)
+1410     IF D=2 THEN GOSUB 2080
+1420     FOR C=1 TO 8:C1=(C-1)*L*CS:C2=(C-1)*L*SN:I2=IY*C
+1430       Z=INT (2^(8-C))
+1440       IF V>=Z THEN GOSUB 1950 ELSE 1450
+1450     NEXT C
+1460   NEXT J
+1470   ON D GOSUB 2140,2260
+1480 NEXT K
+1490 IF S$="O" OR S$="o" THEN 1730
+1500 GOSUB 2760:SCREEN 0,0:WIDTH 80
+1510 COLOR 7,2:CLS:COLOR 7,1:FOR I=11 TO 15:LOCATE I,26:PRINT SPACE$(30):NEXT I
+1520 LOCATE 13,30:PRINT "Autre texte ( O ou N )";:T$=""
+1530 T$=INKEY$:IF T$="" THEN 1530
+1540 IF T$="o" OR T$="O" THEN 1200 ELSE IF T$<>"n" AND T$<>"N" THEN 1520
+1550 SCREEN SCR:CLS:GOSUB 2840:T$=""
+1560 T$=INKEY$:IF T$="" THEN 1560 ELSE SCREEN 0,0:CLS:END
+1570 '==========================================================================
+1580 '                Effacement pour priorit‚
+1590 '==========================================================================
+1600 FOR C=1 TO 8:C1=(C-1)*L*CS:C2=(C-1)*L*SN:I2=IY*C
+1610   FOR S=0 TO L-1:FOR T=0 TO H-1
+1620     X1=C1-J1+S*CS-T*SN+I1+X+S*DX*CS-T*DY*SN
+1630     X1=INT((X1-INT(X1))*10/5+INT(X1))
+1640     Y1=C2+J2+S*SN+T*CS+I2+Y+S*DX*SN+T*DY*CS
+1650     Y1=INT((Y1-INT(Y1))*10/5+INT(Y1))
+1660     PSET (X1,Y1),FO*(1-E)+CO*P1
+1670 NEXT T,S,C:RETURN
+1680 '==========================================================================
+1690 '                 ParamŠtres pour sym‚tries
+1700 '--------------------------------------------------------------------------
+1710 '                      sym‚trie polaire
+1720 '--------------------------------------------------------------------------
+1730 S$="N":IF C$="o" OR C$="O" THEN A=A+3.14:SN=SIN(A):CS=COS(A)
+1740 IF P<>0 THEN L=L1:H=H1
+1750 IF C$<>"O" OR C$<>"o" THEN 1820
+1760 X=X2+(16*H-1)*SN+(2*L+1)*CS:Y=Y2-(16*H-1)*CS+(2*L+1)*SN
+1770 X=INT((X-INT(X))*10/5+INT(X))
+1780 Y=INT((Y-INT(Y))*10/(+INT(Y)):GOTO 1340
+1790 '--------------------------------------------------------------------------
+1800 '                       Sym‚trie par X
+1810 '--------------------------------------------------------------------------
+1820 FLAG=-1:PL=1:X=X2-8*H*SN:Y=Y2+8*H*CS
+1830 X=INT((X-INT(X))*10/5+INT(X))
+1840 Y=INT((Y-INT(Y))*10/5+INT(Y))
+1850 IF C$="X" OR C$="x" THEN 1340
+1860 '--------------------------------------------------------------------------
+1870 '                       Sym‚trie par Y
+1880 '--------------------------------------------------------------------------
+1890 X=X2-8*L*CS:Y=Y2-8*L*SN:D=2:FLAG=1:PL=0
+1900 X=INT((X-INT(X))*10/5+INT(X))
+1910 Y=INT((Y-INT(Y))*10/5+INT(Y)):GOTO 1340
+1920 '==========================================================================
+1930 '                          Ecriture
+1940 '==========================================================================
+1950 FOR S=0 TO L-1:FOR T=0 TO H-1
+1960   X1=C1-J1+S*CS-T*SN+I1+X+S*DX*CS-T*DY*SN
+1970   X1=INT((X1-INT(X1))*10/5+INT(X1))
+1980   Y1=C2+J2+S*SN+T*CS+I2+Y+S*DX*SN+T*DY*CS
+1990   Y1=INT((Y1-INT(Y1))*10/5+INT(Y1))
+2000   Z$=STR$(X1):W$=STR$(Y1)
+2010   DRAW"B M"+Z$+","+W$:B=POINT(X1,Y1):IF B<>E*FO THEN 1980
+2020   PSET (X1,Y1),CO*(1-E)+FO*E
+2030 NEXT T,S
+2040 V=V-Z:RETURN
+2050 '==========================================================================
+2060 '               CarractŠre pour sym‚trie Y
+2070 '==========================================================================
+2080 V1=0:FOR C=1 TO 8
+2090  Z=INT(2^(8-C)):IF V>=Z THEN V1=V1+INT(2^(C-1)):V=V-Z
+2100 NEXT C:V=V1:RETURN
+2110 '==========================================================================
+2120 '               Calcul des Coordonn‚es
+2130 '==========================================================================
+2140 IF P=0 THEN X=8*L*CS+X+EX
+2150 IF P>0 THEN X=8*L*CS+X+ABS(P-PL)*8*H1*SN+EX
+2160 IF P<0 THEN X=8*L*CS+X-(ABS(P)-PL)*8*SN+EX
+2170 IF P=0 THEN Y=8*L*SN+Y+EY
+2180 IF P>0 THEN Y=8*L*SN+Y-ABS(P-PL)*8*H1*CS+EY
+2190 IF P<0 THEN Y=8*L*SN+Y+ABS(P)-PL)*8*CS+EY
+2200 X=INT((X-INT(X))*10/5+INT(X))
+2210 Y=INT((Y-INT(Y))*10/5+INT(Y))
+2220 RETURN
+2230 '==========================================================================
+2240 '                  Calcul des coordonn‚es pour sym‚trie Y
+2250 '==========================================================================
+2260 IF P=0 THEN X=-8*L*CS+X-EX
+2270 IF P>0 THEN X=-8*(L+1)*CS+X+ABS(P-PL)*8*H1*SN-EX
+2280 IF P<0 THEN X=-8*(L-1)*CS+X-(ABS(P)-PL)*8*SN-EX
+2290 IF P=0 THEN Y=-8*L*SN+Y+EY-SN
+2300 IF P>0 THEN Y=-8*(L+1)*SN+Y-ABS(P-PL)*8*H1*CS+EY
+2310 IF P<0 THEN Y=-8*(L-1)*SN+Y+(ABS(P)-PL)*8*CS+EY
+2320 X=INT((X-INT(X))*10/5+INT(X))
+2330 Y=INT((Y-INT(Y))*10/5+INT(Y))
+2340 RETURN
+2350 '==========================================================================
+2360 '                    POLICE DE CARACTERES
+2370 '==========================================================================
+2380 FOR I=1 TO 255:IF I=7 THEN I=8 ELSE IF I=9 THEN I=14 ELSE IF I=28 THEN I=32
+2390 PRINT CHR$(I);
+2400 NEXT I:LOCATE 14,30:PRINT  " P A T I E N T E Z "
+2410 DEF SEG=&HB800
+2420 ADRESSE=0:CURSEUR=0
+2430 FOR I=1 TO 255:IF I=7 THEN I=8 ELSE IF I=9 THEN I=14 ELSE IF I=28 THEN I=32
+2440   FOR J=1 TO 8 STEP 2
+2450     ALPHA (I,J)=PEEK(ADRESSE):ALPHA (I,J+1)=PEEK(ADRESSE+8192)
+2460     ADRESSE=ADRESSE+80
+2470   NEXT J:CURSEUR=CURSEUR+1:ADRESSE=CURSEUR
+2480   IF I=90 THEN CURSEUR=4*80:ADRESSE=CURSEUR
+2490   IF I=170 THEN CURSEUR=8*80:ADRESSE=CURSEUR
+2500   IF I=250 THEN CURSEUR=12*80:ADRESSE=CURSEUR
+2510 NEXT I
+2520 CLS:RETURN
+2530 DEF SEG=0
+2540 FOR I=1 TO 255:IF I=7 THEN I=8 ELSE IF I=9 THEN I=14 ELSE IF I=28 THEN I=32
+2550   A$="":PRINT" Valeur Adresse d'‚l‚ment ASCII (I)    LIGNE (J)";SPACE$(12);
+2560   PRINT "Dessin":PRINT :FOR  J=1 TO 8
+2570     A=ALPHA(I,J):PRINT " ";A,
+2580     IF A>127 THEN A$=A$+"Û":A=A-128 ELSE A$=A$+" "
+2590     IF A>63  THEN A$=A$+"Û":A=A-64  ELSE A$=A$+" "
+2600     IF A>31  THEN A$=A$+"Û":A=A-32  ELSE A$=A$+" "
+2610     IF A>15  THEN A$=A$+"Û":A=A-16  ELSE A$=A$+" "
+2620     IF A>7   THEN A$=A$+"Û":A=A-8   ELSE A$=A$+" "
+2630     IF A>3   THEN A$=A$+"Û":A=A-4   ELSE A$=A$+" "
+2640     IF A>1   THEN A$=A$+"Û":A=A-2   ELSE A$=A$+" "
+2650     IF A>0   THEN A$=A$+"Û":A=A-1
+2660      PRINT VAPTR(ALPHA(I,J)),I,J;:LOCATE CSRLIN,60:PRINT A$:A$=""
+2670      IF INKEY$="" THEN 2670
+2680    NEXT J:PRINT
+2690 NEXT I
+2700 RETURN
+2710 '==========================================================================
+2720 '                   Ecran-Disque
+2730 '==========================================================================
+2740 '                        Sauvegarde
+2750 '--------------------------------------------------------------------------
+2760 DEF SEG=&HB800:BSAVE N$,0,16384
+2770 '
+2780 '
+2790 '
+2800 RETURN
+2810 '--------------------------------------------------------------------------
+2820 '                        Lecture
+2830 '--------------------------------------------------------------------------
+2840 DEF SEG=&HB800:BLOAD N$,0
+2850 '
+2860 '
+2870 '
+2880 RETURN
+2890 '--------------------------------------------------------------------------
+2900 '                 Traitement d'erreur:"Fichier non existent"
+2910 '--------------------------------------------------------------------------
+2920 RESUME 1160
+2930 '==========================================================================
+2940 '                      MENU PRINCIPAL
+2950 '==========================================================================
+2960 '                    Affichage des donn‚es courantes
+2970 '--------------------------------------------------------------------------
+2980 SCREEN 0,0:WIDTH 80:COLOR 7,4:CLS:COLOR 7,2:A=A2:A1=INT(A*180/3.14):L=L1:H=H1:C$="-"
+2990 LOCATE 2,5:PRINT SPACE$(72);
+3000 FOR I=3 TO 22:LOCATE I,5:PRINT"  ";:COLOR 7,1:PRINT SPACE$(36);
+3010 PRINT STRING$(22,46);" [     ]  ";:COLOR 7,2:PRINT"  ";:NEXT I
+3020 LOCATE 22,5:PRINT"  ";:COLOR 7,1:PRINT"  ";STRING$(57,46);"......]";
+3030 COLOR 7,2:LOCATE 23,5:PRINT SPACE$(72);:LOCATE 24,5:PRINT SPACE$(72);
+3040 COLOR 3,5:LOCATE 2,31:PRINT "Choix des PARAMETRES":COLOR 7,1
+3050 LOCATE  3,9:PRINT"Couleur du FOND                FO":LOCATE  3,67:PRINT FO;
+3060 LOCATE  4,9:PRINT"Nom d'ECRAN ,ANCIEN ou … CREER N$":LOCATE  4,68:PRINT N$;
+3070 LOCATE  5,9:PRINT"Image avec SYMETRIE (O ou N)   S$":LOCATE  5,68:PRINT S$;
+3080 LOCATE  6,9:PRINT"Par raport … X,Y ou O (lettre) C$":LOCATE  6,68:PRINT C$;
+3090 LOCATE  7,9:PRINT"Origine du texte, ABSCISSE      X":LOCATE  7,67:PRINT X;
+3100 LOCATE  8,9:PRINT"Origine du texte, ORDONNEE      Y":LOCATE  8,67:PRINT Y;
+3110 LOCATE  9,9:PRINT"Angle en DEGRES (- si<0)        A":LOCATE  9,67:PRINT A1;
+3120 LOCATE 10,9:PRINT"Co‚fficient de LARGEUR          L":LOCATE 10,67:PRINT L;
+3130 LOCATE 11,9:PRINT"Co‚fficient d' HAUTEUR          H":LOCATE 11,67:PRINT H;
+3140 LOCATE 12,9:PRINT"Co‚fficient de DEFORMATION X   DX":LOCATE 12,67:PRINT DX;
+3150 LOCATE 13,9:PRINT"Co‚fficient de DEFORMATION Y   DY":LOCATE 13,67:PRINT DY;
+3160 LOCATE 14,9:PRINT"Co‚fficient d' INCLINAISON X   IX":LOCATE 14,67:PRINT IX;
+3170 LOCATE 15,9:PRINT"Co‚fficient d' INCLINAISON Y   IY":LOCATE 15,67:PRINT IY;
+3180 LOCATE 16,9:PRINT"Co‚fficient de PERSPECTIVE      P":LOCATE 16,67:PRINT P;
+3190 LOCATE 17,9:PRINT"Co‚fficient de PRIORITE        P1":LOCATE 17,67:PRINT P1;
+3200 LOCATE 18,9:PRINT"Effet de l'ESCALIER,  sens X   EX":LOCATE 18,67:PRINT EX;
+3210 LOCATE 19,9:PRINT"Effet de l'ESCALIER,  sens Y   EY":LOCATE 19,67:PRINT EY;
+3220 LOCATE 20,9:PRINT"Ecriture INVERSE                E":LOCATE 10,67:PRINT E;
+3230 LOCATE 21,9:PRINT"Couleur d'ENCRE                CO":LOCATE 21,67:PRINT CO;
+3240 LOCATE 22,9:PRINT"Texte … ‚crire :[";A$;
+3250 COLOR 3,5:LOCATE 23,7
+3260 PRINT"  D‚placements: ";CHR$(24);",";CHR$(25);
+3270 PRINT" / PARAMETRE, PUIS RETURN / [ESC] pour terminer  ";:COLOR 7,1
+3280 '--------------------------------------------------------------------------
+3290 '                   Modification des paramŠtres
+3300 '--------------------------------------------------------------------------
+3310 IF DRA=1 THEN 3340
+3320 LIN=3:LINA=LIN:P$=STR$(FO):GOSUB 3430
+3330 LIN =4:GOSUB 3520
+3340 LIN =5:LINA=4:P$=" "+N$:GOSUB 3600:GOTO 3370
+3350 I$=INKEY$:IF I$="" THEN 3350 ELSE IF I$=CHR$(27) THEN COLOR 7,1:RETURN
+3360 IF I$<>CHR$(0)+CHR$(72) AND I$<>CHR$(0)+CHR$(80) THEN 3390
+3370 IF I$=CHR$(0)+CHR$(72) THEN LIN=LIN-1:IF LIN<5 THEN LIN=5:LOCATE LIN,67
+3380 IF I$=CHR$(0)+CHR$(80) THEN LIN=LIN+1:IF LIN>22 THEN LIN=22:LOCATE LIN,67
+3390 IF LIN=5 THEN GOSUB 3600:GOTO 3350
+3400 IF LIN=6 THEN GOSUB 3700:GOTO 3350
+3410 ON LIN-6 GOSUB 3800,3910,3930,4050,4160,4170,4180:IF LIN<14 THEN 3350
+3420 ON LIN-13 GOSUB 4190,4200,4210,4220,4230,4240,4250,4260,4360:GOTO 3350
+3430 GOSUB 4490:LOCATE LIN,67:PRINT FO;:LINA=LIN:IN$=" "
+3440 I$=INKEY$:IF I$=""  THEN 3440
+3450 IF ASC(I$)=13 AND IN$<>" " THEN FO=VAL(IN$):GOTO 3490
+3460 IF ASC(I$)<48 OR ASC(I$)>57 THEN PLAY"o2l8g":GOTO 3440
+3470 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+3480 IF LEN(IN$)<3 THEN GOTO 3440 ELSE PLAY"o2l8f"
+3490 IF FO<0 OR FO>7 THEN PLAY"O2L8A":GOTO 3430
+3500 P$=IN$:GOSUB 4490:LOCATE LIN,67:PRINT P$
+3510 RETURN
+3520 GOSUB 4490:LOCATE LIN,68:PRINT N$;:LINA=LIN:P$=" "+N$:IN$=" "
+3530 I$=INKEY$:IF I$=""THEN 3530
+3540 IF ASC(I$)=13 AND IN$<>" " THEN N$=MID$(IN$,2,3):P$=IN$:GOTO 3580
+3550 IF ASC(I$)<48 OR ASC(I$)>127 THEN PLAY"O2L8G":GOTO 3530
+3560 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+3570 IF LEN(IN$)<5 THEN GOTO 3530 ELSE PLAY"O2L8G":N$="":GOTO 3520
+3580 P$=IN$:GOSUB 4490:LOCATE LIN,67:PRINT P$
+3590 RETURN
+3600 GOSUB 4490:LOCATE LIN,68:PRINT S$;:LINA=LIN:P$=" "+S$:IN$=" "
+3610 IF DRA=1 THEN 3630 ELSE DRA=1:GOTO 3620
+3620 I$=INKEY$:IF I$="" THEN 3620
+3630 IF I$=CHR$(0)+CHR$(72) OR I$=CHR$(0)+CHR$(80) THEN RETURN
+3640 IF ASC(I$)=13 AND IN$<>" " THEN S$=MID$(IN$,2,1):P$=" "+S$:GOTO 3690
+3650 IF I$<>"n" AND I$<>"N" AND I$<>"o" AND I$<>"O" THEN  PLAY"O2L8G":GOTO 3620
+3660 IF I$="n" OR I$="N" THEN I$="N" ELSE I$="O"
+3670 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+3680 IF LEN (IN$)<3 THEN 3620 ELSE PLAY "O2L8G":S$="":GOTO 3600
+3690 RETURN
+3700 GOSUB 4490:LOCATE LIN,68:PRINT C$;:LINA=LIN:P$=" "+C$:IN$=" ":GOTO 3730
+3710 IF S$="N" THEN RETURN
+3720 I$=INKEY$:IF I$=" " THEN 3720
+3730 IF I$=CHR$(0)+CHR$(72) OR I$=CHR$(0)+CHR$(80) THEN RETURN
+3740 IF ASC(I$)=13 AND IN$<>" " THEN C$=MID$(IN$,2,1):P$=" "+C$:GOTO 3790
+3750 IF I$="x" THEN I$="X" ELSE IF I$="y" THEN I$="Y" ELSE IF I$="o" THEN I$="O"
+3760 IF I$<>"X" AND I$<>"Y" AND I$<>"O" THEN PLAY"O2L8G":GOTO 3720
+3770 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+3780 IF LEN(IN$)<3  THEN GOTO 3720 ELSE PLAY"O2L8G":C$="":GOTO 3700
+3790 RETURN
+3800 SE=X:T$="X" :GOSUB 3810:X=SE:RETURN
+3810 GOSUB 4490:LOCATE LIN,67:PRINT SE;:LINA=LIN:P$=STR$(SE):IN$=" ":GOTO 3830
+3820 I$=INKEY$:IF I$="" THEN 3820
+3830 IF I$=CHR$(0)+CHR$(72) OR I$=CHR$(0)+CHR$(80) THEN RETURN
+3840 IF ASC(I$)=13 AND IN$<>" " THEN  SE=VAL(IN$):GOTO 3880
+3850 IF ASC(I$)<48 OR ASC(I$)>57 THEN PLAY"O2L8G":GOTO 3820
+3860 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+3870 IF LEN(IN$)<5 THEN GOTO 3820 ELSE PLAY"O2L8G":I$=" ":GOTO 3800
+3880 IF SE<0 OR SE>319-320*(SCR=2) AND T$="X" THEN PLAY"O2L8G":GOTO 3800
+3885 IF SE<0 OR SE>199 AND T$="Y" THEN PLAY"O2L8G":GOTO 3800
+3890 P$=IN$:GOSUB 4490:LOCATE LIN,67:PRINT P$
+3900 RETURN
+3910 SE=Y:T$="Y":GOSUB 3810:Y=SE:RETURN
+3920 RETURN
+3930 SE=INT(A*180/3.14):T$="0":GOSUB 3940:A=SE*3.14/180:RETURN
+3940 GOSUB 4490:LOCATE LIN,67:PRINT SE;:LINA=LIN:P$=STR$(SE):IN$=" ":GOTO 3960
+3950 I$=INKEY$:IF I$="" THEN 3950
+3960 IF I$=CHR$(0)+CHR$(72) OR I$=CHR$(0)+CHR$(80) THEN RETURN
+3970 IF ASC(I$)=13 AND IN$<>" " THEN SE=VAL(IN$):GOTO 4020
+3980 IF I$="-" THEN IN$="-":GOTO 3950
+3990 IF ASC(I$)<48 OR ASC(I$)>57 THEN PLAY"O2L8G":GOTO 3950
+4000 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+4010 IF LEN(IN$)<5 THEN GOTO 3950 ELSE PLAY"O2L8G":I$=" ":GOTO 3930
+4020 IF T$="1" THEN SE=ABS(SE):IN$=" "+MID$(IN$,2,LEN(IN$)-1)
+4030 P$=IN$:GOSUB 4490:LOCATE LIN,67:PRINT P$
+4040 RETURN
+4050 SE=L:GOSUB 4060:L=SE:RETURN
+4060 GOSUB 4490:LOCATE LIN,67:PRINT SE;:LINA=LIN:P$=STR$(SE):IN$=" ":GOTO 4080
+4070 I$=INKEY$:IF I$="" THEN 4070
+4080 IF I$=CHR$(0)+CHR$(72) OR I$=CHR$(0)+CHR$(80) THEN RETURN
+4090 IF ASC(I$)=13 AND I$<>" " THEN SE=VAL(IN$):GOTO 4130
+4100 IF ASC(I$)<48 OR ASC(I$)>57 THEN PLAY"O2L8G":GOTO 4070
+4110 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+4120 IF LEN(IN$)<4 THEN GOTO 4070 ELSE  PLAY"O2G8":I$=" ":GOTO 4060
+4130 IF SE<1 OR SE>40 THEN PLAY"O2L8G":GOTO 4060
+4140 P$=IN$:GOSUB 4490:LOCATE LIN,67:PRINT P$
+4150 RETURN
+4160 SE=H:GOSUB 4060:H=SE:RETURN
+4170 SE=DX:T$="0":GOSUB 3940:DX=SE:RETURN
+4180 SE=DY:T$="0":GOSUB 3940:DY=SE:RETURN
+4190 SE=IX:T$="0":GOSUB 3940:IX=SE:RETURN
+4200 SE=IY:T$="0":GOSUB 3940:IY=SE:RETURN
+4210 SE=P:T$="0":GOSUB 3940:P=SE:RETURN
+4220 SE=P1:T$="1":GOSUB 3940:P1=SE:RETURN
+4230 SE=EX:T$="0":GOSUB 3940:EX=SE:RETURN
+4240 SE=EY:T$="0":GOSUB 3940:EY=SE:RETURN
+4250 SE=E:T$="1":GOSUB 3940:E=SE:RETURN
+4260 GOSUB 4490:LOCATE LIN,67:PRINT CO;:LINA=LIN:P$=STR$(CO):IN$=" ":GOTO 4280
+4270 I$=INKEY$:IF I$="" THEN 4270
+4280 IF I$=CHR$(0)+CHR$(72) OR I$=CHR$(0)+CHR$(80) THEN RETURN
+4290 IF ASC(I$)=13 AND IN$<>" " THEN COP=VAL(IN$):GOTO 4330
+4300 IF ASC(I$)<48 OR ASC(I$)>57 THEN PLAY"O2L8G":GOTO 4270
+4310 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,67:PRINT IN$;
+4320 IF LEN(IN$)<4 THEN GOTO 4270 ELSE  PLAY"O2L8G":GOTO 4260
+4330 IF CO<0 OR CO>15 THEN PLAY"O2L8G":CO=0:GOTO 4260
+4340 P$=IN$:GOSUB 4490:LOCATE LIN,67:PRINT P$
+4350 RETURN
+4360 GOSUB 4490:LOCATE LIN,26:PRINT  A$;SPACE$(46-LEN(A$));:LINA=LIN:P$=A$
+4370 IN$="":GOTO 4390
+4380 I$=INKEY$:IF I$="" THEN 4380
+4390 IF I$=CHR$(0)+CHR$(72) OR I$=CHR$(0)+CHR$(80) THEN RETURN
+4400 IF ASC(I$)=13 AND IN$<>" " THEN A$=IN$:GOTO 4440
+4410 IF I$=SPACE$(LEN(I$)) THEN I$=STRING$(LEN(I$),CHR$(255))
+4420 IN$=IN$+I$:GOSUB 4490:LOCATE LIN,26:PRINT IN$;
+4430 IF LEN(IN$)<46 THEN GOTO 4380 ELSE PLAY "O2L8G":GOTO 4360
+4440 P$=IN$:GOSUB 4490:LOCATE  LIN,26:PRINT P$
+4450 RETURN
+4460 '--------------------------------------------------------------------------
+4470 '                 Sous-routine d'Affichage
+4480 '--------------------------------------------------------------------------
+4490 IF LIN=22 THEN 4530
+4500 LOCATE LINA,67:COLOR 7,1:PRINT"     ":LOCATE LINA,67:PRINT P$
+4510 IF LIN=22 THEN LOCATE LIN,26:COLOR 2,4:PRINT SPACE$(46):RETURN
+4520 LOCATE LIN,67:COLOR 2,4:PRINT"     ":RETURN
+4530 LOCATE LINA,26:COLOR 7,1:PRINT STRING$(46,46):LOCATE LINA,26:PRINT P$
+4540 GOTO 4510
+

@@ -1,0 +1,10 @@
+10 CLS
+20 P$=" "
+30 COLOR 15,0,0
+40 INPUT"Datei: ",D$
+50 IF D$="" THEN GOTO 40
+60 CLS
+70 OPEN "I",#1,D$
+80 N$=INPUT$(20,#1)
+90 PRINT N$
+

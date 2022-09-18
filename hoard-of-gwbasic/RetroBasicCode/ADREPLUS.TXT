@@ -1,0 +1,114 @@
+		      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+		      ³ DOCUMENTATION D'ADRESSE PLUS ³
+		      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  ADREPLUS.EXE (ou .BAS)  est  un  utilitaire  de gestion  d'adresse, autrement
+dit c'est un carnet d'adresse.
+
+  Ce programme vous propose plusieurs menus : Enregistrer, Modifierø, EFFACERø,
+Rechercher,  Quitter.  Ces menus  sont  s‚lectionnables  par l'interm‚diaire du
+curseur ‚voluant dans le sens horizontal.
+  Les  menus  suivie  de  ® ø ¯  ness‚cite la s‚lection  d'une adresse (dans la
+fenˆtre  dessous  la bar  des  menu ) sur laquelle  l'option  interviendra . La
+s‚lection  de  cette  adresse  s'‚tablie au  moyen  d'un  autre  curseur qui ce
+trouve  dans  cette  fenˆtre, et  par cons‚quent  se  d‚placent  dans  le  sens
+vertical.
+
+ Mouvement des deux curseurs :
+ -----------------------------
+  Le  curseur  qui  se  d‚place horizontalement  dans  la  barre des  menus, se
+r‚alise au moyen des touches du pav‚ numerique : ® 4 ¯ et ® 6 ¯.
+  Le second  curseur  qui se trouve dans  la fenˆtre  o— figure le  listing des
+adresses   enregistr‚es ,  se  d‚place dans  la  page  au  moyen  des   touches
+® 2 ¯  et  ® 8 ¯ . Pour changer de page au cas o—  vous auriez  enregistr‚ plus
+de  20  adresses, utilisez les touches ® 9 ¯ et ® 3 ¯ pour effectuer un d‚file-
+ment des pages.
+
+ N.B. le pav‚ num‚rique DOIT ˆtre BLOQUE en NUMLOCK .
+
+Explication des diff‚rents menus :
+----------------------------------
+ ENREGISTRER :
+ ~~~~~~~~~~~~~  Cette  option  vous  permettera d' ajouter  une  fiche  adresse
+ dans votre banque de donn‚es. Un ‚cran de saisie s'affiche :
+  En  premier  lieu  on  vous demande d'entrer le  Nom de la nouvelle personne.
+  Si vous  n'entrez aucun caractŠre avant d'appuyer sur ® ENTER ¯  l'ordinateur
+ pensera  que vous  avez fait  une erreur  de selection d 'option, donc il vous
+ demendera si  vous d‚sirez continuer la saisie. Si vous r‚pondez  n‚gativement
+ vous serez automatiquement dans le menu de d‚part.
+  Dans  le  cas  o—  vous  avez  entiŠrement  ( ou  partiellement )  rempli  le
+ questionnaire, on vous demande une confirmation, Si vous repondez n‚gativement
+ vous recommencez au d‚part . Dans le cas  contraire on vous  demandera si vous
+ d‚sirez … nouveau enregistrer une adresse.
+    Toute  adresse  confirm‚e est automatiquement  class‚e  par  Ordre alphab‚-
+ tique et enregistr‚e au moment o— vous retournerez au menu principal.
+
+ MODIFIER ø :
+ ~~~~~~~~~~~~   Cette  option  sert …  modifier une fiche adresse d‚j… enregis-
+ tr‚e. La  selection de la  fiche … modifier s'effectue  dans le menu principal
+ au moyen  du second  curseur. Donc l' adresse qui sera  modifi‚e est celle que
+ le curseur pointe .
+   L'ordinateur  vous  affichera les diff‚rents champs  les un aprŠs les autres
+ et attendra  votre  modification. Si vous  appuyez  sur  ® ENTER ¯  sans avoir
+ inscrit  aucun  caractŠre, l'ordinateur prendra  en  compte  l'ancienne valeur.
+   A la fin, l'ordinateur vous demande une confirmation.
+
+ EFFACER ø :
+ ~~~~~~~~~~~    Ce  menu  vous  permet  de d' effacer  une fiche. La  fiche qui
+ doit  ˆtre  effacer  devra ˆtre au pr‚alable  s‚lectionn‚e  dans la page o— se
+ trouve  l'ensemble  des adresses grƒce au pointeur. L' ordinateur vous demande
+ confirmation .
+
+ RECHERCHER :
+ ~~~~~~~~~~~~   Ce dernier est le menu le plus int‚ressant du programme.
+  Il   permet  de  vous   ressortir  toutes   les   fiches  de   votre  fichier
+ correspondant   au(x)   critŠre(s)  que  vous   aurez  d‚fini(s) .  La  touche
+ ® ENTER ¯, sans avoir  ‚crit un seul caractŠre , annulera le champ en question
+ pour le filtre de la recherche.
+  Pour le code postal ,  si vous d‚sirez  effectuer une  recherche dans tout un
+ d‚partement il vous suffira d'entrer que les deux premiers chiffres .
+
+   ATTENTION : pour les d‚partement dont le code est inferieur … dix, veillez
+   ~~~~~~~~~~~ … mettre un z‚ro devant son chiffre.
+    Ex : Le Dep. de l'AISNE code 2, il faut introduire ® 02 ¯ !
+
+  Une fois  que l' ordinateur vous affiche les  adresse  correspondant  … votre
+ filtre, si il y en a plusieurs, vous pourrez  choisir celle  que vous  d‚sirez
+ voire complŠtement, au moyen du pav‚ num‚rique et de ® ENTER ¯.
+  Si  vous  avez  afficher  une adresse  …  l' ‚cran  et  que  vous  d‚sirez en
+ s‚lectionner  une  autre,  appuyez  sur n' importe quelle touche, sauf ® ESC ¯
+ qui vous ramŠnera au menu principal.
+
+ QUITTER :
+ ~~~~~~~~~     Cette option permet de quitter ADREPLUS pour retourner au DOS.
+
+ Les petit TRUC EN PLUS ...:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  *  Dans le menu principal tout … droite de la barre des menus un nombre est
+ inscrit . Ce dernier correspond au nombre de fiches enregistr‚es.
+
+  *  En appuyant sur la ® BARRE d' ESPACE ¯ vous affichez l'adresse complŠte
+  selectionn‚e dans la fenˆtre o— se trouve l'ensemble de ces adresses.
+
+  * Au menu principal en appuyant sur ® ESC ¯ vous sortirez du logiciel.
+
+
+    PETIT PROGRAMME SUP. POUR CREE LE FICHIER ® ESSAI.ADR ¯
+
+ 10 OPEN "O",#1,"ESSAI.ADR"
+ 20 PRINT #1,"NOM,PRENOM,RUE,99999,VILLE,TEL"
+ 30 CLOSE
+ 40 END
+
+	       Effectuer un RUN de ce petit prog.
+
+ Ce programme est indispensable avant le premier lancement d' ADREPLUS !
+
+
+
+		  PROGRAMME ECRIT EN GWBASIC VER 3.2
+		     COMPILABLE PAR TURBO-BASIC
+
+  Mr DARCHE Yoann, 71 avenue d'Orl‚ans 91800 BRUNOY Tel: 69-39-51-26
+
+

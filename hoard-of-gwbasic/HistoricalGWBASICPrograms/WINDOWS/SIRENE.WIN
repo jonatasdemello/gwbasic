@@ -1,0 +1,33 @@
+10 COLOR 15,0,0
+20 CLS
+30 PRINT"Welche Sirene mîchten Sie hîren ???"
+40 PRINT
+50 PRINT"01 = Police"
+60 PRINT"02 = Ambulance"
+70 PRINT"03 = Fire Engine"
+80 PRINT"04 = Raumschiff Enterprise"
+90 PRINT"05 = Alert ";:COLOR 28:PRINT"RED":COLOR 15
+100 PRINT"06 = Raumschiff Enterprise II"
+110 PRINT"07 = AIRWOLF Feuerbereitschaft"
+120 PRINT"08 = AIRWOLF Feuerbereitschaft II"
+130 PRINT"09 = Autoalarm"
+140 PRINT"10 = Autoalarm II"
+150 PRINT"11 = EXIT"
+160 PRINT
+170 FILES "*.sir"
+180 PRINT
+190 INPUT"Bitte wÑhlen Sie hier --> --> --> ",A
+200 IF A=1 THEN A$="sirene1.sir"
+210 IF A=2 THEN A$="sirene2.sir"
+220 IF A=3 THEN A$="sirene3.sir"
+230 IF A=4 THEN A$="sirene4.sir"
+240 IF A=5 THEN A$="sirene5.sir"
+250 IF A=6 THEN A$="sirene6.sir"
+260 IF A=7 THEN A$="sirene7.sir"
+270 IF A=8 THEN A$="sirene8.sir"
+280 IF A=9 THEN A$="sirene9.sir"
+290 IF A=10 THEN A$="sirene10.sir"
+300 IF A=11 THEN A$="windows.bas"
+310 PRINT"Bitte drÅcken Sie die F2 Taste !!!"
+320 LOAD A$
+

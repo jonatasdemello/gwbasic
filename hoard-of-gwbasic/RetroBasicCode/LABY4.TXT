@@ -1,0 +1,132 @@
+                      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                      ³ LABYRINTHE INFERNAL VERSION 1.3 ³
+                      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  Vous ˆtes entrez dans un labyrinthe,et la porte par laquelle vous ˆtes arriv‚
+c'est referm‚e. Mais il exestiste une autre sortie, … vous de la trouver !!
+
+ Quellesques indications :
+
+    - Dans ce labyrinthe il y a des grilles avec des portes ferm‚es … clef
+ les clefs qui  permettent l'ouverture de ces portes sont r‚parties dans
+ des coffres disperc‚s dans le labyrinthe. Il y a 9 sortes de clef au maximum !
+     Attention dans certain coffre il y a une fiole qui peut vous donnez ou
+ vous retirez des points d'endurances ....
+
+     - Il faut que vous trouviez la sortie avant que vous n'ayez plus de
+ points d'endurance, sinon vous perissez … jamais dans ce Labyrinthe.
+
+     - Vous regardez toujours devant vous, vous ˆtes dedans et non au
+ dessus !
+
+     - Pour vous aider vous disposez d'une carte o— est uniquement idiqu‚e
+ votre position et celle de la sortie.
+  Vous ‰tes repr‚sent‚ par un carr‚ de la couleur des messages, la sortie
+ d'un carr‚ d'une autre couleur.
+  Les carr‚ qui se trouvent autour du cadre sont les directions de la sortie
+  La croit vous indique la direction de votre regard.
+
+     - Les deplacements :
+
+   Ils s'effectuent au moyen du pav‚ numerique :
+           ( Avancer )
+                8                  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                                   ³ Ne pas oublier que vous regardez ÃÄ¿
+  ( Gauche ) 4      6 ( Droite )   ³      toujour devant vous !       ³ ³
+                                   ÀÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³
+                2                    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+          ( Demi-tour )
+
+(C) pour la carte, (P) pour prendre quelque chose, <ESC> pour abandonner le jeu
+                     =-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+ Cr‚ation d'un labyrinthe :
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  table de codification d'un labyrinthe :
+  ---------------------------------------
+  1 : Í      3 : É   6 : »                8:   Ë
+                               7: Î      10: Ì   ¹ <-- 11
+  2 : º      4 : È   5 : ¼                9:   Ê
+
+  de 12 … 15 (inclus) ce sont les cul de sac
+
+  12 : Íµ  13 : Ò  14: Ğ  15: ÆÍ
+  16 : Code de l' entr‚e
+  17 : Code de la sortie
+
+ Codage des coffres :
+ --------------------
+   De -1 … -15 suivie du code qui correspond … sa contenance :
+   0 : Une fiole   de 1 … 9 : numero de la clef.
+
+  ex : data .. , .. , -1 , 5
+                      ³    ÀÄ Dans le coffre il y aura la clef nø5
+                      ÀÄÄÄ Le signe - indique que dans cette all‚e il y aura
+ un coffre (Le chiffre qui suit est un code qui repr‚sente une all‚e d‚finie
+ ci dessus ici le 1 designe un simple all‚e horizontal).
+
+ Codage des portes :
+ -------------------
+    De P1 … P11 suivie d'un code qui correspond … la clef qui ouvre la porte.
+   ex : data ..... , P3 , 8 , ...
+                     ³    ÀÄ La clef nø8 permet l'ouverture de cette porte.
+                     ÀÄÄÄÄÄÄ Le P signifie qu'il y a une porte dans ce virage
+                                  ( Cf le code 3 si dessus ).
+ Les 7 premiers code :
+ ---------------------
+    Dans la premiŠre ligne de DATA doit figurer ces 7 codes imperativement :
+
+dans l'ordre :
+    XME   : dimention du labyrinthe en caractŠre en abscice
+    YME   : dimention du labyrinthe en caractŠre en ordonn‚e
+    X,Y   : coordonn‚es de d‚part
+    Xm,Ym : coordonn‚es o— le joueur doit ce trouver pour le second coup .
+    EN    : Nombre de point d'endurence .
+
+ Exemple de codification d'un labyrinthe :
+ -----------------------------------------
+   On se propose de coder ce labyrinthe :
+
+                           1 1 1 1 1
+         1 2 3 4 5 6 7 8 9 0 1 2 3 4        Legende :
+        1ÉÍ+ÍS E ÛÍËÍÛ ÉÍÍÍÍÍÍÍ+ÍËÍ»
+        2ÌÍËÍ» * ÉÍÎÍÍÍÊÍÍÍ» ÉÍ» ÈÍ¹        Û .........cul de sac.
+        3º + + ÈÍ¹ ÌÍÍÍÍÍ» º º ÌÍËÍ¹        + .........porte
+        4º º ÌÍÛ ÈÍ¼ ÛÍ» º º + º Û º
+        5ÌÍ¹ ÈÍÍÍÍÍ» ÉÍÊÍ¹ ÈÍ¼ ÌÍÍÍ¹        * ...all‚e avec un coffre
+        6º ÈÍÍÍ» ÉÍÊÍÊÍ» ÌÍËÍ+Í¼ ÉÍ¹                  contenant une boisson
+        7+ ÉÍ» º ÈÍ*Í» ÈÍ¹ + ÉÍÍÍ¹ º
+        8ÈÍ¼ ÈÍÎÍÍÍÍÍÊÍ+Í¹ º º ÛÍ¹ *        E..........Entr‚e
+        9ÉÍÍÍÍÍÊÍËÍ» ÉÍ+Í¹ º ÈÍËÍ¹ º        S..........Sortie
+       10ÈÍ*ÍËÍÍÍ¼ ÌÍ¼ ÛÍ¹ ÈÍÍÍÎÍ¼ º
+       11ÛÍÍÍÊÍÍÍ*ÍÊÍÍÍ+ÍÊÍÍÍ*ÍÊÍÍÍ¼
+
+ Coordonn‚es des porte suivie du numero de la clef qui l'ouvre :
+ (2,1):1, (12,1):8, (2,3):3, (3,3):3, (11,4):6, (11,6):7, (1,7):4, (10,7):9,
+ (8,8):2, (8,9):5, (8,11):5
+
+ Coordonn‚es des coffre et leur clef qu'ils contiennent :
+ (5,1):2, (7,1):3, (11,1):6, (4,4):7, (7,4):4, (11,5):8, (13,5):1, (12,8):9,
+ (8,10):5.
+
+ CODAGE : (Voir LISTING de  6000-6110).
+
+Quellesques remarques sur l'organisation du programme.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ de la ligne  30 …   70 : Lecture du Labyrinthe en DATA
+             100 …  300 : Aiguillage pour l'affichage et corps du Prog.
+            1000 … 1040 : Affichage de la grille
+            1500 … 1510 : Aff. du coffre
+            1600 … 1630 : calcule des cons‚quence de l'objet pris dans le coffre
+            2000 … 2280 : calcule des d‚placement du joueur
+            2280 … 3070 : calcule de l'image … afficher
+            4010 … 5020 : image des diff‚rente all‚es
+            6000 … la fin : m‚morisation du Labyrinthe
+
+Les variables : X,Y  coordonn‚e de l'actuelle position
+-------------- XM,YM coordonn‚e de l'ancienne position
+                 B   type d'all‚e (Virage,intersection etc...)
+                P()  memorisation du labyrinthe
+
+ Programme ‚crit en GWBASIC (Ver 2) compilable en Turbo Basic. CGA Couleur
+                                                       Darche Yoann 6/08/90

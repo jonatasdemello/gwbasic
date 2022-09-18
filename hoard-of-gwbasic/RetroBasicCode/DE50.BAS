@@ -1,0 +1,114 @@
+0  SCREEN 2:SCREEN 0,0,0
+11 COLOR 7,0:PRINT :PRINT
+12 PRINT "                      Une CREATION de DARCHE YOANN"
+15 LOCATE 6,33:PRINT "Edition "
+16 PRINT
+17 LOCATE ,15:PRINT "Ы   Ы ЫЫЫЫЫ Ы      ЫЫЫ  Ы ЫЫЫЫЫ Ы ЫЫЫЫЫ Ы   Ы"
+18 LOCATE ,15:PRINT "Ы   Ы Ы     Ы     Ы   Ы Ы     Ы Ы Ы     ЫЫ ЫЫ"
+19 LOCATE ,15:PRINT "Ы   Ы Ы     Ы     Ы     Ы    ЫЫ Ы Ы     Ы Ы Ы"
+20 LOCATE ,15:PRINT "ЫЫЫЫЫ ЫЫЫ   Ы     Ы     Ы   ЫЫ  Ы ЫЫЫ   Ы   Ы"
+21 LOCATE ,15:PRINT "Ы   Ы Ы     Ы     Ы     Ы  ЫЫ   Ы Ы     Ы   Ы"
+22 LOCATE ,15:PRINT "Ы   Ы Ы     Ы     Ы   Ы Ы ЫЫ    Ы Ы     Ы   Ы"
+23 LOCATE ,15:PRINT "Ы   Ы ЫЫЫЫЫ ЫЫЫЫЫ  ЫЫЫ  Ы ЫЫЫЫЫ Ы ЫЫЫЫЫ Ы   Ы"
+24 PRINT
+25 LOCATE ,28:PRINT "ЫЫЫЫ  ЫЫЫЫЫ ЫЫЫЫЫ  ЫЫЫ "
+26 LOCATE ,28:PRINT "Ы   Ы Ы     Ы     Ы   Ы"
+27 LOCATE ,28:PRINT "Ы   Ы ЫЫЫ   ЫЫЫЫ  Ы   Ы"
+28 LOCATE ,28:PRINT "Ы   Ы Ы         Ы Ы   Ы"
+29 LOCATE ,28:PRINT "ЫЫЫЫ  ЫЫЫЫЫ ЫЫЫЫ   ЫЫЫ "
+999 A$=INPUT$(1)
+1000 SCREEN 2:SCREEN 0,0,0
+1010 CLS:KEY OFF
+1020 PRINT :PRINT  "         LITCHFIELD et WILCOXON"
+1030 PRINT
+1040 INPUT "Produit  : ",PRODUIT$
+1050 INPUT "Voie     : ",VOIE$
+1060 INPUT "Pr‚ventif: ",PREVE$
+1070 INPUT "EspЉce   : ",ESPE$
+1080 INPUT "DATE     : ",DAT$
+1090 INPUT "TEST     : ",TEST$
+1100 CLS
+1110 PRINT :PRINT  "         LITCHFIELD et WILCOXON"
+1120 PRINT :PRINT
+1130 K=1:DIM D(20,3)
+1134 IF K>=16 THEN 1200
+1135 LOCATE 10:PRINT "TEST nш";K
+1140 LOCATE 11:INPUT "Dose mg/kg        :",D(K,1)
+1150 LOCATE 12:INPUT "Nombre d'animaux  :",D(K,2)
+1160 LOCATE 13:INPUT "% R‚el            :",D(K,3)
+1170 LOCATE 14:PRINT "                    ENCORE O/N ":A$=INPUT$(1)
+1180 IF A$="n" OR A$="N" THEN 1190 ELSE K=K+1:GOTO 1134
+1190 GOSUB 4000
+1200 FOR I=1 TO K :N=N+D(I,2):NEXT
+1210 FOR I=1 TO K:Y=Y+D(I,3):NEXT
+1220 FOR I=1 TO K:X=X+D(I,1):NEXT
+1230 FOR I=1 TO K:XY=XY+(D(I,1)*D(I,3)):NEXT
+1240 FOR I=1 TO K:X2=X2+(D(I,1)^2):NEXT
+1250 FOR I=1 TO K:Y2=Y2+(D(I,3)^2):NEXT
+1260 B=(K*XY-X*Y)/(K*X2-X^2)
+1270 A=(Y-B*X)/K
+1280 POI=(16-A)/B:GOSUB 60000:D16=POI
+1290 POI=(50-A)/B:GOSUB 60000:D50=POI
+1291 POI=(84-A)/B:GOSUB 60000:D84=POI
+1300 S=(D84/D50+D50/D16)/2:POI=S:GOSUB 60000:S=POI
+1301 FOR I=1 TO K
+1310 IF D(I,3)>=16 AND D(I,3)<=84 THEN N1=N1+D(I,2)
+1320 NEXT
+1330 POI=SQR(N1):GOSUB 60000:N2=POI:POI=2.77/N2:GOSUB 60000:EX=POI:POI=S^EX:GOSUB 60000:F=POI
+1410 POI=D50/F:GOSUB 60000:LCI=POI:POI=D50*F:GOSUB 60000:LCS=POI
+1420 CLS:COLOR 13
+1430 PRINT "                        LITCHFIELD et WILCOXON"
+1440 PRINT
+1500 LOCATE 3,1:PRINT "Produit  :";PRODUIT$
+1510 LOCATE 4,1:PRINT "Voie     :";VOIE$
+1520 LOCATE 5,1:PRINT "Preventif:";PREVE$
+1530 LOCATE 6,1:PRINT "EspЉce   :";ESPE$
+1540 LOCATE 6,40:PRINT "TEST :";TEST$
+1550 LOCATE 3,40:PRINT "DATE :";DAT$
+1560 LOCATE 8,1:PRINT " Dose en mg/kg         Nombre d'animaux          Pourcentage ":VIEW PRINT 9 TO 25
+1570 LOCATE 18,1
+1571 PRINT "      D16         D50         D84       S       EX       F"
+1572 LOCATE 19,6:PRINT D16;:LOCATE ,18:PRINT D50;:LOCATE ,30:PRINT D84;:LOCATE ,40:PRINT S;:LOCATE ,48:PRINT EX;:LOCATE ,57:PRINT F
+1573 LOCATE 20,1:PRINT "-------------------------------------------------------------------------------"
+1574 LOCATE 21,1:PRINT "                     LCI              DE50            LCS          "
+1575 LOCATE 22,21:PRINT LCI:LOCATE 22,38:PRINT D50:LOCATE 22,53:PRINT LCS
+1576 LOCATE 23,1:PRINT "-------------------------------------------------------------------------------"
+1580 LOCATE 9:VIEW PRINT 9 TO 17:FOR I=1 TO K:LOCATE ,2:PRINT D(I,1);:LOCATE ,24:PRINT D(I,2);:LOCATE ,50:PRINT D(I,3):NEXT
+1999 A$=INPUT$(1):CLS
+2000 PRINT :PRINT "      X ESTIME POUR Y DONNE ET INVERSE "
+2010 PRINT :PRINT
+2011 PRINT " 1- Y DONNE 2- X DONNE":A$=INPUT$(1)
+2012 IF A$="1" THEN 3000 ELSE 2020
+2020 INPUT " DOSE ",DX
+2030 RE=A+DX*B:PRINT "Estimation ...>>>:";RE
+2040 PRINT :PRINT "Encore [O/N]..":A$=INPUT$(1)
+2050 IF A$="n" OR A$="N" THEN 2060 ELSE CLS:GOTO 2000
+2060 PRINT " <R>eprise du programme ou <A>bandon ....!!! ":A$=INPUT$(1)
+2070 IF A$="r" OR A$="R" THEN RUN
+2080 IF A$<>"a" AND A$<>"A" THEN BEEP:GOTO 2060 ELSE 50000
+3000 INPUT " POURCENTAGE : ",DX
+3010 RE=(DX-A)/B:PRINT "Estimation ...>>>:";RE
+3020 PRINT :PRINT "Encore [O/N]..":A$=INPUT$(1)
+3030 IF A$="n" OR A$="N" THEN 2060 ELSE CLS:GOTO 2000
+4000 CLS
+4010 PRINT "             Correction ."
+4015 PRINT " Y / X"," 1"," 2"," 3"
+4020 FOR I=1 TO K
+4030 PRINT I,D(I,1),D(I,2),D(I,3):NEXT
+4040 PRINT " Correct  O/N":A$=INPUT$(1)
+4050 IF A$="o" OR A$="O" THEN RETURN
+4060 INPUT " X,Y :",X,Y
+4065 PRINT "Ancienne Valeur :";D(Y,X)
+4070 INPUT "Nouvelle Valeur : ",VA
+4080 D(Y,X)=VA :X=0:Y=0:VA=0:GOTO 4000
+50000 VIEW PRINT:CLS
+50010 PRINT "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+50020 PRINT " save <fichier>,p
+59999 REM NEW
+60000 FX$=STR$(POI):FX=INT(POI):FX1$=STR$(FX)
+60010 LO=LEN(FX$)
+60020 FX$=RIGHT$(FX$,LO-1)
+60030 LO1=LEN(FX1$):FX1$=RIGHT$(FX1$,LO1-1):LO=LEN(FX$):LO1=LEN(FX1$)
+60040 FX$=LEFT$(FX$,LO-(LO-2*LO1-2))
+60050 POI=VAL(FX$):LO=0:LO1=0:FX$="":FX1$="":FX=0:RETURN
+

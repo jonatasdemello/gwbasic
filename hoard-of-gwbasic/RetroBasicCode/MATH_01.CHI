@@ -1,0 +1,228 @@
+\1cw
+\U1STANDARD
+\U3ITALIC
+\U4BOLD
+\U5FOREIGN
+\U7GREEK
+\U9MATHI
+\U!UNDERLIN
+\U"ORATOR
+\U#SCRIPT
+\FD
+\+
+\+
+\+
+\^\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \@\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \^\,
+\=
+\+
+\,
+\+
+\^\ \ \ \ \ \ \ \ \ \ \ \"INTERSECTION ET PARALLELISME DANS L'ESPACE\ \ \ \ \ \ \ \ \ \ \ \^\,
+\+
+\,
+\+
+\!I_LE_PLAN_:\,
+\+
+\,
+\+
+\ \#D\5w\#finition axiomatique du plan :\,
+\+
+\,
+\+
+ \3Axiome 1 : \1Par deux points distincts \ passe \ une \ droite \ et \ une 
+\+
+seule.\,
+\+
+ \3Axiome 2 : \1Par trois non alini\5w\1s passe un plan et un seul\,
+\+
+ \3Axiome 3 : \1Une droite passant par deux points distincts \ A \ et \ B 
+\+
+d'un plan \#P \1est inclue dans \#P\1.\,
+\+
+ \3Axiome 4 : \ \1Tout \ plan \ partage \ l'espace \ en \ deux \ demi-Espaces 
+\+
+convexes. Tout segment [AB] ayant une extraimit\5w \1dans \ chacun \ des 
+\+
+demi-Espaces poss\5r\1de une intersection unique dans \#P\,
+\+
+\,
+\+
+ D\5w\#termination d\1'\#un plan :\,
+\+
+\,
+\+
+   \1Un plan est enti\5r\1rement d\5w\1termin\5w \1par la donn\5w\1e de :\,
+\+
+ \4- Soit trois points non alignes\,
+\+
+ - Une droite et un point hors de cette droite\,
+\+
+ - Deux droites strictement paralleles\,
+\+
+\,
+\+
+ \#Vocabulaire :\,
+\+
+\,
+\+
+   \1On dit que des points sont \!coplanaires \1lorsqu'ils \!appartiennent 
+\+
+\5f \1un m\5e\1me plan .\,
+\+
+   On dit que \ des \ droites \ sont  \!coplanaires  \1lorsqu'elles \ sont 
+\+
+\!inclusent \1dans un m\5e\1me Plan.\,
+\+
+\,
+\+
+\!II_Position_relative_de_Droites_et_de_Plans_:\,
+\+
+\,
+\+
+  \#Droites parall\5r\#les :\,
+\+
+\,
+\+
+  \1Dans l'espace \ deux \ droites \ sont \ parall\5r\1les \ ssi \ elles \ sont 
+\+
+coplanaires, et parall\5r\1les dans ce plan\,
+\+
+\,
+\+
+  \3Th\5w\3or\5r\3me 1 (ADMIS) :\,
+\+
+\1Par un point exterieur \5f \#D\1, on ne peut mener qu'une \ seule \ droite 
+\+
+parall\5r\1le \5f \#D\1.\,
+\+
+\,
+\+
+  \3Th\5w\3or\5r\3me 2 :\,
+\+
+\1Si deux droites sont parall\5r\1les tout plan qui \ coupe \ l'une \ coupe 
+\+
+l'autre.\,
+\+
+   Hypoth\5r\1ses : D // \7D\1, \#P \9n \1D = {A}\,
+\+
+\,
+\+
+\,
+\+
+\,
+\+
+\,
+\+
+\,
+\+
+  * Si D et \7D \1confondus, si \#P \1coupe D alors \#P \1coupe \7D \1(car D = \7D\1)\,
+\+
+  * Si D et \7D \1strictement parall\5r\1les, alors D \ et \ \7D \ \1engendre \ un 
+\+
+plan \#Q\1. \#P \1et \3Q \1ont en commun donc une droite \#D\1' passant par A\,
+\+
+  Dans \#Q \1: \#D \1et \7D \1parall\5r\1les et \#D\1' coupe \#D\1, donc \#D\1' coupe \7D \1en B.\,
+\+
+  B est \5w\1l\5w\1ment de \#D\1' donc de \#P\1, donc \#P \1coupe \7D \1en B\,
+\+
+\,
+\+
+\,\/
+\+
+\,
+\+
+\,
+\+
+  \3Th\5w\3or\5r\3me 3 (ADMIS) :\,
+\+
+\1Si deux droites sont parall\5r\1les elles m\5e\1mes \5f \1une troisi\5r\1me \ alors 
+\+
+elles sont parall\5r\1les entres elles.\,
+\+
+\,
+\+
+  \#Droites et Plans parall\5r\#les :\,
+\+
+\,
+\+
+ \1On dit qu'un Plan et une droite \ D \ sont \ parall\5r\1les \ ssi \ D \ est 
+\+
+incluse dans P, ou si D et P n'ont pas de point en commeun .\,
+\+
+\,
+\+
+  \3Th\5w\3or\5r\3me 1 (ADMIS) :\,
+\+
+\1Une droite \#D \1est parall\5r\1le \5f \1un plan \#P \1ssi \#D \1est parall\5r\1le \ \5f \ \1une 
+\+
+droite de \#P\1.\,
+\+
+\,
+\+
+  \3Th\5w\3or\5r\3me 2 :\,
+\+
+\1Si une droite \#D \1est \ parall\5r\1le \ \5f \ \1un \ plan \ \#P\1, \ alors \ tout \ plan 
+\+
+contenant \#D \1et coupant \#P\1, le coupe suivant une droite parall\5r\1le \ \5f 
+\+
+\#D\1.\,
+\+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \3Hypoth\5r\3ses : \#D \3// \#P\,
+\+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q \ \3un \ plan \ contenant \ \#D \ \ \3et 
+\+
+\ \ \ \ \ \ \ \ \                            coupant \#P \3suivant \7D\,
+\+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \3Prouvons que \#D \3// \7D \3.\,
+\+
+\,
+\+
+\,
+\+
+\,
+\+
+\,
+\+
+\1Utilisons le raisonnement par l'absurde :\,
+\+
+  Dans \#Q\1, \ \#D \ \1et \ \7D \ \1sont \ coplanaires, \ si \ elles \ n'\5w\1taient \ pas 
+\+
+parall\5r\1les elles seraient s\5w\1cantes et auraient donc \ un \ point \ en 
+\+
+commun le point A, A serait donc \5w\1l\5w\1ment de \7D \1don \#P\1, et \ de \ \#D \ \1ce 
+\+
+qui contredirait le fait que \#D \1et \#P \1soient parall\5r\1les ( car \#D \1et \#P 
+\+
+\1auraient A en commun ).\,
+\+
+\,
+\+
+  \3Th\5w\3or\5r\3me 3 :\,
+\+
+\1Si  deux droites sont parall\5r\1les, tout plan parall\5r\1le \5f \1l'une  est 
+\+
+parall\5r\1le \5f \1l'autre.\,
+\+
+\,
+\+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \3Hypoth\5r\3ses : \#D \3// \7D\3, \#D \3// \#P\,
+\+
+\,
+\+
+\,
+\+
+\,
+\+
+\,
+\+
+ \1Si \7D \1et \#P \1n'\5w\1taient pas parall\5r\1les, alors \#P \1couperait \ \7D \ \1donc \ \#D 
+\+
+\1qui lui est parall\5r\1le . \#P \1et \#D \1auraient un point en commun ce \ qui 
+\+
+contredit que \#D \1et \#P \1sont parall\5r\1les .\,
+\+
+\,
+\+
+\,
+\=
+

@@ -1,0 +1,62 @@
+10 CLS
+20 KEY OFF
+30 COLOR 15
+40 PRINT"VERHALTENSREGELN FöR DEN COMPUTER"
+45 LOCATE 25,1:PRINT"VERHALTENSREGELN FöR DEN COMPUTER";
+55 LOCATE 3,1
+60 COLOR 14:PRINT"Funktioniert das verdammte Ding?"
+70 GOSUB 520
+80 IF A=1 THEN 110
+90 IF A=2 THEN 140
+100 REM **********
+110 COLOR 14:PRINT"Fummel blo· nicht daran rum!"
+120 GOTO 460
+130 REM **********
+140 COLOR 14:PRINT"Hast Du daran rumgespielt?"
+150 GOSUB 520
+160 IF A=1 THEN 190
+170 IF A=2 THEN 270
+180 REM **********
+190 COLOR 14:PRINT"Du RINDVIEH!"
+200 GOTO 220
+210 REM **********
+220 COLOR 14:PRINT"Hat es jemand gemerkt?"
+230 GOSUB 520
+240 IF A=1 THEN 350
+250 IF A=2 THEN 320
+260 REM **********
+270 COLOR 14:PRINT"Wird man Dich verantwortlich machen?"
+280 GOSUB 520
+290 IF A=1 THEN 350
+300 IF A=2 THEN 430
+310 REM **********
+320 COLOR 14:PRINT"Pfeife unauffÑllig ";CHR$(34);"La Paloma";CHR$(34);" und verschwinde schnellstens!"
+330 GOTO 460
+340 REM **********
+350 COLOR 14:PRINT"Du armes SCHWEIN!"
+360 GOTO 380
+370 REM **********
+380 COLOR 14:PRINT"Kannst Du jemanden die Schuld zuschieben?"
+390 GOSUB 520
+400 IF A=1 THEN 460
+410 IF A=2 THEN 350
+420 REM **********
+430 COLOR 14:PRINT"KÅmmere Dich nicht drum!"
+440 GOTO 460
+450 REM **********
+460 COLOR 14:PRINT"ALLES KLAR!"
+470 COLOR 12:PRINT"Nochmal ???"
+480 GOSUB 520
+490 IF A=1 THEN 10
+500 IF A=2 THEN COLOR 15:LOCATE 8,1:KEY ON:END
+510 REM **********
+520 LOCATE 6,1:COLOR 10:PRINT"(J)a / (N)ein"
+530 A$=INKEY$:IF A$="" THEN 530
+540 IF A$="j" OR A$="J" THEN A=1:GOTO 570
+550 IF A$="n" OR A$="N" THEN A=2:GOTO 570
+560 GOTO 530
+570 IF A=1 THEN LOCATE 6,1:COLOR 12:PRINT"JA  ";:COLOR 10:PRINT" / (N)ein"
+580 IF A=2 THEN LOCATE 6,1:COLOR 10:PRINT"(J)a /";:COLOR 12:PRINT" NEIN  "
+590 FOR Z=0 TO 20000:NEXT
+600 PRINT:LOCATE 3,1:PRINT"                                                                              ":PRINT"                                                                              ":LOCATE 3,1:RETURN
+

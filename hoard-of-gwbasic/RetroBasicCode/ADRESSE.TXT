@@ -1,0 +1,79 @@
+             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³  Documentation du programme ADRESSE.BAS (ou .EXE) ÃÄ¿
+             ÀÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³
+               ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    Ce programme est un utilitaire simple qui permet de g‚rer un carnet
+ d'adresse. Il intŠgre les fonctions suivantes :
+       - Recherche par filtre d‚finie par l'utilisteur … chaque recherche
+       - Tri alphab‚tique de la banque de donn‚
+       - Modification d'une donn‚e d‚j… enregistr‚e
+       - Enregistrement et Supression d'une fiche adresse.
+
+    La s‚lection du service d‚sir‚ ce fait par le pav‚ numerique en utilisant
+           8   9
+                  <ENTER>  s‚lectionne le service o— se trouve le curseur
+       4       6  <ESPACE> affiche l'adresse complŠte du non point‚
+
+           2   3
+
+     Le curseur dans la bar des menus ansi que dans le fichier est repr‚sent‚
+ par la couleur invers‚ ( Font blanc, caractŠres noirs )
+     Les touches 4 et 6 vous permettent des vous d‚placer dans la bar des menus
+ et <ENTER> de valider votre choix
+     Les touches 8 et 2 vous permettent de selectionner une adresse, et
+ <ESPACE> de l'afficher entiŠrement.
+     Les touches 9 et 3 sont actives que si votre fichier comporte plus de 20
+ adresses. Elles permettent d'effectuer un d‚filement de page
+
+ Description de chaques menus :
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       1ø) Enregistrer :
+       -----------------
+    Ce menu vous permetera d'enregistrer des nouvelles fiches.
+
+ N.B. : Ne vous pr‚ocuper pas pour les Mininuscules/Majuscules pour les noms
+ pr‚nons et villes l'ordinateur ce charge de tout mettre en majuscule.
+
+ N.B.2 : Si vous pressez <ENTER> … la ligne d'entr‚e du NOM sans avoir mis
+ un seule caractŠres, l'ordinateur consid‚ra que c'est une fiche ® Vide ¯ donc
+ elle ne sera pas m‚moris‚.
+
+  A la question : ® <ESC> pour Abandon <O> confirmer <N> recommencer ¯
+  ~~~~~~~~~~~~~~~
+  si vous r‚pondez <O> ou <ENTER> la fiche sera m‚moris‚e.
+  si vous r‚pondez <N> vous devrez la r‚introduire.
+  si vous r‚pondez <ESC> la derniŠre fiche ne sera pas memoris‚e mais les
+  pr‚c‚dantes le seront (si il y en a).
+
+  Pour la seconde question : ® D‚sirez-vous encore enregistr‚ une fiche ? ¯
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  si vous r‚pondez <O> ou <ENTER> vous recommencer … introduire une nouvelle
+  fiche.
+  si vous r‚pondez <N> ou <ESC> les fiches seront tri‚es et enregistr‚es.
+
+       2ø) Modifier :
+       --------------
+    Ce menu vous permetera de modifier entiŠrement ou une partie d'une fiche.
+    Si vous ne voulez rien modifier appuyer 6 fois sur <ENTER> et confirmer
+  par <O>.
+    Si vous ne voulez pas modifier un terme de la fiche il vous suffira
+  d'appuyer sur <ENTER> sans rien mettre
+
+    La fiche … modifier est s‚lectionn‚e par le pointeur au menu principal.
+
+       3ø) Effacer :
+       -------------
+    Ce menu vous permetera d'effacer entiŠrement une fiche .
+    L'ordinaeur vous demande une simple confirmation Oui ou Non
+    La fiche … effacer est s‚lectionn‚e par le pointeur au menu principal.
+
+       4ø) Rechercher :
+       ----------------
+    Ce menu vous permetera de resortir un certain nombre de fiche corespondant
+ … un filtre d‚finie par l'utilistateur
+    Si vous appuyez sur <ENTER> sans mettre aucun caractŠre … un champ d'entr‚
+ celui-ci sera annul‚ pour le filtre
+
+
+

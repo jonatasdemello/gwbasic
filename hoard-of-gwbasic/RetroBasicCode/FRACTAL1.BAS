@@ -1,0 +1,135 @@
+0 CLS
+10 DEFINT A,B,C,E-Y
+20 DIM H(128,128),C(320)
+30 REM =========================== Menu ========================================
+40 SCREEN 7:WINDOW (0,0)-(639,399)
+50 COLOR 13:PRINT "1> nouvelle surface"
+60 PRINT "2> carte
+70 PRINT "3> vue en strates"
+80 PRINT "4> vue en ombres"
+90 PRINT "5> vue en fil de fer "
+100 PRINT "6> le jeu"
+110 PRINT
+120 INPUT ">",I:IF I>6 OR I<0 OR I<>INT(I) THEN 120
+130 ON I GOSUB 180,780,990,1160,860,1380
+140 PRINT CHR$(7)
+150 WHILE INKEY$="":WEND
+160 GOTO 40
+170 REM ========================= ParamŠtres ===================================
+180 INPUT "Maille (0-3) : ",M
+190 P=2^(7-M)
+200 PRINT " ---->> pas =";P
+210 INPUT "Hauteur de base : ",H
+220 INPUT "Deviation       : ",D
+230 INPUT "Graine          : ",Z
+240 INPUT "Taille (128,64,32): ",L
+250 REM =========================== Calcul =====================================
+260 RANDOMIZE TIMER
+270 N=H/16:GOSUB 710
+280 COLOR 3
+290 REM =========================== surface de base .
+300 FOR X=0 TO L STEP P
+310 FOR Y=0 TO L STEP P
+320 H(X,Y)=RND*H:IF H(X,Y)<N THEN H(X,Y)=N
+330 C=H(X,Y)/N:IF C>15 THEN C=15
+340 PSET (X*4,Y*2),C
+350 NEXT Y,X
+360 REM ========================== Calcul fractal .
+370 WHILE P>1
+380 Q=P/2:E=D/2
+390 FOR X=Q TO L-Q STEP P
+400 FOR Y=Q TO L-Q STEP P
+410 H=(H(X-Q,Y-Q)+H(X-Q,Y+Q)+H(X+Q,Y-Q)+H(X+Q,Y+Q))/4+D*RND-E
+420 IF H<N THEN H=N
+430 C=H/N:IF C>15 THEN C=15
+440 H(X,Y)=H:PSET (X*4,Y*2),C
+450 NEXT Y,X
+460 FOR X=P TO L-P STEP P
+470 FOR Y=Q TO L-Q STEP P
+480 H=(H(X-Q,Y)+H(X+Q,Y)+H(X,Y-Q)+H(X,Y+Q))/4+D*RND-E
+490 IF H<N THEN H=N
+500 C=H/N:IF C>15 THEN C=15
+510 H(X,Y)=H:PSET(X*4,Y*2),C
+520 H=(H(Y-Q,X)+H(Y+Q,X)+H(Y,X-Q)+H(Y,X+Q))/4+D*RND-E
+530 IF H<N THEN H=N
+540 C=H/N:IF C>15 THEN C=15
+550 H(Y,X)=H:PSET (Y*4,X*2),C
+560 NEXT Y,X
+570 FOR I=Q TO L-Q STEP P
+580 H=(H(0,I-Q)+H(0,I+Q)+H(Q,I))/3+D*RND-E:IF H<N THEN H=N
+590 H(0,I)=H
+600 H=(H(L,I-Q)+H(L,I+Q)+H(L-Q,I))/3+D*RND-E:IF H<N THEN H=N
+610 H(L,I)=H
+620 H=(H(I-Q,0)+H(I+Q,0)+H(I,Q))/3+D*RND-E:IF H<N THEN H=N
+630 H(I,0)=H
+640 H=(H(I-Q,L)+H(I+Q,L)+H(I,L-Q))/3+D*RND-E:IF H<N THEN H=N
+650 H(I,L)=H
+660 NEXT I
+670 P=P/2:D=D/2
+680 WEND
+690 RETURN
+700 REM =========================== affichage
+710 CLS:PSET(64,8)
+720 REM
+730 DRAW "NR-3":FOR C=1 TO 15
+740 D$="C"+STR$(C)+";NU"+STR$(N+N):DRAW D$
+750 NEXT C
+760 RETURN
+770 REM ============================ CARTE
+780 CLS
+790 FOR Y=0 TO 128
+800 FOR X=0 TO 128
+810 C=H(X,Y)/N:IF C>15 THEN C=15
+820 PSET (X*4,Y*2),C
+830 NEXT X,Y
+840 RETURN
+850 REM ====================== Fil de fer
+860 CLS:O=160:K=0
+870 PSET (0,40):LINE -(320,0),1:LINE -(640,40)
+880 ERASE C:'DIM C(320)
+890 FOR Y=0 TO L STEP 2:PSET (O*4-320,C(O+K))
+900 K=0:O=160-Y:IF O<0 THEN K=-O
+910 FOR X=K TO L STEP 2
+920 T=H(X,Y)+Y+X
+930 IF C(X+O)>T THEN H=C(X+O) ELSE H=T
+935 C(X+O)=H
+940 LINE -((O+X)*4-320,H)
+950 NEXT X:LINE -((O+X)*4-322,FH):FH=H
+960 NEXT Y
+970 RETURN
+980 REM =============== strates
+990 CLS:NM=N*4
+1000 FOR I=0 TO 80:H=H(0,I)+I:IF H<NM+I THEN H=NM+I
+1010 C(80-I)=H-2
+1020 H=H(I,0)+I:IF H<NM+I THEN H=NM+I
+1030 C(80+I)=H-2
+1040 NEXT I
+1050 FOR Y=0 TO L
+1060 FOR X=0 TO L-1:NMX=NM+X+Y
+1070 A=80-Y+X:IF A<0 OR A>319 THEN 1130
+1080 H=(H(X,Y)+X+Y)
+1090 C=H(X,Y)/N:IF C>15 THEN C=15
+1100 IF H<MNX THEN H=NMX
+1110 IF H<=C(A) THEN PSET (A*4,C(A)),0
+1120 IF H>C(A) THEN PSET (A*4,C(A)+2):LINE -(A*4,H),C:C(A)=H
+1130 NEXT X,Y
+1140 RETURN
+1150 REM ====================================== ombres
+1160 CLS
+1170 REM
+1180 FOR I=0 TO 80:C(80-I)=H(0,I)+I-2:C(80+I)=H(I,0)+I-2:NEXT
+1190 FOR Y=0 TO L:O1=0:O2=0
+1200 FOR X=L TO 0 STEP -1
+1210 A=80-Y+X:IF A<0 OR A>319 THEN 1290
+1220 H=(H(X,Y)+X+Y)
+1230 C=3
+1240 IF H(X,Y)>=O1 THEN O1=H(X,Y)+1 ELSE C=2
+1250 IF H(X,Y)>=O2 THEN O2=H(X,Y)+2 ELSE C=1
+1260 IF H<C(A) THEN PSET (A*4,C(A)-2),C+1:GOTO 1290
+1270 PSET (A*4,C(A)),C:LINE -(A*4,H)
+1280 C(A)=H+2
+1290 O1=O1-1:O2=O2-2
+1300 NEXT X,Y
+1310 RETURN
+1380 rem
+

@@ -1,0 +1,87 @@
+10 KEY 1,"RUN"+CHR$(13)
+20 KEY 2,"LOAD"+CHR$(34)
+30 KEY 3,"LIST"+CHR$(13)
+40 KEY 4,"RUN 730"+CHR$(13)
+50 KEY 5,"LIST -"
+60 KEY 6,"COLOR 15"+CHR$(13)
+70 KEY 7,"SYSTEM"+CHR$(13)
+80 KEY 8,"KEY LIST"+CHR$(13)
+90 KEY 9,"CLS"+CHR$(13)
+100 KEY 10,"SAVE"+CHR$(34)+"WORLDTIM"+CHR$(34)+CHR$(13)
+110 KEY OFF
+120 CLS
+130 SOUND 500,1.2:SOUND 455,1.2:SOUND 500,1.2:SOUND 455,1.2:SOUND 500,1.2:SOUND 455,1.2:SOUND 500,1.2
+140 COLOR 15:PRINT"****************************** Weltzeituhr ************************************"
+150 PRINT
+160 PRINT" Dieses Programm ermittelt die Weltzeiten von :"
+170 PRINT
+180 COLOR 12:PRINT"Berlin M.E.Z."
+190 COLOR 10
+200 PRINT"London G.M.T    Tokyo"
+210 PRINT"Rio de Janeiro  Hong Kong"
+220 PRINT"Caracas         Bangkok"
+230 PRINT"New York        Dacca"
+240 PRINT"Chicago         Karachi"
+250 PRINT"Denver          Dubai"
+260 PRINT"Los Angeles     Moscow"
+270 PRINT"Honolulu        Cairo"
+280 COLOR 14
+290 PRINT"DATE LINE";:COLOR 10:PRINT"       Berlin"
+300 PRINT"Wellington      Sydney"
+310 PRINT"Noumea"
+320 PRINT
+330 COLOR 27
+340 PRINT
+350 PRINT
+360 PRINT
+370 PRINT"Bitte Leertaste drÅcken"
+380 COLOR 15
+390 PRINT
+400 PRINT"Funktionstasten: [SPACE],[E]nde,[G]et Time,Get [D]ate"
+410 J$=INKEY$:IF J$="" GOTO 410
+420 IF J$="e" OR J$="E" THEN CLS:SOUND 500,2:KEY ON:END
+430 IF J$=" " THEN SOUND 500,2:GOTO 470
+440 IF J$="g" OR J$="G" THEN CLS:SOUND 500,2:GOTO 1490
+450 IF J$="d" OR J$="D" THEN CLS:SOUND 500,2:GOTO 1570
+460 GOTO 420
+470 CLS
+480 COLOR 28:PRINT"********************** D E R   P R O G R A M M I E R E R **********************"
+490 PRINT
+500 COLOR 15:PRINT"Ich wÅnsche Ihnen viel Spa· und natÅrlich das Sie immer"
+510 PRINT"genau wissen wie spÑt es ist."
+520 PRINT"Mit diesem Programm von mir : ";:COLOR 28:PRINT"W O R L D T I M E";:COLOR 15:
+530 PRINT"Es ist ein sehr gutes Programm-ich habe zwei Tage daran gearbeitet."
+540 PRINT"Ich habe immer mehr daran verbessert."
+550 PRINT
+560 PRINT"Viel Spa· noch ---> ";:COLOR 11:PRINT"Markus Birth":COLOR 15
+570 PRINT
+580 PRINT"Jede Zeile ist anders gefÑrbt."
+590 PRINT"Jede 1. Zeile ist ";:COLOR 14:PRINT"Gelb ";:COLOR 15:PRINT"gefÑrbt."
+600 PRINT"Jede 2. Zeile ist ";:COLOR 11:PRINT"Hellblau ";:COLOR 15:PRINT"gefÑrbt."
+610 PRINT"Die îrtliche Zeit ist ";:COLOR 10:PRINT"GrÅn ";:COLOR 15:PRINT"gefÑrbt."
+620 PRINT"Jede Besonderheit(hier DATE LINE) ist ";:COLOR 12:PRINT"Rot ";:COLOR 15:PRINT"gefÑrbt."
+630 PRINT
+640 PRINT
+650 PRINT
+660 PRINT
+670 PRINT
+680 COLOR 27
+690 PRINT"Bitte die Leertaste drÅcken"
+5863  THEN B$="4"
+690 IF A=6 THEN B$="5"
+700 IF A=7 THEN B$="6"
+710 IF A=8 THEN B$="7"
+720 IF A=9 THEN B$="8"
+730 IF A=10 THEN B$="9"
+740 IF A=11 THEN B$="A"
+750 IF A=12 THEN B$="B"
+760 IF A=13 THEN B$="C"
+770 IF A=14 THEN B$="D"
+780 IF A=15 THEN B$="E"
+790 IF A=16 THEN B$="F"
+800 IF A<1 OR A>16 THEN B$="9"
+810 DNUM$=DNUM$+B$
+820 IF LEN(DNUM$)=4 THEN DNUM$=DNUM$+"-"
+830 IF LEN(DNUM$)>=9 THEN RETURN
+840 GOTO 630
+

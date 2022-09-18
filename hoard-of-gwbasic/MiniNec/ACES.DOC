@@ -1,0 +1,236 @@
+
+
+
+
+
+
+		     APPLIED COMPUTATIONAL ELECTROMAGNETICS SOCIETY
+
+				       & NEWSLETTER
+
+
+
+
+	      INTRODUCTION AND BACKGROUND
+
+		   The first issue of the ACES Newsletter on numerical
+	      modeling in electromagnetics was published in February,
+	      1986.  Pre-paid subsciptions will run one year from the date
+	      of the first issue, and will include a minimum of two
+	      issues.  Other subscriptions will begin with the next issue
+	      and will also run for one year.  Back issues of the
+	      Newsletter may be ordered until the supply has been
+	      exhausted at a price of $15.00 per copy.	A limited supply
+	      of 1986 Conference Proceedings are available for $35.00 per
+	      copy.
+
+		   Motivation for both the Newsletter and the Society
+	      stems from the fact that, over the past ten years or so,
+	      computer modeling has matured as a problem-solving tool in
+	      real-world electromagnetics applications.  Use of computer
+	      modeling has become so routine that sessions at the various
+	      professional society meetings deal primarily with new
+	      developments, as also do most of the articles found in the
+	      technical literature.  As a result, those areas where
+	      modeling is routinely used are not highlighted, and
+	      information exchange among the practitioners (both users and
+	      developers) is inhibited.
+
+		   Consequently, it seems worthwhile to explore
+	      alternatives that could provide a forum for those working in
+	      applications of computer modeling in electromagnetics.
+	      Response to our first meeting "The First Annual NEC Review"
+	      (130+ attendance and over 40 presentations) held at Lawrence
+	      Livermore National Laboratory in March 1985, and our second
+	      meeting "The Second Annual Review of Progress in Applied
+	      Computational Electromagnetics" (100+ attendance and nearly
+	      50 presentations) held at the Naval Postgraduate School
+	      shows that there is a need for an applications forum, and
+	      the consensus was that both a regular meeting and a
+	      publication were appropriate.  The Newsletter is the initial
+	      phase of a publication that we expect to become a journal
+	      under the aegis of the Applied Computational
+	      Electromagnetics Society.  This organization is now being
+	      formally chartered, having had a constitution and by-laws
+	      adopted at the Monterey Meeting along with a slate of
+	      officers.  Membership in ACES can be attained through either
+	      attending an annual meeting, or by payment of a membership
+	      fee (see below).	Corporate membership includes Newsletter
+	      reproduction rights (for internal use) and a listing in each
+	      Newsletter issue.
+
+	      NEWSLETTER GOALS AND ORGANIZATION
+
+		   The overall goal of ACES is to foster information
+	      exchange among computer modelers in electromagnetics.  The
+	      focus of ACES is on computer-applications issues as opposed
+	      to the research and development emphasis provided by other
+	      societies and media.  In order to promote this goal and
+	      focus, the ACES Newsletter/Journal will be organized as
+	      follows:
+		   1.  There will be several regular departments or
+	      features to appear in the Newsletter including--
+		   --A modeling column that will contain announcements of
+	      general interest such as problems and limitations discovered
+	      in codes and fixes developed thereto, enhancements and
+	      improvements added, innovative applications discovered, and
+	      new codes available.
+		  --Applications notes, to consist of an
+	      introductory summary which describes in 1-2 pages the
+	      problem, the approach used, the results obtained, and
+	      conclusions and recommendations, followed by a maximum of 8-
+	      10 pages which provide more detail, including results and
+	      validation thereof.
+		   --Code descriptions which briefly describe new codes
+	      that have become available.
+		   --Tutorial articles that give an introduction/overview
+	      of various modeling topics from an applications viewpoint,
+	      covering material likely to help the modeler do more
+	      accurate, efficient and reliable modeling.
+		   --An ACES column to provide news of Society activities.
+
+		   2.  Material published in the Newsletter will be so
+	      organized that as subsequent Newsletters become available,
+	      the various sections can be removed to be kept in a common
+	      binder, thus allowing various subjects (applications notes
+	      for example) to be accumulated as a separate reference
+	      document.  This topic-oriented organization of the
+	      Newsletter material should provide a more useful way to
+	      collect information than the chronological format used by
+	      most journals.
+
+		   3.  For the ease and convenience of both the readers
+	      and contributors to the Newsletter, standard formats will be
+	      adopted wherever possible for providing material for
+	      inclusion.  By requiring an application-note summary to
+	      contain specific information in a particular order, the
+	      reader can always be sure of what the note's minimum
+	      content will be, and the authors will not have to design
+	      their own format.
+
+	      ARTICLE-PUBLICATION CRITERIA
+
+		   Finally, because the ACES Newsletter/Journal is
+	      intended to deal with applications, each contribution will
+	      be required to satisfy at least one of the following
+	      criteria to be considered for publication:
+
+		   1.  Code validation.  This may be done using
+	      experimental, analytical or computational data.
+
+		   2.  Code applications to design.  This could include
+	      studies of parameter sensitivity tradeoffs for the purpose
+	      of tabulating handbook-type data or achieving some desired
+	      performance.
+
+		   3.  Code studies of basic physics.  This might involve
+	      using a code to simulate reality in such a way that better
+	      or new physical insight or understanding is achieved.
+
+		   4.  Code enhancements and fixes.  This category is self
+	      explanatory, but could cover significant changes to existing
+	      codes, including extending their applicability or improving
+	      their performance, and correcting problems or removing
+	      limitations.
+
+	      ADDITIONAL INFORMATION
+
+		   For further information regarding the Newsletter or
+	      becoming a member in the Applied Computational
+	      Electromagnetics Society, please contact ACES secretary
+	      Dr. Richard W. Adler, Code 62AB, Naval Postgraduate School,
+	      Monterey, CA  93943, telephone (408)646-2352.  You can
+	      subscribe to the Newsletter (and become a member of ACES) by
+	      completing and returning the form below.	Information for
+	      prospective authors follows on the next page.
+
+
+	      ACE NEWSLETTER SUBSCRIPTION FORM (Please type or print)
+
+	      NAME___________________________TITLE___________________
+	      ORGANIZATION___________________________________________
+	      ADDRESS________________________________________________
+	      CITY______________STATE_____ZIP_______PHONE(     ) ________
+	      FOREIGN ADDRESS_________________________________________
+
+	      (  )  US Subscription ($25.00 personal, $75.00
+	      organizational).
+	      (  )  Foreign Subscription (Add $10.00 to the above).
+	      PLEASE REMIT PAYMENT WITH THIS FORM BY CHECK OR MONEY ORDER,
+	      MADE PAYABLE TO "Applied Computational Electromagnetics
+	      Society".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	      SUBMITTAL OF MATERIAL FOR THE ACES NEWSLETTER
+
+		   In preparing material for submittal to the ACES
+	      Newsletter, please keep the following guidelines in mind.
+
+	      APPLICATIONS NOTES
+
+	      FORMAT
+
+		   During the start-up phase of the ACES Newsletter, and
+	      for the forseeable future thereafter, we plan to employ
+	      camera-ready final copy because of the cost savings and
+	      convenience it provides.	Please follow the guidelines used
+	      by the IEEE Antenna and Propagation Society Newsletter which
+	      are paraphrased below.
+		   "...Materials intended for publication in the
+	      Newsletter should be typed single-space in photo-ready
+	      condition--all typing must be kept within a 4 1/2 inch
+	      column width.  Any plain white paper can be used but special
+	      paper with light blue column guidelines such as can be
+	      obtained from the IEEE Headquarters for its Newsletters is
+	      convenient.  An alternative method is to type on plain bond
+	      paper using heavy black guidelines on a back-up sheet..."
+
+	      CONTENT
+
+		   In order to ensure an appropriate level of quality
+	      control and review, contributions for the Applications Notes
+	      will be refereed.  We intend to have the Associate Editors
+	      perform this function whenever possible in order to reduce
+	      time delays in publication.  Contributions will be reviewed
+	      both for technical correctness and for adherence to the
+	      guidelines listed above with respect to information content.
+	      Contributors might therefore want to submit the initial
+	      manuscript in draft form so that any suggested changes can
+	      be made before the photo-ready copy is prepared.
+
+	      STYLE
+
+		   Although it is our intention to be reasonably flexible
+	      with espect to the style of the applications articles which
+	      appear in the ACES Newsletter, it is advisable to provide
+	      some guidelines.	We suggest that article preparation with
+	      respect to equations, referencing and layout follow that of
+	      Radio Science.  In particular, equation numbers are put in
+	      parentheses at the right column margin, and references are
+	      given by author(s) name and year in the body of the article
+	      and listed in alphabetical order at the end.
+
+	      OTHER CONTRIBUTIONS
+
+		   Contributions of other kinds are also welcomed.  These
+	      include items for the modeling column, code descriptions and
+	      suggested topics for the tutorial articles.
+hese
+	      include items for the modeling column, code descriptions 

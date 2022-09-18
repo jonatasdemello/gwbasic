@@ -1,0 +1,343 @@
+\1cw
+\U1STANDARD
+\U3ITALIC
+\U5FOREIGN
+\U7GREEK
+\U8LINEDRAW
+\U9MATHI
+\U0MATHII
+\U!UNDERLIN
+\U"ORATOR
+\U#SCRIPT
+\FD
+\+
+\+
+\+
+\^\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \@\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \^\,
+\=
+\+
+\,
+\+
+\,
+\+
+\^\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \"PRODUITS SCALAIRES DANS LE PLAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \^\,
+\+
+\,
+\+
+\,
+\+
+ \!Produit_Scalaire_de_deux_vecteurs_:\,
+\+
+\,
+\+             \8L L    L     L
+             \1u.v = \9N\1u\9N \1x \9N\1v\9N \1x cos(\7a\1)\,
+\+
+\3Th\5w\3or\5r\3me :\,
+\+
+\,
+\+
+\,
+\+
+
+\+
+\,
+\+
+ \1Etant donn\5w\1es trois point A,B,C et H la projection de \ C \ sur \ un 
+\+
+axe passant par A et B\,
+\-
+\+       \8-L   -L   --   --
+       \1AB . AC = AB x AH\,
+\-
+\+       \8-L   -L   -L   -L
+       \1AB . AC = AB . AH\,
+\+
+\,
+\+
+\!Distance_d'un_point_a_une_droite_:\,
+\+
+\,
+\+
+   \1Dans un rep\5r\1re orthonormal, la distance du point A(X\ ,Y\ ) \5f \ \1la 
+\-                                                       o  o
+\+
+droite \#D \1d'\5w\1quation ax + by + c = 0 est \,
+\+
+\,
+\+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \81\ \1aX\  + bY\  + c \81\,
+\-                 \1o     o
+\+
+   d(A,\#D\1) = \8===================\,
+\+
+\ \ \ \ \ \ \ \ \ \ \    \ \0\\\ \ 5\8----------\,
+\+                     \12    2
+\ \ \ \ \ \ \ \ \ \ \ \   \ \ \0\\/\ \ \1a\  + b\,
+\+
+\,
+\+
+\!Cercle_et_disque_forme_:\,
+\+
+\,
+\+
+         \1Soit \7W \1un point de \#P \1et R un r\5w\1el positif.\,
+\+
+ 1) On appelle cercle \#C \1de centre \7W \1et de rayon R \ l'ensemble \ des 
+\+
+points M tels que \7W\1M = R :\,
+\+
+\,
+\+
+      \#C \1= { M, M \9e \#P \1/ \7W\1M = R }\,
+\+
+\,
+\+
+   On note \#C\1(\7W\1,R).\,
+\+
+\,
+\+
+ 2) On appelle \ disque \ ouvert \ \#D \ \1de \ centre \ \7W \ \1et \ de \ rayon \ R 
+\+
+l'ensemble des points M du plan tels que \7W\1M < R :\,
+\+
+\,
+\+
+     \#D \1= { M, M \9e \#P \1/ \7W\1M < R }\,
+\+
+\,
+\+
+ 3) On appelle disque ferm\5w \#D \1de centre \7W \1et de rayon R l'ensemble 
+\+
+des points M du plan tels que \7W\1M \9< \1R.\,
+\+
+\,
+\+
+    \#D \1= { M, M \9e \#P \1/ \7W\1M \9< \1R }\,
+\+
+\,
+\+
+\!Equation_d'un_cercle_:\,
+\+
+\,
+\+
+   \1Dans un rep\5r\1re orthogonal, une \5w\1quation \ du \ cercle \ de \ centre 
+\+
+\7W\1(a,b) et de rayon R est :\,
+\+
+\,
+\+                 2            2    2
+        ( x - a )  + ( y - b )\  = R\,
+\+
+\,\/
+\+
+\,
+\+
+\!Etude_Reciproque_:\,
+\+
+\,
+\+
+    \1Soit \7a\1,\7b\1,\7g \ \1trois \ nombres \ re\5w\1ls. \ Consid\5w\1rons \ l'ensemble \ E 
+\+
+d\5w\1fini dans un rep\5r\1re orthogonal par :\,
+\+
+\,
+\+                       2   2
+       E = { M(x,y) / x\ + y\ + \7a\1x + \7b\1y + \7g \1= 0 }\,
+\+
+\,
+\+
+Quelle est la nature de E ?\,
+\+
+\,
+\+    2   2
+   x\ + y\ + \7a\1x + \7b\1y + \7g \1= 0 s'\5w\1crit :\,
+\+
+        \,
+\+                        2                    2
+\+       \0&      \7a  \0*\12    \7a    \0&      \7b  \0*\12    \7b
+ \ \ \ \ \ \ \81 \1x + \8---\ 1\  \1- \8---\ \1+ \81 \1y + \8--- 1\  \1- \8---\ \1+ \7g \1= 0\,
+\-       \07      \12  \08     \14    \07      \12  \08     \14
+\+
+       
+\+                                       2    2
+\+       \0&      \7a  \0*\12   \0&      \7b  \0*\12    \7a  \1+ \7b  \1- 4\7g
+ \ \ \ \ \ \ \81 \1x + \8---\ 1\  \1+ \81 \1y + \8--- 1\  \1= \8--------------\,
+\-       \07      \12  \08    7      \12  \08          \14
+\+
+\,
+\+                               \0&    \7a       b  \0*
+\1Soit \7W \1le point de coordonn\5w\1es \81 - ---\ \1, \8- --- 1 \1et M(x,y) :\,
+\-                               \07    \12       2  \08
+\+            &      \7a  \0*
+\ \ \ \ \ \ \ \ \ \ \ \ \81 \1x + \8---\ 1\,
+\-            1      \12  \81
+\+
+\ \ \ \ \ \ \ \ \ \7W\1M\ \81\ \ \ \ \ \ \ \ \ 1\,
+\+                   \7b
+            \81\ \1y + \8---\ 1\,
+\-            \07      \12  \08
+\+
+\,
+\+                    \12    2
+\+                   \7a  \1+ \7b  \1- 4\7g
+    \9N\7W\1M\9N \1= k, k = \8--------------\,
+\-                        \14
+\+
+\,
+\+                           2
+donc    E = { M(x,y) / \9N\7W\1M\9N\  \1= k\ }\,
+\+
+  si k < 0 alors il est \5w\1vident que E est vide : E = \9o \,
+\+
+  \1si k = 0 alors E est r\5w\1duit au seul point \7W  \1: E = {\7W\1}\ \ \ \ \ \ \056\,
+\+
+  \1si k > 0 alors E est le cercle de centre \7W \1et de rayon R = \0r\ \1k\,
+\+
+\,
+\+
+\3Th\5w\3or\5r\3me :\,
+\+
+\,
+\+                      \12   2
+ Soit E = { M(x,y) / x\ + y\  + \7a\1x + \7b\1y + \7g \1= 0 }\,
+\+
+ dans un rep\5r\1re orthonormal l'ensemble E est un cercle,\,
+\+
+ \5w\1ventuellement r\5w\1duit \5f \1un point , ou l' ensemble vide\,
+\+
+\,
+\+
+\!Courbes_de_niveau_:\,
+\+
+\,
+\+             \9L
+\+
+   \#P \1: plan, \#V\ \ \1ensemble des vecteurs associ\5w\1s au plan .\,
+\+
+\,
+\+                 2   2
+ 1)  { M(x,y) / x\ + y\  + \7a\1x + \7b\1x + \7g\ \1= 0 }\,
+\+
+\,
+\+                                                       \8L
+                                      \#Theoreme \ : \ \1Si \ u \ est \ \ un 
+\+
+                                      vecteur non nul et k un r\5w\1el\,
+\+
+                                      quelconque alors  l'ensemble \,
+\+
+                                      des \ points \ M du plan \ tels 
+\+                                          \8L -L
+                                      \1que u.OM = k est une \ droite 
+\+                                                            \8-L   L
+                                      \1orthogonale \5f \1(OA) si OA = u\,
+\+                                \8-L -L
+\1Pour d\5w\1terminer cette droite : \ OA.OM \ = \ k, \ soit \ H \ le \ projet\5w 
+\+                                             \8-L
+\1orthogonal de M sur (OA) qui est orient\5w \1par OA on a :\,
+\+       \8--   --                             -L
+       \1OA x OH = k si (OA) est orient\5w \1par OA\,
+\+
+\+                      \8--     \1k
+          \ \ \ \ \ \ \ \ \ \ \ \ OH =\ \8----\,
+\-                            --
+\-                            \1OA\/
+\+
+\,
+\+               2    2
+2) { M \9e \#P \81 \1MA\ - MB\  = k, k \9e \0R\1, A \9e \#P\1, B \9e \#P \1}.\,
+\+
+\,
+\+     2    2   \8-L\12   \8-L\12
+   MA\ - MB\  = MA\  - MB\,
+\+
+\+    \8-L   -L       -L   -L
+\1=\ ( MA + MB ) . ( MA - MB )\,
+\+
+\+   \8-L   -L
+\1= 2MI . BA  si I milieu de [AB]\,
+\+
+\+    2     2    \8-L   -L
+  \1MA\  - MB\  = 2MI . BA \,
+\+                             2    2           \8-L   -L
+\ \ \1Si on cherche M tels que MA\ - MB\  = k on a 2AB . IM = k\,
+\+                                                          \8-L
+\1Soit H la projection orthogonal de M sur (AB) orient\5w \1par AB\,
+\+                     \8--   --
+                   \12.AB x IH = k\,
+\+
+\+              \8--     \1k
+              IH = \8------\,
+\-                      --
+\-                    \12.AB
+\+                                                      2    2
+ \3Th\5w\3or\5r\3me : \1L'ensemble des points M du plan tel que MA\ - MB\  \ = \ k 
+\+
+o\5i \1k est r\5w\1el donn\5w \1et A et B deux points quelconque du \ plan \ est 
+\+
+une droite orthogonal \5f \1(AB)\,
+\+
+\,
+\+                2    2
+ 3) { M \9e \#P \81 \1MA\ + MB\  = k, k \9e \0R\1, A \9e \#P\1, B \9e \#P \1}\,
+\+
+\,
+\+    2    2   \8-L\12   \8-L\12
+  MA\ + MB\  = MA\  + MB\  soit I le milieu de [AB]\,
+\+
+\,
+\+       \8-L   -L  \12     \8-L   -L  \12
+\ \ \ = ( MI + IA )\  + ( MI + IB )\,
+\+
+\+     \8-L\12  \8-L\12    \8-L -L   -L\12  \8-L\12   \8-L -L
+\ \ \ \1= MI\ + IA\  + 2MI.IA + MI\ + IB\ + 2MI.IB\,
+\+
+\+        2     2     2    \8-L   -L   -L
+   \1= 2MI\  + IA\  + IB\  + 2MI.( IA + IB )\,
+\+
+\,
+\+              2     2
+\+        2   AB    AB         \8L
+   \1= 2MI\  + \8--- \1+ \8--- \1+      0\,
+\-             4     4
+\-
+\+                                     2
+\+                  2     2      2   AB
+               \ MA\  + MB\  = 2MI\  + \8---\,
+\-                                    \12
+\+                                                  2    2
+ Si on cherche l'ensemble des points M tels que MA\ + MB\  = k on a\,
+\+
+\+          2                           2
+\+    2   AB                2    k    AB
+ 2MI\  + \8--- \1= k   <==>  MI\  = \8---\ - ---\,
+\-         \12                     2     4
+\+
+\+             2
+\+       k   AB
+ * Si \8---- --- \1positif, l'ensemble des points M est le \ cercle \ de \,
+\-       2    4
+\+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \05\8---------\06\,
+\+                                     \12
+\+                         \0\\  / \1k    AB
+centre I et de rayon   \ \ \ \ \  \8--- - ---\,
+\-                          \0\\/  \12     4
+\+
+\+             2
+\+       k   AB
+ * Si \8---- --- \1est nul M est en I\,
+\-       2    4
+\+
+\+             2
+\+       k   AB
+ * Si \8---- --- \1est n\5w\1gatif l'ensemble cherch\5w \1est l'ensemble Vide\,
+\-       2    4
+\+                                                      2    2
+\3Th\5w\3or\5r\3me : \1L'ensemble des points M du plan tels que MA\ + MB\  \ = \ k 
+\+
+o\5i \1k est un r\5w\1el donn\5w \1est soit un cercle, \ soit \ un \ point, \ soit 
+\+
+l'ensemble vide .
+\=
+

@@ -1,0 +1,12 @@
+IFID: 566d7c14-014b-4cb2-84d6-ad2670a352b4
+Name: Korenvliet
+Byline: by Independent Software (www.independent-software.com)
+HtmlByline: by <a href="mailto:info@independent-software.com">Independent Software</a>
+AuthorEmail: Independent Software <info@independent-software.com>
+Desc: "You were recently informed that your eccentric uncle Wout had passed away.  There is a persistent rumor that the old crackpot left the Korenvliet estate to whomever manages to locate his will. You've dutifully travelled down  to the village where the estate is located to start your search of the grounds. This game is based on the original <i>korenvl.bas</i> GW-BASIC programme, whose author is unknown.
+Version: 1.2
+ReleaseDate: 2017-02-16
+Language: en-US
+LicenseType: Freeware
+CopyingRules: Nominal cost only; compilations allowed
+PresentationProfile: Default
