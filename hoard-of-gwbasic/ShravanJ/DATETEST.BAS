@@ -1,0 +1,7 @@
+10 D$ = DATE$
+20 DD = VAL(LEFT$(D$, 2))
+30 MM = VAL(MID$(D$, 4,2))
+40 YY = VAL(RIGHT$(D$, 2))
+50 DOW = DD + MM + YY + (YY/4) + 6
+60 PRINT DOW
+

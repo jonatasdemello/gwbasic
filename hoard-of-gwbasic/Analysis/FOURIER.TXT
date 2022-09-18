@@ -1,0 +1,17 @@
+This program is intended to write a Fourier series from a wave shape
+that can be read from an oscilloscope trace or from a set of meter
+readings.  It is based on approximate methods for finding the area under
+a curve.
+
+The wave is considered to be neither odd or even so we expect the 
+series to contain both sine and cosine terms.  Since this algorithm
+is for half-wave symmetry we look for only odd harmonics.  This
+program will generate the first eight terms.
+
+It is also assumed that the waveform begins at x=0, so the first data
+ordinate point entered should be at x=0.
+
+It is necessary to enter the ordinates for only ONE HALF CYCLE.
+
+Thirty to forty points will yield a Fourier series with a good fit
+to the original waveform.

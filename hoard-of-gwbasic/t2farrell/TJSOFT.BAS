@@ -1,0 +1,21 @@
+10 KEY OFF:CLS
+20 T=1
+30 FOR N=1 TO 23
+40 PRINT TAB(T)"LINGOAID"
+50 T=T+3
+60 NEXT N
+70 T=72
+80 LOCATE 1,1
+90 U$="                                                             "
+100 FOR N=1 TO 23
+110 PRINT TAB(T)"LINGOAID";
+120 IF T=<39 THEN PRINT MID$(U$,1,C)
+130 T=T-3:C=C+3
+140 NEXT N
+150 LOCATE 4,10:PRINT "Written by";
+160 LOCATE 5,10:PRINT "Troy Farrell &";
+170 LOCATE 6,10:PRINT "Jeff Wilson";
+180 LOCATE 18,50:PRINT "Copyright (C) 1988";
+190 LOCATE 19,50:PRINT "T.J. Software Company Ltd.";
+200 FOR Q=1 TO 2000:NEXT Q
+
