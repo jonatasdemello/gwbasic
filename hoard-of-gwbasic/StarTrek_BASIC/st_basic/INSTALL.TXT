@@ -1,0 +1,23 @@
+ *** STAR TREK GAME INSTALLATION PROGRAM INSTRUCTIONS *********************
+ USAGE:       INSTALL [/I [drive][target directory]]
+        or    INSTALL [/I /X drive &/or target directory] 
+    (** commands in brackets [] are optional. DO NOT type 
+     in the brackets when using the command.)
+ IMPORTANT:   Current drive and directory should contain the source files.
+      /I   -- Command that initializes installation of game.
+      /X   -- Use this to not create STARTREK directory (see below).
+ [target directory] -- Optional unless used with the /X command.
+              Can be any legal eight letter + 3 letter ext-
+              ension (********.***) name for a directory.
+              You don't have to specify if using current
+              directory (except with /X). ** NOTE that INSTALL will always
+              create & copy files to a subdirectory under
+              STARTREK if the /X option is not used (as in the example below).
+ Example of installation of game in drive C under \GAMES directory
+              INSTALL /I C:\GAMES
+ The program will then copy all files to c:\games\startrek.
+        /X -- Causes Install to NOT automatically create the 
+                 directory STARTREK in addition to the dir-
+                 ectory specified when this command is used.
+        NOTE:You MUST specify a drive &/or directory with /X.
+
