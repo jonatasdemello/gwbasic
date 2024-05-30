@@ -1,0 +1,37 @@
+# See <https://stackoverflow.com/questions/34713765/github-changes-repository-to-the-wrong-language>
+
+# * linguist-vendored
+# or:
+# data/* linguist-vendored
+# *.ME linguist-vendored
+# ^ such as READ.ME etc, otherwise sometimes detected as "Roff"
+# *.bas linguist-vendored=false
+
+# To allow C to be detected, instead of the above just fix BASIC identification:
+*.ME linguist-vendored
+QBASIC.TXT.1 linguist-vendored
+ISSUE7.FAN.1 linguist-vendored
+# Linguist detects C-like extensions but they are really plain text files:
+gwbasic/hoard-of-gwbasic/TVDog/mymouse/MANUAL.C linguist-vendored
+# Linguist detects C-like extensions but they are really BASIC:
+# These have unexpected extensions:
+hoard-of-gwbasic/ProgrammersHeaven/upaint/1.1 linguist-language=BASIC
+hoard-of-gwbasic/ProgrammersHeaven/upaint/2.2 linguist-language=BASIC
+hoard-of-gwbasic/ProgrammersHeaven/upaint/3.3 linguist-language=BASIC
+hoard-of-gwbasic/ProgrammersHeaven/upaint/4.4 linguist-language=BASIC
+hoard-of-gwbasic/ProgrammersHeaven/upaint/5.5 linguist-language=BASIC
+hoard-of-gwbasic/ProgrammersHeaven/MOON016/FFBLK.H linguist-language=BASIC
+*.MOO linguist-language=BASIC
+# These have expected extensions but linguist detects language incorrectly:
+*.BAS linguist-language=BASIC
+# ^ otherwise sometimes detected as "AGS Script" or "FreeBasic"
+*.ASC linguist-language=BASIC
+# ^ otherwise sometimes detected as "AGS Script"
+*.BI linguist-language=BASIC
+# ^ otherwise sometimes detected as "FreeBasic" etc
+*.INC linguist-language=BASIC
+
+
+README.md linguist-documentation=true
+# or:
+# doc/* linguist-documentation
