@@ -1,0 +1,49 @@
+Hello Kindly Rat;		Aruba, February 22, 2003
+
+I'm glad that there is still interest for GWBasic. A little tutorial on listdisk.bas or listdisk.exe The purpose of listdisk is to get a much better listing of GWbasic programs which must have been saved in ASCII format. When you normally save a basic program it will be saved in a compact way that will be unreadable if you open it in any wordprocessor. To avoid this and get a larger program (in bytes) you save it in ASCII format.
+Compact format (unreadable):	GWbasic command is save"filename" <Enter>
+ASCII format (readable):		GWbasic command is save "filename",a <Enter>
+
+So in ASCII format you can load it with GWbasic and run. Now you can listdisk read it and saved it in a much more readable way than GWbasic does. You get beautiful indents at a line that begins with '  which is short for REM. Also the line numbers are nicely aligned and very large basic lines are intelligently printed.
+
+Due to the fact that most printers are going USB I'm in the process of upgrading my GWbasic programs so that they will print to a diskfile. Hereafter anybody with a super wordprocessor like Word or WordPerfect can edit and print the listings the way they like.
+
+Tutorial on Listdisk.bas = Listdisk.exe
+
+Put listdisk in the directory where you have your basic programs saved in ASCII format. ((I always list my programs in ASCII format. In Explorer open these files with note(or word)pad.))
+
+Press F3 and you will see your basic files on your screen.
+
+Press F7 and type the filename you want to be processed. The extension .bas you may omit.
+
+Press F1 will show you the way listdisk will save the file to disk if you want so. Press <Esc> to exit this listing.
+
+Press F8 and type a header that will put a title on your first page.
+
+Press F2 to change the right margin from 80 to 132. (Remember that your wordprocessor will print 132 characters on a line by changing the character size.)
+
+Press F9 to review your settings.
+
+Press F10 and <Enter> This will list in one shot the complete listing and will make an ASCII DOS text to your harddisk with the filename entered under F7 plust the extension txt.
+
+Press F5 or F6 if you want an extra linefeed between the basic lines. (I use this only in troubleshooting bugs in a program)
+
+Press F4 to exit this program.
+
+Load your txt file with a word processor. Edit and print the way you like it.
+
+Success!!!
+
+Eric F. Tchong
+postbox 2354
+San Nicolas
+Aruba
+phone 297 584-7332
+fax 297 584-9290
+
+
+
+
+
+
+

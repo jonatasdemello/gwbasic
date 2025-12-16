@@ -1,7 +1,0 @@
-ZXASCII
-AUTO -1
-PROG mouseclock
-10 LET time$=""
-20 ON EVERY 50 LET t=TIME: LET time$=#17#15#0#0#0#16#0#0#0#0+USING$("*0##",HOUR t)+":"+USING$("*0##",MINUTES t)+":"+USING$("*0##",SECONDS t)
-30 PRINT MOVE MOUSEx+FONTw*2,MOUSEy;time$: WAIT SCREEN: CLS 
-40 GO TO 30

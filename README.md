@@ -2,6 +2,14 @@
 
 A collection of GWBasic, BASIC, BASICA, QBASIC games, tutorials and others.
 
+**PC Basic**
+
+https://github.com/robhagemans/pcbasic
+
+http://robhagemans.github.io/pcbasic/
+
+http://www.pc-basic.org 
+
 
 ## Links
 
@@ -16,16 +24,23 @@ http://www.oocities.org/KindlyRat/GWBASIC.html
 
 https://hwiegman.home.xs4all.nl/gwbasic.html
 
-
 http://www.moorecad.com/classicbasic/index.html
+
+
+## PC Basic
 
 https://github.com/robhagemans/pcbasic
 
-http://robhagemans.github.io/pcbasic/doc/#
+http://robhagemans.github.io/pcbasic/doc
 
 
 http://archive.is/AUm6G
 http://www.oocities.org/KindlyRat/GWBASIC.html
+
+
+https://github.com/mysteriouskangaroo/GWBasic.git
+https://github.com/MohammedMaaz/GW-Basic-games.git
+https://github.com/pmachapman/basic-samples.git
 
 
 KindlyRat's archived Geocities page has a number of classic games and utilities.
@@ -86,7 +101,6 @@ http://peyre.42web.io/index.html
 http://peyre.42web.io/GWBASIC/index.htm
 
 other links:
-
 
 	http://peyre.x10.mx/index.htm
 	http://peyre.x10.mx/GWBASIC/SEABAT.zip
